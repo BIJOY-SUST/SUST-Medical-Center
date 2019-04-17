@@ -89,13 +89,15 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-wrap">
+                        <div class="menu-wrap">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
                                     <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
                                         <ul class="dropdown">
@@ -103,16 +105,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
-                                    <li class="has-dropdown">
-                                        <a href="{% url 'cse:departments' %}">Departments</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{% url 'cse:departments_single' %}">Plasetic Surgery
-                                                Department</a></li>
-                                            <li><a href="{% url 'cse:departments_single' %}">Dental Department</a></li>
-                                            <li><a href="{% url 'cse:departments_single' %}">Psychological
-                                                Department</a></li>
-                                        </ul>
-                                    </li>
+
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:blog' %}">Blog</a>
                                         <ul class="dropdown">
@@ -124,8 +117,10 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <p class="btn-cta"><a href="{% url 'cse:appointment' %}"><span>Make an Appointment <i
-                                    class="icon-calendar3"></i></span></a></p>
+                            <p class="btn-cta"><a href="#">
+                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                            </a></p>
                         </div>
                     </div>
                 </div>

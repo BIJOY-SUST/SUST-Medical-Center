@@ -31,6 +31,8 @@ def index(request):
 
 def services(request):
         return render(request, 'cse/services.html')
+def about_us(request):
+        return render(request, 'cse/about_us.html')
 
 
 def staring(request):

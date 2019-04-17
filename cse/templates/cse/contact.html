@@ -45,6 +45,10 @@
     <!-- Theme style  -->
     <link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
 
+
+    {#    <link rel="stylesheet" href="{% static 'cse/contact/style.css' %}">#}
+
+
     <!-- Modernizr JS -->
     <script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
     <!-- FOR IE9 below -->
@@ -72,16 +76,15 @@
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="loc">
                                         <span class="icon"><i class="icon-location"></i></span>
-                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
-										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
-										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
-										4d91.8319132?hl=en-GB">University Ave, Sylhet 3114</a></p>
+                                        <p>
+                                            <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -96,6 +99,8 @@
                             <div class="menu-1">
                                 <ul>
                                     <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
                                         <ul class="dropdown">
@@ -103,16 +108,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
-                                    <li class="has-dropdown">
-                                        <a href="{% url 'cse:departments' %}">Departments</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{% url 'cse:departments_single' %}">Plasetic Surgery
-                                                Department</a></li>
-                                            <li><a href="{% url 'cse:departments_single' %}">Dental Department</a></li>
-                                            <li><a href="{% url 'cse:departments_single' %}">Psychological
-                                                Department</a></li>
-                                        </ul>
-                                    </li>
+
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:blog' %}">Blog</a>
                                         <ul class="dropdown">
@@ -124,8 +120,10 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <p class="btn-cta"><a href="{% url 'cse:appointment' %}"><span>Make an Appointment <i
-                                    class="icon-calendar3"></i></span></a></p>
+                            <p class="btn-cta"><a href="#">
+                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                            </a></p>
                         </div>
                     </div>
                 </div>
@@ -133,17 +131,78 @@
         </div>
     </nav>
 
+    {#    <!-- ***** Hero Area Start ***** -->#}
+    {#    <section class="hero-area">#}
+    {#        <div class="hero-slides owl-carousel">#}
+    {#            <!-- Single Hero Slide -->#}
+    {#            <div class="single-hero-slide bg-img bg-overlay-white"#}
+    {#                 style="background-image: url({% static 'cse/contact/img/bg-img/hero1.jpg' %})">#}
+    {#                <div class="container h-100">#}
+    {#                    <div class="row h-100 align-items-center">#}
+    {#                        <div class="col-12">#}
+    {#                            <div class="hero-slides-content">#}
+    {#                                <h2 data-animation="fadeInUp" data-delay="100ms">Medical Services that <br>You can Trust#}
+    {#                                    100%</h2>#}
+    {#                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet,#}
+    {#                                    consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>#}
+    {#                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover#}
+    {#                                    Medifile <span>+</span></a>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <!-- Single Hero Slide -->#}
+    {#            <div class="single-hero-slide bg-img bg-overlay-white"#}
+    {#                 style="background-image: url({% static 'cse/contact/img/bg-img/breadcumb3.jpg' %})">#}
+    {#                <div class="container h-100">#}
+    {#                    <div class="row h-100 align-items-center">#}
+    {#                        <div class="col-12">#}
+    {#                            <div class="hero-slides-content">#}
+    {#                                <h2 data-animation="fadeInUp" data-delay="100ms">Medical Services that <br>You can Trust#}
+    {#                                    100%</h2>#}
+    {#                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet,#}
+    {#                                    consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>#}
+    {#                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover#}
+    {#                                    Medifile <span>+</span></a>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <!-- Single Hero Slide -->#}
+    {#            <div class="single-hero-slide bg-img bg-overlay-white"#}
+    {#                 style="background-image: url({% static 'cse/contact/img/bg-img/breadcumb1.jpg' %})">#}
+    {#                <div class="container h-100">#}
+    {#                    <div class="row h-100 align-items-center">#}
+    {#                        <div class="col-12">#}
+    {#                            <div class="hero-slides-content">#}
+    {#                                <h2 data-animation="fadeInUp" data-delay="100ms">Medical Services that <br>You can Trust#}
+    {#                                    100%</h2>#}
+    {#                                <h6 data-animation="fadeInUp" data-delay="400ms">Lorem ipsum dolor sit amet,#}
+    {#                                    consectetuer adipiscing elit sed diam nonummy nibh euismod.</h6>#}
+    {#                                <a href="#" class="btn medilife-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover#}
+    {#                                    Medifile <span>+</span></a>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
+    <!-- ***** Hero Area End ***** -->
     <aside id="colorlib-hero" class="hero">
         <div class="flexslider">
             <ul class="slides">
-                <li style="background-image: url({% static 'cse/images/img_bg_1.jpg' %}">
+                <li style="background-image: url({% static 'cse/images/hero1.jpg' %}">
                     <div class="overlay"></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center slider-text">
-                                <div class="slider-text-inner">
-                                    <h1>Contact <strong>Us</strong></h1>
-                                    {#                                    <h2>html5 Bootstrap Templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>#}
+                                <div class="slider-text-inner" align="left">
+                                    <h1>We Always Care Your <br> Health</h1>
+
+{#                                    <h1>Contact <strong>Us</strong></h1>#}
                                 </div>
                             </div>
                         </div>
@@ -153,38 +212,44 @@
         </div>
     </aside>
 
-    {#    <div id="colorlib-appointment">#}
-    {#        <div class="container">#}
-    {#            <div class="row">#}
-    {#                <div class="col-md-8 col-md-offset-2 text-center">#}
-    {#                    <h2 class="line-block">Make an appointment</h2>#}
-    {#                    <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
-    {#                            class="icon-calendar3"></i></a></p>#}
+    {#        <div id="colorlib-appointment">#}
+    {#            <div class="container">#}
+    {#                <div class="row">#}
+    {#                    <div class="col-md-8 col-md-offset-2 text-center">#}
+    {#                        <h2 class="line-block">Make an appointment</h2>#}
+    {#                        <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
+    {#                                class="icon-calendar3"></i></a></p>#}
+    {#                    </div>#}
     {#                </div>#}
     {#            </div>#}
     {#        </div>#}
-    {#    </div>#}
 
     <div id="colorlib-contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
-                    <h3>Contact Information</h3>
+                    <h2>Contact Information</h2>
                     <div class="row contact-info-wrap">
-                        <div class="col-md-3">
-                            <p><span><i class="icon-location"></i></span> Shahjalal University of Science and Technology
-                                <br> Shahjalal University of Science and Technology, Sylhet-3114.</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p><span><i class="icon-phone"></i></span> <a href="tel://1234567920">+ 880-821-713491</a>
+                        <div class="">
+                            <p><span><i class="icon-location"></i></span>
+                                <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
+                                    Shahjalal University of Science and Technology, Sylhet-3114.</a>
                             </p>
                         </div>
-                        <div class="col-md-3">
+                        <div class="">
+                            <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
+                                880-821-713491</a>
+                            </p>
+                        </div>
+                        <div class="">
                             <p><span><i class="icon-mail"></i></span> <a href="mailto:mdc@sust.edu">mdc@sust.edu</a>
                             </p>
                         </div>
-                        <div class="col-md-3">
+                        <div class="">
                             <p><span><i class="icon-globe-outline"></i></span> <a href="#">sustmedicalcenter.com</a></p>
+                        </div>
+                        <div class="">
+                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">www.sust.edu</a></p>
                         </div>
                     </div>
                 </div>
@@ -233,67 +298,34 @@
             </div>
         </div>
     </div>
-
-    <div id="map" class="colorlib-map"></div>
+    <div>
+        <center><b><h2>Here you can find us on map</h2></b></center>
+    </div>
+    <br>
+    {#        <div id="map" class="colorlib-map"></div>#}
+    <div id="map"></div>
 
 
     <footer id="colorlib-footer" role="contentinfo">
         <div class="overlay"></div>
         <div class="container">
-{#            <div class="row row-pb-md">#}
-                <div class="col-md-3 colorlib-widget" >
-                    <h3>Shahjalal University of Science and Technology</h3>
-                    <p>Shahjalal University of Science and Technology (SUST) was established in 1986. The only
-                        university of its kind at that time, it started it''s journey on the 13th of February 1991 with
-                        only three departments: Physics, Chemistry and Economics, 13 teachers and 205 students. It has
-                        now expanded to 7 schools, 27 departments , 2 institutes and and centers. The number of teachers
-                        has grown to 552 and the students to 10922. Besides, the University has 13 affiliated colleges
-                        under the School of Medical Sciences with 4000 students.</p>
-                </div>
-{#                <div class="col-md-3 col-md-push-1 colorlib-widget">#}
-{#                    <h3>Navigation</h3>#}
-{#                    <ul class="colorlib-footer-links">#}
-{#                        <li><a href="#"><i class="icon-check"></i> Department</a></li>#}
-{#                        <li><a href="#"><i class="icon-check"></i> Blog</a></li>#}
-{#                        <li><a href="#"><i class="icon-check"></i> Contact</a></li>#}
-{#                        <li><a href="#"><i class="icon-check"></i> Terms</a></li>#}
-{#                        <li><a href="#"><i class="icon-check"></i> Shop</a></li>#}
-{#                    </ul>#}
-{#                </div>#}
+            {#            <div class="">#}
+            {#                <center><b><h1>About</h1></b></center>#}
+            {#            </div>#}
+            <div class="">
+                <center><b><h1>Shahjalal University of Science and Technology</h1></b></center>
+                <br>
+                <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
+                    research university located in Sylhet, Bangladesh.[1][2] It is the 8th oldest university of the
+                    country and the first university to adopt American credit system. SUST is the Flagship University of
+                    the Science & Technology University System of Bangladesh.</p>
 
-                {#                <div class="col-md-3 colorlib-widget">#}
-                {#                    <h3>Our Services</h3>#}
-                {#                    <ul class="colorlib-footer-links">#}
-                {#                        <li><a href="#"><i class="icon-check"></i> Heart Surgery</a></li>#}
-                {#                        <li><a href="#"><i class="icon-check"></i> Surgical Treatment</a></li>#}
-                {#                        <li><a href="#"><i class="icon-check"></i> General Treatment</a></li>#}
-                {#                        <li><a href="#"><i class="icon-check"></i> Medical Treatment</a></li>#}
-                {#                        <li><a href="#"><i class="icon-check"></i> Help Desk</a></li>#}
-                {#                    </ul>#}
-                {#                </div>#}
-
-                {#                <div class="col-md-3 colorlib-widget">#}
-                {#                    <h3>Make an Appointment</h3>#}
-                {#                    <form class="contact-form">#}
-                {#                        <div class="form-group">#}
-                {#                            <label for="name" class="sr-only">Name</label>#}
-                {#                            <input type="name" class="form-control" id="name" placeholder="Name">#}
-                {#                        </div>#}
-                {#                        <div class="form-group">#}
-                {#                            <label for="email" class="sr-only">Email</label>#}
-                {#                            <input type="email" class="form-control" id="email" placeholder="Email">#}
-                {#                        </div>#}
-                {#                        <div class="form-group">#}
-                {#                            <label for="message" class="sr-only">Message</label>#}
-                {#                            <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>#}
-                {#                        </div>#}
-                {#                        <div class="form-group">#}
-                {#                            <input type="submit" id="btn-submit" class="btn btn-primary btn-send-message"#}
-                {#                                   value="Send Message">#}
-                {#                        </div>#}
-                {#                    </form>#}
-                {#                </div>#}
-{#            </div>#}
+                <p>The university was founded as the first science & technology university of the country by the
+                    Government of Bangladesh according to a university act in 1986 to give special importance in science
+                    and technology education. Following this, seven more science and technology universities have been
+                    established in Bangladesh. SUST is traditionally known for pioneering research and education in the
+                    physical sciences and engineering.</p>
+            </div>
         </div>
         <div class="row copyright">
             <div class="col-md-12 text-center">
@@ -303,13 +335,7 @@
                         All rights reserved | SUST Medical Center</a>
                     </small>
                 </p>
-                {#				<p>#}
-                {#					<small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-                {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>#}
-                {#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-                {#</small> #}
-                {#					<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>#}
-                {#				</p>#}
+
             </div>
         </div>
     </footer>
@@ -337,11 +363,39 @@
 <script src="{% static 'cse/js/jquery.countTo.js' %}"></script>
 <!-- Magnific Popup -->
 <script src="{% static 'cse/js/jquery.magnific-popup.min.js' %}"></script>
+
 <script src="{% static 'cse/js/magnific-popup-options.js' %}"></script>
 <!-- Sticky Kit -->
 <script src="{% static 'cse/js/sticky-kit.min.js' %}"></script>
 <!-- Main -->
 <script src="{% static 'cse/js/main.js' %}"></script>
+
+
+<script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+
+
+<script src="{% static 'cse/js/respond.min.js' %}"></script>
+
+
+{#<script src="{% static 'cse/js/google_map.js' %}"></script>#}
+<script src="{% static 'cse/js/map-promodi.js' %}"></script>
+
+
+{#<!-- jQuery (Necessary for All JavaScript Plugins) -->#}
+{#<script src="{% static 'cse/contact/js/jquery/jquery-2.2.4.min.js' %}"></script>#}
+{#<!-- Popper js -->#}
+{#<script src="{% static 'cse/contact/js/popper.min.js' %}"></script>#}
+{#<!-- Bootstrap js -->#}
+{#<script src="{% static 'cse/contact/js/bootstrap.min.js' %}"></script>#}
+{#<!-- Plugins js -->#}
+{#<script src="{% static 'cse/contact/js/plugins.js' %}"></script>#}
+{#<!-- Active js -->#}
+{#<script src="{% static 'cse/contact/js/active.js' %}"></script>#}
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap"></script>
+
 
 </body>
 </html>
