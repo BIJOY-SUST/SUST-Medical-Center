@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUST Medical Center</title>
+
+    {% load staticfiles %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/animate.css' %}"/>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/icomoon.css' %}"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/bootstrap.css' %}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/magnific-popup.css' %}"/>
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.theme.default.min.css' %}"/>
+    <!-- Flexslider  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/flexslider.css' %}"/>
+    <!-- Flaticons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/fonts/flaticon/font/flaticon.css' %}"/>
+    <!-- Theme style  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="{% static 'cse/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+<div class="colorlib-loader"></div>
+
+<div id="page">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                            class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="num">
+                                        <span class="icon"><i class="icon-phone"></i></span>
+                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="loc">
+                                        <span class="icon"><i class="icon-location"></i></span>
+                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
+										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
+										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
+										4d91.8319132?hl=en-GB">University Ave, Sylhet 3114</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="menu-1">
+                                <ul>
+                                    <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:doctors' %}">Doctors</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'cse:services' %}">Services</a></li>
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:departments' %}">Departments</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'cse:departments_single' %}">Plasetic Surgery
+                                                Department</a></li>
+                                            <li><a href="{% url 'cse:departments_single' %}">Dental Department</a></li>
+                                            <li><a href="{% url 'cse:departments_single' %}">Psychological
+                                                Department</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:blog' %}">Blog</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="btn-cta"><a href="{% url 'cse:appointment' %}"><span>Make an Appointment <i
+                                    class="icon-calendar3"></i></span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="colorlib-hero" class="hero">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-image: url({% static 'cse/images/img_bg_1.jpg' %}">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center slider-text">
+                                <div class="slider-text-inner">
+                                    <h1>Contact <strong>Us</strong></h1>
+                                    {#                                    <h2>html5 Bootstrap Templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    {#    <div id="colorlib-appointment">#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-8 col-md-offset-2 text-center">#}
+    {#                    <h2 class="line-block">Make an appointment</h2>#}
+    {#                    <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
+    {#                            class="icon-calendar3"></i></a></p>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    <div id="colorlib-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 animate-box">
+                    <h3>Contact Information</h3>
+                    <div class="row contact-info-wrap">
+                        <div class="col-md-3">
+                            <p><span><i class="icon-location"></i></span> Shahjalal University of Science and Technology
+                                <br> Shahjalal University of Science and Technology, Sylhet-3114, Bangladesh.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><span><i class="icon-phone"></i></span> <a href="tel://1234567920">+ 880-821-713491</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><span><i class="icon-mail"></i></span> <a href="mailto:mdc@sust.edu">mdc@sust.edu</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">sustmedicalcenter.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1 animate-box">
+                    <h3>Get In Touch</h3>
+                    <form action="#">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" class="form-control" placeholder="Your email address">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control"
+                                       placeholder="Your subject of this message">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                          placeholder="Say something about us"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Send Message" class="btn btn-primary">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="colorlib-map"></div>
+
+
+    <footer id="colorlib-footer" role="contentinfo">
+        <div class="overlay"></div>
+        <div class="container">
+{#            <div class="row row-pb-md">#}
+                <div class="col-md-3 colorlib-widget" >
+                    <h3>Shahjalal University of Science and Technology</h3>
+                    <p>Shahjalal University of Science and Technology (SUST) was established in 1986. The only
+                        university of its kind at that time, it started it''s journey on the 13th of February 1991 with
+                        only three departments: Physics, Chemistry and Economics, 13 teachers and 205 students. It has
+                        now expanded to 7 schools, 27 departments , 2 institutes and and centers. The number of teachers
+                        has grown to 552 and the students to 10922. Besides, the University has 13 affiliated colleges
+                        under the School of Medical Sciences with 4000 students.</p>
+                </div>
+{#                <div class="col-md-3 col-md-push-1 colorlib-widget">#}
+{#                    <h3>Navigation</h3>#}
+{#                    <ul class="colorlib-footer-links">#}
+{#                        <li><a href="#"><i class="icon-check"></i> Department</a></li>#}
+{#                        <li><a href="#"><i class="icon-check"></i> Blog</a></li>#}
+{#                        <li><a href="#"><i class="icon-check"></i> Contact</a></li>#}
+{#                        <li><a href="#"><i class="icon-check"></i> Terms</a></li>#}
+{#                        <li><a href="#"><i class="icon-check"></i> Shop</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+
+                {#                <div class="col-md-3 colorlib-widget">#}
+                {#                    <h3>Our Services</h3>#}
+                {#                    <ul class="colorlib-footer-links">#}
+                {#                        <li><a href="#"><i class="icon-check"></i> Heart Surgery</a></li>#}
+                {#                        <li><a href="#"><i class="icon-check"></i> Surgical Treatment</a></li>#}
+                {#                        <li><a href="#"><i class="icon-check"></i> General Treatment</a></li>#}
+                {#                        <li><a href="#"><i class="icon-check"></i> Medical Treatment</a></li>#}
+                {#                        <li><a href="#"><i class="icon-check"></i> Help Desk</a></li>#}
+                {#                    </ul>#}
+                {#                </div>#}
+
+                {#                <div class="col-md-3 colorlib-widget">#}
+                {#                    <h3>Make an Appointment</h3>#}
+                {#                    <form class="contact-form">#}
+                {#                        <div class="form-group">#}
+                {#                            <label for="name" class="sr-only">Name</label>#}
+                {#                            <input type="name" class="form-control" id="name" placeholder="Name">#}
+                {#                        </div>#}
+                {#                        <div class="form-group">#}
+                {#                            <label for="email" class="sr-only">Email</label>#}
+                {#                            <input type="email" class="form-control" id="email" placeholder="Email">#}
+                {#                        </div>#}
+                {#                        <div class="form-group">#}
+                {#                            <label for="message" class="sr-only">Message</label>#}
+                {#                            <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>#}
+                {#                        </div>#}
+                {#                        <div class="form-group">#}
+                {#                            <input type="submit" id="btn-submit" class="btn btn-primary btn-send-message"#}
+                {#                                   value="Send Message">#}
+                {#                        </div>#}
+                {#                    </form>#}
+                {#                </div>#}
+{#            </div>#}
+        </div>
+        <div class="row copyright">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | SUST Medical Center</a>
+                    </small>
+                </p>
+                {#				<p>#}
+                {#					<small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
+                {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>#}
+                {#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
+                {#</small> #}
+                {#					<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>#}
+                {#				</p>#}
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="{% static 'cse/js/jquery.min.js' %}"></script>
+<!-- jQuery Easing -->
+<script src="{% static 'cse/js/jquery.easing.1.3.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'cse/js/bootstrap.min.js' %}"></script>
+<!-- Waypoints -->
+<script src="{% static 'cse/js/jquery.waypoints.min.js' %}"></script>
+<!-- Stellar Parallax -->
+<script src="{% static 'cse/js/jquery.stellar.min.js' %}"></script>
+<!-- Carousel -->
+<script src="{% static 'cse/js/owl.carousel.min.js' %}"></script>
+<!-- Flexslider -->
+<script src="{% static 'cse/js/jquery.flexslider-min.js' %}"></script>
+<!-- countTo -->
+<script src="{% static 'cse/js/jquery.countTo.js' %}"></script>
+<!-- Magnific Popup -->
+<script src="{% static 'cse/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'cse/js/magnific-popup-options.js' %}"></script>
+<!-- Sticky Kit -->
+<script src="{% static 'cse/js/sticky-kit.min.js' %}"></script>
+<!-- Main -->
+<script src="{% static 'cse/js/main.js' %}"></script>
+
+</body>
+</html>
+

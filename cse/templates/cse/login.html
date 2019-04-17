@@ -1,0 +1,623 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="supernova">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>SUST Medical Center</title>
+
+    {% load staticfiles %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/animate.css' %}"/>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/icomoon.css' %}"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/bootstrap.css' %}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/magnific-popup.css' %}"/>
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.theme.default.min.css' %}"/>
+    <!-- Flexslider  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/flexslider.css' %}"/>
+    <!-- Flaticons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/fonts/flaticon/font/flaticon.css' %}"/>
+    <!-- Theme style  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="{% static 'cse/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+
+    <link rel="alternate" type="application/json+oembed"
+          href="https://www.jotform.com/oembed/?format=json&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F91042143588456"
+          title="oEmbed Form">
+    <link rel="alternate" type="text/xml+oembed"
+          href="https://www.jotform.com/oembed/?format=xml&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F91042143588456"
+          title="oEmbed Form">
+    <meta property="og:title" content="Course Registration Form">
+    <meta property="og:url" content="https://form.jotform.me/91042143588456">
+    <meta property="og:description" content="Please click the link to complete this form.">
+    {#    <link rel="shortcut icon" href="https://cdn.jotfor.ms/favicon.ico">#}
+    <link rel="canonical" href="https://form.jotform.me/91042143588456"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1"/>
+    <meta name="HandheldFriendly" content="true"/>
+    {#    <title>Course Registration Form</title>#}
+    <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.10833" rel="stylesheet" type="text/css"/>
+    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.10833"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.10833"/>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=58c6459d9a11c7136a8b4567"/>
+    <style type="text/css">
+        .form-label-left {
+            width: 150px;
+        }
+
+        .form-line {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .form-label-right {
+            width: 150px;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: rgb(153, 153, 153);
+        }
+
+        .form-all {
+            margin: 0px auto;
+            padding-top: 0px;
+            width: 800px;
+            color: #555 !important;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header {
+            color: #555;
+        }
+
+    </style>
+
+    <style type="text/css" id="form-designer-style">
+        /* Injected CSS Code */
+        .form-label.form-label-auto {
+
+            display: inline-block;
+            float: left;
+            text-align: left;
+
+        }
+
+        /*PREFERENCES STYLE*/
+        .form-all {
+            font-family: Lucida Grande, sans-serif;
+        }
+
+        .form-all .qq-upload-button,
+        .form-all .form-submit-button,
+        .form-all .form-submit-reset,
+        .form-all .form-submit-print {
+            font-family: Lucida Grande, sans-serif;
+        }
+
+        .form-all .form-pagebreak-back-container,
+        .form-all .form-pagebreak-next-container {
+            font-family: Lucida Grande, sans-serif;
+        }
+
+        .form-header-group {
+            font-family: Lucida Grande, sans-serif;
+        }
+
+        .form-label {
+            font-family: Lucida Grande, sans-serif;
+        }
+
+        .form-label.form-label-auto {
+
+            display: inline-block;
+            float: left;
+            text-align: left;
+
+        }
+
+        .form-line {
+            margin-top: 12px 36px 12px 36px px;
+            margin-bottom: 12px 36px 12px 36px px;
+        }
+
+        .form-all {
+            width: 800px;
+        }
+
+        .form-label-left,
+        .form-label-right,
+        .form-label-left.form-label-auto,
+        .form-label-right.form-label-auto {
+            width: 150px;
+        }
+
+        .form-all {
+            font-size: 14px
+        }
+
+        .form-all .qq-upload-button,
+        .form-all .qq-upload-button,
+        .form-all .form-submit-button,
+        .form-all .form-submit-reset,
+        .form-all .form-submit-print {
+            font-size: 14px
+        }
+
+        .form-all .form-pagebreak-back-container,
+        .form-all .form-pagebreak-next-container {
+            font-size: 14px
+        }
+
+        .supernova .form-all, .form-all {
+            background-color: rgb(153, 153, 153);
+            border: 1px solid transparent;
+        }
+
+        .form-all {
+            color: #555;
+        }
+
+        .form-header-group .form-header {
+            color: #555;
+        }
+
+        .form-header-group .form-subHeader {
+            color: #555;
+        }
+
+        .form-label-top,
+        .form-label-left,
+        .form-label-right,
+        .form-html,
+        .form-checkbox-item label,
+        .form-radio-item label {
+            color: #555;
+        }
+
+        .form-sub-label {
+            color: #6f6f6f;
+        }
+
+        .supernova {
+            background-color: undefined;
+        }
+
+        .supernova body {
+            background: transparent;
+        }
+
+        .form-textbox,
+        .form-textarea,
+        .form-radio-other-input,
+        .form-checkbox-other-input,
+        .form-captcha input,
+        .form-spinner input {
+            background-color: undefined;
+        }
+
+        .supernova {
+            height: 100%;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-position: center top;
+        }
+
+        .supernova {
+            background-image: url("//www.jotform.com/images/brushed.png");
+        }
+
+        #stage {
+            background-image: url("//www.jotform.com/images/brushed.png");
+        }
+
+        .form-all {
+            background-image: url("//www.jotform.com/images/brushed.png");
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-position: center top;
+        }
+
+        .form-all {
+            position: relative;
+        }
+
+        .form-all:before {
+            content: "";
+            background-image: url("https://www.jotform.com/uploads/guest_91041785977065/form_files/logo.5cb43612f2b556.13361468.png");
+            display: inline-block;
+            height: 140px;
+            position: absolute;
+            background-size: 129px 140px;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+
+        .form-all {
+            margin-top: 150px !important;
+        }
+
+        .form-all:before {
+            top: -150px;
+            background-position: top center;
+        }
+
+        .ie-8 .form-all:before {
+            display: none;
+        }
+
+        .ie-8 {
+            margin-top: auto;
+            margin-top: initial;
+        }
+
+        /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+        /* Injected CSS Code */
+    </style>
+
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.jotfor.ms/css/styles/buttons/form-submit-button-simple_green.css?3.3.10833"/>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.jotfor.ms/css/styles/buttons/form-submit-button-simple_black.css?3.3.10833"/>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.jotfor.ms/css/styles/buttons/form-submit-button-simple_red.css?3.3.10833"/>
+    <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.10833" type="text/javascript"></script>
+    <script type="text/javascript">
+        JotForm.init(function () {
+            JotForm.initCaptcha('input_26');
+            $('input_26_reload').observe('click', function () {
+                JotForm.reloadCaptcha('input_26')
+            })
+            /*INIT-END*/
+        });
+
+        JotForm.prepareCalculationsOnTheFly([null, {
+            "name": "clickTo",
+            "qid": "1",
+            "text": "Student Registration Form",
+            "type": "control_head"
+        }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+            "name": "submit",
+            "qid": "19",
+            "text": "Clear Fields",
+            "type": "control_button"
+        }, {
+            "name": "submit20",
+            "qid": "20",
+            "text": "Submit Application",
+            "type": "control_button"
+        }, null, null, {
+            "description": "",
+            "name": "typeA23",
+            "qid": "23",
+            "subLabel": "",
+            "text": "Type a question",
+            "type": "control_textbox"
+        }, {
+            "description": "",
+            "name": "typeA24",
+            "qid": "24",
+            "subLabel": "",
+            "text": "Type a question",
+            "type": "control_dropdown"
+        }, {
+            "description": "",
+            "name": "typeA",
+            "qid": "25",
+            "subLabel": "",
+            "text": "Type a question",
+            "type": "control_textbox"
+        }, {
+            "description": "",
+            "name": "enterThe",
+            "qid": "26",
+            "text": "Enter the message as it's shown",
+            "type": "control_captcha"
+        }, {
+            "name": "dontHave",
+            "qid": "27",
+            "text": "Don't have an account? Click here to register.",
+            "type": "control_button"
+        }]);
+        setTimeout(function () {
+            JotForm.paymentExtrasOnTheFly([null, {
+                "name": "clickTo",
+                "qid": "1",
+                "text": "Student Registration Form",
+                "type": "control_head"
+            }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+                "name": "submit",
+                "qid": "19",
+                "text": "Clear Fields",
+                "type": "control_button"
+            }, {
+                "name": "submit20",
+                "qid": "20",
+                "text": "Submit Application",
+                "type": "control_button"
+            }, null, null, {
+                "description": "",
+                "name": "typeA23",
+                "qid": "23",
+                "subLabel": "",
+                "text": "Type a question",
+                "type": "control_textbox"
+            }, {
+                "description": "",
+                "name": "typeA24",
+                "qid": "24",
+                "subLabel": "",
+                "text": "Type a question",
+                "type": "control_dropdown"
+            }, {
+                "description": "",
+                "name": "typeA",
+                "qid": "25",
+                "subLabel": "",
+                "text": "Type a question",
+                "type": "control_textbox"
+            }, {
+                "description": "",
+                "name": "enterThe",
+                "qid": "26",
+                "text": "Enter the message as it's shown",
+                "type": "control_captcha"
+            }, {
+                "name": "dontHave",
+                "qid": "27",
+                "text": "Don't have an account? Click here to register.",
+                "type": "control_button"
+            }]);
+        }, 20);
+    </script>
+</head>
+<body>
+<form class="jotform-form" action="https://submit.jotform.me/submit/91042143588456/" method="post"
+      name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
+    <input type="hidden" name="formID" value="91042143588456"/>
+
+
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                            class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="num">
+                                        <span class="icon"><i class="icon-phone"></i></span>
+                                        <p><a href="#">Call us : 880-821-713491</a><br><a href="#">714479</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="loc">
+                                        <span class="icon"><i class="icon-location"></i></span>
+                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
+										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
+										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
+										4d91.8319132?hl=en-GB">Location : University Ave, Sylhet 3114</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="menu-1">
+                                <ul>
+                                    <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="btn-cta">
+                                <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
+                                <a href="{% url 'cse:register' %}"><span>  Register <i
+                                        class="glyphicon-registration-mark"></i></span></a>
+                            </p>
+
+
+                        </div>
+                        {#                        <div class="col-md-3">#}
+                        {#							<p class="btn-cta"><a href="#"><span>Register <i class="glyphicon-registration-mark"></i></span></a></p>#}
+                        {##}
+                        {#						</div>#}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div role="main" class="form-all">
+        <ul class="form-section page-section">
+            <li id="cid_1" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group ">
+                    <div class="header-text httac htvam">
+                        <h1 id="header_1" class="form-header" data-component="header">
+                            User Login Form
+                        </h1>
+                        <div id="subHeader_1" class="form-subHeader">
+                            Fill out the form carefully for login
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_23">
+                <label class="form-label form-label-left form-label-auto" id="label_23" for="input_23">
+                    User Name
+                    <span class="form-required">
+            *
+          </span>
+                </label>
+                <div id="cid_23" class="form-input jf-required">
+                    <input type="text" id="input_23" name="q23_typeA23" data-type="input-textbox"
+                           class="form-textbox validate[required]" size="20" value="" data-component="textbox"
+                           required=""/>
+                </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_25">
+                <label class="form-label form-label-left form-label-auto" id="label_25" for="input_25">
+                    Password
+                    <span class="form-required">
+            *
+          </span>
+                </label>
+                <div id="cid_25" class="form-input jf-required">
+                    <input type="text" id="input_25" name="q25_typeA" data-type="input-textbox"
+                           class="form-textbox validate[required]" size="20" value="" data-component="textbox"
+                           required=""/>
+                </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_24">
+                <label class="form-label form-label-left form-label-auto" id="label_24" for="input_24">
+                    User Type
+                    <span class="form-required">
+            *
+          </span>
+                </label>
+                <div id="cid_24" class="form-input jf-required">
+                    <select class="form-dropdown validate[required]" id="input_24" name="q24_typeA24"
+                            style="width:150px" data-component="dropdown" required="">
+                        <option value=""></option>
+                        <option value="Student"> Student</option>
+                        <option value="Teacher"> Teacher</option>
+                        <option value="Stuff"> Stuff</option>
+                        <option value="Admin"> Admin </option>
+
+                    </select>
+                </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_captcha" id="id_26">
+                <label class="form-label form-label-left form-label-auto" id="label_26" for="input_26">
+                    Enter the message as it's shown
+                    <span class="form-required">
+            *
+          </span>
+                </label>
+                <div id="cid_26" class="form-input jf-required">
+                    <div class="form-captcha" data-component="captcha">
+                        <label for="input_26"> <img alt="Captcha - Reload if not displayed" id="input_26_captcha"
+                                                    class="form-captcha-image"
+                                                    style="background:url(https://cdn.jotfor.ms/images/loader-big.gif) no-repeat center"
+                                                    src="https://cdn.jotfor.ms/images/blank.gif" width="150"
+                                                    height="41"/> </label>
+                        <div style="white-space:nowrap">
+                            <input type="text" id="input_26" class="form-textbox validate[required]" name="captcha"
+                                   style="width:130px" required=""/>
+                            <img src="https://cdn.jotfor.ms/images/reload.png" alt="Reload"
+                                 style="cursor:pointer;vertical-align:middle" id="input_26_reload"/>
+                            <input type="hidden" name="captcha_id" id="input_26_captcha_id" value="0"/>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
+                <div id="cid_20" class="form-input-wide">
+                    <div style="text-align:left" class="form-buttons-wrapper">
+                        <button id="input_20" type="submit" class="form-submit-button form-submit-button-simple_green"
+                                data-component="button">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
+                <div id="cid_19" class="form-input-wide">
+                    <div style="text-align:right" class="form-buttons-wrapper">
+                        <button id="input_19" type="submit" class="form-submit-button form-submit-button-simple_black"
+                                data-component="button">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_27">
+                <div id="cid_27" class="form-input-wide">
+                    <div style="text-align:left" class="form-buttons-wrapper">
+                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_red"
+                                data-component="button">
+                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li style="display:none">
+                Should be Empty:
+                <input type="text" name="website" value=""/>
+            </li>
+        </ul>
+    </div>
+{#    <script>#}
+{#        JotForm.showJotFormPowered = "new_footer";#}
+{#    </script>#}
+{#    <input type="hidden" id="simple_spc" name="simple_spc" value="91042143588456"/>#}
+{#    <script type="text/javascript">#}
+{#        document.getElementById("si" + "mple" + "_spc").value = "91042143588456-91042143588456";#}
+{#    </script>#}
+{#    <div class="formFooter-heightMask">#}
+{#    </div>#}
+{#    <div class="formFooter f6">#}
+{#        <a href="https://www.jotform.com/pricing?utm_source=formfooter&utm_medium=banner&utm_term=91042143588456&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le"#}
+{#           target="_blank" class="formFooter-logoLink"><img class="formFooter-logo"#}
+{#                                                            src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png"#}
+{#                                                            alt="" style="height: 44px;"></a>#}
+{#        <div class="formFooter-rightSide">#}
+{#      <span class="formFooter-text">#}
+{#        Now create your own JotForm - It's free!#}
+{#      </span>#}
+{#            <a class="formFooter-button"#}
+{#               href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=91042143588456&utm_content=jotform_button&utm_campaign=powered_by_jotform_le"#}
+{#               target="_blank">Create your own JotForm</a>#}
+{#        </div>#}
+{#    </div>#}
+</form>
+</body>
+</html>
