@@ -52,6 +52,16 @@
 	<script src="{% static 'cse/js/respond.min.js' %}"></script>
 	<![endif]-->
 
+    <style type="text/css">
+        article {
+            float: left;
+            {#text-align: left;#}
+        {#padding: 50px;#} width: 50%;
+        {#background-color: #f1f1f1;#} height: 300px; /* only for demonstration, should be removed */
+        }
+    </style>
+
+
 </head>
 <body>
 
@@ -89,7 +99,7 @@
                     </div>
                 </div>
             </div>
-                        <div class="menu-wrap">
+            <div class="menu-wrap">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-8">
@@ -100,17 +110,17 @@
 
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>
-                                        </ul>
+{#                                        <ul class="dropdown">#}
+{#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+{#                                        </ul>#}
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:blog' %}">Blog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>
-                                        </ul>
+{#                                        <ul class="dropdown">#}
+{#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
+{#                                        </ul>#}
                                     </li>
                                     <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
@@ -777,72 +787,91 @@
     <footer id="colorlib-footer" role="contentinfo">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row row-pb-md">
+            <section>
+
+
+                {#            <div class="">#}
+                {#                <center><b><h1>About</h1></b></center>#}
+                {#            </div>#}
+                {#                <div class="" style="alignment: left">#}
+                <article>
+                    <left><h3>Shahjalal University of Science and Technology</h3></left>
+                    </p>
+                    <br>
+                    <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
+                        research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
+                        country and the first university to adopt American credit system. SUST is the Flagship
+                        University of
+                        the Science & Technology University System of Bangladesh.</p>
+                </article>
                 <div class="col-md-3 colorlib-widget">
-                    <h3>Medicare</h3>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-                <div class="col-md-3 col-md-push-1 colorlib-widget">
-                    <h3>Navigation</h3>
-                    <ul class="colorlib-footer-links">
-                        <li><a href="#"><i class="icon-check"></i> Department</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Blog</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Contact</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Terms</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Shop</a></li>
+                    <h2>About SUST</h2>
+                    <ul>
+                        <li class="">
+                            <a href="http://www1.sust.edu/about">Overview</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/mission">Mission</a>
+                        </li><!-- <li class="">
+												<a href="http://www1.sust.edu/about/accolades">Accolades</a>
+											</li><li class="">
+												<a href="http://www1.sust.edu/about/achievements">Achievements</a>
+											</li> -->
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/location">Location, Maps and Direction</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/news-and-events">News and Events</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/notice-board">Notice Board</a>
+                        </li><!-- <li class="">
+												<a href="http://www1.sust.edu/about/visit-sust">Visit SUST</a>
+											</li> -->
+                        <li class="">
+                            <a href="http://www1.sust.edu/about/contact-us">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
-
+                {#                </div>#}
                 <div class="col-md-3 colorlib-widget">
-                    <h3>Our Services</h3>
+                    <h2>Contact SUST</h2>
                     <ul class="colorlib-footer-links">
-                        <li><a href="#"><i class="icon-check"></i> Heart Surgery</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Surgical Treatment</a></li>
-                        <li><a href="#"><i class="icon-check"></i> General Treatment</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Medical Treatment</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Help Desk</a></li>
+                        <li>
+                            <p><span><i class="icon-location"></i></span>
+                                <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
+                                    University Ave, Sylhet-3114.</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
+                                880-821-713491</a></p>
+                        </li>
+                        <li>
+                            <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p><span><i class="icon-globe-outline"></i></span> <a href="https://www.sust.edu">swww.sust.edu</a>
+                            </p>
+
+                        </li>
                     </ul>
                 </div>
-
-                <div class="col-md-3 colorlib-widget">
-                    <h3>Make an Appointment</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="name" class="form-control" id="name" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" id="btn-submit" class="btn btn-primary btn-send-message btn-md"
-                                   value="Send Message">
-                        </div>
-                    </form>
-                </div>
-            </div>
+            </section>
         </div>
         <div class="row copyright">
             <div class="col-md-12 text-center">
                 <p>
                     <small class="block">
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | SUST Medical Center</a>
+                        All rights reserved | Colorlib : SUST Medical Center</a>
                     </small>
                 </p>
-                {#				<p>#}
-                {#					<small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-                {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>#}
-                {#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-                {#</small> #}
-                {#					<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>#}
-                {#				</p>#}
+
             </div>
         </div>
     </footer>
@@ -870,11 +899,39 @@
 <script src="{% static 'cse/js/jquery.countTo.js' %}"></script>
 <!-- Magnific Popup -->
 <script src="{% static 'cse/js/jquery.magnific-popup.min.js' %}"></script>
+
 <script src="{% static 'cse/js/magnific-popup-options.js' %}"></script>
 <!-- Sticky Kit -->
 <script src="{% static 'cse/js/sticky-kit.min.js' %}"></script>
 <!-- Main -->
 <script src="{% static 'cse/js/main.js' %}"></script>
+
+
+<script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+
+
+<script src="{% static 'cse/js/respond.min.js' %}"></script>
+
+
+{#<script src="{% static 'cse/js/google_map.js' %}"></script>#}
+<script src="{% static 'cse/js/map-promodi.js' %}"></script>
+
+
+{#<!-- jQuery (Necessary for All JavaScript Plugins) -->#}
+{#<script src="{% static 'cse/contact/js/jquery/jquery-2.2.4.min.js' %}"></script>#}
+{#<!-- Popper js -->#}
+{#<script src="{% static 'cse/contact/js/popper.min.js' %}"></script>#}
+{#<!-- Bootstrap js -->#}
+{#<script src="{% static 'cse/contact/js/bootstrap.min.js' %}"></script>#}
+{#<!-- Plugins js -->#}
+{#<script src="{% static 'cse/contact/js/plugins.js' %}"></script>#}
+{#<!-- Active js -->#}
+{#<script src="{% static 'cse/contact/js/active.js' %}"></script>#}
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap"></script>
+
 
 </body>
 </html>
