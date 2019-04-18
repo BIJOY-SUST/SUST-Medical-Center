@@ -55,8 +55,7 @@
     <style type="text/css">
         article {
             float: left;
-            {#text-align: left;#}
-        {#padding: 50px;#} width: 50%;
+        {#text-align: left;#}{#padding: 50px;#} width: 50%;
         {#background-color: #f1f1f1;#} height: 300px; /* only for demonstration, should be removed */
         }
     </style>
@@ -110,17 +109,17 @@
 
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
-{#                                        <ul class="dropdown">#}
-{#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
-{#                                        </ul>#}
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                        {#                                        </ul>#}
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
                                     <li class="has-dropdown">
                                         <a href="{% url 'cse:blog' %}">Blog</a>
-{#                                        <ul class="dropdown">#}
-{#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
-{#                                        </ul>#}
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
+                                        {#                                        </ul>#}
                                     </li>
                                     <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
@@ -147,12 +146,14 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
                                 <div class="slider-text-inner">
-                                    <h1>Dr. <strong> Beatrice Prior</strong></h1>
-                                    <h2 class="doc-holder">Dr. Prior's Plastic Surgery Clinic Welcomes You!</h2>
-                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                        large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg" href="{% url 'cse:appointment' %}">Make an
-                                        Appointment</a></p>
+                                    <h1 style="color: darkred">The Most Valuable Thing<br>Is Your Health</h1>
+
+                                    {#                                    <h1>Dr. <strong> Beatrice Prior</strong></h1>#}
+                                    {#                                    <h2 class="doc-holder">Dr. Prior's Plastic Surgery Clinic Welcomes You!</h2>#}
+                                    {#                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a#}
+                                    {#                                        large language ocean.</h2>#}
+                                    {#                                    <p><a class="btn btn-primary btn-lg" href="{% url 'cse:appointment' %}">Make an#}
+                                    {#                                        Appointment</a></p>#}
                                 </div>
                             </div>
                         </div>
@@ -164,12 +165,14 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
                                 <div class="slider-text-inner">
-                                    <h1>Dr. <strong> Mark Bowman</strong></h1>
-                                    <h2 class="doc-holder">Dr. Mark Bowman's Dental Clinic Welcomes You!</h2>
-                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                        large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg" href="{% url 'cse:appointment' %}">Make an
-                                        Appointment</a></p>
+                                    <h1 style="color: darkred">Best Care & Better Doctor</h1>
+
+                                    {#                                    <h1>Dr. <strong> Mark Bowman</strong></h1>#}
+                                    {#                                    <h2 class="doc-holder">Dr. Mark Bowman's Dental Clinic Welcomes You!</h2>#}
+                                    {#                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a#}
+                                    {#                                        large language ocean.</h2>#}
+                                    {#                                    <p><a class="btn btn-primary btn-lg" href="{% url 'cse:appointment' %}">Make an#}
+                                    {#                                        Appointment</a></p>#}
                                 </div>
                             </div>
                         </div>
@@ -181,11 +184,12 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
                                 <div class="slider-text-inner">
-                                    <h1>Have an Access to <strong>a Health Professional at any time</strong></h1>
-                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                        large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="{% url 'cse:appointment' %}">Make
-                                        an Appointment</a></p>
+                                    <h1 style="color: darkgreen">We Care for Your Health Every Moment </h1>
+                                    {#                                    <h1>Have an Access to <strong>a Health Professional at any time</strong></h1>#}
+                                    {#                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a#}
+                                    {#                                        large language ocean.</h2>#}
+                                    {#                                    <p><a class="btn btn-primary btn-lg btn-learn" href="{% url 'cse:appointment' %}">Make#}
+                                    {#                                        an Appointment</a></p>#}
                                 </div>
                             </div>
                         </div>
@@ -197,11 +201,13 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
                                 <div class="slider-text-inner">
-                                    <h1>Special offer! <strong>Free Consultation</strong> this month only</h1>
-                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                        large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="{% url 'cse:appointment' %}">Make
-                                        an Appointment</a></p>
+                                    <h1 style="color: darkgreen">We Always Care Your Health</h1>
+
+                                    {#                                    <h1>Special offer! <strong>Free Consultation</strong> this month only</h1>#}
+                                    {#                                    <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a#}
+                                    {#                                        large language ocean.</h2>#}
+                                    {#                                    <p><a class="btn btn-primary btn-lg btn-learn" href="{% url 'cse:appointment' %}">Make#}
+                                    {#                                        an Appointment</a></p>#}
                                 </div>
                             </div>
                         </div>
@@ -333,24 +339,24 @@
         </div>
     </div>
 
-    <div id="colorlib-appointment">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="line-block">Make an appointment</h2>
-                    <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i
-                            class="icon-calendar3"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    {#    <div id="colorlib-appointment">#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-8 col-md-offset-2 text-center">#}
+    {#                    <h2 class="line-block">Make an appointment</h2>#}
+    {#                    <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
+    {#                            class="icon-calendar3"></i></a></p>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
 
     <div id="colorlib-services">
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
                     <h2>Our Services</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    {#                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                 </div>
             </div>
             <div class="row">
@@ -492,7 +498,7 @@
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
                     <h2>Well Experienced Doctors</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+{#                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                 </div>
             </div>
             <div class="row">
@@ -564,50 +570,50 @@
         </div>
     </div>
 
-    <div id="colorlib-counter" class="colorlib-counters"
-         style="background-image: url({% static 'cse/images/img_bg_2.jpg' %})" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 text-center animate-box">
-                            <span class="icon"><i class="flaticon-healthy"></i></span>
-                            <span class="colorlib-counter js-counter" data-from="0" data-to="3297" data-speed="5000"
-                                  data-refresh-interval="50"></span>
-                            <span class="colorlib-counter-label">Satisfied Customer</span>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center animate-box">
-                            <span class="icon"><i class="flaticon-hospital"></i></span>
-                            <span class="colorlib-counter js-counter" data-from="0" data-to="378" data-speed="5000"
-                                  data-refresh-interval="50"></span>
-                            <span class="colorlib-counter-label">Hospitals</span>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center animate-box">
-                            <span class="icon"><i class="flaticon-healthy-1"></i></span>
-                            <span class="colorlib-counter js-counter" data-from="0" data-to="400" data-speed="5000"
-                                  data-refresh-interval="50"></span>
-                            <span class="colorlib-counter-label">Qualified Doctor</span>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center animate-box">
-                            <span class="icon"><i class="flaticon-ambulance"></i></span>
-                            <span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000"
-                                  data-refresh-interval="50"></span>
-                            <span class="colorlib-counter-label">Departments</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {#    <div id="colorlib-counter" class="colorlib-counters"#}
+    {#         style="background-image: url({% static 'cse/images/img_bg_2.jpg' %})" data-stellar-background-ratio="0.5">#}
+    {#        <div class="overlay"></div>#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-10 col-md-offset-1">#}
+    {#                    <div class="row">#}
+    {#                        <div class="col-md-3 col-sm-6 text-center animate-box">#}
+    {#                            <span class="icon"><i class="flaticon-healthy"></i></span>#}
+    {#                            <span class="colorlib-counter js-counter" data-from="0" data-to="3297" data-speed="5000"#}
+    {#                                  data-refresh-interval="50"></span>#}
+    {#                            <span class="colorlib-counter-label">Satisfied Customer</span>#}
+    {#                        </div>#}
+    {#                        <div class="col-md-3 col-sm-6 text-center animate-box">#}
+    {#                            <span class="icon"><i class="flaticon-hospital"></i></span>#}
+    {#                            <span class="colorlib-counter js-counter" data-from="0" data-to="378" data-speed="5000"#}
+    {#                                  data-refresh-interval="50"></span>#}
+    {#                            <span class="colorlib-counter-label">Hospitals</span>#}
+    {#                        </div>#}
+    {#                        <div class="col-md-3 col-sm-6 text-center animate-box">#}
+    {#                            <span class="icon"><i class="flaticon-healthy-1"></i></span>#}
+    {#                            <span class="colorlib-counter js-counter" data-from="0" data-to="400" data-speed="5000"#}
+    {#                                  data-refresh-interval="50"></span>#}
+    {#                            <span class="colorlib-counter-label">Qualified Doctor</span>#}
+    {#                        </div>#}
+    {#                        <div class="col-md-3 col-sm-6 text-center animate-box">#}
+    {#                            <span class="icon"><i class="flaticon-ambulance"></i></span>#}
+    {#                            <span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000"#}
+    {#                                  data-refresh-interval="50"></span>#}
+    {#                            <span class="colorlib-counter-label">Departments</span>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
 
     <div id="colorlib-blog">
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
                     <h2>Recent blog</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.
-                        Odit ab aliquam dolor eius.</p>
+{#                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.#}
+{#                        Odit ab aliquam dolor eius.</p>#}
                 </div>
             </div>
             <div class="row">
@@ -622,9 +628,9 @@
                         </a>
                         <div class="desc">
                             <h3><a href="{% url 'cse:blog' %}">Here's why yoga is best for your health</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
+{#                            <p>A small river named Duden flows by their place and supplies it with the necessary#}
+{#                                regelialia.</p>#}
+{#                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
                         </div>
                     </div>
                 </div>
@@ -639,9 +645,9 @@
                         </a>
                         <div class="desc">
                             <h3><a href="{% url 'cse:blog' %}">live better get to know your medical technology</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
+{#                            <p>A small river named Duden flows by their place and supplies it with the necessary#}
+{#                                regelialia.</p>#}
+{#                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
                         </div>
                     </div>
                 </div>
@@ -656,9 +662,9 @@
                         </a>
                         <div class="desc">
                             <h3><a href="{% url 'cse:blog' %}">Eating apple is the source of energy</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
+{#                            <p>A small river named Duden flows by their place and supplies it with the necessary#}
+{#                                regelialia.</p>#}
+{#                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
                         </div>
                     </div>
                 </div>
@@ -667,36 +673,36 @@
     </div>
 
 
-    <div id="colorlib-register" style="background-image: url({% static 'cse/images/img_bg_1.jpg' %})"
-         data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div class="date-counter text-center">
-                        <h2>We offer <strong>Free Consultation</strong></h2>
-                        <h3>By Dr. <strong>Beatrice Prior</strong></h3>
-                        <p class="countdown">
-                            <span id="days"></span>
-                            <span id="hours"></span>
-                            <span id="minutes"></span>
-                            <span id="seconds"></span>
-                        </p>
-                        <p><strong>Limited offer, Hurry Up!</strong></p>
-                        <p><a href="#" class="btn btn-primary btn-lg">Book an Appointment <i class="icon-calendar3"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {#    <div id="colorlib-register" style="background-image: url({% static 'cse/images/img_bg_1.jpg' %})"#}
+    {#         data-stellar-background-ratio="0.5">#}
+    {#        <div class="overlay"></div>#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-10 col-md-offset-1 animate-box">#}
+    {#                    <div class="date-counter text-center">#}
+    {#                        <h2>We offer <strong>Free Consultation</strong></h2>#}
+    {#                        <h3>By Dr. <strong>Beatrice Prior</strong></h3>#}
+    {#                        <p class="countdown">#}
+    {#                            <span id="days"></span>#}
+    {#                            <span id="hours"></span>#}
+    {#                            <span id="minutes"></span>#}
+    {#                            <span id="seconds"></span>#}
+    {#                        </p>#}
+    {#                        <p><strong>Limited offer, Hurry Up!</strong></p>#}
+    {#                        <p><a href="#" class="btn btn-primary btn-lg">Book an Appointment <i class="icon-calendar3"></i></a>#}
+    {#                        </p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
 
     <div id="colorlib-testimonial" class="colorlib-bg-section">
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
                     <h2>What our patients says</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+{#                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                 </div>
             </div>
             <div class="row">
