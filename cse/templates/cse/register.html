@@ -8,14 +8,6 @@
 
     {% load staticfiles %}
 
-{#    for welcome page#}
-{#      <meta name="viewport" content="width=device-width, initial-scale=1">#}
-{#  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">#}
-{#  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
-{#  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>#}
-{#  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>#}
-{#    end of welcome page#}
-
     <link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -161,12 +153,12 @@
         }
 
         .form-line {
-            margin-top: 12px 36px 12px 36px px;
-            margin-bottom: 12px 36px 12px 36px px;
+            margin-top: 12px;
+            margin-bottom: 12px;
         }
 
         .form-all {
-            width: 1200px;
+            width: 1000px;
         }
 
         .form-label-left,
@@ -177,7 +169,7 @@
         }
 
         .form-all {
-            font-size: 14px
+            font-size: 16px
         }
 
         .form-all .qq-upload-button,
@@ -248,15 +240,15 @@
         }
 
         .supernova {
-            background-image: url("https://www.jotform.com/images/brushed.png");
+            background-image: url({% static 'cse/images/brushed.png' %});
         }
 
         #stage {
-            background-image: url("https://www.jotform.com/images/brushed.png");
+            background-image: url({% static 'cse/images/brushed.png' %});
         }
 
         .form-all {
-            background-image: url("//www.jotform.com/images/brushed.png");
+            background-image: url({% static 'cse/images/brushed.png' %});
             background-repeat: repeat;
             background-attachment: scroll;
             background-position: center top;
@@ -268,7 +260,7 @@
 
         .form-all:before {
             content: "";
-            background-image: url("https://www.jotform.com/uploads/guest_91036233033040/form_files/logo.5cb3916c84b109.29864752.png");
+            background-image: url({% static 'cse/images/logo.png' %});
             display: inline-block;
             height: 140px;
             position: absolute;
@@ -561,9 +553,16 @@
     </script>
 </head>
 <body>
-<form class="jotform-form" action="https://submit.jotform.me/submit/91035707344454/" method="post"
-      enctype="multipart/form-data" name="form_91035707344454" id="91035707344454" accept-charset="utf-8">
-    <input type="hidden" name="formID" value="91035707344454"/>
+
+
+<!---------------------------------------------form start here--------------------------------------------------------->
+
+
+<form class="jotform-form" action="" method="post" enctype="multipart/form-data" name="form_91035707344454"
+      id="91035707344454" accept-charset="utf-8">
+    {#    <input type="hidden" name="formID" value="91035707344454"/>#}
+
+    <!------------Navigation Bar start here------------------------------------------->
 
     <nav class="colorlib-nav" role="navigation">
         <div class="top-menu">
@@ -611,22 +610,19 @@
                         <div class="col-md-3">
                             <p class="btn-cta">
                                 <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
-                                <a href="{% url 'cse:staring' %}"><span>  Register <i class="glyphicon-registration-mark"></i></span></a>
+                                <a href="{% url 'cse:staring' %}"><span>  Register <i
+                                        class="glyphicon-registration-mark"></i></span></a>
                             </p>
 
 
                         </div>
-                        {#                        <div class="col-md-3">#}
-                        {#							<p class="btn-cta"><a href="#"><span>Register <i class="glyphicon-registration-mark"></i></span></a></p>#}
-                        {##}
-                        {#						</div>#}
-
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!----------------- End of Navigation Bar ---------------------------------->
 
     <div role="main" class="form-all">
         <ul class="form-section page-section">
@@ -642,229 +638,72 @@
                     </div>
                 </div>
             </li>
+
+             <!------------------------ Full Name Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
                 <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
                     Full Name
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_4" class="form-input jf-required">
                     <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="first_4" name="q4_fullName[first]" class="form-textbox validate[required]"
-                     size="10" value="" data-component="first" required=""/>
-              <label class="form-sub-label" for="first_4" id="sublabel_first"
-                     style="min-height:13px"> First Name </label>
-            </span>
                         <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="middle_4" name="q4_fullName[middle]" class="form-textbox" size="10" value=""
-                     data-component="middle" required=""/>
-              <label class="form-sub-label" for="middle_4" id="sublabel_middle"
-                     style="min-height:13px"> Middle Name </label>
-            </span>
+                          <input type="text" id="first_4" name="firstname"
+                                 class="form-textbox validate[required]"
+                                 size="20" value="" data-component="first" required=""/>
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> First Name </label>
+                        </span>
                         <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="last_4" name="q4_fullName[last]" class="form-textbox validate[required]" size="15"
-                     value="" data-component="last" required=""/>
-              <label class="form-sub-label" for="last_4" id="sublabel_last" style="min-height:13px"> Last Name </label>
-            </span>
+                          <input type="text" id="last_4" name="lastname"
+                                 class="form-textbox validate[required]" size="20"
+                                 value="" data-component="last" required=""/>
+                          <label class="form-sub-label" for="last_4" id="sublabel_last" style="min-height:13px"> Last Name </label>
+                        </span>
                     </div>
                 </div>
             </li>
+
+
+             <!------------------------ User Name Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_textbox" id="id_34">
                 <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
                     User Name
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_34" class="form-input jf-required">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="text" id="input_34" name="q34_userName" data-type="input-textbox"
-                   class="form-textbox validate[required]" size="20" value="" placeholder="BIJOY_SUST"
-                   data-component="textbox" required=""/>
-            <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>
-          </span>
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                        <input type="text" id="input_34" name="username" data-type="input-textbox"
+                               class="form-textbox validate[required]" size="20" value="" placeholder="BIJOY_SUST"
+                               data-component="textbox" required=""/>
+                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>
+                    </span>
                 </div>
             </li>
+
+
+             <!------------------------ Birth of Date Field ---------------------------->
+
             <li class="form-line form-line-column form-col-1 jf-required" data-type="control_birthdate" id="id_24">
                 <label class="form-label form-label-left" id="label_24" for="input_24">
                     Birth Date
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
-                <div id="cid_24" class="form-input jf-required">
-                    <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <select name="q24_birthDate24[month]" id="input_24_month" class="form-dropdown validate[required]"
-                      data-component="birthdate-month">
-                <option>  </option>
-                <option value="January"> January </option>
-                <option value="February"> February </option>
-                <option value="March"> March </option>
-                <option value="April"> April </option>
-                <option value="May"> May </option>
-                <option value="June"> June </option>
-                <option value="July"> July </option>
-                <option value="August"> August </option>
-                <option value="September"> September </option>
-                <option value="October"> October </option>
-                <option value="November"> November </option>
-                <option value="December"> December </option>
-              </select>
-              <label class="form-sub-label" for="input_24_month" id="sublabel_month"
-                     style="min-height:13px"> Month </label>
-            </span>
-                        <span class="form-sub-label-container" style="vertical-align:top">
-              <select name="q24_birthDate24[day]" id="input_24_day" class="form-dropdown validate[required]"
-                      data-component="birthdate-day">
-                <option>  </option>
-                <option value="1"> 1 </option>
-                <option value="2"> 2 </option>
-                <option value="3"> 3 </option>
-                <option value="4"> 4 </option>
-                <option value="5"> 5 </option>
-                <option value="6"> 6 </option>
-                <option value="7"> 7 </option>
-                <option value="8"> 8 </option>
-                <option value="9"> 9 </option>
-                <option value="10"> 10 </option>
-                <option value="11"> 11 </option>
-                <option value="12"> 12 </option>
-                <option value="13"> 13 </option>
-                <option value="14"> 14 </option>
-                <option value="15"> 15 </option>
-                <option value="16"> 16 </option>
-                <option value="17"> 17 </option>
-                <option value="18"> 18 </option>
-                <option value="19"> 19 </option>
-                <option value="20"> 20 </option>
-                <option value="21"> 21 </option>
-                <option value="22"> 22 </option>
-                <option value="23"> 23 </option>
-                <option value="24"> 24 </option>
-                <option value="25"> 25 </option>
-                <option value="26"> 26 </option>
-                <option value="27"> 27 </option>
-                <option value="28"> 28 </option>
-                <option value="29"> 29 </option>
-                <option value="30"> 30 </option>
-                <option value="31"> 31 </option>
-              </select>
-              <label class="form-sub-label" for="input_24_day" id="sublabel_day" style="min-height:13px"> Day </label>
-            </span>
-                        <span class="form-sub-label-container" style="vertical-align:top">
-              <select name="q24_birthDate24[year]" id="input_24_year" class="form-dropdown validate[required]"
-                      data-component="birthdate-year">
-                <option>  </option>
-                <option value="2019"> 2019 </option>
-                <option value="2018"> 2018 </option>
-                <option value="2017"> 2017 </option>
-                <option value="2016"> 2016 </option>
-                <option value="2015"> 2015 </option>
-                <option value="2014"> 2014 </option>
-                <option value="2013"> 2013 </option>
-                <option value="2012"> 2012 </option>
-                <option value="2011"> 2011 </option>
-                <option value="2010"> 2010 </option>
-                <option value="2009"> 2009 </option>
-                <option value="2008"> 2008 </option>
-                <option value="2007"> 2007 </option>
-                <option value="2006"> 2006 </option>
-                <option value="2005"> 2005 </option>
-                <option value="2004"> 2004 </option>
-                <option value="2003"> 2003 </option>
-                <option value="2002"> 2002 </option>
-                <option value="2001"> 2001 </option>
-                <option value="2000"> 2000 </option>
-                <option value="1999"> 1999 </option>
-                <option value="1998"> 1998 </option>
-                <option value="1997"> 1997 </option>
-                <option value="1996"> 1996 </option>
-                <option value="1995"> 1995 </option>
-                <option value="1994"> 1994 </option>
-                <option value="1993"> 1993 </option>
-                <option value="1992"> 1992 </option>
-                <option value="1991"> 1991 </option>
-                <option value="1990"> 1990 </option>
-                <option value="1989"> 1989 </option>
-                <option value="1988"> 1988 </option>
-                <option value="1987"> 1987 </option>
-                <option value="1986"> 1986 </option>
-                <option value="1985"> 1985 </option>
-                <option value="1984"> 1984 </option>
-                <option value="1983"> 1983 </option>
-                <option value="1982"> 1982 </option>
-                <option value="1981"> 1981 </option>
-                <option value="1980"> 1980 </option>
-                <option value="1979"> 1979 </option>
-                <option value="1978"> 1978 </option>
-                <option value="1977"> 1977 </option>
-                <option value="1976"> 1976 </option>
-                <option value="1975"> 1975 </option>
-                <option value="1974"> 1974 </option>
-                <option value="1973"> 1973 </option>
-                <option value="1972"> 1972 </option>
-                <option value="1971"> 1971 </option>
-                <option value="1970"> 1970 </option>
-                <option value="1969"> 1969 </option>
-                <option value="1968"> 1968 </option>
-                <option value="1967"> 1967 </option>
-                <option value="1966"> 1966 </option>
-                <option value="1965"> 1965 </option>
-                <option value="1964"> 1964 </option>
-                <option value="1963"> 1963 </option>
-                <option value="1962"> 1962 </option>
-                <option value="1961"> 1961 </option>
-                <option value="1960"> 1960 </option>
-                <option value="1959"> 1959 </option>
-                <option value="1958"> 1958 </option>
-                <option value="1957"> 1957 </option>
-                <option value="1956"> 1956 </option>
-                <option value="1955"> 1955 </option>
-                <option value="1954"> 1954 </option>
-                <option value="1953"> 1953 </option>
-                <option value="1952"> 1952 </option>
-                <option value="1951"> 1951 </option>
-                <option value="1950"> 1950 </option>
-                <option value="1949"> 1949 </option>
-                <option value="1948"> 1948 </option>
-                <option value="1947"> 1947 </option>
-                <option value="1946"> 1946 </option>
-                <option value="1945"> 1945 </option>
-                <option value="1944"> 1944 </option>
-                <option value="1943"> 1943 </option>
-                <option value="1942"> 1942 </option>
-                <option value="1941"> 1941 </option>
-                <option value="1940"> 1940 </option>
-                <option value="1939"> 1939 </option>
-                <option value="1938"> 1938 </option>
-                <option value="1937"> 1937 </option>
-                <option value="1936"> 1936 </option>
-                <option value="1935"> 1935 </option>
-                <option value="1934"> 1934 </option>
-                <option value="1933"> 1933 </option>
-                <option value="1932"> 1932 </option>
-                <option value="1931"> 1931 </option>
-                <option value="1930"> 1930 </option>
-                <option value="1929"> 1929 </option>
-                <option value="1928"> 1928 </option>
-                <option value="1927"> 1927 </option>
-                <option value="1926"> 1926 </option>
-                <option value="1925"> 1925 </option>
-                <option value="1924"> 1924 </option>
-                <option value="1923"> 1923 </option>
-                <option value="1922"> 1922 </option>
-                <option value="1921"> 1921 </option>
-                <option value="1920"> 1920 </option>
-              </select>
-              <label class="form-sub-label" for="input_24_year" id="sublabel_year"
-                     style="min-height:13px"> Year </label>
-            </span>
-                    </div>
+                <div id="cid_34" class="form-input jf-required">
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                        <input type="date" id="input_34" name="date_of_birth" data-type="input-date"
+                               class="form-date validate[required]" size="20"  data-date-format="DD-MM-YYYY" value="01-30-2001"
+                               data-component="date" required=""/>
+
+                    </span>
                 </div>
+
             </li>
+
+            <!------------------------ Gender Field ---------------------------->
+
             <li class="form-line form-line-column form-col-2 jf-required" data-type="control_dropdown" id="id_3">
                 <label class="form-label form-label-left" id="label_3" for="input_3">
                     Gender
@@ -882,19 +721,9 @@
                     </select>
                 </div>
             </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_30">
-                <label class="form-label form-label-left form-label-auto" id="label_30" for="input_30">
-                    Age
-                    <span class="form-required">
-            *
-          </span>
-                </label>
-                <div id="cid_30" class="form-input jf-required">
-                    <input type="text" id="input_30" name="q30_age" data-type="input-textbox"
-                           class="form-textbox validate[required, Numeric]" size="10" value="" data-component="textbox"
-                           required=""/>
-                </div>
-            </li>
+
+             <!------------------------ Address Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_textarea" id="id_36">
                 <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
                     Address
@@ -910,72 +739,69 @@
           </span>
                 </div>
             </li>
+
+             <!------------------------ Mobile Number Field ---------------------------->
+
+
             <li class="form-line form-line-column form-col-1 jf-required" data-type="control_phone" id="id_27"
                 data-compound-hint=",">
                 <label class="form-label form-label-left" id="label_27" for="input_27_area">
                     Mobile Number
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_27" class="form-input jf-required">
                     <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="tel" id="input_27_area" name="q27_mobileNumber[area]" class="form-textbox validate[required]"
-                     size="6" value="" data-component="areaCode" required=""/>
-              <span class="phone-separate">
-                 -
-              </span>
-              <label class="form-sub-label" for="input_27_area" id="sublabel_area"
-                     style="min-height:13px"> Area Code </label>
-            </span>
                         <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="tel" id="input_27_phone" name="q27_mobileNumber[phone]"
-                     class="form-textbox validate[required]" size="12" value="" data-component="phone" required=""/>
-              <label class="form-sub-label" for="input_27_phone" id="sublabel_phone" style="min-height:13px"> Phone Number </label>
-            </span>
+                            <input type="mobile" id="input_27_phone" name="q27_mobileNumber[phone]"
+                                   class="form-textbox validate[required]" size="30" value="" data-component="phone"
+                                   required=""/>
+                            <label class="form-sub-label" for="input_27_phone" id="sublabel_phone"
+                                   style="min-height:13px"> Mobile Number </label>
+                        </span>
                     </div>
                 </div>
             </li>
+
+             <!------------------------ Pnone Number Field ---------------------------->
+
             <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
                 <label class="form-label form-label-left" id="label_25" for="input_25_area"> Phone Number </label>
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="tel" id="input_25_area" name="q25_phoneNumber25[area]" class="form-textbox" size="6" value=""
-                     data-component="areaCode"/>
-              <span class="phone-separate">
-                 -
-              </span>
-              <label class="form-sub-label" for="input_25_area" id="sublabel_area"
-                     style="min-height:13px"> Area Code </label>
-            </span>
                         <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="tel" id="input_25_phone" name="q25_phoneNumber25[phone]" class="form-textbox" size="12"
-                     value="" data-component="phone"/>
-              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone" style="min-height:13px"> Phone Number </label>
-            </span>
+                              <input type="tel" id="input_25_phone" name="q25_phoneNumber25[phone]" class="form-textbox"
+                                     size="30"
+                                     value="" data-component="phone"/>
+                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"
+                                     style="min-height:13px"> Phone Number </label>
+                        </span>
                     </div>
                 </div>
             </li>
+
+             <!------------------------ User Email Field ---------------------------->
+
             <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label class="form-label form-label-left" id="label_6" for="input_6">
+                <label style="left: auto" class="form-label form-label-left" id="label_6" for="input_6">
                     User E-mail
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input jf-required">
                     <input type="email" id="input_6" name="q6_userEmail" class="form-textbox validate[required, Email]"
                            size="30" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
+                    <label class="form-sub-label" for="input_34" style="min-height:13px">
+                        You can access the web site using this email </label>
+
                 </div>
             </li>
+
+
+             <!------------------------ User Type Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     User Type
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_33" class="form-input jf-required">
                     <select class="form-dropdown validate[required]" id="input_33" name="q33_userType"
@@ -984,11 +810,14 @@
                         <option value="Student"> Student</option>
                         <option value="Teacher"> Teacher</option>
                         <option value="Stuff"> Stuff</option>
-                        <option value="Admin"> Admin </option>
+                        <option value="Admin"> Admin</option>
 
                     </select>
                 </div>
             </li>
+
+             <!------------------------ Registration Number Field ---------------------------->
+
             <li class="form-line" data-type="control_textbox" id="id_31">
                 <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration
                     Number </label>
@@ -1001,6 +830,9 @@
           </span>
                 </div>
             </li>
+
+             <!------------------------ Department Name Field ---------------------------->
+
             <li class="form-line" data-type="control_dropdown" id="id_38">
                 <label class="form-label form-label-left form-label-auto" id="label_38" for="input_38">
                     Department </label>
@@ -1042,6 +874,9 @@
           </span>
                 </div>
             </li>
+
+             <!------------------------ Designation Field ---------------------------->
+
             <li class="form-line" data-type="control_textarea" id="id_32">
                 <label class="form-label form-label-left form-label-auto" id="label_32" for="input_32">
                     Designation </label>
@@ -1056,9 +891,7 @@
             <li class="form-line jf-required" data-type="control_dropdown" id="id_28">
                 <label class="form-label form-label-left form-label-auto" id="label_28" for="input_28">
                     Blood Group
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_28" class="form-input jf-required">
                     <select class="form-dropdown validate[required]" id="input_28" name="q28_bloodGroup"
@@ -1075,25 +908,44 @@
                     </select>
                 </div>
             </li>
+
+             <!------------------------ Password Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_textbox" id="id_37">
                 <label class="form-label form-label-left" id="label_37" for="input_37">
                     Password
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_37" class="form-input jf-required">
                     <input type="text" id="input_37" name="q37_password" data-type="input-textbox"
                            class="form-textbox validate[required]" size="50" value="" maxLength="10"
                            data-component="textbox" required=""/>
+                    <label class="form-sub-label" for="input_37" style="min-height:13px"> lower case letter [a-z] or
+                        upper case letter [A-Z] or numeric character [0-9] </label>
+
                 </div>
             </li>
+
+             <!------------------------ Height Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textbox" id="id_37">
+                <label class="form-label form-label-left" id="label_37" for="input_37">
+                    Height
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_37" class="form-input jf-required">
+                    <input type="text" id="input_37" name="height" data-type="input-textbox"
+                           class="form-textbox validate[required]" size="30" value="" maxLength="10"
+                           data-component="textbox" required=""/>
+                </div>
+            </li>
+
+             <!------------------------ User Photos Field ---------------------------->
+
             <li class="form-line jf-required" data-type="control_fileupload" id="id_29">
                 <label class="form-label form-label-left" id="label_29" for="input_29">
                     User Photos
-                    <span class="form-required">
-            *
-          </span>
+                    <span class="form-required">*</span>
                 </label>
                 <div id="cid_29" class="form-input jf-required">
           <span class="form-sub-label-container" style="vertical-align:top">
@@ -1106,29 +958,41 @@
           </span>
                 </div>
             </li>
-            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_19">
-                <div id="cid_19" class="form-input-wide">
-                    <div style="margin-left:156px" class="form-buttons-wrapper">
-                        <button id="input_19" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            Clear Fields
-                        </button>
-                    </div>
-                </div>
+
+            <!----------------------- Clear Fields ------------------------------------------>
+
+
+            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
+                {#                <div id="cid_19" class="form-input-wide">#}
+                {#                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
+                <button id="input_19" type="reset" style="width: 150px"
+                        class="form-submit-button form-submit-button-simple_black"
+                        data-component="button">
+                    Clear Fields
+                </button>
+                {#                    </div>#}
+                {#                </div>#}
             </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_20">
-                <div id="cid_20" class="form-input-wide">
-                    <div style="margin-left:156px" class="form-buttons-wrapper">
-                        <button id="input_20" type="submit" class="form-submit-button form-submit-button-simple_green"
-                                data-component="button">
-                            Register
-                        </button>
-                    </div>
-                </div>
+
+            <!----------------------- Register Button ------------------------------------------>
+
+            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
+                {#                <div id="cid_20" class="form-input-wide">#}
+                {#                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
+                <button id="input_20" type="submit" style="width: 150px"
+                        class="form-submit-button form-submit-button-simple_green"
+                        data-component="button">
+                    Register
+                </button>
+                {#                    </div>#}
+                {#                </div>#}
             </li>
+
+            <!----------------------- Previous Button ------------------------------------------>
+
             <li class="form-line" data-type="control_button" id="id_35">
                 <div id="cid_35" class="form-input-wide">
-                    <div style="margin-left:156px" class="form-buttons-wrapper">
+                    <div style="text-align:left" class="form-buttons-wrapper">
                         <button id="input_35" type="submit" class="form-submit-button form-submit-button-simple_black"
                                 data-component="button">
                             <a href="{% url 'cse:staring' %}">Back To The Previous Page</a>
@@ -1144,29 +1008,6 @@
             </li>
         </ul>
     </div>
-{#    <script>#}
-{#        JotForm.showJotFormPowered = "new_footer";#}
-{#    </script>#}
-{#    <input type="hidden" id="simple_spc" name="simple_spc" value="91035707344454"/>#}
-{#    <script type="text/javascript">#}
-{#        document.getElementById("si" + "mple" + "_spc").value = "91035707344454-91035707344454";#}
-{#    </script>#}
-{#    <div class="formFooter-heightMask">#}
-{#    </div>#}
-{#    <div class="formFooter f6">#}
-{#        <a href="https://www.jotform.com/pricing?utm_source=formfooter&utm_medium=banner&utm_term=91035707344454&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le"#}
-{#           target="_blank" class="formFooter-logoLink"><img class="formFooter-logo"#}
-{#                                                            src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png"#}
-{#                                                            alt="" style="height: 44px;"></a>#}
-{#        <div class="formFooter-rightSide">#}
-{#      <span class="formFooter-text">#}
-{#        Now create your own JotForm - It's free!#}
-{#      </span>#}
-{#            <a class="formFooter-button"#}
-{#               href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=91035707344454&utm_content=jotform_button&utm_campaign=powered_by_jotform_le"#}
-{#               target="_blank">Create your own JotForm</a>#}
-{#        </div>#}
-{#    </div>#}
 </form>
 </body>
 </html>

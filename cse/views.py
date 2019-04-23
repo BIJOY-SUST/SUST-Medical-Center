@@ -5,6 +5,8 @@ from django.shortcuts import render
 def staring(request):
         return render(request, 'cse/staring.html')
 
+
+
 def login(request):
         return render(request, 'cse/login.html')
 
