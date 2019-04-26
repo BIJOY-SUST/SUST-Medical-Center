@@ -678,7 +678,7 @@
                         <input type="text" id="input_34" name="username" data-type="input-textbox"
                                class="form-textbox validate[required]" size="20" value="" placeholder="BIJOY_SUST"
                                data-component="textbox" required=""/>
-                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>
+{#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
                     </span>
                 </div>
             </li>
@@ -765,7 +765,7 @@
              <!------------------------ Pnone Number Field ---------------------------->
 
             <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Phone Number </label>
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number </label>
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
@@ -773,7 +773,7 @@
                                      size="30"
                                      value="" data-component="phone"/>
                               <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"
-                                     style="min-height:13px"> Phone Number </label>
+                                     style="min-height:13px"> Telephone Number </label>
                         </span>
                     </div>
                 </div>
@@ -909,23 +909,6 @@
                 </div>
             </li>
 
-             <!------------------------ Password Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_textbox" id="id_37">
-                <label class="form-label form-label-left" id="label_37" for="input_37">
-                    Password
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_37" class="form-input jf-required">
-                    <input type="text" id="input_37" name="q37_password" data-type="input-textbox"
-                           class="form-textbox validate[required]" size="50" value="" maxLength="10"
-                           data-component="textbox" required=""/>
-                    <label class="form-sub-label" for="input_37" style="min-height:13px"> lower case letter [a-z] or
-                        upper case letter [A-Z] or numeric character [0-9] </label>
-
-                </div>
-            </li>
-
              <!------------------------ Height Field ---------------------------->
 
             <li class="form-line jf-required" data-type="control_textbox" id="id_37">
@@ -939,6 +922,26 @@
                            data-component="textbox" required=""/>
                 </div>
             </li>
+
+
+             <!------------------------ Password Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textbox" id="id_37">
+                <label class="form-label form-label-left" id="label_37" for="input_37">
+                    Password
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_37" class="form-input jf-required">
+                    <input type="password" id="input_37" name="q37_password" data-type="input-textbox"
+                           class="form-textbox validate[required]" size="50" value="" maxLength="10"
+                           data-component="textbox" required=""/>
+                    <label class="form-sub-label" for="input_37" style="min-height:13px"> lower case letter [a-z] or
+                        upper case letter [A-Z] or numeric character [0-9] </label>
+
+                </div>
+            </li>
+
+
 
              <!------------------------ User Photos Field ---------------------------->
 
@@ -959,53 +962,52 @@
                 </div>
             </li>
 
-            <!----------------------- Clear Fields ------------------------------------------>
+            <!----------------------- login page Fields ------------------------------------------>
 
 
             <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
-                {#                <div id="cid_19" class="form-input-wide">#}
-                {#                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
-                <button id="input_19" type="reset" style="width: 150px"
-                        class="form-submit-button form-submit-button-simple_black"
-                        data-component="button">
-                    Clear Fields
+{#                <div id="cid_19" class="form-input-wide">#}
+                    <div style="text-align: left" class="form-buttons-wrapper">
+                <button id="input_19" type="submit" style="width: 350px" class="form-submit-button form-submit-button-simple_black" data-component="button">
+                        <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>
                 </button>
-                {#                    </div>#}
-                {#                </div>#}
+                    </div>
+{#                </div>#}
             </li>
+
+
+{#            <!----------------------- Previous Button ------------------------------------------>#}
+{##}
+{#            <li class="form-line" data-type="control_button" id="id_27">#}
+{#                <div id="cid_27" class="form-input-wide">#}
+{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
+{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
+{#                                data-component="button">#}
+{#                            <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </li>#}
 
             <!----------------------- Register Button ------------------------------------------>
 
             <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
-                {#                <div id="cid_20" class="form-input-wide">#}
-                {#                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
-                <button id="input_20" type="submit" style="width: 150px"
+{#                                <div id="cid_20" class="form-input-wide">#}
+{#                                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
+                <button  id="input_20" type="submit" style="width: 150px"
                         class="form-submit-button form-submit-button-simple_green"
                         data-component="button">
                     Register
                 </button>
-                {#                    </div>#}
-                {#                </div>#}
+{#                                    </div>#}
+{#                                </div>#}
             </li>
-
-            <!----------------------- Previous Button ------------------------------------------>
-
-            <li class="form-line" data-type="control_button" id="id_35">
-                <div id="cid_35" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper">
-                        <button id="input_35" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            <a href="{% url 'cse:staring' %}">Back To The Previous Page</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-            <li style="clear:both">
-            </li>
-            <li style="display:none">
-                Should be Empty:
-                <input type="text" name="website" value=""/>
-            </li>
+{#            <li style="clear:both">#}
+{#            </li>#}
+{#            <li style="display:none">#}
+{#                Should be Empty:#}
+{#                <input type="text" name="website" value=""/>#}
+{#            </li>#}
         </ul>
     </div>
 </form>

@@ -8,6 +8,7 @@ class CustomUser(AbstractUser):
     # date_of_birth = models.DateField()
     height = models.FloatField(null=False,blank=True,default=None)
     date_of_birth = models.DateField(null=False,blank=True,default=None)
+
     # gender = models.Con
 
     def __str__(self):
