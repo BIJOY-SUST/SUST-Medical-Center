@@ -158,7 +158,7 @@
         }
 
         .form-all {
-            width: 1000px;
+            width: 900px;
         }
 
         .form-label-left,
@@ -177,7 +177,7 @@
         .form-all .form-submit-button,
         .form-all .form-submit-reset,
         .form-all .form-submit-print {
-            font-size: 14px
+            font-size: 16px
         }
 
         .form-all .form-pagebreak-back-container,
@@ -558,8 +558,9 @@
 <!---------------------------------------------form start here--------------------------------------------------------->
 
 
-<form class="jotform-form" action="" method="post" enctype="multipart/form-data" name="form_91035707344454"
+<form class="jotform-form" action="{% url 'cse:register'%}" method="post" enctype="multipart/form-data" name="form_91035707344454"
       id="91035707344454" accept-charset="utf-8">
+    {% csrf_token %}
     {#    <input type="hidden" name="formID" value="91035707344454"/>#}
 
     <!------------Navigation Bar start here------------------------------------------->
@@ -572,7 +573,7 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
@@ -642,10 +643,12 @@
              <!------------------------ Full Name Field ---------------------------->
 
             <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
-                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
+{#                <div>#}
+                    <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
                     Full Name
-                    <span class="form-required">*</span>
-                </label>
+                        <span class="form-required">*</span>
+                    </label>
+{#                </div>#}
                 <div id="cid_4" class="form-input jf-required">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
@@ -712,7 +715,7 @@
           </span>
                 </label>
                 <div id="cid_3" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_3" name="q3_gender" style="width:150px"
+                    <select class="form-dropdown validate[required]" id="input_3" name="gender" style="width:150px"
                             data-component="dropdown" required="">
                         <option value=""></option>
                         <option value="Male"> Male</option>
@@ -733,7 +736,7 @@
                 </label>
                 <div id="cid_36" class="form-input jf-required">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <textarea id="input_36" class="form-textarea validate[required]" name="q36_address36" cols="40" rows="6"
+            <textarea id="input_36" class="form-textarea validate[required]" name="address" cols="40" rows="6"
                       data-component="textarea" required=""></textarea>
             <label class="form-sub-label" for="input_36" style="min-height:13px"> Street Address, City, State / Province, Postal / Zip Code </label>
           </span>
@@ -752,7 +755,7 @@
                 <div id="cid_27" class="form-input jf-required">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="mobile" id="input_27_phone" name="q27_mobileNumber[phone]"
+                            <input type="mobile" id="input_27_phone" name="mobileno"
                                    class="form-textbox validate[required]" size="30" value="" data-component="phone"
                                    required=""/>
                             <label class="form-sub-label" for="input_27_phone" id="sublabel_phone"
@@ -765,11 +768,11 @@
              <!------------------------ Pnone Number Field ---------------------------->
 
             <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number </label>
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number   </label>
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="q25_phoneNumber25[phone]" class="form-textbox"
+                              <input type="tel" id="input_25_phone" name="telno" class="form-textbox"
                                      size="30"
                                      value="" data-component="phone"/>
                               <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"
@@ -787,7 +790,7 @@
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input jf-required">
-                    <input type="email" id="input_6" name="q6_userEmail" class="form-textbox validate[required, Email]"
+                    <input type="email" id="input_6" name="useremail" class="form-textbox validate[required, Email]"
                            size="30" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
                     <label class="form-sub-label" for="input_34" style="min-height:13px">
                         You can access the web site using this email </label>
@@ -804,7 +807,7 @@
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_33" name="q33_userType"
+                    <select class="form-dropdown validate[required]" id="input_33" name="usertype"
                             style="width:150px" data-component="dropdown" required="">
                         <option value=""></option>
                         <option value="Student"> Student</option>
@@ -819,11 +822,10 @@
              <!------------------------ Registration Number Field ---------------------------->
 
             <li class="form-line" data-type="control_textbox" id="id_31">
-                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration
-                    Number </label>
+                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number </label>
                 <div id="cid_31" class="form-input">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="text" id="input_31" name="q31_registrationNumb" data-type="input-textbox"
+            <input type="text" id="input_31" name="regno" data-type="input-textbox"
                    class="form-textbox validate[Fill Mask]" size="25" value="" placeholder="2016331012"
                    data-component="textbox"/>
             <label class="form-sub-label" for="input_31" style="min-height:13px"> If you are a student, you must give the registration number. </label>
@@ -838,7 +840,7 @@
                     Department </label>
                 <div id="cid_38" class="form-input">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <select class="form-dropdown" id="input_38" name="q38_department" style="width:500px"
+            <select class="form-dropdown" id="input_38" name="department" style="width:500px"
                     data-component="dropdown">
               <option value="">  </option>
               <option value="Department of Forestry And Environmental Science"> Department of Forestry And Environmental Science </option>
@@ -881,20 +883,23 @@
                 <label class="form-label form-label-left form-label-auto" id="label_32" for="input_32">
                     Designation </label>
                 <div id="cid_32" class="form-input">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <textarea id="input_32" class="form-textarea" name="q32_position" cols="40" rows="6"
-                      data-component="textarea"></textarea>
-            <label class="form-sub-label" for="input_32" style="min-height:13px"> For Teacher or Stuff Only<br>If you are a stuff or teacher, your designation must be given. </label>
-          </span>
-                </div>
+              <span class="form-sub-label-container" style="vertical-align:top">
+                <textarea id="input_32" class="form-textarea" name="position" cols="40" rows="6"
+                          data-component="textarea"></textarea>
+                <label class="form-sub-label" for="input_32" style="min-height:13px"> For Teacher or Stuff Only<br>If you are a stuff or teacher, your designation must be given. </label>
+              </span>
+                    </div>
             </li>
+
+            <!-----------------------------Blood Group------------------------------->
+
             <li class="form-line jf-required" data-type="control_dropdown" id="id_28">
                 <label class="form-label form-label-left form-label-auto" id="label_28" for="input_28">
                     Blood Group
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_28" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_28" name="q28_bloodGroup"
+                    <select class="form-dropdown validate[required]" id="input_28" name="bloodgroup"
                             style="width:150px" data-component="dropdown" required="">
                         <option value=""></option>
                         <option value="A+	"> A+</option>
@@ -932,8 +937,8 @@
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_37" class="form-input jf-required">
-                    <input type="password" id="input_37" name="q37_password" data-type="input-textbox"
-                           class="form-textbox validate[required]" size="50" value="" maxLength="10"
+                    <input type="password" id="input_37" name="password" data-type="input-textbox"
+                           class="form-textbox validate[required]" size="30" value="" maxLength="10"
                            data-component="textbox" required=""/>
                     <label class="form-sub-label" for="input_37" style="min-height:13px"> lower case letter [a-z] or
                         upper case letter [A-Z] or numeric character [0-9] </label>
@@ -952,12 +957,12 @@
                 </label>
                 <div id="cid_29" class="form-input jf-required">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="file" id="input_29" name="q29_userPhotos" class="form-upload validate[required]"
+            <input type="file" id="input_29" name="userphotos" class="form-upload validate[required]"
                    data-imagevalidate="yes"
                    data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
                    data-file-maxsize="1024" data-file-minsize="100" data-file-limit="" data-component="fileupload"
                    required=""/>
-            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB </label>
+            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB(Image file must be PNG, JPG, or JPEG) </label>
           </span>
                 </div>
             </li>
@@ -968,26 +973,12 @@
             <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
 {#                <div id="cid_19" class="form-input-wide">#}
                     <div style="text-align: left" class="form-buttons-wrapper">
-                <button id="input_19" type="submit" style="width: 350px" class="form-submit-button form-submit-button-simple_black" data-component="button">
+                <button id="input_19" type="submit"  class="form-submit-button form-submit-button-simple_black" data-component="button">
                         <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>
                 </button>
                     </div>
 {#                </div>#}
             </li>
-
-
-{#            <!----------------------- Previous Button ------------------------------------------>#}
-{##}
-{#            <li class="form-line" data-type="control_button" id="id_27">#}
-{#                <div id="cid_27" class="form-input-wide">#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
-{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
-{#                                data-component="button">#}
-{#                            <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </li>#}
 
             <!----------------------- Register Button ------------------------------------------>
 
@@ -1002,12 +993,6 @@
 {#                                    </div>#}
 {#                                </div>#}
             </li>
-{#            <li style="clear:both">#}
-{#            </li>#}
-{#            <li style="display:none">#}
-{#                Should be Empty:#}
-{#                <input type="text" name="website" value=""/>#}
-{#            </li>#}
         </ul>
     </div>
 </form>

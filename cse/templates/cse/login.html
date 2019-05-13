@@ -156,7 +156,7 @@
         }
 
         .form-all {
-            width: 800px;
+            width: 700px;
         }
 
         .form-label-left,
@@ -410,8 +410,7 @@
 
 <!----------------------Form Start Here------------------------------------------------------>
 
-<form class="jotform-form" action="{% url 'cse:index' %}" method="post"
-      name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
+<form class="jotform-form" action="{% url 'cse:login'%}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
     {% csrf_token %}
 {#    <input type="hidden" name="formID" value="91042143588456"/>#}
 
@@ -425,7 +424,7 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
@@ -466,14 +465,7 @@
                                 <a href="{% url 'cse:register' %}"><span>  Register <i
                                         class="glyphicon-registration-mark"></i></span></a>
                             </p>
-
-
                         </div>
-                        {#                        <div class="col-md-3">#}
-                        {#							<p class="btn-cta"><a href="#"><span>Register <i class="glyphicon-registration-mark"></i></span></a></p>#}
-                        {##}
-                        {#						</div>#}
-
                     </div>
                 </div>
             </div>
@@ -511,79 +503,51 @@
                            size="40" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
                 </div>
             </li>
-            <!------------------------ Password ---------------------------->
+                        <!------------------------ Password ---------------------------->
 
-            <li class="form-line jf-required" data-type="control_textbox" id="id_25">
-                <label style="font-size: 16px" class="form-label form-label-left form-label-auto" id="label_25" for="input_25">
+            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
+                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
                     Password
                     <span class="form-required">*</span>
                 </label>
-                <div id="cid_25" class="form-input jf-required">
-                    <input type="password" id="input_25" name="q25_typeA" data-type="input-textbox"
-                           class="form-textbox validate[required]" size="30" value="" data-component="textbox"
-                           required=""/>
+                <div id="cid_6" class="form-input jf-required">
+                    <input type="password" id="input_6" name="password" class="form-textbox validate[required, Email]"
+                           size="30" value="" placeholder="ex: 123456" data-component="email" required=""/>
                 </div>
             </li>
 
 
-             <!------------------------ Captcha ---------------------------->
-
-{#            <li class="form-line jf-required" data-type="control_captcha" id="id_26">#}
-{#                <label class="form-label form-label-left form-label-auto" id="label_26" for="input_26">#}
-{#                    Enter the message as it's shown#}
-{#                    <span class="form-required">*</span>#}
-{#                </label>#}
-{#                <div id="cid_26" class="form-input jf-required">#}
-{#                    <div class="form-captcha" data-component="captcha">#}
-{#                        <label for="input_26"> <img alt="Captcha - Reload if not displayed" id="input_26_captcha"#}
-{#                                                    class="form-captcha-image"#}
-{#                                                    style="background:url(https://cdn.jotfor.ms/images/loader-big.gif) no-repeat center"#}
-{#                                                    src="https://cdn.jotfor.ms/images/blank.gif" width="150"#}
-{#                                                    height="41"/> </label>#}
-{#                        <div style="white-space:nowrap">#}
-{#                            <input type="text" id="input_26" class="form-textbox validate[required]" name="captcha"#}
-{#                                   style="width:130px" required=""/>#}
-{#                            <img src="https://cdn.jotfor.ms/images/reload.png" alt="Reload"#}
-{#                                 style="cursor:pointer;vertical-align:middle" id="input_26_reload"/>#}
-{#                            <input type="hidden" name="captcha_id" id="input_26_captcha_id" value="0"/>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-
-{#            </li>#}
-
-
              <!------------------------ reset button ---------------------------->
-
+{#            <li></li>#}
             <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
-{#                <div id="cid_19" class="form-input-wide">#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper" >#}
-                        <button  id="input_19" type="reset" style="width: 150px" class="form-submit-button form-submit-button-simple_black"
+                <div id="cid_19" class="form-input-wide">
+                    <div style="text-align:left" class="form-buttons-wrapper" >
+                        <button  id="input_19" type="reset" style="width: 200px" class="form-submit-button form-submit-button-simple_black"
                                 data-component="button">
                             Clear Fields
                         </button>
-{#                    </div>#}
-{#                </div>#}
+                    </div>
+                </div>
             </li>
 
              <!------------------------ Login button ---------------------------->
 
             <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
-{#                <div id="cid_20" class="form-input-wide">#}
-{#                    <div style="text-align:right" class="form-buttons-wrapper">#}
+                <div id="cid_20" class="form-input-wide">
+                    <div style="text-align:left" class="form-buttons-wrapper">
                         <button id="input_20" type="submit" style="width: 150px" class="form-submit-button form-submit-button-simple_green"
                                 data-component="button">Login
 {#                            <a href="{% url 'cse:index' %}" style="color: #0b2e13">Login</a>#}
                         </button>
-{#                    </div>#}
-{#                </div>#}
+                    </div>
+                </div>
             </li>
 
              <!------------------------ forword to register ---------------------------->
 
             <li class="form-line" data-type="control_button" id="id_27">
                 <div id="cid_27" class="form-input-wide">
-                    <div style="text-align:right" class="form-buttons-wrapper">
+                    <div style="text-align:left" class="form-buttons-wrapper">
                         <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"
                                 data-component="button">
                             <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>
@@ -591,10 +555,6 @@
                     </div>
                 </div>
             </li>
-{#            <li style="display:none">#}
-{#                Should be Empty:#}
-{#                <input type="text" name="website" value=""/>#}
-{#            </li>#}
         </ul>
     </div>
 </form>
