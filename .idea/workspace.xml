@@ -16,8 +16,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/medical/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+            <state relative-caret-position="749">
+              <caret line="170" column="33" lean-forward="true" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cse/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -25,20 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/medical/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="132">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -49,22 +49,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cse/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="132">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cse/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="528">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -83,28 +71,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/login.html">
+        <entry file="file://$PROJECT_DIR$/cse/templates/cse/confirm_email.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="426" column="88" selection-start-line="426" selection-start-column="88" selection-end-line="426" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="575" column="88" selection-start-line="575" selection-start-column="88" selection-end-line="575" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="730" column="87" selection-start-line="730" selection-start-column="87" selection-end-line="730" selection-end-column="87" />
+            <state relative-caret-position="110">
+              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -115,8 +85,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -172,15 +142,19 @@
         <option value="$PROJECT_DIR$/cse/migrations/0003_auto_20190422_1333.py" />
         <option value="$PROJECT_DIR$/cse/migrations/0002_customuser_height.py" />
         <option value="$PROJECT_DIR$/cse/forms.py" />
-        <option value="$PROJECT_DIR$/cse/urls.py" />
         <option value="$PROJECT_DIR$/cse/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/cse/templates/cse/staring.html" />
-        <option value="$PROJECT_DIR$/medical/settings.py" />
         <option value="$PROJECT_DIR$/cse/admin.py" />
         <option value="$PROJECT_DIR$/medical/urls.py" />
         <option value="$PROJECT_DIR$/cse/models.py" />
-        <option value="$PROJECT_DIR$/cse/templates/cse/login.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/register.html" />
+        <option value="$PROJECT_DIR$/cse/token.py" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/before_email.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/after_confirm.html" />
+        <option value="$PROJECT_DIR$/cse/urls.py" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/confirm_email.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/login.html" />
+        <option value="$PROJECT_DIR$/medical/settings.py" />
         <option value="$PROJECT_DIR$/cse/views.py" />
       </list>
     </option>
@@ -196,7 +170,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,20 +191,7 @@
             <path>
               <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
               <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
               <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
@@ -242,6 +202,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,16 +305,22 @@
       <workItem from="1557408347988" duration="1605000" />
       <workItem from="1557508913075" duration="13000" />
       <workItem from="1557570678044" duration="84000" />
+      <workItem from="1557809452481" duration="57000" />
+      <workItem from="1557811645310" duration="72000" />
+      <workItem from="1557833435302" duration="4353000" />
+      <workItem from="1557852548342" duration="12415000" />
+      <workItem from="1557902398821" duration="2405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139226000" />
+    <option name="totallyTimeSpent" value="158528000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="34" width="1850" height="1046" extended-state="6" />
+    <frame x="0" y="-37" width="1920" height="1117" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1432553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15933476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -364,11 +331,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="manage.py@sust-medical-center" order="8" visible="true" weight="0.22453223" />
+      <window_info anchor="bottom" id="manage.py@sust-medical-center" order="8" sideWeight="0.49827388" weight="0.19106464" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32935324" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50172615" side_tool="true" weight="0.20722434" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32967034" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32848233" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32843652" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -511,16 +478,74 @@
     <entry file="file://$PROJECT_DIR$/media/images/587585039-wallpapers-for-my-computer-screen.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/medical/settings.py">
+    <entry file="file://$PROJECT_DIR$/cse/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+        <state relative-caret-position="44">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16060">
+          <caret line="730" column="87" selection-start-line="730" selection-start-column="87" selection-end-line="730" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/token.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/after_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="502" column="17" selection-start-line="502" selection-start-column="17" selection-end-line="502" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="975" column="16" selection-start-line="975" selection-start-column="16" selection-end-line="975" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/before_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/confirm_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/images/587585066-wallpapers-for-my-computer-screen_ye1LFOh.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/medical/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="132">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -528,61 +553,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cse/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/login.html">
+    <entry file="file://$PROJECT_DIR$/medical/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="426" column="88" selection-start-line="426" selection-start-column="88" selection-end-line="426" selection-end-column="88" />
+        <state relative-caret-position="749">
+          <caret line="170" column="33" lean-forward="true" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/register.html">
+    <entry file="file://$PROJECT_DIR$/cse/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="575" column="88" selection-start-line="575" selection-start-column="88" selection-end-line="575" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="730" column="87" selection-start-line="730" selection-start-column="87" selection-end-line="730" selection-end-column="87" />
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cse/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="528">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>

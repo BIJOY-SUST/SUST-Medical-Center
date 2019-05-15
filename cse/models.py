@@ -11,11 +11,12 @@ class CustomUser(AbstractUser):
     user_type = models.CharField(null=False,blank=False,default=None,max_length=20)
     mobile_no = models.CharField(null=False,blank=False,default=None,max_length=20)
     tel_no = models.CharField(null=False,blank=False,default=None,max_length=20)
-    age = models.CharField(null=False,blank=False,default=None,max_length=90)
+    # age = models.CharField(null=False,blank=False,default=None,max_length=90)
     department = models.CharField(null=True,blank=True,default=None,max_length=90)
     designation = models.CharField(null=True,blank=True,default=None,max_length=90)
     blood_group = models.CharField(null=False,blank=False,default=None,max_length=20)
     photos = models.FileField(null=False,blank=False,default=None,upload_to='images/')
+
 
 
     def __str__(self):

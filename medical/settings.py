@@ -84,6 +84,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'medical.wsgi.application'
 
+#Email verification
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sustmedicalcenter@gmail.com'
+EMAIL_HOST_PASSWORD = 'smc12397'
+EMAIL_PORT = 587
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -167,8 +173,3 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
-
-
-
-LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'home'

@@ -17,7 +17,9 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('about_us/', views.about_us, name='about_us'),
 
-
+    # account confirmations
+    # path('activate/<uid>/<token>/', views.activate,name='activate'),
+    re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', views.activate, name='activate'),
 
     # path('blog_single/', views.blog_single, name='blog_single'),
     # path('departments_single/', views.departments_single, name='departments_single'),

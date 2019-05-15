@@ -562,6 +562,12 @@
       id="91035707344454" accept-charset="utf-8">
     {% csrf_token %}
     {#    <input type="hidden" name="formID" value="91035707344454"/>#}
+{#{% for message in messages %}#}
+{#    <div class="alert alert-success">#}
+{#        <a class="close" href="#" data-dismiss="alert">×</a>#}
+{#        {{ message }}#}
+{#    </div>#}
+{#{% endfor %}#}
 
     <!------------Navigation Bar start here------------------------------------------->
 
@@ -670,7 +676,6 @@
 
 
              <!------------------------ User Name Field ---------------------------->
-
             <li class="form-line jf-required" data-type="control_textbox" id="id_34">
                 <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
                     User Name
@@ -967,6 +972,18 @@
                 </div>
             </li>
 
+
+            <li>
+                {% if messages %}
+                    <ul class="messages">
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                {% endif %}
+            </li>
             <!----------------------- login page Fields ------------------------------------------>
 
 
@@ -993,6 +1010,7 @@
 {#                                    </div>#}
 {#                                </div>#}
             </li>
+
         </ul>
     </div>
 </form>
