@@ -1,7 +1,7 @@
 import  json
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User,AbstractUser
-from django.contrib.auth import logout
+from django.contrib.auth import logout as auth_logout
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404,redirect,HttpResponse,NoReverseMatch,HttpResponsePermanentRedirect,Http404,HttpResponseRedirect
 from django.db.models import Q
@@ -9,6 +9,7 @@ from .token import account_activation_token
 from django.utils.encoding import force_bytes,force_text
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.sites.models import Site
 from django.template.loader import render_to_string
 from django.conf import  settings
 from django.core.mail import send_mail,EmailMessage
@@ -23,6 +24,10 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 def staring(request):
         return render(request, 'cse/staring.html')
 
+def logout(request):
+    auth_logout(request)
+    return render(request, 'cse/staring.html')
+
 def login(request):
         if request.method == "POST":
                 temail = request.POST['useremail']
@@ -30,7 +35,7 @@ def login(request):
                 user = authenticate(email=temail, password=tpassword)
                 if user is not None:
                         if user.is_active:
-                                auth_login(request, user,backend='allauth.account.auth_backends.AuthenticationBackend')
+                                auth_login(request, user)
                                 return render(request, 'cse/index.html')
                         else:
                                 messages.error(request, 'Your account has been disabled..!')
@@ -87,20 +92,22 @@ def register(request):
 
                 c.is_active=False
                 c.save()
-
-                site = get_current_site(request)
+                site = request.META['HTTP_HOST']
+                print(site)
                 mail_subject = "Confirmation message for SUSTMedicalCenter"
                 message = render_to_string('cse/confirm_email.html', {
                         'user': c,
-                        'domain': site.domain,
-                        # 'uid' : c.id,
+                        'domain': site,
+                        # 'domain': get_current_site(request).domain,
                         'uid': urlsafe_base64_encode(force_bytes(c.pk)),
                         'token': account_activation_token.make_token(c),
                 })
                 from_email = settings.EMAIL_HOST_USER
-                to_email = c.email
+                to_email = request.POST.get('useremail')
                 to_list = [to_email]
                 send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+                # emailcheck = EmailMessage(mail_subject, message, from_email, to_list,)
+                # emailcheck.send()
                 return render(request, 'cse/before_confirm.html')
         else:
                 return render(request,'cse/register.html')
@@ -115,8 +122,7 @@ def activate(request,uidb64,token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        auth_login(request, user, backend='allauth.account.auth_backends.AuthenticationBackend')
-        # return redirect('home')
+        auth_login(request, user)
         return render(request,'cse/after_confirm.html')
     else:
         return HttpResponse("<h2>Activation link is invalid...! <a href='/register'> Return</a>  to the register page.</h2>")
@@ -163,7 +169,3 @@ def services(request):
 
 def about_us(request):
         return render(request, 'cse/about_us.html')
-
-
-
-
