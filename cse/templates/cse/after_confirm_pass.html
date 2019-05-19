@@ -1,4 +1,4 @@
-{#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">#}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html class="supernova">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -156,14 +156,14 @@
         }
 
         .form-all {
-            width: 700px;
+            width: 800px;
         }
 
         .form-label-left,
         .form-label-right,
         .form-label-left.form-label-auto,
         .form-label-right.form-label-auto {
-            width: 150px;
+            width: 180px;
         }
 
         .form-all {
@@ -408,10 +408,6 @@
 </head>
 <body>
 
-<!----------------------Form Start Here------------------------------------------------------>
-
-
-{#    <input type="hidden" name="formID" value="91042143588456"/>#}
 
 <!---------------------- Navigation Bar ------------------------------------------------------->
 
@@ -470,29 +466,89 @@
             </div>
         </div>
     </nav>
-<form class="jotform-form" action="" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
-    {% csrf_token %}
     <!------------------------ End Navigation Bar---------------------------->
+<!----------------------Form Start Here------------------------------------------------------>
 
+<form class="jotform-form" action="{% url 'cse:password_reset_complete' %}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
+    {% csrf_token %}
+{#    <input type="hidden" name="formID" value="91042143588456"/>#}
     <div role="main" class="form-all">
         <ul class="form-section page-section">
-            <li id="cid_1" class="form-input-wide" data-type="control_head">
-                <div class="form-header-group ">
-                    <div class="header-text httac htvam">
-                        <h1 id="header_1" class="form-header" data-component="header">
-                            User Login Form
-                        </h1>
-                        <div id="subHeader_1" class="form-subHeader">
-                            Fill out the form carefully for login
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <!---------- Error Message ------------------->
+
+            <style>
+                /* Style all input fields */
+                {#input {#}
+                {#  width: 80%;#}
+                {#  height: 10%;#}
+                {#  padding: 12px;#}
+                {#  border: 1px solid #ccc;#}
+                {#  border-radius: 4px;#}
+                {#  box-sizing: border-box;#}
+                {#  margin-top: 6px;#}
+                {#  margin-bottom: 16px;#}
+                {#}#}
+
+                /* Style the submit button */
+                {#input[type=submit] {#}
+                {#  background-color: #4CA  F50;#}
+                {#  color: white;#}
+                {#}#}
+
+                /* Style the container for inputs */
+                {#.container {#}
+                {#  background-color: #f1f1f1;#}
+                {#  padding: 20px;#}
+                {#}#}
+
+                /* The message box is shown when the user clicks on the password field */
+                #message {
+                  display:none;
+                                background-image: url({% static 'cse/images/brushed.png' %});
+
+                  {#background: #f1f1f1;#}
+                  color: #000;
+                      position: fixed;
+                      bottom: 50pt;
+                      right: 0;
+                      width: 500px;
+                  {#position: relative;#}
+                  {#  left: 200px;#}
+                  {#  top: 5px;#}
+                  padding: 10px;
+                  margin-top: 10px;
+                }
+
+                #message p {
+                  padding: 10px 35px;
+                  font-size: 18px;
+                }
+
+                /* Add a green text color and a checkmark when the requirements are right */
+                .valid {
+                  color: green;
+                }
+
+                .valid:before {
+                  position: relative;
+                  left: -35px;
+                  content: "✔";
+                }
+
+                /* Add a red text color and an "x" when the requirements are wrong */
+                .invalid {
+                  color: red;
+                }
+
+                .invalid:before {
+                  position: relative;
+                  left: -35px;
+                  content: "✖";
+                }
+            </style>
             <li>
                 {% if messages %}
                     <ul class="messages">
-                        <div class="alert alert-danger">
+                        <div class="alert alert-success">
                             {% for message in messages %}
                             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                             {% endfor %}
@@ -500,33 +556,32 @@
                     </ul>
                 {% endif %}
             </li>
-            <!------------------------ Email ---------------------------->
 
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
-                    User E-mail
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="email" id="input_6"  name="useremail" class="form-textbox validate[required, Email]"
-                           size="40" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
-                </div>
+            <li class="form-line form-line-column form-col-3 jf-required">
+                  <h1>Enter new password </h1>
+                <p><h5>Please enter your new password  correctly.</h5></p>
             </li>
-                        <!------------------------ Password ---------------------------->
+            <li>
+                                    <h3>Hi, {{ user.email }}</h3>
+
+            </li>
+                                <!------------------------ Password ---------------------------->
 
             <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
-                    Password
+                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">
+                    New Password
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input jf-required">
-                    <input type="password" id="id_password"  name="password" class="form-textbox validate[required, Password]"
-                           size="30" value="" placeholder="ex: 123456" data-component="email" required=""/>
+                    <input type="password" id="psw"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
+                           characters"
+                           size="30" value="" placeholder="ex: aA345678" data-component="password" required>
 
                             <input type="checkbox" onclick="myFunction()">Show Password
                             <script>
                             function myFunction() {
-                              var x = document.getElementById("id_password");
+                              var x = document.getElementById("psw");
                               if (x.type === "password") {
                                 x.type = "text";
                               } else {
@@ -536,36 +591,15 @@
                             </script>
                 </div>
             </li>
-             <!------------------------ reset button ---------------------------->
-{#            <li></li>#}
-            <li class="form-line form-line-column form-col-2" data-type="control_button" id="fgfg">
-                <div id="gfgf" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper" >
-                        <button id="fgfgf" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            <a href="{% url 'cse:password_reset' %}">Forgot your password?</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-             <!------------------------ Login button ---------------------------->
+             <!------------------------ Reset button ---------------------------->
             <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
                 <div id="cid_20" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper">
-                        <button id="input_20" type="submit"  style="width: 150px" class="form-submit-button form-submit-button-simple_green"
+                    <div style="text-align: right" class="form-buttons-wrapper">
+                        <button id="input_20" type="submit" style="width: 280px" class="form-submit-button form-submit-button-simple_black"
                                 data-component="button">
-                            <a href="{% url 'cse:login' %}" style="color: black">Login</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-             <!------------------------ forword to register ---------------------------->
-            <li class="form-line" data-type="control_button" id="id_27">
-                <div id="cid_27" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper">
-                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>
+{#                            <a href="{% url 'cse:password_reset_done' %}">#}
+                                Change My Password
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -573,5 +607,77 @@
         </ul>
     </div>
 </form>
+
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+
+
 </body>
 </html>

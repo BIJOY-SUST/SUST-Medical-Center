@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'medical.wsgi.application'
 #Email verification
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sustmedicalcenter@gmail.com'
-EMAIL_HOST_PASSWORD = 'smc12397'
+EMAIL_HOST_USER = 'bijoysust.system@gmail.com'
+EMAIL_HOST_PASSWORD = 'system.admin'
 EMAIL_PORT = 587
 
 # Database
@@ -173,3 +173,9 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+
+
+INCLUDE_REGISTER_URL = True
+INCLUDE_AUTH_URLS = True

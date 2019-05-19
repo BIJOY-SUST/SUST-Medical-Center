@@ -9,6 +9,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('cse.urls')),
+
     path('accounts/', include('allauth.urls')),  # new
     path('cse/',include('cse.urls',namespace='lol')),
 ]

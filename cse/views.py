@@ -22,6 +22,13 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 def staring(request):
+        # site = get_current_site(request).dom
+        #
+        #
+        #
+        # ain,
+        # site = request.META['HTTP_HOST']
+        # print(site)
         return render(request, 'cse/staring.html')
 
 def logout(request):
@@ -30,8 +37,12 @@ def logout(request):
 
 def login(request):
         if request.method == "POST":
-                temail = request.POST['useremail']
-                tpassword = request.POST['password']
+                # temail = request.POST['useremail']
+                # tpassword = request.POST['password']
+
+                temail = request.POST.get('useremail')
+                tpassword = request.POST.get('password')
+
                 user = authenticate(email=temail, password=tpassword)
                 if user is not None:
                         if user.is_active:
@@ -65,7 +76,7 @@ def register(request):
                 tposition = request.POST.get('position')
                 tbloodgroup = request.POST.get('bloodgroup')
                 theight = request.POST.get('height')
-                tpassword = request.POST.get('password')
+                tpassword = request.POST.get('psw')
                 tnowdate = datetime.today()
 
                 c = CustomUser(first_name=tfirstname,last_name=tlastname,username=tusername,date_of_birth=tbdate,gender=tgender,address=taddress,
@@ -93,7 +104,7 @@ def register(request):
                 c.is_active=False
                 c.save()
                 site = request.META['HTTP_HOST']
-                print(site)
+                # print(site)
                 mail_subject = "Confirmation message for SUSTMedicalCenter"
                 message = render_to_string('cse/confirm_email.html', {
                         'user': c,
@@ -122,15 +133,63 @@ def activate(request,uidb64,token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        auth_login(request, user)
+        # auth_login(request, user)
         return render(request,'cse/after_confirm.html')
     else:
-        return HttpResponse("<h2>Activation link is invalid...! <a href='/register'> Return</a>  to the register page.</h2>")
+        return render(request,'cse/if_invalid.html')
 
 
 
+def password_reset(request):
+        return render(request,'cse/password_reset.html')
+
+def password_reset_done(request):
+        if CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
+                c = CustomUser.objects.get(email=request.POST.get('useremail'))
+                c.is_active=False
+                c.save()
+                site = request.META['HTTP_HOST']
+                # print(site)
+                mail_subject = "Confirmation message for SUSTMedicalCenter"
+                message = render_to_string('cse/confirm_email_pass.html', {
+                        'user': c,
+                        'domain': site,
+                        # 'domain': get_current_site(request).domain,
+                        'uid': urlsafe_base64_encode(force_bytes(c.pk)),
+                        'token': account_activation_token.make_token(c),
+                })
+                from_email = settings.EMAIL_HOST_USER
+                to_email = request.POST.get('useremail')
+                to_list = [to_email]
+                send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+                return render(request,'cse/password_reset_done.html')
+        else:
+                messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
+                return render(request, 'cse/password_reset.html')
 
 
+
+def passactivate(request,uidb64,token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = CustomUser.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active=True
+        user.save()
+        return render(request,'cse/after_confirm_pass.html', {'user':user})
+
+    else:
+        return render(request,'cse/if_invalid_pass.html')
+
+
+def password_reset_complete(request):
+
+    return render(request,'cse/password_reset_confirm.html')
+
+# def reset(request):
+#         return render(request,'cse/password_reset_done.html')
 
 
 

@@ -1,0 +1,17 @@
+{% autoescape off %}
+    Dear {{ user.username }},
+    We received a request to reset the password associated with this email address.
+    So, if you want to reset your password. Please click on the link below to setup a new password.
+
+    http://{{ domain }}{% url 'cse:passactivate' uidb64=uid token=token %}
+
+
+    If clicking the link above doesn't work, please copy and paste the URL into your browser's address window or retype it.
+    Once you  have returned to SUST Medical Center website, we will give you future instructions for resetting your password.
+
+    If you didn't request a to have your password reset, you can safely  ignore this email. We assure you that your account is safe.
+
+    Sincerely,
+    SUST Medical Center Team
+
+{% endautoescape %}

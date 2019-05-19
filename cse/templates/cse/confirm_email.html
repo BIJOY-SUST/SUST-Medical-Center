@@ -1,6 +1,7 @@
 {% autoescape off %}
     Hi {{ user.username }},
     Thanks for your registration in SUSTMedicalCenter.
+
     Please click on the link below to confirm your registration,
     http://{{ domain }}{% url 'cse:activate' uidb64=uid token=token %}
 {% endautoescape %}

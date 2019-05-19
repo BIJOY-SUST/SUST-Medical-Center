@@ -1,4 +1,4 @@
-{#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">#}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html class="supernova">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -408,11 +408,6 @@
 </head>
 <body>
 
-<!----------------------Form Start Here------------------------------------------------------>
-
-
-{#    <input type="hidden" name="formID" value="91042143588456"/>#}
-
 <!---------------------- Navigation Bar ------------------------------------------------------->
 
     <nav class="colorlib-nav" role="navigation">
@@ -470,108 +465,14 @@
             </div>
         </div>
     </nav>
-<form class="jotform-form" action="" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
-    {% csrf_token %}
+
     <!------------------------ End Navigation Bar---------------------------->
 
-    <div role="main" class="form-all">
-        <ul class="form-section page-section">
-            <li id="cid_1" class="form-input-wide" data-type="control_head">
-                <div class="form-header-group ">
-                    <div class="header-text httac htvam">
-                        <h1 id="header_1" class="form-header" data-component="header">
-                            User Login Form
-                        </h1>
-                        <div id="subHeader_1" class="form-subHeader">
-                            Fill out the form carefully for login
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <!---------- Error Message ------------------->
-            <li>
-                {% if messages %}
-                    <ul class="messages">
-                        <div class="alert alert-danger">
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                            {% endfor %}
-                        </div>
-                    </ul>
-                {% endif %}
-            </li>
-            <!------------------------ Email ---------------------------->
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
-                    User E-mail
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="email" id="input_6"  name="useremail" class="form-textbox validate[required, Email]"
-                           size="40" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
-                </div>
-            </li>
-                        <!------------------------ Password ---------------------------->
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
-                    Password
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="password" id="id_password"  name="password" class="form-textbox validate[required, Password]"
-                           size="30" value="" placeholder="ex: 123456" data-component="email" required=""/>
-
-                            <input type="checkbox" onclick="myFunction()">Show Password
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("id_password");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            </script>
-                </div>
-            </li>
-             <!------------------------ reset button ---------------------------->
-{#            <li></li>#}
-            <li class="form-line form-line-column form-col-2" data-type="control_button" id="fgfg">
-                <div id="gfgf" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper" >
-                        <button id="fgfgf" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            <a href="{% url 'cse:password_reset' %}">Forgot your password?</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-             <!------------------------ Login button ---------------------------->
-            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
-                <div id="cid_20" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper">
-                        <button id="input_20" type="submit"  style="width: 150px" class="form-submit-button form-submit-button-simple_green"
-                                data-component="button">
-                            <a href="{% url 'cse:login' %}" style="color: black">Login</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-             <!------------------------ forword to register ---------------------------->
-            <li class="form-line" data-type="control_button" id="id_27">
-                <div id="cid_27" class="form-input-wide">
-                    <div style="text-align:left" class="form-buttons-wrapper">
-                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"
-                                data-component="button">
-                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>
-                        </button>
-                    </div>
-                </div>
-            </li>
-        </ul>
+    <div role="main" style="text-align: left" >
+            <div role="main" style="text-align: center" >
+                <p><h2>Failed</h2></p>
+            </div>
+            <p><<h4>Activation link is invalid...! <a href="{% url 'cse:register' %}"> Return</a>  to the register page.</h4></p>
     </div>
-</form>
 </body>
 </html>
