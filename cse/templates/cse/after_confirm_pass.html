@@ -562,7 +562,8 @@
                 <p><h5>Please enter your new password  correctly.</h5></p>
             </li>
             <li>
-                                    <h3>Hi, {{ user.email }}</h3>
+{#                <h3>Hi, {{ user.email }}</h3>#}
+                <input id="prodId" name="in_email" type="hidden" value={{ user.email }}>
 
             </li>
                                 <!------------------------ Password ---------------------------->

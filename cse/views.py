@@ -144,7 +144,7 @@ def password_reset(request):
         return render(request,'cse/password_reset.html')
 
 def password_reset_done(request):
-        if CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
+        if request.method=='POST' and CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
                 c = CustomUser.objects.get(email=request.POST.get('useremail'))
                 c.is_active=False
                 c.save()
@@ -185,8 +185,17 @@ def passactivate(request,uidb64,token):
 
 
 def password_reset_complete(request):
-
-    return render(request,'cse/password_reset_confirm.html')
+    if request.method == 'POST' and CustomUser.objects.filter(email=request.POST.get('in_email')).exists():
+        # tt = request.POST.get('in_email')
+        # print(tt)
+        c = CustomUser.objects.get(email=request.POST.get('in_email'))
+        tpass = request.POST.get('psw')
+        c.set_password(tpass)
+        c.save()
+        return render(request,'cse/password_reset_confirm.html')
+    else:
+        messages.error(request, 'Failed....!')
+        return render(request,'cse/after_confirm_pass.html')
 
 # def reset(request):
 #         return render(request,'cse/password_reset_done.html')

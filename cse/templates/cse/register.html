@@ -240,7 +240,7 @@
         }
 
         .supernova {
-            background-image: url({% static 'cse/images/brushed.png' %});
+            {#background-image: url({% static 'cse/images/brushed.png' %});#}
         }
 
         #stage {
@@ -248,7 +248,7 @@
         }
 
         .form-all {
-            background-image: url({% static 'cse/images/brushed.png' %});
+            {#background-image: url({% static 'cse/images/brushed.png' %});#}
             background-repeat: repeat;
             background-attachment: scroll;
             background-position: center top;
@@ -683,7 +683,7 @@
                 </label>
                 <div id="cid_34" class="form-input jf-required">
                     <span class="form-sub-label-container" style="vertical-align:top">
-                        <input type="text" id="input_34" name="username" data-type="input-textbox"
+                        <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"
                                class="form-textbox validate[required]" size="20" value="" placeholder="BIJOY_SUST"
                                data-component="textbox" required=""/>
 {#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
@@ -962,14 +962,14 @@
                 /* The message box is shown when the user clicks on the password field */
                 #message {
                   display:none;
-                                background-image: url({% static 'cse/images/brushed.png' %});
+                                {#background-image: url({% static 'cse/images/brus' %});#}
 
                   {#background: #f1f1f1;#}
                   color: #000;
-                      position: fixed;
-                      bottom: 50pt;
-                      right: 0;
-                      width: 500px;
+                  position: fixed;
+                  bottom: 50pt;
+                  right: 0;
+                  width: 500px;
                   {#position: relative;#}
                   {#  left: 200px;#}
                   {#  top: 5px;#}
@@ -1013,7 +1013,7 @@
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input jf-required">
-                    <input type="password" id="psw"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    <input type="password" onfocus="this.value=''" id="psw"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
                            characters"
                            size="30" value="" placeholder="ex: aA345678"  class="form-textbox validate[required]"
