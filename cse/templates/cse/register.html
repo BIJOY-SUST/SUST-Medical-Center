@@ -645,7 +645,17 @@
                     </div>
                 </div>
             </li>
-
+            <li>
+                {% if messages %}
+                    <ul class="messages">
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                {% endif %}
+            </li>
              <!------------------------ Full Name Field ---------------------------->
 
             <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
@@ -881,10 +891,11 @@
               <option value="Department of Public Administration (PAD)"> Department of Public Administration (PAD) </option>
               <option value="Department of Social work (SCW)"> Department of Social work (SCW) </option>
               <option value="Department of Sociology (SOC)"> Department of Sociology (SOC) </option>
-              <option value="Office"> Office(For Staff) </option>
+              <option value="Faculty or Staff"> Faculty or Staff </option>
+              <option value="Admin"> Admin </option>
 
             </select>
-            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you are a staff, you must select  "Office(For Staff)". </label>
+            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you're a 'faculty or staff' or 'admin', you must select  "Faculty or Staff" or "Admin". </label>
           </span>
                 </div>
             </li>
@@ -1063,17 +1074,17 @@
             </li>
 
 
-            <li>
-                {% if messages %}
-                    <ul class="messages">
-                        <div class="alert alert-success">
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                            {% endfor %}
-                        </div>
-                    </ul>
-                {% endif %}
-            </li>
+{#            <li>#}
+{#                {% if messages %}#}
+{#                    <ul class="messages">#}
+{#                        <div class="alert alert-success">#}
+{#                            {% for message in messages %}#}
+{#                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </ul>#}
+{#                {% endif %}#}
+{#            </li>#}
             <!----------------------- login page Fields ------------------------------------------>
                     <style>
             .butto {

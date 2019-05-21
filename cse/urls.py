@@ -31,6 +31,9 @@ urlpatterns = [
 
     path('pregform/', user_view.pregform, name='pregform'),
 
+    path('newdoctor/', user_view.newdoctor, name='newdoctor'),
+    path('newdoctor_reg/', user_view.newdoctorreg, name='newdoctor_reg'),
+
 
 
     # account confirmations

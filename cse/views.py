@@ -36,7 +36,7 @@ def logout(request):
     return render(request, 'cse/staring.html')
 
 def login(request):
-        if request.method == "POST":
+        if request.method == 'POST':
                 # temail = request.POST['useremail']
                 # tpassword = request.POST['password']
 
@@ -46,10 +46,15 @@ def login(request):
                 user = authenticate(email=temail, password=tpassword)
                 if user is not None:
                         if user.is_active:
+                                # user.user_type='Admin'
+                                # user.save()
                                 auth_login(request, user)
-                                if request.user.is_superuser == True:
+                                if request.user.is_superuser:
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
                                     return render(request, 'cse/indexsuper.html', {'messages': last_ten})
+                                elif user.user_type == 'Admin':
+                                    last_ten = FeebBack.objects.all().order_by('-id')[:10]
+                                    return render(request, 'cse/index_admin.html', {'messages': last_ten})
                                 else:
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
                                     return render(request, 'cse/index.html', {'messages': last_ten})
@@ -108,23 +113,43 @@ def register(request):
 
                 c.is_active=False
                 c.save()
-                site = request.META['HTTP_HOST']
-                # print(site)
-                mail_subject = "Confirmation message for SUSTMedicalCenter"
-                message = render_to_string('cse/confirm_email.html', {
-                        'user': c,
-                        'domain': site,
-                        # 'domain': get_current_site(request).domain,
-                        'uid': urlsafe_base64_encode(force_bytes(c.pk)),
-                        'token': account_activation_token.make_token(c),
-                })
-                from_email = settings.EMAIL_HOST_USER
-                to_email = request.POST.get('useremail')
-                to_list = [to_email]
-                send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
-                # emailcheck = EmailMessage(mail_subject, message, from_email, to_list,)
-                # emailcheck.send()
-                return render(request, 'cse/before_confirm.html')
+
+                if c.user_type == 'Admin':
+                    site = request.META['HTTP_HOST']
+                    # print(site)
+                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    message = render_to_string('cse/confirm_email_admin.html', {
+                            'user': c,
+                            'domain': site,
+                            # 'domain': get_current_site(request).domain,
+                            'uid': urlsafe_base64_encode(force_bytes(c.pk)),
+                            'token': account_activation_token.make_token(c),
+                    })
+                    from_email = settings.EMAIL_HOST_USER
+                    to_email = 'bsbijoy2050@gmail.com'
+                    to_list = [to_email]
+                    send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+                    # emailcheck = EmailMessage(mail_subject, message, from_email, to_list,)
+                    # emailcheck.send()
+                    return render(request, 'cse/before_confirm_admin.html')
+                else:
+                    site = request.META['HTTP_HOST']
+                    # print(site)
+                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    message = render_to_string('cse/confirm_email.html', {
+                            'user': c,
+                            'domain': site,
+                            # 'domain': get_current_site(request).domain,
+                            'uid': urlsafe_base64_encode(force_bytes(c.pk)),
+                            'token': account_activation_token.make_token(c),
+                    })
+                    from_email = settings.EMAIL_HOST_USER
+                    to_email = request.POST.get('useremail')
+                    to_list = [to_email]
+                    send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+                    # emailcheck = EmailMessage(mail_subject, message, from_email, to_list,)
+                    # emailcheck.send()
+                    return render(request, 'cse/before_confirm.html')
         else:
                 return render(request,'cse/register.html')
 
@@ -139,9 +164,20 @@ def activate(request,uidb64,token):
         user.is_active = True
         user.save()
         # auth_login(request, user)
-        return render(request,'cse/after_confirm.html')
+        if user.user_type == 'Admin':
+            return render(request,'cse/after_confirm_admin.html')
+        else:
+            return render(request,'cse/after_confirm.html')
     else:
         return render(request,'cse/if_invalid.html')
+
+
+
+
+
+
+
+
 
 
 
@@ -151,23 +187,27 @@ def password_reset(request):
 def password_reset_done(request):
         if request.method=='POST' and CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
                 c = CustomUser.objects.get(email=request.POST.get('useremail'))
-                c.is_active=False
-                c.save()
-                site = request.META['HTTP_HOST']
-                # print(site)
-                mail_subject = "Confirmation message for SUSTMedicalCenter"
-                message = render_to_string('cse/confirm_email_pass.html', {
-                        'user': c,
-                        'domain': site,
-                        # 'domain': get_current_site(request).domain,
-                        'uid': urlsafe_base64_encode(force_bytes(c.pk)),
-                        'token': account_activation_token.make_token(c),
-                })
-                from_email = settings.EMAIL_HOST_USER
-                to_email = request.POST.get('useremail')
-                to_list = [to_email]
-                send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
-                return render(request,'cse/password_reset_done.html')
+                if c.is_active==True:
+                    c.is_active=False
+                    c.save()
+                    site = request.META['HTTP_HOST']
+                    # print(site)
+                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    message = render_to_string('cse/confirm_email_pass.html', {
+                            'user': c,
+                            'domain': site,
+                            # 'domain': get_current_site(request).domain,
+                            'uid': urlsafe_base64_encode(force_bytes(c.pk)),
+                            'token': account_activation_token.make_token(c),
+                    })
+                    from_email = settings.EMAIL_HOST_USER
+                    to_email = request.POST.get('useremail')
+                    to_list = [to_email]
+                    send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+                    return render(request,'cse/password_reset_done.html')
+                else:
+                    messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
+                    return render(request, 'cse/password_reset.html')
         else:
                 messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
                 return render(request, 'cse/password_reset.html')
@@ -228,12 +268,15 @@ def password_reset_complete(request):
 def index(request):
     if not request.user.is_authenticated:
         return render(request,'cse/login.html')
-    elif request.user.is_superuser==True:
+    elif request.user.is_superuser:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        return render(request, 'cse/indexsuper.html',{'messages': last_ten})
+        return render(request, 'cse/indexsuper.html', {'messages': last_ten})
+    elif request.user.user_type == 'Admin':
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/index_admin.html', {'messages': last_ten})
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        return render(request, 'cse/index.html',{'messages': last_ten})
+    return render(request, 'cse/index.html', {'messages': last_ten})
 
 def blog(request):
     if not request.user.is_authenticated:
@@ -247,21 +290,24 @@ def contact(request):
         return render(request, 'cse/contact.html')
 
 def feedback(request):
-    if  request.user.is_authenticated and request.method=='POST':
-        sub  = request.POST.get('subject')
-        mess  = request.POST.get('message')
-        c=FeebBack(user_id=request.user.id,tsub=sub,tmessage=mess)
-        c.save()
-        mail_subject = "Thankyou for your feedback"
-        message = render_to_string('cse/feed.html', {
-            'user': request.user,
-        })
-        from_email = settings.EMAIL_HOST_USER
-        to_email = request.user.email
-        to_list = [to_email]
-        send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+    if request.user.is_authenticated:
+        if request.method=='POST':
+            sub  = request.POST.get('subject')
+            mess  = request.POST.get('message')
+            c=FeebBack(user_id=request.user.id,tsub=sub,tmessage=mess)
+            c.save()
+            mail_subject = "Thankyou for your feedback"
+            message = render_to_string('cse/feed.html', {
+                'user': request.user,
+            })
+            from_email = settings.EMAIL_HOST_USER
+            to_email = request.user.email
+            to_list = [to_email]
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
 
-        return render(request,'cse/contact.html')
+            return render(request,'cse/contact.html')
+        else:
+            return render(request,'cse/contact.html')
     else:
         return render(request,'cse/login.html')
 
@@ -285,5 +331,65 @@ def about_us(request):
 
 
 
+
+
+# Patient recorded created
+
 def pregform(request):
     return render(request,'cse/pregform.html')
+
+
+
+
+
+
+
+
+
+# Doctor recorded created
+
+def newdoctor(request):
+    if request.user.is_authenticated:
+        if request.user.is_superuser:
+            return render(request,'cse/doctorreg.html')
+        else:
+            return render(request,'cse/staring.html')
+    else:
+        return render(request,'cse/login.html')
+
+def newdoctorreg(request):
+    if request.user.is_authenticated:
+        if request.method=='POST':
+                tfirstname = request.POST.get('firstname')
+                tlastname = request.POST.get('lastname')
+                tgender = request.POST.get('gender')
+                taddress = request.POST.get('address')
+                tqualifications = request.POST.get('qualifications')
+                tmobileno = request.POST.get('mobileno')
+                ttelno = request.POST.get('telno')
+                tuseremail = request.POST.get('useremail')
+
+                c = Doctors(first_name=tfirstname,last_name=tlastname,gender=tgender,address=taddress,qualification=tqualifications,
+                               mobile_no=tmobileno,tel_no=ttelno,email=tuseremail)
+
+                c.doctorphoto = request.FILES['userphotos']
+                file_type = c.doctorphoto.url.split('.')[-1]
+                file_type = file_type.lower()
+                if file_type not in IMAGE_FILE_TYPES:
+                        messages.error(request, 'Image file must be PNG, JPG, or JPEG')
+                        return render(request, 'cse/doctorreg.html')
+
+
+                if Doctors.objects.filter(email=request.POST.get('useremail')).exists():
+                        messages.error(request, 'User email is already exists..!')
+                        return render(request, 'cse/doctorreg.html')
+
+                c.save()
+                messages.error(request, 'Doctors record created successfully..!')
+                return render(request, 'cse/doctorreg.html')
+        else:
+            messages.error(request, 'Error..!')
+            return render(request,'cse/doctorreg.html')
+
+    else:
+        return render(request,'cse/login.html')

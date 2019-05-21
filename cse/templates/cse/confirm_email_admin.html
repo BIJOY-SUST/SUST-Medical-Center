@@ -1,0 +1,16 @@
+{% autoescape off %}
+    Hi Admin,
+    {{ user.first_name }} {{ user.last_name }} wants to register as a Admin in SUSTMedicalCenter.
+    If you want, you can contact with his/her. His/Her email address is {{ user.email }}.
+
+    If you are agree,then please click on the link below to confirm his/her registration,
+
+    http://{{ domain }}{% url 'cse:activate' uidb64=uid token=token %}
+
+    If you didn't know his/her, you can safely  ignore this email.
+
+    Sincerely,
+
+    SUST Medical Center Team
+
+{% endautoescape %}

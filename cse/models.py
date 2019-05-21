@@ -28,11 +28,14 @@ class Doctors(models.Model):
     email = models.EmailField(null=False,blank=False,default=None,unique=True)
     first_name = models.CharField(null=False,blank=False,default=None,max_length=40)
     last_name = models.CharField(null=False,blank=False,default=None,max_length=40)
+    gender = models.CharField(null=False,blank=False,default=None,max_length=20)
     address = models.TextField(null=False, blank=False, default=None)
     mobile_no = models.CharField(null=False,blank=False,default=None,max_length=20)
+    tel_no = models.CharField(null=False,blank=False,default=None,max_length=20)
     qualification = models.TextField(null=False,blank=False,default=None)
-    available_time_start = models.TimeField(null=False,blank=False,default=None)
-    available_time_end = models.TimeField(null=False,blank=False,default=None)
+    doctorphoto = models.FileField(null=False,blank=False,default=None,upload_to='doctor/')
+    # available_time_start = models.TimeField(null=False,blank=False,default=None)
+    # available_time_end = models.TimeField(null=False,blank=False,default=None)
 
 
 

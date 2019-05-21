@@ -1,7 +1,14 @@
 {% autoescape off %}
     Hi {{ user.username }},
-    Thanks for your registration in SUSTMedicalCenter.
-
+    Thanks for your registration in SUST Medical Center.
     Please click on the link below to confirm your registration,
+
     http://{{ domain }}{% url 'cse:activate' uidb64=uid token=token %}
+
+    If you didn't request  to open  account in SUST Medical Center, you can safely  ignore this email.
+
+    Sincerely,
+
+    SUST Medical Center Team
+
 {% endautoescape %}

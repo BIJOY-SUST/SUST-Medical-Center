@@ -467,14 +467,16 @@
     </nav>
 
     <!------------------------ End Navigation Bar---------------------------->
+
     <div role="main" style="text-align: left" >
             <div role="main" style="text-align: center" >
-                <p><h2>Registration successful</h2></p>
+                <p><h2>Success</h2></p>
             </div>
-            <p><h4>A confirmation message has been sent to your registered email address.
-        Please follow the instructions in the email  to activate your account.
-        Once you have activated your account, you will be able to sign in to SUST Medical Center.</h4></p>
+            <p><h4>Thank you for your email confirmation. User account activated successfully.
+            He/She may now <a href="{% url 'cse:login' %}"> Log In </a> as a Admin into SUST Medical Center.</h4></p>
     </div>
+
+
 
 <style>
 .footer {
@@ -498,5 +500,6 @@
     </p>
 
 </div>
+
 </body>
 </html>
