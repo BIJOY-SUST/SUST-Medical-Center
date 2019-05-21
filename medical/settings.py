@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'medical.wsgi.application'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bijoysust.system@gmail.com'
-EMAIL_HOST_PASSWORD = 'system.admin'
+EMAIL_HOST_PASSWORD = 'smc.bijoyadmin'
 EMAIL_PORT = 587
 
 # Database
@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'medi',
         'USER': 'bijoy_sust',
-        'PASSWORD': '321654',
+        'PASSWORD': 'smc.bijoyadmin',
         'HOST': 'localhost',
         'PORT': '3306'
     }

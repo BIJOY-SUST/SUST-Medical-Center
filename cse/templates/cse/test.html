@@ -204,16 +204,15 @@
     <aside id="colorlib-hero" class="hero">
         <div class="flexslider">
             <ul class="slides">
-                <li style="background-image: url({% static 'cse/images/hero1.jpg' %})">
+                <li style="background-image: url({% static 'cse/images/img_bg_2.jpg' %})">
                     <div class="overlay"></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center slider-text">
                                 <div class="slider-text-inner" align="left">
-                                    <h1 style="color: darkgreen">We Always Care Your <br> Health</h1>
-                                    <br>
-                                    <h1>Contact <strong>Us</strong></h1>
-                                    {#                                    <h1>Contact <strong>Us</strong></h1>#}
+                                    <h1 style="color: darkred">Best Care & Better Doctor</h1>
+                                    {#                                    <br>#}
+                                    <h1>Our <strong>Services</strong></h1>
                                 </div>
                             </div>
                         </div>
@@ -223,110 +222,324 @@
         </div>
     </aside>
 
-    {#        <div id="colorlib-appointment">#}
-    {#            <div class="container">#}
-    {#                <div class="row">#}
-    {#                    <div class="col-md-8 col-md-offset-2 text-center">#}
-    {#                        <h2 class="line-block">Make an appointment</h2>#}
-    {#                        <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
-    {#                                class="icon-calendar3"></i></a></p>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
+    {#	<div id="colorlib-appointment">#}
+    {#		<div class="container">#}
+    {#			<div class="row">#}
+    {#				<div class="col-md-8 col-md-offset-2 text-center">#}
+    {#					<h2 class="line-block">Make an appointment</h2>#}
+    {#					<p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i class="icon-calendar3"></i></a></p>#}
+    {#				</div>#}
+    {#			</div>#}
+    {#		</div>#}
+    {#	</div>#}
 
-    <div id="colorlib-contact">
+    <div id="colorlib-services">
         <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                    <h2>Our Services</h2>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                                        <div  style = "text-align: center" >
-
-                    <h1><b>Contact Information</b></h1>
-                                        </div>
-                    <div class="row contact-info-wrap">
-                        <div class="">
-                            <p><span><i class="icon-location"></i></span>
-                                <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
-                                    Shahjalal University of Science and Technology, Sylhet-3114.</a>
-                            </p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
-                                880-821-713491</a>
-                            </p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-mail"></i></span> <a href="mailto:bijoysust.system@gmail.com">bijoysust.system@gmail.com</a>
-                            </p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">sustmedicalcenter.com</a></p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">www.sust.edu</a></p>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-healthy-1"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Qualified Doctors</a></h3>
+                            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and devious Semikoli</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div  style = "text-align: center" >
-                        <h3>Get In Touch</h3>
-
-                        <h2><b>PATIENTS FEEDBACK</b>
-                        </h2>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-hospital"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Medical Counseling</a></h3>
+                            <p>Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the
+                                belt and made herself on the way.</p>
+                        </div>
                     </div>
-                    <form action="{% url 'cse:feedback' %}" method="post">
-                         {% csrf_token %}
-{#                        <div class="row form-group">#}
-{#                            <div class="col-md-6">#}
-{#                                <label for="fname">First Name</label>#}
-{#                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">#}
-{#                            </div>#}
-{#                            <div class="col-md-6">#}
-{#                                <label for="lname">Last Name</label>#}
-{#                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="row form-group">#}
-{#                            <div class="col-md-12">#}
-{#                                <label for="email">Email</label>#}
-{#                                <input type="text" id="email" class="form-control" placeholder="Your email address">#}
-{#                            </div>#}
-{#                        </div>#}
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Subject</label>
-                                <input type="text" name="subject" id="subject" class="form-control"
-                                       placeholder="Your subject of this message" required>
-                            </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-ambulance"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Emergency Services</a></h3>
+                            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and devious Semikoli</p>
                         </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
-                                          placeholder="Say something about us" required></textarea>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-blood-donation"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Blood Bank</a></h3>
+                            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and devious Semikoli</p>
                         </div>
-                        <div class="form-group text-center">
-                            <input type="submit" value="Send Message" class="btn btn-primary">
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-radiation"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Operation Theater</a></h3>
+                            <p>Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the
+                                belt and made herself on the way.</p>
                         </div>
-
-                    </form>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="flaticon-medical"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Free Medicine</a></h3>
+                            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and devious Semikoli</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div  style = "text-align: center" >
+    <div id="colorlib-contact">
+        <div class="container">
+            <div class="row">
+{#                <div class="col-md-10 col-md-offset-1 animate-box">#}
 
-        <h2><b>Map of the area – Here you can find us</b>
-        </h2>
+                    <h2>Services provided at the University Health Service Centre include:</h2>
+                    <br>
+                    <ul>
+                        <li>Routine medical examinations & health checkups (blood pressure, RBS by glucometer etc.)</li>
+                        <li>Treatment of illness, injury, & other physical problems</li>
+                        <li>Minor Surgical Procedures (drainage of abscess ,boil etc)</li>
+                        <li>Minor Wound Management</li>
+                        <li>Sports Injury Management</li>
+                        <li>Travel Medicine and Advice</li>
+                        <li>Advice & assistance for students with examination difficulties</li>
+                        <li>Special arrangements for students with disabilities and sick students</li>
+                        <li>Referral to specialists ,imaging services, pathology, and physiotherapy according to need
+                            and
+                            condition
+                            of the patient
+                        </li>
+                        <li>Organize blood grouping and donation campaign under direct supervision</li>
+                        <li>Vaccination :Hepatitis B and Ca cervix</li>
+                        <li>Issuing medical card for the students and give medical clearance after completion of their
+                            respective
+                            courses(Bsc, Msc)
+                        </li>
+                        <li>Medical Assessments/Pre-Employment Medicals :By issuing fitness certificate</li>
+                    </ul>
+                    <br>
+                    <h2>Support and confidentiality</h2>
+                    <p>
+                        Our staffs are available to help you deal with your problems by treating you as a responsible
+                        adult,
+                        offering constructive support without judgment.
+                        <br><br>
+                        Consultations are held in confidence and nothing you tell a doctor will be passed on to anyone
+                        else,
+                        whether
+                        a parent, relative, friend or University staff.
+                    </p>
+{#                </div>#}
+
+            </div>
+        </div>
+    </div>
+    <div id="colorlib-choose">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="choose">
+                    <div class="half img-bg"
+                         style="background-image: url({% static 'cse/images/img_bg_3.jpg' %})"></div>
+                    <div class="half features-wrap">
+                        <div class="colorlib-heading animate-box">
+                            <h2>What Makes Us Best?</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="features animate-box">
+                                    <span class="icon text-center"><i class="flaticon-healthy-1"></i></span>
+                                    <div class="desc">
+                                        <h3>Qualified Doctors</h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary regelialia. </p>
+                                    </div>
+                                </div>
+                                <div class="features animate-box">
+                                    <span class="icon text-center"><i class="flaticon-stethoscope"></i></span>
+                                    <div class="desc">
+                                        <h3>Free Consultation</h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary regelialia. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="features animate-box">
+                                    <span class="icon text-center"><i class="flaticon-medical-1"></i></span>
+                                    <div class="desc">
+                                        <h3>Online Enrollment</h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary regelialia. </p>
+                                    </div>
+                                </div>
+                                <div class="features animate-box">
+                                    <span class="icon text-center"><i class="flaticon-radiation"></i></span>
+                                    <div class="desc">
+                                        <h3>Modern Facilities</h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary regelialia. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <br>
-    {#        <div id="map" class="colorlib-map"></div>#}
-    <div id="map"></div>
+
+    {#    <div id="colorlib-register" style="background-image: url(images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">#}
+    {#        <div class="overlay"></div>#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-10 col-md-offset-1 animate-box">#}
+    {#                    <div class="date-counter text-center">#}
+    {#                        <h2>We offer <strong>Free Consultation</strong></h2>#}
+    {#                        <h3>By Dr. <strong>Mary Smith</strong></h3>#}
+    {#                        <p class="countdown">#}
+    {#                            <span id="days"></span>#}
+    {#                            <span id="hours"></span>#}
+    {#                            <span id="minutes"></span>#}
+    {#                            <span id="seconds"></span>#}
+    {#                        </p>#}
+    {#                        <p><strong>Limited offer, Hurry Up!</strong></p>#}
+    {#                        <p><a href="#" class="btn btn-primary btn-lg">Book an Appointment <i class="icon-calendar3"></i></a>#}
+    {#                        </p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+{#    <div>#}
+{#        <img class="img-user"  src="{{ user.photos.url }}">#}
+{##}
+{#        <span   ></span>#}
+{##}
+{#    </div>#}
+    <div id="colorlib-testimonial" class="colorlib-bg-section">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                    <h2>What our patients says</h2>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 animate-box">
+                    <div class="owl-carousel">
+{#                        {% for item in messages %}#}
+                        <div class="item">
+                            <div class="testimony text-center">
+                                <span class="img-user"
+                                      style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>
+                                <span class="user">Edward Tom</span>
+                                <blockquote>
+                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad
+                                        Commas, wild Question Marks and devious Semikoli."</p>
+                                    <p class="color"><span><i class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony text-center">
+                                <span class="img-user"
+                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>
+                                <span class="user">Carl Bean</span>
+                                <blockquote>
+                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad
+                                        Commas, wild Question Marks and devious Semikoli."</p>
+                                    <p class="color"><span><i class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony text-center">
+                                <span class="img-user"
+                                      style="background-image: url({% static 'cse/images/person3.jpg' %})"></span>
+                                <span class="user">John Bay</span>
+                                <blockquote>
+                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad
+                                        Commas, wild Question Marks and devious Semikoli."</p>
+                                    <p class="color"><span><i class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony text-center">
+                                <span class="img-user" style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>
+                                <span class="user">Ronald Duck</span>
+                                <blockquote>
+                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad
+                                        Commas, wild Question Marks and devious Semikoli."</p>
+                                    <p class="color"><span><i class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony text-center">
+                                <span class="img-user"
+                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>
+                                <span class="user">Justine Mill</span>
+                                <blockquote>
+                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad
+                                        Commas, wild Question Marks and devious Semikoli."</p>
+                                    <p class="color"><span><i class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i
+                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer id="colorlib-footer" role="contentinfo">
         <div class="overlay"></div>
@@ -472,14 +685,9 @@
 {#<!-- Active js -->#}
 {#<script src="{% static 'cse/contact/js/active.js' %}"></script>#}
 
-{#<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" #}
-{#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8"></iframe>#}
-<script async defer
-{#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8">#}
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8&callback=initMap">
-        {#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap">#}
 
-</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap"></script>
 
 
 </body>

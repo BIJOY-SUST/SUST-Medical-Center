@@ -665,6 +665,10 @@
         }, 20);
     </script>
 </head>
+{##}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+{##}
 <body>
 {#<!-- Preloader -->#}
 {#        <div class="preloader">#}
@@ -678,7 +682,7 @@
 {#        </div>#}
 {#        <!-- Preloader -->#}
 
-
+<div>
     <nav class="colorlib-nav" role="navigation">
         <div class="top-menu">
             <div class="container">
@@ -693,7 +697,7 @@
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">Call us : 880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -702,7 +706,7 @@
                                         <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
 										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
 										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
-										4d91.8319132?hl=en-GB">Location : University Ave, Sylhet 3114</a></p>
+										4d91.8319132?hl=en-GB"> University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -716,9 +720,9 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">About Us</a></li>
+                                    <li class="active" ><a href="{% url 'cse:staring' %}">Home</a></li>
+                                    <li  ><a href="#">Contact</a></li>
+{#                                    <li><a href="#">About Us</a></li>#}
                                 </ul>
                             </div>
                         </div>
@@ -733,28 +737,117 @@
             </div>
         </div>
     </nav>
+</div>
+<div>
+    <br>
+    <br>
 
-<form class="jotform-form" action="" method="post"
-      enctype="multipart/form-data" name="form_91035707344454" id="91035707344454" accept-charset="utf-8">
-    <input type="hidden" name="formID" value="91035707344454"/>
+</div>
+{#<form class="jotform-form" action="" method="post"#}
+{#      enctype="multipart/form-data" name="form_91035707344454" id="91035707344454" accept-charset="utf-8">#}
+{#    <input type="hidden" name="formID" value="91035707344454"/>#}
+{##}
+{#    <div role="main" class="form-all">#}
+{#        <ul class="form-section page-section">#}
+{#            <li id="cid_1" class="form-input-wide" data-type="control_head">#}
+{#                <div class="form-header-group ">#}
+{#                    <div class="header-text httac htvam">#}
+{#                        <h1 style="text-align: center" id="header_1" class="form-header" data-component="header">#}
+{#                            Welcome#}
+{#                        </h1>#}
+{#                        <div id="subHeader_1" class="form-subHeader">#}
+{#                            <h4>The Health Service Centre, SUST located near the central auditorium just opposite to the basket ball ground , offers free experienced general practitioner and emergency medical care services to all members of the University community: students (undergraduate and post graduate), teachers ,staffs and their families in a user-friendly efficient environment. Students get medicine from the Centre at free of cost but they need to show their Medical card at all consultations and employees get medicine at minimum cost. The Centre provides service round the clock, seven days a week. The centre also has an ambulance.#}
+{#                            </h4>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{#</form>#}
 
-    <div role="main" class="form-all">
-        <ul class="form-section page-section">
-            <li id="cid_1" class="form-input-wide" data-type="control_head">
-                <div class="form-header-group ">
-                    <div class="header-text httac htvam">
-                        <h1 style="text-align: center" id="header_1" class="form-header" data-component="header">
-                            Welcome
-                        </h1>
-                        <div id="subHeader_1" class="form-subHeader">
-                            <h4>The Health Service Centre, SUST located near the central auditorium just opposite to the basket ball ground , offers free experienced general practitioner and emergency medical care services to all members of the University community: students (undergraduate and post graduate), teachers ,staffs and their families in a user-friendly efficient environment. Students get medicine from the Centre at free of cost but they need to show their Medical card at all consultations and employees get medicine at minimum cost. The Centre provides service round the clock, seven days a week. The centre also has an ambulance.
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+
+<div class="w3-row-padding w3-content" style="max-width:1400px">
+  <div class="w3-twothird">
+    <img src="{% static 'cse/images/medi.png' %}" alt="Notebook" style="width:100%">
+    <h2>Empty Notebook Found</h2>
+    <div class="w3-justify">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <br>
+        <br>
+        <br>
+
     </div>
-</form>
+  </div>
+  <div class="w3-third">
+    <div class="w3-container w3-light-grey">
+      <h2>Very New News!</h2>
+      <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <br>
+    <div class="w3-container w3-light-grey w3-justify">
+      <h2>Very New News!</h2>
+      <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <br>
+          <div class="w3-container w3-light-grey w3-justify">
+      <h2>Very New News!</h2>
+      <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <br>
+    <div class="w3-container w3-light-grey w3-justify">
+      <h2>Very New News!</h2>
+      <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div>
+            <p>                      </p>
+            <br>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+{#    <footer id="colorlib-footer">#}
+{#        <div class="overlay"></div>#}
+{#        <div class="row copyright">#}
+{#            <div class="col-md-12 text-center">#}
+{#                <p>#}
+{#                    <small class="block">#}
+{#                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>#}
+{#                        All rights reserved | Colorlib : SUST Medical Center</a>#}
+{#                    </small>#}
+{#                </p>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </footer>#}
+
+
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height:25px;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+   transition: bottom 0.3s;
+}
+</style>
+<div class="footer">
+    <p>
+        <small class="">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | Colorlib : SUST Medical Center</a>
+        </small>
+    </p>
+
+</div>
 </body>
 </html>

@@ -573,7 +573,7 @@
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">Call us : 880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -582,7 +582,7 @@
                                         <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
 										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
 										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
-										4d91.8319132?hl=en-GB">Location : University Ave, Sylhet 3114</a></p>
+										4d91.8319132?hl=en-GB">University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -598,7 +598,7 @@
                                 <ul>
                                     <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
                                     <li><a href="#">Contact</a></li>
-                                    <li><a href="#">About Us</a></li>
+{#                                    <li><a href="#">About Us</a></li>#}
                                 </ul>
                             </div>
                         </div>
@@ -684,7 +684,7 @@
                 <div id="cid_34" class="form-input jf-required">
                     <span class="form-sub-label-container" style="vertical-align:top">
                         <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"
-                               class="form-textbox validate[required]" size="20" value="" placeholder="BIJOY_SUST"
+                               class="form-textbox validate[required]" size="20" value="BIJOY_SUST" placeholder="BIJOY_SUST"
                                data-component="textbox" required=""/>
 {#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
                     </span>
@@ -827,7 +827,10 @@
              <!------------------------ Registration Number Field ---------------------------->
 
             <li class="form-line" data-type="control_textbox" id="id_31">
-                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number </label>
+                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number
+
+
+                </label>
                 <div id="cid_31" class="form-input">
           <span class="form-sub-label-container" style="vertical-align:top">
             <input type="text" id="input_31" name="regno" data-type="input-textbox"
@@ -842,11 +845,13 @@
 
             <li class="form-line" data-type="control_dropdown" id="id_38">
                 <label class="form-label form-label-left form-label-auto" id="label_38" for="input_38">
-                    Department </label>
+                    Department
+                    <span class="form-required">*</span>
+                </label>
                 <div id="cid_38" class="form-input">
           <span class="form-sub-label-container" style="vertical-align:top">
             <select class="form-dropdown" id="input_38" name="department" style="width:500px"
-                    data-component="dropdown">
+                    data-component="dropdown" required="">
               <option value="">  </option>
               <option value="Department of Forestry And Environmental Science"> Department of Forestry And Environmental Science </option>
               <option value="Department of Architecture (ARC)"> Department of Architecture (ARC) </option>
@@ -876,8 +881,10 @@
               <option value="Department of Public Administration (PAD)"> Department of Public Administration (PAD) </option>
               <option value="Department of Social work (SCW)"> Department of Social work (SCW) </option>
               <option value="Department of Sociology (SOC)"> Department of Sociology (SOC) </option>
+              <option value="Office"> Office(For Staff) </option>
+
             </select>
-            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you are a student or teacher, you must select a department. </label>
+            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you are a staff, you must select  "Office(For Staff)". </label>
           </span>
                 </div>
             </li>
@@ -1009,15 +1016,16 @@
 
             <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
                 <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">
-                    New Password
+                    Password
                     <span class="form-required">*</span>
                 </label>
                 <div id="cid_6" class="form-input jf-required">
-                    <input type="password" onfocus="this.value=''" id="psw"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    <input type="password" onfocus="this.value=''" id="psw"
+                           name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
                            characters"
-                           size="30" value="" placeholder="ex: aA345678"  class="form-textbox validate[required]"
-                           data-component="password" required>
+                           size="30"  placeholder="ex: aA123456"  class="form-textbox validate[required]"
+                           data-component="password" required="">
 
                             <input type="checkbox" onclick="myFunction()">Show Password
                             <script>
@@ -1067,30 +1075,108 @@
                 {% endif %}
             </li>
             <!----------------------- login page Fields ------------------------------------------>
+                    <style>
+            .butto {
+              background-color: #4CAF50; /* Green */
+                position: relative;
+
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button {
+              background-color: #4CAF50; /* Green */
+                  position: absolute;
+
+                right: 50px;
+                border-radius: 50%;
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .butt {
+              background-color: #4CAF50; /* Green */
+                  position: relative;
+
+                right: -35px;
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button1:hover {
+                background-color: #f44336;
+                color: white;
+            }
+            .button2:hover {
+              background-color: #f44336;
+              color: white;
+            }
+            .button3:hover {
+              background-color: #f44336;
+              color: white;
+            }
+
+        </style>
+
+        <li>
+            <button class="butto button1">
+                <a href="{% url 'cse:login' %}" style="color: black"  >Already have an account? Click here to login</a>
+            </button>
+            <button class="button button2">Register
+{#                <a href="{% url 'cse:' %}" style="color: black" ></a>#}
+            </button>
 
 
-            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">
+        </li>
+
+{#            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">#}
 {#                <div id="cid_19" class="form-input-wide">#}
-                    <div style="text-align: left" class="form-buttons-wrapper">
-                <button id="input_19" type="submit"  class="form-submit-button form-submit-button-simple_black" data-component="button">
-                        <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>
-                </button>
-                    </div>
+{#                    <div style="text-align: left" class="form-buttons-wrapper">#}
+{#                <button id="input_19" type="submit"  class="form-submit-button form-submit-button-simple_black" data-component="button">#}
+{#                        <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>#}
+{#                </button>#}
+{#                    </div>#}
 {#                </div>#}
-            </li>
-
-            <!----------------------- Register Button ------------------------------------------>
-
+{#            </li>#}
+{##}
+{#            <!----------------------- Register Button ------------------------------------------>#}
+{##}
             <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
-{#                                <div id="cid_20" class="form-input-wide">#}
-{#                                    <div style="margin-left:156px" class="form-buttons-wrapper">#}
-                <button  id="input_20" type="submit" style="width: 150px"
-                        class="form-submit-button form-submit-button-simple_green"
-                        data-component="button">
-                    Register
-                </button>
-{#                                    </div>#}
-{#                                </div>#}
+                                <div id="cid_20" class="form-input-wide">
+                                    <div style="margin-left:156px" class="form-buttons-wrapper">
+{#                <button  id="input_20" type="submit" style="width: 150px"#}
+{#                        class="form-submit-button form-submit-button-simple_green"#}
+{#                        data-component="button">#}
+{#                    Register#}
+{#                </button>#}
+                                    </div>
+                                </div>
             </li>
 
         </ul>
@@ -1166,6 +1252,30 @@ myInput.onkeyup = function() {
   }
 }
 </script>
+
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+       height:25px;
+
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+    <p>
+        <small class="block">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | Colorlib : SUST Medical Center</a>
+        </small>
+    </p>
+
+</div>
+
 
 </body>
 </html>

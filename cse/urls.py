@@ -23,9 +23,15 @@ urlpatterns = [
     path('index/', user_view.index, name='index'),
     path('blog/', user_view.blog, name='blog'),
     path('contact/', user_view.contact, name='contact'),
+    path('feedback/', user_view.feedback, name='feedback'),
+
     path('doctors/', user_view.doctors, name='doctors'),
     path('services/', user_view.services, name='services'),
     path('about_us/', user_view.about_us, name='about_us'),
+
+    path('pregform/', user_view.pregform, name='pregform'),
+
+
 
     # account confirmations
     # path('activate/<uid>/<token>/', views.activate,name='activate'),

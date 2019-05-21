@@ -16,7 +16,7 @@ from django.core.mail import send_mail,EmailMessage
 from django.contrib import  messages
 from django.shortcuts import render
 from datetime import date,datetime
-from .models import CustomUser,Doctors
+from .models import CustomUser,Doctors,FeebBack
 from django.contrib import messages
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
@@ -47,7 +47,12 @@ def login(request):
                 if user is not None:
                         if user.is_active:
                                 auth_login(request, user)
-                                return render(request, 'cse/index.html')
+                                if request.user.is_superuser == True:
+                                    last_ten = FeebBack.objects.all().order_by('-id')[:10]
+                                    return render(request, 'cse/indexsuper.html', {'messages': last_ten})
+                                else:
+                                    last_ten = FeebBack.objects.all().order_by('-id')[:10]
+                                    return render(request, 'cse/index.html', {'messages': last_ten})
                         else:
                                 messages.error(request, 'Your account has been disabled..!')
                                 return render(request, 'cse/login.html')
@@ -221,19 +226,64 @@ def password_reset_complete(request):
 # User authentication er kahini ses akn theke baki kaj
 
 def index(request):
-        return render(request, 'cse/index.html')
+    if not request.user.is_authenticated:
+        return render(request,'cse/login.html')
+    elif request.user.is_superuser==True:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/indexsuper.html',{'messages': last_ten})
+    else:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/index.html',{'messages': last_ten})
 
 def blog(request):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+    else:
         return render(request, 'cse/blog.html')
-
 def contact(request):
+    if not request.user.is_authenticated:
+        return render(request,'cse/login.html')
+    else:
         return render(request, 'cse/contact.html')
 
-def doctors(request):
-        return render(request, 'cse/doctors.html')
+def feedback(request):
+    if  request.user.is_authenticated and request.method=='POST':
+        sub  = request.POST.get('subject')
+        mess  = request.POST.get('message')
+        c=FeebBack(user_id=request.user.id,tsub=sub,tmessage=mess)
+        c.save()
+        mail_subject = "Thankyou for your feedback"
+        message = render_to_string('cse/feed.html', {
+            'user': request.user,
+        })
+        from_email = settings.EMAIL_HOST_USER
+        to_email = request.user.email
+        to_list = [to_email]
+        send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
 
+        return render(request,'cse/contact.html')
+    else:
+        return render(request,'cse/login.html')
+
+def doctors(request):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+    else:
+        return render(request, 'cse/doctors.html')
 def services(request):
-        return render(request, 'cse/services.html')
+    if request.user.is_authenticated:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/services.html',{'messages': last_ten})
+    else:
+        return render(request,'cse/login.html')
 
 def about_us(request):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+    else:
         return render(request, 'cse/about_us.html')
+
+
+
+def pregform(request):
+    return render(request,'cse/pregform.html')

@@ -238,7 +238,7 @@
         }
 
         .supernova {
-            background-image: url({% static 'cse/images/brushed.png' %});
+            {#background-image: url({% static 'cse/images/brushed.png' %});#}
         }
 
         #stage {
@@ -246,7 +246,7 @@
         }
 
         .form-all {
-            background-image: url({% static 'cse/images/brushed.png' %});
+            {#background-image: url({% static 'cse/images/brushed.png' %});#}
             background-repeat: repeat;
             background-attachment: scroll;
             background-position: center top;
@@ -679,6 +679,27 @@ myInput.onkeyup = function() {
 </script>
 
 
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+       height:20px;
 
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+    <p>
+        <small class="block">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | Colorlib : SUST Medical Center</a>
+        </small>
+    </p>
+
+</div>
 </body>
 </html>
