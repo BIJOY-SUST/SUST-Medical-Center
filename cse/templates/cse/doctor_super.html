@@ -356,6 +356,13 @@
                                 <span>Email: {{ item.email }}</span>
 
 {#                                <ul class="colorlib-social">#}
+                                    <form action="{% url 'cse:doctors_delete' item.doctor_id %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="doctor_id" value="{{ item.doctor_id }}" />
+                                        <button type="submit" class="btn btn-default btn-sm" style="background-color: red"  >Delete
+{#                                            <span class=btn-cta">Delete</span>#}
+                                        </button>
+                                    </form>
 {#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
 {#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
 {#                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}

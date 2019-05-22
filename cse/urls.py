@@ -26,6 +26,8 @@ urlpatterns = [
     path('feedback/', user_view.feedback, name='feedback'),
 
     path('doctors/', user_view.doctors, name='doctors'),
+    path('<int:doctor_id>/doctors_delete/', user_view.doctors_delete, name='doctors_delete'),
+
     path('services/', user_view.services, name='services'),
     path('about_us/', user_view.about_us, name='about_us'),
 

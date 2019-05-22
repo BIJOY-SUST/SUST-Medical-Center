@@ -34,6 +34,7 @@ class Doctors(models.Model):
     tel_no = models.CharField(null=False,blank=False,default=None,max_length=20)
     qualification = models.TextField(null=False,blank=False,default=None)
     doctorphoto = models.FileField(null=False,blank=False,default=None,upload_to='doctor/')
+    positions = models.CharField(null=False,blank=False,default=None,max_length=100)
     # available_time_start = models.TimeField(null=False,blank=False,default=None)
     # available_time_end = models.TimeField(null=False,blank=False,default=None)
 

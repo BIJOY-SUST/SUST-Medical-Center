@@ -694,13 +694,13 @@
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="firstname"
                                  class="form-textbox validate[required]"
-                                 size="20" value="" data-component="first" required=""/>
+                                 size="23" value="" data-component="first" required=""/>
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> First Name </label>
                         </span>
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="last_4" name="lastname"
-                                 class="form-textbox validate[required]" size="20"
+                                 class="form-textbox validate[required]" size="22"
                                  value="" data-component="last" required=""/>
                           <label class="form-sub-label" for="last_4" id="sublabel_last" style="min-height:13px"> Last Name </label>
                         </span>
@@ -761,6 +761,24 @@
                         <option value="Female"> Female</option>
                         <option value="N/A"> N/A</option>
                     </select>
+                </div>
+            </li>
+
+            <!------- positions-------->
+
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Designation
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="position"
+                                 class="form-textbox validate[required]"
+                                 size="47" value="" data-component="first" required=""/>
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Medical Officer </label>
+                        </span>
                 </div>
             </li>
 
@@ -1197,7 +1215,7 @@
 
         <li>
             <button class="butto button1">
-                <a href="{% url 'cse:index' %}" style="color: black"  >Back To Previous Page</a>
+                <a href="{% url 'cse:index' %}" style="color: black"  >Back To Home Page</a>
             </button>
             <button class="button button2">Register
 {#                <a href="{% url 'cse:' %}" style="color: black" ></a>#}

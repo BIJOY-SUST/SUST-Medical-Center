@@ -51,13 +51,18 @@ def login(request):
                                 auth_login(request, user)
                                 if request.user.is_superuser:
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    return render(request, 'cse/indexsuper.html', {'messages': last_ten})
+                                    doctor = Doctors.objects.all()
+                                    return render(request, 'cse/indexsuper.html',{'messages': last_ten, 'doctorlist': doctor})
+
                                 elif user.user_type == 'Admin':
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    return render(request, 'cse/index_admin.html', {'messages': last_ten})
+                                    doctor = Doctors.objects.all()
+                                    return render(request, 'cse/index_admin.html',{'messages': last_ten, 'doctorlist': doctor})
                                 else:
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    return render(request, 'cse/index.html', {'messages': last_ten})
+                                    doctor = Doctors.objects.all()
+                                    return render(request, 'cse/index.html',{'messages': last_ten, 'doctorlist': doctor})
+
                         else:
                                 messages.error(request, 'Your account has been disabled..!')
                                 return render(request, 'cse/login.html')
@@ -270,13 +275,16 @@ def index(request):
         return render(request,'cse/login.html')
     elif request.user.is_superuser:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        return render(request, 'cse/indexsuper.html', {'messages': last_ten})
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/indexsuper.html', {'messages': last_ten,'doctorlist':doctor})
     elif request.user.user_type == 'Admin':
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        return render(request, 'cse/index_admin.html', {'messages': last_ten})
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/index_admin.html', {'messages': last_ten,'doctorlist':doctor})
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-    return render(request, 'cse/index.html', {'messages': last_ten})
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/index.html', {'messages': last_ten,'doctorlist':doctor})
 
 def blog(request):
     if not request.user.is_authenticated:
@@ -314,8 +322,30 @@ def feedback(request):
 def doctors(request):
     if not request.user.is_authenticated:
         return render(request, 'cse/login.html')
+    elif request.user.is_superuser:
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/doctor_super.html',{'doctorlist':doctor})
     else:
-        return render(request, 'cse/doctors.html')
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/doctors.html',{'doctorlist':doctor})
+
+
+
+def doctors_delete(request,doctor_id):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+    elif request.user.is_superuser:
+        doctor_s = Doctors.objects.get(pk=doctor_id)
+        doctor_s.delete()
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/doctor_super.html',{'doctorlist':doctor})
+    else:
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/doctors.html',{'doctorlist':doctor})
+
+
+
+
 def services(request):
     if request.user.is_authenticated:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
@@ -368,8 +398,8 @@ def newdoctorreg(request):
                 tmobileno = request.POST.get('mobileno')
                 ttelno = request.POST.get('telno')
                 tuseremail = request.POST.get('useremail')
-
-                c = Doctors(first_name=tfirstname,last_name=tlastname,gender=tgender,address=taddress,qualification=tqualifications,
+                tposition = request.POST.get('position')
+                c = Doctors(first_name=tfirstname,last_name=tlastname,positions=tposition,gender=tgender,address=taddress,qualification=tqualifications,
                                mobile_no=tmobileno,tel_no=ttelno,email=tuseremail)
 
                 c.doctorphoto = request.FILES['userphotos']

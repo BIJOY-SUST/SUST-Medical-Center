@@ -645,7 +645,17 @@
                     </div>
                 </div>
             </li>
-
+            <li>
+                {% if messages %}
+                    <ul class="messages">
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                {% endif %}
+            </li>
              <!------------------------ Full Name Field ---------------------------->
 
             <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
@@ -1064,17 +1074,17 @@
             </li>
 
 
-            <li>
-                {% if messages %}
-                    <ul class="messages">
-                        <div class="alert alert-success">
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                            {% endfor %}
-                        </div>
-                    </ul>
-                {% endif %}
-            </li>
+{#            <li>#}
+{#                {% if messages %}#}
+{#                    <ul class="messages">#}
+{#                        <div class="alert alert-success">#}
+{#                            {% for message in messages %}#}
+{#                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </ul>#}
+{#                {% endif %}#}
+{#            </li>#}
             <!----------------------- login page Fields ------------------------------------------>
                     <style>
             .butto {
