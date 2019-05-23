@@ -19,6 +19,16 @@ from django.shortcuts import render
 from datetime import date,datetime
 from .models import CustomUser,Doctors,FeebBack
 from django.contrib import messages
+
+from  django.http import HttpResponse
+
+from django.views.generic import View
+
+from django.template.loader import get_template
+
+from cse.utils import render_to_pdf
+
+
 from django.shortcuts import get_object_or_404
 
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
@@ -392,6 +402,7 @@ def patientconfirm(request):
     else:
         return render(request,'cse/login.html')
 
+
 def pregform(request):
     if request.user.is_authenticated:
         if request.user.user_type == 'Admin' or request.user.is_superuser:
@@ -417,13 +428,167 @@ def pregform(request):
         return render(request, 'cse/login.html')
 
 
-def patient_reg(request):
+# def patient_reg(request):
+#     if request.user.is_authenticated:
+#         if request.user.user_type == 'Admin' or request.user.is_superuser:
+#             if request.method=='POST':
+#                 t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
+#                 t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
+#                 context = {
+#                     'tpatient' : t_patient,
+#                     'tdoctor' : t_doctor,
+#
+#                     'thistory' : request.POST.get('history'),
+#                     'tadditional_field' : request.POST.get('additional_field'),
+#                     'ttestadvised' : request.POST.get('testadvised'),
+#
+#                     'today_date' : date.today(),
+#
+#
+#                     '1_medi_name' : request.POST.get('medicine_1'),
+#                     '1_drug_limit' : request.POST.get('drug_limit_1'),
+#                     '1_eat' : request.POST.get('eating_time_1'),
+#
+#                     '2_medi_name': request.POST.get('medicine_2'),
+#                     '2_drug_limit': request.POST.get('drug_limit_2'),
+#                     '2_eat': request.POST.get('eating_time_2'),
+#
+#                     '3_medi_name': request.POST.get('medicine_3'),
+#                     '3_drug_limit': request.POST.get('drug_limit_3'),
+#                     '3_eat': request.POST.get('eating_time_3'),
+#
+#                     '4_medi_name': request.POST.get('medicine_4'),
+#                     '4_drug_limit': request.POST.get('drug_limit_4'),
+#                     '4_eat': request.POST.get('eating_time_4'),
+#
+#                     '5_medi_name': request.POST.get('medicine_5'),
+#                     '5_drug_limit': request.POST.get('drug_limit_5'),
+#                     '5_eat': request.POST.get('eating_time_5'),
+#
+#                     '6_medi_name': request.POST.get('medicine_6'),
+#                     '6_drug_limit': request.POST.get('drug_limit_6'),
+#                     '6_eat': request.POST.get('eating_time_6'),
+#
+#                     '7_medi_name': request.POST.get('medicine_7'),
+#                     '7_drug_limit': request.POST.get('drug_limit_7'),
+#                     '7_eat': request.POST.get('eating_time_7'),
+#
+#                     '8_medi_name': request.POST.get('medicine_8'),
+#                     '8_drug_limit': request.POST.get('drug_limit_8'),
+#                     '8_eat': request.POST.get('eating_time_8'),
+#
+#                     '9_medi_name': request.POST.get('medicine_9'),
+#                     '9_drug_limit': request.POST.get('drug_limit_9'),
+#                     '9_eat': request.POST.get('eating_time_9'),
+#
+#                     '10_medi_name': request.POST.get('medicine_10'),
+#                     '10_drug_limit': request.POST.get('drug_limit_10'),
+#                     '10_eat': request.POST.get('eating_time_10'),
+#
+#                 }
+#                 return render(request,'cse/test.html',context)
+#             else:
+#                 # messages.error(request, 'Fill the form very carefully...!')
+#                 return render(request,'cse/patient_confirm.html')
+#         else:
+#             return render(request,'cse/index.html')
+#     else:
+#         messages.error(request, 'Please login first...!')
+#         return render(request, 'cse/login.html')
+
+# class GeneratePDF(View):
+#     def get(self, request, *args, **kwargs):
+#         if request.user.is_authenticated:
+#             if request.user.user_type == 'Admin' or request.user.is_superuser:
+#                 if request.method == 'POST' or request.method == 'GET':
+#                 # if request.method == 'POST':
+#                     # template = get_template('cse/test.html')
+#
+#
+#                     t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
+#                     t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
+#                     context={
+#                         'tpatient' : t_patient,
+#                         'tdoctor' : t_doctor,
+#
+#                         'thistory' : request.POST.get('history'),
+#                         'tadditional_field' : request.POST.get('additional_field'),
+#                         'ttestadvised' : request.POST.get('testadvised'),
+#
+#                         'today_date' : date.today(),
+#
+#
+#                         '1_medi_name' : request.POST.get('medicine_1'),
+#                         '1_drug_limit' : request.POST.get('drug_limit_1'),
+#                         '1_eat' : request.POST.get('eating_time_1'),
+#
+#                         '2_medi_name': request.POST.get('medicine_2'),
+#                         '2_drug_limit': request.POST.get('drug_limit_2'),
+#                         '2_eat': request.POST.get('eating_time_2'),
+#
+#                         '3_medi_name': request.POST.get('medicine_3'),
+#                         '3_drug_limit': request.POST.get('drug_limit_3'),
+#                         '3_eat': request.POST.get('eating_time_3'),
+#
+#                         '4_medi_name': request.POST.get('medicine_4'),
+#                         '4_drug_limit': request.POST.get('drug_limit_4'),
+#                         '4_eat': request.POST.get('eating_time_4'),
+#
+#                         '5_medi_name': request.POST.get('medicine_5'),
+#                         '5_drug_limit': request.POST.get('drug_limit_5'),
+#                         '5_eat': request.POST.get('eating_time_5'),
+#
+#                         '6_medi_name': request.POST.get('medicine_6'),
+#                         '6_drug_limit': request.POST.get('drug_limit_6'),
+#                         '6_eat': request.POST.get('eating_time_6'),
+#
+#                         '7_medi_name': request.POST.get('medicine_7'),
+#                         '7_drug_limit': request.POST.get('drug_limit_7'),
+#                         '7_eat': request.POST.get('eating_time_7'),
+#
+#                         '8_medi_name': request.POST.get('medicine_8'),
+#                         '8_drug_limit': request.POST.get('drug_limit_8'),
+#                         '8_eat': request.POST.get('eating_time_8'),
+#
+#                         '9_medi_name': request.POST.get('medicine_9'),
+#                         '9_drug_limit': request.POST.get('drug_limit_9'),
+#                         '9_eat': request.POST.get('eating_time_9'),
+#
+#                         '10_medi_name': request.POST.get('medicine_10'),
+#                         '10_drug_limit': request.POST.get('drug_limit_10'),
+#                         '10_eat': request.POST.get('eating_time_10'),
+#                     }
+#                     # html = template.render(context)
+#                     # return HttpResponse(html)
+#                     pdf = render_to_pdf('cse/prescription.html',context)
+#                     if pdf:
+#                         response = HttpResponse(pdf, content_type='application/pdf')
+#                         filename = "Patient_%s.pdf" %("Prescription")
+#                         content = "inline; filename='%s'" %(filename)
+#                         download = request.GET.get("download")
+#                         if download:
+#                             content = "attachment; filename='%s'" %(filename)
+#                         response['Content-Disposition'] = content
+#                         return response
+#                     return HttpResponse("Not found")
+#                 else:
+#                     # messages.error(request, 'Fill the form very carefully...!')
+#                     return render(request, 'cse/patient_confirm.html')
+#             else:
+#                 return render(request, 'cse/index.html')
+#         else:
+#             messages.error(request, 'Please login first...!')
+#             return render(request, 'cse/login.html')
+
+def pdf(request):
     if request.user.is_authenticated:
         if request.user.user_type == 'Admin' or request.user.is_superuser:
-            if request.method=='POST':
+            # if request.method == 'POST' or request.method == 'GET':
+            if request.method == 'POST':
+                # template = get_template('cse/test.html')
                 t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
                 t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
-                context = {
+                context={
                     'tpatient' : t_patient,
                     'tdoctor' : t_doctor,
 
@@ -473,17 +638,33 @@ def patient_reg(request):
                     '10_medi_name': request.POST.get('medicine_10'),
                     '10_drug_limit': request.POST.get('drug_limit_10'),
                     '10_eat': request.POST.get('eating_time_10'),
-
                 }
-                return render(request,'cse/prescription.html',context)
+                # html = template.render(context)
+                # return HttpResponse(html)
+                pdf = render_to_pdf('cse/prescription.html',context)
+                if pdf:
+                    response = HttpResponse(pdf, content_type='application/pdf')
+                    filename = "Patient_%s.pdf" %("Prescription")
+                    content = "inline; filename='%s'" %(filename)
+                    download = request.GET.get("download")
+                    if download:
+                        content = "attachment; filename='%s'" %(filename)
+                    response['Content-Disposition'] = content
+                    return response
+                return HttpResponse("Not found")
             else:
                 # messages.error(request, 'Fill the form very carefully...!')
-                return render(request,'cse/patient_confirm.html')
+                return render(request, 'cse/patient_confirm.html')
         else:
-            return render(request,'cse/index.html')
+            return render(request, 'cse/index.html')
     else:
         messages.error(request, 'Please login first...!')
         return render(request, 'cse/login.html')
+
+
+
+
+
 
 
 

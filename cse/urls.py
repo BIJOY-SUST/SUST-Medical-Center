@@ -34,7 +34,10 @@ urlpatterns = [
 
     path('patientconfirm/', user_view.patientconfirm, name='patientconfirm'),
     path('pregform/', user_view.pregform, name='pregform'),
-    path('patientreg/',user_view.patient_reg,name='patient_reg'),
+    # path('patientreg/',user_view.patient_reg,name='patient_reg'),
+    # path('pdf/',user_view.GeneratePDF.as_view(),name='pdf'),
+    path('pdf/',user_view.pdf,name='pdf'),
+
 
     path('newdoctor/', user_view.newdoctor, name='newdoctor'),
     path('newdoctor_reg/', user_view.newdoctorreg, name='newdoctor_reg'),
