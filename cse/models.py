@@ -16,6 +16,7 @@ class CustomUser(AbstractUser):
     designation = models.CharField(null=True,blank=True,default=None,max_length=90)
     blood_group = models.CharField(null=False,blank=False,default=None,max_length=20)
     photos = models.FileField(null=False,blank=False,default=None,upload_to='images/')
+    pass_reset = models.BooleanField(null=False,blank=False,default=None)
 
 
 

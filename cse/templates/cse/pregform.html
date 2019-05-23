@@ -558,7 +558,6 @@
 
 
     <!------------Navigation Bar start here------------------------------------------->
-
     <nav class="colorlib-nav" role="navigation">
         <div class="top-menu">
             <div class="container">
@@ -567,22 +566,21 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="loc">
                                         <span class="icon"><i class="icon-location"></i></span>
-                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
-										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
-										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
-										4d91.8319132?hl=en-GB">University Ave, Sylhet 3114</a></p>
+                                        <p>
+                                            <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -596,20 +594,46 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
-                                    <li><a href="#">Contact</a></li>
-{#                                    <li><a href="#">About Us</a></li>#}
+                                    <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:doctors' %}">Doctors</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:services' %}">Services</a></li>
+
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:blog' %}">Blog</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
+{#                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">#}
+{#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+{#                            </a></p>#}
                             <p class="btn-cta">
-                                <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
-                                <a href="{% url 'cse:staring' %}"><span>  Register <i
-                                        class="glyphicon-registration-mark"></i></span></a>
+                                <a href="{% url 'cse:pregform' %}">
+                                    <span>New Patient <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+{#                                <a href="{% url 'cse:newdoctor' %}">#}
+{#                                    <span>New Doctor <i class="glyphicon glyphicon-log-out"></i></span>#}
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+{#                                </a>#}
+                                <a href="{% url 'cse:logout' %}">
+                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
                             </p>
-
-
                         </div>
                     </div>
                 </div>
@@ -621,7 +645,7 @@
 <!---------------------------------------------form start here--------------------------------------------------------->
 
 
-<form class="jotform-form" action="{% url 'cse:register'%}" method="post" enctype="multipart/form-data" name="form_91035707344454"
+<form class="jotform-form" action="{% url 'cse:patient_reg'%}" method="post" enctype="multipart/form-data" name="form_91035707344454"
       id="91035707344454" accept-charset="utf-8">
     {% csrf_token %}
     {#    <input type="hidden" name="formID" value="91035707344454"/>#}
@@ -637,7 +661,7 @@
                 <div class="form-header-group ">
                     <div class="header-text httac htvam">
                         <h1 id="header_1" class="form-header" data-component="header">
-                            User Registration Form
+                            Patient's Registration Form
                         </h1>
                         <div id="subHeader_1" class="form-subHeader">
                             Fill out the form carefully for registration
@@ -658,298 +682,954 @@
             </li>
              <!------------------------ Full Name Field ---------------------------->
 
-            <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
-{#                <div>#}
-                    <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
-                    Full Name
-                        <span class="form-required">*</span>
-                    </label>
-{#                </div>#}
-                <div id="cid_4" class="form-input jf-required">
-                    <div data-wrapper-react="true">
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                          <input type="text" id="first_4" name="firstname"
-                                 class="form-textbox validate[required]"
-                                 size="20" value="" data-component="first" required=""/>
-                          <label class="form-sub-label" for="first_4" id="sublabel_first"
-                                 style="min-height:13px"> First Name </label>
-                        </span>
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                          <input type="text" id="last_4" name="lastname"
-                                 class="form-textbox validate[required]" size="20"
-                                 value="" data-component="last" required=""/>
-                          <label class="form-sub-label" for="last_4" id="sublabel_last" style="min-height:13px"> Last Name </label>
-                        </span>
-                    </div>
-                </div>
+            <li>
+{#                <h3>Hi, {{ user.email }}</h3>#}
+                <input id="prodId" name="in_email" type="hidden" value={{ user.email }}>
+
             </li>
 
 
              <!------------------------ User Name Field ---------------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    User Name
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_34" class="form-input jf-required">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                        <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"
-                               class="form-textbox validate[required]" size="20" value="BIJOY_SUST" placeholder="BIJOY_SUST"
-                               data-component="textbox" required=""/>
+{#            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">#}
+{#                    User Name#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_34" class="form-input jf-required">#}
+{#                    <span class="form-sub-label-container" style="vertical-align:top">#}
+{#                        <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"#}
+{#                               class="form-textbox validate[required]" size="20" value="BIJOY_SUST" placeholder="BIJOY_SUST"#}
+{#                               data-component="textbox" required=""/>#}
 {#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
-                    </span>
-                </div>
-            </li>
+{#                    </span>#}
+{#                </div>#}
+{#            </li>#}
 
 
              <!------------------------ Birth of Date Field ---------------------------->
 
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_birthdate" id="id_24">
-                <label class="form-label form-label-left" id="label_24" for="input_24">
-                    Birth Date
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_34" class="form-input jf-required">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                        <input type="date" id="input_34" name="date_of_birth" data-type="input-date"
-                               class="form-date validate[required]" size="20"  data-date-format="DD-MM-YYYY" value="01-30-2001"
-                               data-component="date" required=""/>
-
-                    </span>
-                </div>
-
-            </li>
+{#            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_birthdate" id="id_24">#}
+{#                <label class="form-label form-label-left" id="label_24" for="input_24">#}
+{#                    Birth Date#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_34" class="form-input jf-required">#}
+{#                    <span class="form-sub-label-container" style="vertical-align:top">#}
+{#                        <input type="date" id="input_34" name="date_of_birth" data-type="input-date"#}
+{#                               class="form-date validate[required]" size="20"  data-date-format="DD-MM-YYYY" value="01-30-2001"#}
+{#                               data-component="date" required=""/>#}
+{##}
+{#                    </span>#}
+{#                </div>#}
+{##}
+{#            </li>#}
 
             <!------------------------ Gender Field ---------------------------->
 
-            <li class="form-line form-line-column form-col-2 jf-required" data-type="control_dropdown" id="id_3">
-                <label class="form-label form-label-left" id="label_3" for="input_3">
-                    Gender
-                    <span class="form-required">
-            *
-          </span>
+{#            <li class="form-line form-line-column form-col-2 jf-required" data-type="control_dropdown" id="id_3">#}
+{#                <label class="form-label form-label-left" id="label_3" for="input_3">#}
+{#                    Gender#}
+{#                    <span class="form-required">#}
+{#            *#}
+{#          </span>#}
+{#                </label>#}
+{#                <div id="cid_3" class="form-input jf-required">#}
+{#                    <select class="form-dropdown validate[required]" id="input_3" name="gender" style="width:150px"#}
+{#                            data-component="dropdown" required="">#}
+{#                        <option value=""></option>#}
+{#                        <option value="Male"> Male</option>#}
+{#                        <option value="Female"> Female</option>#}
+{#                        <option value="N/A"> N/A</option>#}
+{#                    </select>#}
+{#                </div>#}
+{#            </li>#}
+
+            <!------- History-------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_3666">
+                <label class="form-label form-label-left form-label-auto" id="label_3666" for="input_36">
+                    History
+                    <span class="form-required">*</span>
                 </label>
-                <div id="cid_3" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_3" name="gender" style="width:150px"
-                            data-component="dropdown" required="">
+                <div id="cid_3666" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_355" class="form-textarea validate[required]" name="history" cols="40" rows="4"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36" style="min-height:13px">Example: Fever</label>
+                  </span>
+                </div>
+            </li>
+
+             <!------------------------ Additional Information Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_3666">
+                <label class="form-label form-label-left form-label-auto" id="label_3666" for="input_36">
+                    Additional Information
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_3666" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_355" class="form-textarea validate[required]" name="additional_field" cols="40" rows="6"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36" style="min-height:13px">Example: BP Test Report Information</label>
+                  </span>
+                </div>
+            </li>
+             <!------------------------ Test Advised Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_36">
+                <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
+                    Tests Advised
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_36" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_36" class="form-textarea validate[required]" name="testadvised" cols="40" rows="4"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36" style="min-height:13px"> Example: MRI of right knee </label>
+                  </span>
+                </div>
+            </li>
+
+
+            <!------------------------ Doctor ID Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Doctor ID
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="form-dropdown validate[required]" id="input_33" name="doctoremail"
+                            style="width:375px" data-component="dropdown" required="">
                         <option value=""></option>
-                        <option value="Male"> Male</option>
-                        <option value="Female"> Female</option>
-                        <option value="N/A"> N/A</option>
+                        {% for item in doctorlist %}
+                            <option value="{{ item.email }}">{{ item.email }}</option>
+
+{#                        <option value="Teacher"> Teacher</option>#}
+{#                        <option value="Stuff"> Stuff</option>#}
+{#                        <option value="Admin"> Admin</option>#}
+                        {% endfor %}
                     </select>
                 </div>
             </li>
 
-             <!------------------------ Address Field ---------------------------->
+            <!------------------------ medicine name Field ---------------------------->
 
-            <li class="form-line jf-required" data-type="control_textarea" id="id_36">
-                <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
-                    Address
-                    <span class="form-required">
-            *
-          </span>
-                </label>
-                <div id="cid_36" class="form-input jf-required">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <textarea id="input_36" class="form-textarea validate[required]" name="address" cols="40" rows="6"
-                      data-component="textarea" required=""></textarea>
-            <label class="form-sub-label" for="input_36" style="min-height:13px"> Street Address, City, State / Province, Postal / Zip Code </label>
-          </span>
-                </div>
+                <!------------------------------ 1 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 1</b></p>
             </li>
-
-             <!------------------------ Mobile Number Field ---------------------------->
-
-
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_phone" id="id_27"
-                data-compound-hint=",">
-                <label class="form-label form-label-left" id="label_27" for="input_27_area">
-                    Mobile Number
-                    <span class="form-required">*</span>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
                 </label>
-                <div id="cid_27" class="form-input jf-required">
-                    <div data-wrapper-react="true">
+                <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="mobile" id="input_27_phone" name="mobileno"
-                                   class="form-textbox validate[required]" size="30" value="" data-component="phone"
-                                   required=""/>
-                            <label class="form-sub-label" for="input_27_phone" id="sublabel_phone"
-                                   style="min-height:13px"> Mobile Number </label>
+                          <input type="text" id="first_4" name="medicine_1" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                    </div>
                 </div>
             </li>
-
-             <!------------------------ Pnone Number Field ---------------------------->
 
             <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number   </label>
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="telno" class="form-textbox"
-                                     size="30"
+                              <input type="tel" id="input_25_phone" name="drug_limit_1" class="form-textbox" size="10"
                                      value="" data-component="phone"/>
-                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"
-                                     style="min-height:13px"> Telephone Number </label>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
 
-             <!------------------------ User Email Field ---------------------------->
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="left: auto" class="form-label form-label-left" id="label_6" for="input_6">
-                    User E-mail
-                    <span class="form-required">*</span>
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
                 </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="email" id="input_6" name="useremail" class="form-textbox validate[required, Email]"
-                           size="30" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
-                    <label class="form-sub-label" for="input_34" style="min-height:13px">
-                        You can access the web site using this email </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_1"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
 
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
                 </div>
             </li>
+
+                <!------------------------------ 2 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 2</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_2" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_2" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_2"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+
+                <!------------------------------ 3 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 3</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_3" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_3" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_3"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 4 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 4</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_4" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_4" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_4"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 5 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 5</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_5" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_5" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_5"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 6 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 6</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_6" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_6" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_6"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 7 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 7</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_7" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_7" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_7"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 8 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 8</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_8" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_8" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_8"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 9 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 9</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_9" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_9" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_9"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+                        <!------------------------------ 10 ----------------------->
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <p style="text-align: center"><b>Medicine 10</b></p>
+            </li>
+            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                    Medicine Name
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_34" class="form-input jf-required">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input type="text" id="first_4" name="medicine_10" class="form-textbox"
+                                 size="42" value="" data-component="first">
+                          <label class="form-sub-label" for="first_4" id="sublabel_first"
+                                 style="min-height:13px"> Example: Napa 400mg </label>
+                        </span>
+                </div>
+            </li>
+
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="tel" id="input_25_phone" name="drug_limit_10" class="form-textbox" size="10"
+                                     value="" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                    Eating Time
+{#                    <span class="form-required">*</span>#}
+                </label>
+                <div id="cid_33" class="form-input jf-required">
+                    <select class="" id="input_33" name="eating_time_10"
+                            style="width:280px" data-component="dropdown">
+                        <option value=""></option>
+
+                        <option value="After Breakfast">After Breakfast</option>
+                        <option value="After Lunch"> After Lunch</option>
+                        <option value="After Dinner"> After Dinner</option>
+
+                        <option value="Before Breakfast"> Before Breakfast</option>
+                        <option value="Before Lunch"> Before Lunch</option>
+                        <option value="Before Dinner"> Before Dinner</option>
+
+                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
+                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
+                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+
+                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
+                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
+                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+
+                    </select>
+                </div>
+            </li>
+             <!------------------------ Mobile Number Field ---------------------------->
+
+
+{#            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_phone" id="id_27"#}
+{#                data-compound-hint=",">#}
+{#                <label class="form-label form-label-left" id="label_27" for="input_27_area">#}
+{#                    Mobile Number#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_27" class="form-input jf-required">#}
+{#                    <div data-wrapper-react="true">#}
+{#                        <span class="form-sub-label-container" style="vertical-align:top">#}
+{#                            <input type="mobile" id="input_27_phone" name="mobileno"#}
+{#                                   class="form-textbox validate[required]" size="30" value="" data-component="phone"#}
+{#                                   required=""/>#}
+{#                            <label class="form-sub-label" for="input_27_phone" id="sublabel_phone"#}
+{#                                   style="min-height:13px"> Mobile Number </label>#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </li>#}
+
+             <!------------------------ Pnone Number Field ---------------------------->
+
+{#            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">#}
+{#                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number   </label>#}
+{#                <div id="cid_25" class="form-input">#}
+{#                    <div data-wrapper-react="true">#}
+{#                        <span class="form-sub-label-container" style="vertical-align:top">#}
+{#                              <input type="tel" id="input_25_phone" name="telno" class="form-textbox"#}
+{#                                     size="30"#}
+{#                                     value="" data-component="phone"/>#}
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </li>#}
+
+             <!------------------------ User Email Field ---------------------------->
+
+{#            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">#}
+{#                <label style="left: auto" class="form-label form-label-left" id="label_6" for="input_6">#}
+{#                    Doctor E-mail#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_6" class="form-input jf-required">#}
+{#                    <input type="email" id="input_6" name="useremail" class="form-textbox validate[required, Email]"#}
+{#                           size="30" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>#}
+{#                    <label class="form-sub-label" for="input_34" style="min-height:13px">#}
+{#                        You can access the web site using this email </label>#}
+{##}
+{#                </div>#}
+{#            </li>#}
 
 
              <!------------------------ User Type Field ---------------------------->
 
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    User Type
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_33" name="usertype"
-                            style="width:150px" data-component="dropdown" required="">
-                        <option value=""></option>
-                        <option value="Student"> Student</option>
-                        <option value="Teacher"> Teacher</option>
-                        <option value="Stuff"> Stuff</option>
-                        <option value="Admin"> Admin</option>
-
-                    </select>
-                </div>
-            </li>
+{#            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">#}
+{#                    User Type#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_33" class="form-input jf-required">#}
+{#                    <select class="form-dropdown validate[required]" id="input_33" name="usertype"#}
+{#                            style="width:150px" data-component="dropdown" required="">#}
+{#                        <option value=""></option>#}
+{#                        <option value="Student"> Student</option>#}
+{#                        <option value="Teacher"> Teacher</option>#}
+{#                        <option value="Stuff"> Stuff</option>#}
+{#                        <option value="Admin"> Admin</option>#}
+{##}
+{#                    </select>#}
+{#                </div>#}
+{#            </li>#}
 
              <!------------------------ Registration Number Field ---------------------------->
 
-            <li class="form-line" data-type="control_textbox" id="id_31">
-                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number
-
-
-                </label>
-                <div id="cid_31" class="form-input">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="text" id="input_31" name="regno" data-type="input-textbox"
-                   class="form-textbox validate[Fill Mask]" size="25" value="" placeholder="2016331012"
-                   data-component="textbox"/>
-            <label class="form-sub-label" for="input_31" style="min-height:13px"> If you are a student, you must give the registration number. </label>
-          </span>
-                </div>
-            </li>
+{#            <li class="form-line" data-type="control_textbox" id="id_31">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number#}
+{##}
+{##}
+{#                </label>#}
+{#                <div id="cid_31" class="form-input">#}
+{#          <span class="form-sub-label-container" style="vertical-align:top">#}
+{#            <input type="text" id="input_31" name="regno" data-type="input-textbox"#}
+{#                   class="form-textbox validate[Fill Mask]" size="25" value="" placeholder="2016331012"#}
+{#                   data-component="textbox"/>#}
+{#            <label class="form-sub-label" for="input_31" style="min-height:13px"> If you are a student, you must give the registration number. </label>#}
+{#          </span>#}
+{#                </div>#}
+{#            </li>#}
 
              <!------------------------ Department Name Field ---------------------------->
 
-            <li class="form-line" data-type="control_dropdown" id="id_38">
-                <label class="form-label form-label-left form-label-auto" id="label_38" for="input_38">
-                    Department
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_38" class="form-input">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <select class="form-dropdown" id="input_38" name="department" style="width:500px"
-                    data-component="dropdown" required="">
-              <option value="">  </option>
-              <option value="Department of Forestry And Environmental Science"> Department of Forestry And Environmental Science </option>
-              <option value="Department of Architecture (ARC)"> Department of Architecture (ARC) </option>
-              <option value="Department of Chemical Engineering &amp; Polymer Science (CEP)"> Department of Chemical Engineering &amp; Polymer Science (CEP) </option>
-              <option value="Department of Civil &amp; Environmental Engineering (CEE)"> Department of Civil &amp; Environmental Engineering (CEE) </option>
-              <option value="Department of Computer Science &amp; Engineering (CSE)"> Department of Computer Science &amp; Engineering (CSE) </option>
-              <option value="Department of Electrical &amp; Electronic Engineering (EEE)"> Department of Electrical &amp; Electronic Engineering (EEE) </option>
-              <option value="Department of Food Engineering &amp; Tea Technology (FET)"> Department of Food Engineering &amp; Tea Technology (FET) </option>
-              <option value="Department of Industrial &amp; Production Engineering (IPE)"> Department of Industrial &amp; Production Engineering (IPE) </option>
-              <option value="Department of Mechanical Engineering (MEE)"> Department of Mechanical Engineering (MEE) </option>
-              <option value="Department of Petroleum &amp; Mining Engineering (PME)"> Department of Petroleum &amp; Mining Engineering (PME) </option>
-              <option value="Department of Software Engineering (SWE)"> Department of Software Engineering (SWE) </option>
-              <option value="Department of Bio-Chemistry and Molecular Biology (BMB)"> Department of Bio-Chemistry and Molecular Biology (BMB) </option>
-              <option value="Department of Genetic Engineering and Biotechnology (GEB)"> Department of Genetic Engineering and Biotechnology (GEB) </option>
-              <option value="Department of Business Administration, SUST"> Department of Business Administration, SUST </option>
-              <option value="Department of Chemistry (CHE)"> Department of Chemistry (CHE) </option>
-              <option value="Department of Geography and Environment (GEE)"> Department of Geography and Environment (GEE) </option>
-              <option value="Department of Mathematics (MAT)"> Department of Mathematics (MAT) </option>
-              <option value="Department of Physics (PHY)"> Department of Physics (PHY) </option>
-              <option value="Department of Statistics (STA)"> Department of Statistics (STA) </option>
-              <option value="Department of Oceanography (OCG)"> Department of Oceanography (OCG) </option>
-              <option value="Department of Anthropology (ANP)"> Department of Anthropology (ANP) </option>
-              <option value="Department of Bangla (BNG)"> Department of Bangla (BNG) </option>
-              <option value="Department of Economics (ECO)"> Department of Economics (ECO) </option>
-              <option value="Department of English (ENG)"> Department of English (ENG) </option>
-              <option value="Department of Political Studies (PSS)"> Department of Political Studies (PSS) </option>
-              <option value="Department of Public Administration (PAD)"> Department of Public Administration (PAD) </option>
-              <option value="Department of Social work (SCW)"> Department of Social work (SCW) </option>
-              <option value="Department of Sociology (SOC)"> Department of Sociology (SOC) </option>
-              <option value="Faculty or Staff"> Faculty or Staff </option>
-              <option value="Admin"> Admin </option>
-
-            </select>
-            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you're a 'faculty or staff' or 'admin', you must select  "Faculty or Staff" or "Admin". </label>
-          </span>
-                </div>
-            </li>
+{#            <li class="form-line" data-type="control_dropdown" id="id_38">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_38" for="input_38">#}
+{#                    Department#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_38" class="form-input">#}
+{#          <span class="form-sub-label-container" style="vertical-align:top">#}
+{#            <select class="form-dropdown" id="input_38" name="department" style="width:500px"#}
+{#                    data-component="dropdown" required="">#}
+{#              <option value="">  </option>#}
+{#              <option value="Department of Forestry And Environmental Science"> Department of Forestry And Environmental Science </option>#}
+{#              <option value="Department of Architecture (ARC)"> Department of Architecture (ARC) </option>#}
+{#              <option value="Department of Chemical Engineering &amp; Polymer Science (CEP)"> Department of Chemical Engineering &amp; Polymer Science (CEP) </option>#}
+{#              <option value="Department of Civil &amp; Environmental Engineering (CEE)"> Department of Civil &amp; Environmental Engineering (CEE) </option>#}
+{#              <option value="Department of Computer Science &amp; Engineering (CSE)"> Department of Computer Science &amp; Engineering (CSE) </option>#}
+{#              <option value="Department of Electrical &amp; Electronic Engineering (EEE)"> Department of Electrical &amp; Electronic Engineering (EEE) </option>#}
+{#              <option value="Department of Food Engineering &amp; Tea Technology (FET)"> Department of Food Engineering &amp; Tea Technology (FET) </option>#}
+{#              <option value="Department of Industrial &amp; Production Engineering (IPE)"> Department of Industrial &amp; Production Engineering (IPE) </option>#}
+{#              <option value="Department of Mechanical Engineering (MEE)"> Department of Mechanical Engineering (MEE) </option>#}
+{#              <option value="Department of Petroleum &amp; Mining Engineering (PME)"> Department of Petroleum &amp; Mining Engineering (PME) </option>#}
+{#              <option value="Department of Software Engineering (SWE)"> Department of Software Engineering (SWE) </option>#}
+{#              <option value="Department of Bio-Chemistry and Molecular Biology (BMB)"> Department of Bio-Chemistry and Molecular Biology (BMB) </option>#}
+{#              <option value="Department of Genetic Engineering and Biotechnology (GEB)"> Department of Genetic Engineering and Biotechnology (GEB) </option>#}
+{#              <option value="Department of Business Administration, SUST"> Department of Business Administration, SUST </option>#}
+{#              <option value="Department of Chemistry (CHE)"> Department of Chemistry (CHE) </option>#}
+{#              <option value="Department of Geography and Environment (GEE)"> Department of Geography and Environment (GEE) </option>#}
+{#              <option value="Department of Mathematics (MAT)"> Department of Mathematics (MAT) </option>#}
+{#              <option value="Department of Physics (PHY)"> Department of Physics (PHY) </option>#}
+{#              <option value="Department of Statistics (STA)"> Department of Statistics (STA) </option>#}
+{#              <option value="Department of Oceanography (OCG)"> Department of Oceanography (OCG) </option>#}
+{#              <option value="Department of Anthropology (ANP)"> Department of Anthropology (ANP) </option>#}
+{#              <option value="Department of Bangla (BNG)"> Department of Bangla (BNG) </option>#}
+{#              <option value="Department of Economics (ECO)"> Department of Economics (ECO) </option>#}
+{#              <option value="Department of English (ENG)"> Department of English (ENG) </option>#}
+{#              <option value="Department of Political Studies (PSS)"> Department of Political Studies (PSS) </option>#}
+{#              <option value="Department of Public Administration (PAD)"> Department of Public Administration (PAD) </option>#}
+{#              <option value="Department of Social work (SCW)"> Department of Social work (SCW) </option>#}
+{#              <option value="Department of Sociology (SOC)"> Department of Sociology (SOC) </option>#}
+{#              <option value="Faculty or Staff"> Faculty or Staff </option>#}
+{#              <option value="Admin"> Admin </option>#}
+{##}
+{#            </select>#}
+{#            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you're a 'faculty or staff' or 'admin', you must select  "Faculty or Staff" or "Admin". </label>#}
+{#          </span>#}
+{#                </div>#}
+{#            </li>#}
 
              <!------------------------ Designation Field ---------------------------->
 
-            <li class="form-line" data-type="control_textarea" id="id_32">
-                <label class="form-label form-label-left form-label-auto" id="label_32" for="input_32">
-                    Designation </label>
-                <div id="cid_32" class="form-input">
-              <span class="form-sub-label-container" style="vertical-align:top">
-                <textarea id="input_32" class="form-textarea" name="position" cols="40" rows="6"
-                          data-component="textarea"></textarea>
-                <label class="form-sub-label" for="input_32" style="min-height:13px"> For Teacher or Stuff Only<br>If you are a stuff or teacher, your designation must be given. </label>
-              </span>
-                    </div>
-            </li>
+{#            <li class="form-line" data-type="control_textarea" id="id_32">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_32" for="input_32">#}
+{#                    Designation </label>#}
+{#                <div id="cid_32" class="form-input">#}
+{#              <span class="form-sub-label-container" style="vertical-align:top">#}
+{#                <textarea id="input_32" class="form-textarea" name="position" cols="40" rows="6"#}
+{#                          data-component="textarea"></textarea>#}
+{#                <label class="form-sub-label" for="input_32" style="min-height:13px"> For Teacher or Stuff Only<br>If you are a stuff or teacher, your designation must be given. </label>#}
+{#              </span>#}
+{#                    </div>#}
+{#            </li>#}
 
             <!-----------------------------Blood Group------------------------------->
 
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_28">
-                <label class="form-label form-label-left form-label-auto" id="label_28" for="input_28">
-                    Blood Group
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_28" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_28" name="bloodgroup"
-                            style="width:150px" data-component="dropdown" required="">
-                        <option value=""></option>
-                        <option value="A+	"> A+</option>
-                        <option value="O+	"> O+</option>
-                        <option value="B+"> B+</option>
-                        <option value="AB+	"> AB+</option>
-                        <option value="A-	"> A-</option>
-                        <option value="O-	"> O-</option>
-                        <option value="B-	"> B-</option>
-                        <option value="AB-"> AB-</option>
-                    </select>
-                </div>
-            </li>
+{#            <li class="form-line jf-required" data-type="control_dropdown" id="id_28">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_28" for="input_28">#}
+{#                    Blood Group#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_28" class="form-input jf-required">#}
+{#                    <select class="form-dropdown validate[required]" id="input_28" name="bloodgroup"#}
+{#                            style="width:150px" data-component="dropdown" required="">#}
+{#                        <option value=""></option>#}
+{#                        <option value="A+	"> A+</option>#}
+{#                        <option value="O+	"> O+</option>#}
+{#                        <option value="B+"> B+</option>#}
+{#                        <option value="AB+	"> AB+</option>#}
+{#                        <option value="A-	"> A-</option>#}
+{#                        <option value="O-	"> O-</option>#}
+{#                        <option value="B-	"> B-</option>#}
+{#                        <option value="AB-"> AB-</option>#}
+{#                    </select>#}
+{#                </div>#}
+{#            </li>#}
 
              <!------------------------ Height Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_textbox" id="id_37">
-                <label class="form-label form-label-left" id="label_37" for="input_37">
-                    Height
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_37" class="form-input jf-required">
-                    <input type="text" id="input_37" name="height" data-type="input-textbox"
-                           class="form-textbox validate[required]" size="30" value="" maxLength="10"
-                           data-component="textbox" required=""/>
-                </div>
-            </li>
+{##}
+{#            <li class="form-line jf-required" data-type="control_textbox" id="id_37">#}
+{#                <label class="form-label form-label-left" id="label_37" for="input_37">#}
+{#                    Height#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_37" class="form-input jf-required">#}
+{#                    <input type="text" id="input_37" name="height" data-type="input-textbox"#}
+{#                           class="form-textbox validate[required]" size="30" value="" maxLength="10"#}
+{#                           data-component="textbox" required=""/>#}
+{#                </div>#}
+{#            </li>#}
 
 
             <style>
@@ -1022,56 +1702,56 @@
                   content: "✖";
                 }
             </style>
-             <!------------------------ Password Field ---------------------------->
-
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">
-                    Password
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="password" onfocus="this.value=''" id="psw"
-                           name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
-                           characters"
-                           size="30"  placeholder="ex: aA123456"  class="form-textbox validate[required]"
-                           data-component="password" required="">
-
-                            <input type="checkbox" onclick="myFunction()">Show Password
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("psw");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            </script>
-                </div>
-            </li>
+{#             <!------------------------ Password Field ---------------------------->#}
+{##}
+{##}
+{#            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">#}
+{#                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">#}
+{#                    Password#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_6" class="form-input jf-required">#}
+{#                    <input type="password" onfocus="this.value=''" id="psw"#}
+{#                           name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"#}
+{#                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more#}
+{#                           characters"#}
+{#                           size="30"  placeholder="ex: aA123456"  class="form-textbox validate[required]"#}
+{#                           data-component="password" required="">#}
+{##}
+{#                            <input type="checkbox" onclick="myFunction()">Show Password#}
+{#                            <script>#}
+{#                            function myFunction() {#}
+{#                              var x = document.getElementById("psw");#}
+{#                              if (x.type === "password") {#}
+{#                                x.type = "text";#}
+{#                              } else {#}
+{#                                x.type = "password";#}
+{#                              }#}
+{#                            }#}
+{#                            </script>#}
+{#                </div>#}
+{#            </li>#}
 
 
 
              <!------------------------ User Photos Field ---------------------------->
 
-            <li class="form-line jf-required" data-type="control_fileupload" id="id_29">
-                <label class="form-label form-label-left" id="label_29" for="input_29">
-                    User Photos
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_29" class="form-input jf-required">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="file" id="input_29" name="userphotos" class="form-upload validate[required]"
-                   data-imagevalidate="yes"
-                   data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
-                   data-file-maxsize="1024" data-file-minsize="100" data-file-limit="" data-component="fileupload"
-                   required=""/>
-            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB(Image file must be PNG, JPG, or JPEG) </label>
-          </span>
-                </div>
-            </li>
+{#            <li class="form-line jf-required" data-type="control_fileupload" id="id_29">#}
+{#                <label class="form-label form-label-left" id="label_29" for="input_29">#}
+{#                    User Photos#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_29" class="form-input jf-required">#}
+{#          <span class="form-sub-label-container" style="vertical-align:top">#}
+{#            <input type="file" id="input_29" name="userphotos" class="form-upload validate[required]"#}
+{#                   data-imagevalidate="yes"#}
+{#                   data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"#}
+{#                   data-file-maxsize="1024" data-file-minsize="100" data-file-limit="" data-component="fileupload"#}
+{#                   required=""/>#}
+{#            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB(Image file must be PNG, JPG, or JPEG) </label>#}
+{#          </span>#}
+{#                </div>#}
+{#            </li>#}
 
 
 {#            <li>#}
@@ -1157,9 +1837,9 @@
 
         <li>
             <button class="butto button1">
-                <a href="{% url 'cse:login' %}" style="color: black"  >Already have an account? Click here to login</a>
+                <a href="{% url 'cse:index' %}" style="color: black"  >Back To Home Page</a>
             </button>
-            <button class="button button2">Register
+            <button class="button button2">Patient Register
 {#                <a href="{% url 'cse:' %}" style="color: black" ></a>#}
             </button>
 

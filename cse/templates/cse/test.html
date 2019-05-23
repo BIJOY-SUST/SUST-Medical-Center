@@ -158,7 +158,7 @@
         }
 
         .form-all {
-            width: 900px;
+            width: 700px;
         }
 
         .form-label-left,
@@ -605,7 +605,7 @@
                         <div class="col-md-3">
                             <p class="btn-cta">
                                 <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
-                                <a href="{% url 'cse:staring' %}"><span>  Register <i
+                                <a href="{% url 'cse:register' %}"><span>  Register <i
                                         class="glyphicon-registration-mark"></i></span></a>
                             </p>
 
@@ -618,456 +618,30 @@
     </nav>
 
     <!----------------- End of Navigation Bar ---------------------------------->
-<!---------------------------------------------form start here--------------------------------------------------------->
 
-
-<form class="jotform-form" action="{% url 'cse:register'%}" method="post" enctype="multipart/form-data" name="form_91035707344454"
-      id="91035707344454" accept-charset="utf-8">
+<form class="jotform-form" action="{% url 'cse:pregform' %}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
     {% csrf_token %}
-    {#    <input type="hidden" name="formID" value="91035707344454"/>#}
-{#{% for message in messages %}#}
-{#    <div class="alert alert-success">#}
-{#        <a class="close" href="#" data-dismiss="alert">×</a>#}
-{#        {{ message }}#}
-{#    </div>#}
-{#{% endfor %}#}
+    <!------------------------ End Navigation Bar---------------------------->
+
     <div role="main" class="form-all">
         <ul class="form-section page-section">
             <li id="cid_1" class="form-input-wide" data-type="control_head">
                 <div class="form-header-group ">
                     <div class="header-text httac htvam">
                         <h1 id="header_1" class="form-header" data-component="header">
-                            User Registration Form
+                            Patient Is Valid?
                         </h1>
                         <div id="subHeader_1" class="form-subHeader">
-                            Fill out the form carefully for registration
+                            Enter patient email address below to check that patient is sustian/valid or not.
                         </div>
                     </div>
                 </div>
             </li>
-
-             <!------------------------ Full Name Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_fullname" id="id_4" data-compound-hint=",,">
-{#                <div>#}
-                    <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
-                    Full Name
-                        <span class="form-required">*</span>
-                    </label>
-{#                </div>#}
-                <div id="cid_4" class="form-input jf-required">
-                    <div data-wrapper-react="true">
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                          <input type="text" id="first_4" name="firstname"
-                                 class="form-textbox validate[required]"
-                                 size="20" value="" data-component="first" required=""/>
-                          <label class="form-sub-label" for="first_4" id="sublabel_first"
-                                 style="min-height:13px"> First Name </label>
-                        </span>
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                          <input type="text" id="last_4" name="lastname"
-                                 class="form-textbox validate[required]" size="20"
-                                 value="" data-component="last" required=""/>
-                          <label class="form-sub-label" for="last_4" id="sublabel_last" style="min-height:13px"> Last Name </label>
-                        </span>
-                    </div>
-                </div>
-            </li>
-
-
-             <!------------------------ User Name Field ---------------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    User Name
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_34" class="form-input jf-required">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                        <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"
-                               class="form-textbox validate[required]" size="20" value="BIJOY_SUST" placeholder="BIJOY_SUST"
-                               data-component="textbox" required=""/>
-{#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
-                    </span>
-                </div>
-            </li>
-
-
-             <!------------------------ Birth of Date Field ---------------------------->
-
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_birthdate" id="id_24">
-                <label class="form-label form-label-left" id="label_24" for="input_24">
-                    Birth Date
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_34" class="form-input jf-required">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                        <input type="date" id="input_34" name="date_of_birth" data-type="input-date"
-                               class="form-date validate[required]" size="20"  data-date-format="DD-MM-YYYY" value="01-30-2001"
-                               data-component="date" required=""/>
-
-                    </span>
-                </div>
-
-            </li>
-
-            <!------------------------ Gender Field ---------------------------->
-
-            <li class="form-line form-line-column form-col-2 jf-required" data-type="control_dropdown" id="id_3">
-                <label class="form-label form-label-left" id="label_3" for="input_3">
-                    Gender
-                    <span class="form-required">
-            *
-          </span>
-                </label>
-                <div id="cid_3" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_3" name="gender" style="width:150px"
-                            data-component="dropdown" required="">
-                        <option value=""></option>
-                        <option value="Male"> Male</option>
-                        <option value="Female"> Female</option>
-                        <option value="N/A"> N/A</option>
-                    </select>
-                </div>
-            </li>
-
-             <!------------------------ Address Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_textarea" id="id_36">
-                <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
-                    Address
-                    <span class="form-required">
-            *
-          </span>
-                </label>
-                <div id="cid_36" class="form-input jf-required">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <textarea id="input_36" class="form-textarea validate[required]" name="address" cols="40" rows="6"
-                      data-component="textarea" required=""></textarea>
-            <label class="form-sub-label" for="input_36" style="min-height:13px"> Street Address, City, State / Province, Postal / Zip Code </label>
-          </span>
-                </div>
-            </li>
-
-             <!------------------------ Mobile Number Field ---------------------------->
-
-
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_phone" id="id_27"
-                data-compound-hint=",">
-                <label class="form-label form-label-left" id="label_27" for="input_27_area">
-                    Mobile Number
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_27" class="form-input jf-required">
-                    <div data-wrapper-react="true">
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="mobile" id="input_27_phone" name="mobileno"
-                                   class="form-textbox validate[required]" size="30" value="" data-component="phone"
-                                   required=""/>
-                            <label class="form-sub-label" for="input_27_phone" id="sublabel_phone"
-                                   style="min-height:13px"> Mobile Number </label>
-                        </span>
-                    </div>
-                </div>
-            </li>
-
-             <!------------------------ Pnone Number Field ---------------------------->
-
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Telephone Number   </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
-                        <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="telno" class="form-textbox"
-                                     size="30"
-                                     value="" data-component="phone"/>
-                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"
-                                     style="min-height:13px"> Telephone Number </label>
-                        </span>
-                    </div>
-                </div>
-            </li>
-
-             <!------------------------ User Email Field ---------------------------->
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="left: auto" class="form-label form-label-left" id="label_6" for="input_6">
-                    User E-mail
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="email" id="input_6" name="useremail" class="form-textbox validate[required, Email]"
-                           size="30" value="" placeholder="ex: myname@example.com" data-component="email" required=""/>
-                    <label class="form-sub-label" for="input_34" style="min-height:13px">
-                        You can access the web site using this email </label>
-
-                </div>
-            </li>
-
-
-             <!------------------------ User Type Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    User Type
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_33" name="usertype"
-                            style="width:150px" data-component="dropdown" required="">
-                        <option value=""></option>
-                        <option value="Student"> Student</option>
-                        <option value="Teacher"> Teacher</option>
-                        <option value="Stuff"> Stuff</option>
-                        <option value="Admin"> Admin</option>
-
-                    </select>
-                </div>
-            </li>
-
-             <!------------------------ Registration Number Field ---------------------------->
-
-            <li class="form-line" data-type="control_textbox" id="id_31">
-                <label class="form-label form-label-left form-label-auto" id="label_31" for="input_31"> Registration Number
-
-
-                </label>
-                <div id="cid_31" class="form-input">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="text" id="input_31" name="regno" data-type="input-textbox"
-                   class="form-textbox validate[Fill Mask]" size="25" value="" placeholder="2016331012"
-                   data-component="textbox"/>
-            <label class="form-sub-label" for="input_31" style="min-height:13px"> If you are a student, you must give the registration number. </label>
-          </span>
-                </div>
-            </li>
-
-             <!------------------------ Department Name Field ---------------------------->
-
-            <li class="form-line" data-type="control_dropdown" id="id_38">
-                <label class="form-label form-label-left form-label-auto" id="label_38" for="input_38">
-                    Department
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_38" class="form-input">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <select class="form-dropdown" id="input_38" name="department" style="width:500px"
-                    data-component="dropdown" required="">
-              <option value="">  </option>
-              <option value="Department of Forestry And Environmental Science"> Department of Forestry And Environmental Science </option>
-              <option value="Department of Architecture (ARC)"> Department of Architecture (ARC) </option>
-              <option value="Department of Chemical Engineering &amp; Polymer Science (CEP)"> Department of Chemical Engineering &amp; Polymer Science (CEP) </option>
-              <option value="Department of Civil &amp; Environmental Engineering (CEE)"> Department of Civil &amp; Environmental Engineering (CEE) </option>
-              <option value="Department of Computer Science &amp; Engineering (CSE)"> Department of Computer Science &amp; Engineering (CSE) </option>
-              <option value="Department of Electrical &amp; Electronic Engineering (EEE)"> Department of Electrical &amp; Electronic Engineering (EEE) </option>
-              <option value="Department of Food Engineering &amp; Tea Technology (FET)"> Department of Food Engineering &amp; Tea Technology (FET) </option>
-              <option value="Department of Industrial &amp; Production Engineering (IPE)"> Department of Industrial &amp; Production Engineering (IPE) </option>
-              <option value="Department of Mechanical Engineering (MEE)"> Department of Mechanical Engineering (MEE) </option>
-              <option value="Department of Petroleum &amp; Mining Engineering (PME)"> Department of Petroleum &amp; Mining Engineering (PME) </option>
-              <option value="Department of Software Engineering (SWE)"> Department of Software Engineering (SWE) </option>
-              <option value="Department of Bio-Chemistry and Molecular Biology (BMB)"> Department of Bio-Chemistry and Molecular Biology (BMB) </option>
-              <option value="Department of Genetic Engineering and Biotechnology (GEB)"> Department of Genetic Engineering and Biotechnology (GEB) </option>
-              <option value="Department of Business Administration, SUST"> Department of Business Administration, SUST </option>
-              <option value="Department of Chemistry (CHE)"> Department of Chemistry (CHE) </option>
-              <option value="Department of Geography and Environment (GEE)"> Department of Geography and Environment (GEE) </option>
-              <option value="Department of Mathematics (MAT)"> Department of Mathematics (MAT) </option>
-              <option value="Department of Physics (PHY)"> Department of Physics (PHY) </option>
-              <option value="Department of Statistics (STA)"> Department of Statistics (STA) </option>
-              <option value="Department of Oceanography (OCG)"> Department of Oceanography (OCG) </option>
-              <option value="Department of Anthropology (ANP)"> Department of Anthropology (ANP) </option>
-              <option value="Department of Bangla (BNG)"> Department of Bangla (BNG) </option>
-              <option value="Department of Economics (ECO)"> Department of Economics (ECO) </option>
-              <option value="Department of English (ENG)"> Department of English (ENG) </option>
-              <option value="Department of Political Studies (PSS)"> Department of Political Studies (PSS) </option>
-              <option value="Department of Public Administration (PAD)"> Department of Public Administration (PAD) </option>
-              <option value="Department of Social work (SCW)"> Department of Social work (SCW) </option>
-              <option value="Department of Sociology (SOC)"> Department of Sociology (SOC) </option>
-              <option value="Faculty or Staff"> Faculty or Staff </option>
-              <option value="Admin"> Admin </option>
-
-            </select>
-            <label class="form-sub-label" for="input_38" style="min-height:13px"> If you're a 'faculty or staff' or 'admin', you must select  "Faculty or Staff" or "Admin". </label>
-          </span>
-                </div>
-            </li>
-
-             <!------------------------ Designation Field ---------------------------->
-
-            <li class="form-line" data-type="control_textarea" id="id_32">
-                <label class="form-label form-label-left form-label-auto" id="label_32" for="input_32">
-                    Designation </label>
-                <div id="cid_32" class="form-input">
-              <span class="form-sub-label-container" style="vertical-align:top">
-                <textarea id="input_32" class="form-textarea" name="position" cols="40" rows="6"
-                          data-component="textarea"></textarea>
-                <label class="form-sub-label" for="input_32" style="min-height:13px"> For Teacher or Stuff Only<br>If you are a stuff or teacher, your designation must be given. </label>
-              </span>
-                    </div>
-            </li>
-
-            <!-----------------------------Blood Group------------------------------->
-
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_28">
-                <label class="form-label form-label-left form-label-auto" id="label_28" for="input_28">
-                    Blood Group
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_28" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_28" name="bloodgroup"
-                            style="width:150px" data-component="dropdown" required="">
-                        <option value=""></option>
-                        <option value="A+	"> A+</option>
-                        <option value="O+	"> O+</option>
-                        <option value="B+"> B+</option>
-                        <option value="AB+	"> AB+</option>
-                        <option value="A-	"> A-</option>
-                        <option value="O-	"> O-</option>
-                        <option value="B-	"> B-</option>
-                        <option value="AB-"> AB-</option>
-                    </select>
-                </div>
-            </li>
-
-             <!------------------------ Height Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_textbox" id="id_37">
-                <label class="form-label form-label-left" id="label_37" for="input_37">
-                    Height
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_37" class="form-input jf-required">
-                    <input type="text" id="input_37" name="height" data-type="input-textbox"
-                           class="form-textbox validate[required]" size="30" value="" maxLength="10"
-                           data-component="textbox" required=""/>
-                </div>
-            </li>
-
-
-            <style>
-                /* Style all input fields */
-                {#input {#}
-                {#  width: 80%;#}
-                {#  height: 10%;#}
-                {#  padding: 12px;#}
-                {#  border: 1px solid #ccc;#}
-                {#  border-radius: 4px;#}
-                {#  box-sizing: border-box;#}
-                {#  margin-top: 6px;#}
-                {#  margin-bottom: 16px;#}
-                {#}#}
-
-                /* Style the submit button */
-                {#input[type=submit] {#}
-                {#  background-color: #4CAF50;#}
-                {#  color: white;#}
-                {#}#}
-
-                /* Style the container for inputs */
-                {#.container {#}
-                {#  background-color: #f1f1f1;#}
-                {#  padding: 20px;#}
-                {#}#}
-
-                /* The message box is shown when the user clicks on the password field */
-                #message {
-                  display:none;
-                                {#background-image: url({% static 'cse/images/brus' %});#}
-
-                  {#background: #f1f1f1;#}
-                  color: #000;
-                  position: fixed;
-                  bottom: 50pt;
-                  right: 0;
-                  width: 500px;
-                  {#position: relative;#}
-                  {#  left: 200px;#}
-                  {#  top: 5px;#}
-                  padding: 10px;
-                  margin-top: 10px;
-                }
-
-                #message p {
-                  padding: 10px 35px;
-                  font-size: 18px;
-                }
-
-                /* Add a green text color and a checkmark when the requirements are right */
-                .valid {
-                  color: green;
-                }
-
-                .valid:before {
-                  position: relative;
-                  left: -35px;
-                  content: "✔";
-                }
-
-                /* Add a red text color and an "x" when the requirements are wrong */
-                .invalid {
-                  color: red;
-                }
-
-                .invalid:before {
-                  position: relative;
-                  left: -35px;
-                  content: "✖";
-                }
-            </style>
-             <!------------------------ Password Field ---------------------------->
-
-
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">
-                    Password
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="password" onfocus="this.value=''" id="psw"
-                           name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
-                           characters"
-                           size="30"  placeholder="ex: aA123456"  class="form-textbox validate[required]"
-                           data-component="password" required="">
-
-                            <input type="checkbox" onclick="myFunction()">Show Password
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("psw");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            </script>
-                </div>
-            </li>
-
-
-
-             <!------------------------ User Photos Field ---------------------------->
-
-            <li class="form-line jf-required" data-type="control_fileupload" id="id_29">
-                <label class="form-label form-label-left" id="label_29" for="input_29">
-                    User Photos
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_29" class="form-input jf-required">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="file" id="input_29" name="userphotos" class="form-upload validate[required]"
-                   data-imagevalidate="yes"
-                   data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
-                   data-file-maxsize="1024" data-file-minsize="100" data-file-limit="" data-component="fileupload"
-                   required=""/>
-            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB(Image file must be PNG, JPG, or JPEG) </label>
-          </span>
-                </div>
-            </li>
-
-
+            <!---------- Error Message ------------------->
             <li>
                 {% if messages %}
                     <ul class="messages">
-                        <div class="alert alert-success">
+                        <div class="alert alert-danger">
                             {% for message in messages %}
                             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                             {% endfor %}
@@ -1075,8 +649,43 @@
                     </ul>
                 {% endif %}
             </li>
-            <!----------------------- login page Fields ------------------------------------------>
-                    <style>
+            <!------------------------ Email ---------------------------->
+
+            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
+                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
+                    User E-mail
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_6" class="form-input jf-required">
+                    <input type="email" onfocus="this.value=''" id="input_6"  name="useremail" class="form-textbox validate[required, Email]"
+                           size="40" value="ex: myname@example.com" placeholder="ex: myname@example.com" data-component="email" required=""/>
+                </div>
+            </li>
+                        <!------------------------ Password ---------------------------->
+
+{#            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">#}
+{#                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">#}
+{#                    Password#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_6" class="form-input jf-required">#}
+{#                    <input type="password" onfocus="this.value=''" id="id_password"  name="password" class="form-textbox validate[required, Password]"#}
+{#                           size="20"  placeholder="ex: 123456" data-component="email" required=""/>#}
+{##}
+{#                            <input  type="checkbox" onclick="myFunction()">Show Password#}
+{#                            <script>#}
+{#                            function myFunction() {#}
+{#                              var x = document.getElementById("id_password");#}
+{#                              if (x.type === "password") {#}
+{#                                x.type = "text";#}
+{#                              } else {#}
+{#                                x.type = "password";#}
+{#                              }#}
+{#                            }#}
+{#                            </script>#}
+{#                </div>#}
+{#            </li>#}
+        <style>
             .butto {
               background-color: #4CAF50; /* Green */
                 position: relative;
@@ -1098,7 +707,6 @@
             .button {
               background-color: #4CAF50; /* Green */
                   position: absolute;
-
                 right: 50px;
                 border-radius: 50%;
               border: none;
@@ -1118,6 +726,7 @@
                   position: relative;
 
                 right: -35px;
+                border-radius: 12px;
               border: none;
               color: white;
               padding: 15px 32px;
@@ -1147,112 +756,70 @@
 
         <li>
             <button class="butto button1">
-                <a href="{% url 'cse:login' %}" style="color: black"  >Already have an account? Click here to login</a>
+                <a href="{% url 'cse:password_reset' %}" style="color: black"  >Proceed To Check</a>
             </button>
-            <button class="button button2">Register
-{#                <a href="{% url 'cse:' %}" style="color: black" ></a>#}
-            </button>
+{#            <button class="button button2">Login#}
+{#                <a href="{% url 'cse:login' %}" style="color: black" ></a>#}
+{#            </button>#}
 
 
         </li>
+{#        <li class="form-line" data-type="control_button" id="id_27">#}
+{#                <div >#}
+{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
+{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
+{#                                data-component="button">#}
+{#                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#        </li>#}
+{#        <li>#}
+{#            <button class="butt button3">#}
+{#                <a href="{% url 'cse:register' %}" style="color: black" >Don&#x27;t have an account? Click here to register</a>#}
+{#            </button>#}
+{##}
+{#        </li>#}
 
-{#            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">#}
-{#                <div id="cid_19" class="form-input-wide">#}
-{#                    <div style="text-align: left" class="form-buttons-wrapper">#}
-{#                <button id="input_19" type="submit"  class="form-submit-button form-submit-button-simple_black" data-component="button">#}
-{#                        <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>#}
-{#                </button>#}
+
+{#             <!------------------------ reset button ---------------------------->#}
+{#            <li></li>#}
+{#            <li class="form-line form-line-column form-col-2" data-type="control_button" id="fgfg">#}
+{#                <div id="gfgf" class="form-input-wide">#}
+{#                    <div style="text-align:left" class="form-buttons-wrapper" >#}
+{#                        <button id="fgfgf" type="submit" class="form-submit-button form-submit-button-simple_black"#}
+{#                                data-component="button">#}
+{#                            <a href="{% url 'cse:password_reset' %}">Forgot your password?</a>#}
+{#                        </button>#}
 {#                    </div>#}
 {#                </div>#}
 {#            </li>#}
-{##}
-{#            <!----------------------- Register Button ------------------------------------------>#}
-{##}
-            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
-                                <div id="cid_20" class="form-input-wide">
-                                    <div style="margin-left:156px" class="form-buttons-wrapper">
-{#                <button  id="input_20" type="submit" style="width: 150px"#}
-{#                        class="form-submit-button form-submit-button-simple_green"#}
-{#                        data-component="button">#}
-{#                    Register#}
-{#                </button>#}
-                                    </div>
-                                </div>
+{#             <!------------------------ Login button ---------------------------->#}
+{#            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">#}
+{#                <div id="cid_20" class="form-input-wide">#}
+{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
+{#                        <button id="input_20" type="submit"  style="width: 110px" class="form-submit-button form-submit-button-simple_green"#}
+{#                                data-component="button">#}
+{#                            <a href="{% url 'cse:login' %}" style="color: black">Login</a>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </li>#}
+             <!------------------------ forword to register ---------------------------->
+            <li class="form-line" data-type="control_button" id="id_27">
+{#                <div id="cid_27" class="form-input-wide">#}
+{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
+{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
+{#                                data-component="button">#}
+{#                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
             </li>
 
         </ul>
     </div>
 </form>
-
-
-
-<div id="message">
-  <h3>Password must contain the following:</h3>
-  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-  <p id="number" class="invalid">A <b>number</b></p>
-  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-</div>
-
-<script>
-var myInput = document.getElementById("psw");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
-
-// When the user clicks on the password field, show the message box
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
-}
-
-// When the user clicks outside of the password field, hide the message box
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
-}
-
-// When the user starts to type something inside the password field
-myInput.onkeyup = function() {
-  // Validate lowercase letters
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInput.value.match(lowerCaseLetters)) {
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
-  } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-  }
-
-  // Validate capital letters
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-  }
-
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-  }
-
-  // Validate length
-  if(myInput.value.length >= 8) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
-  } else {
-    length.classList.remove("valid");
-    length.classList.add("invalid");
-  }
-}
-</script>
 
 <style>
 .footer {
@@ -1276,7 +843,6 @@ myInput.onkeyup = function() {
     </p>
 
 </div>
-
 
 </body>
 </html>

@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404,redirect,HttpResponse,NoReverseMatch,HttpResponsePermanentRedirect,Http404,HttpResponseRedirect
 from django.db.models import Q
 from .token import account_activation_token
+from .token_admin import account_activation_token_admin
 from django.utils.encoding import force_bytes,force_text
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from django.contrib.sites.shortcuts import get_current_site
@@ -18,8 +19,13 @@ from django.shortcuts import render
 from datetime import date,datetime
 from .models import CustomUser,Doctors,FeebBack
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
+
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
+
+def testing(request):
+    return render(request,'cse/test.html')
 
 def staring(request):
         # site = get_current_site(request).dom
@@ -93,11 +99,12 @@ def register(request):
                 theight = request.POST.get('height')
                 tpassword = request.POST.get('psw')
                 tnowdate = datetime.today()
+                tpas_reset = 0
 
                 c = CustomUser(first_name=tfirstname,last_name=tlastname,username=tusername,date_of_birth=tbdate,gender=tgender,address=taddress,
                                mobile_no=tmobileno,tel_no=ttelno,email=tuseremail,user_type=tusertype,reg_no=tregno,department=tdepartment,
                                designation=tposition,blood_group=tbloodgroup,height=theight,is_superuser=False,date_joined=tnowdate,
-                               is_staff=False,last_login=None)
+                               is_staff=False,last_login=None,pass_reset=tpas_reset)
 
 
                 c.set_password(tpassword)
@@ -183,17 +190,18 @@ def activate(request,uidb64,token):
 
 
 
-
+# ----------------------Password Reset er kaj sguru--------------------
 
 
 def password_reset(request):
         return render(request,'cse/password_reset.html')
 
 def password_reset_done(request):
-        if request.method=='POST' and CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
+        if request.method=='POST':
+            if CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
                 c = CustomUser.objects.get(email=request.POST.get('useremail'))
-                if c.is_active==True:
-                    c.is_active=False
+                if c.is_active == True:
+                    c.pass_reset=True
                     c.save()
                     site = request.META['HTTP_HOST']
                     # print(site)
@@ -213,9 +221,11 @@ def password_reset_done(request):
                 else:
                     messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
                     return render(request, 'cse/password_reset.html')
-        else:
+            else:
                 messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
                 return render(request, 'cse/password_reset.html')
+        else:
+            return render(request, 'cse/password_reset.html')
 
 
 
@@ -225,27 +235,33 @@ def passactivate(request,uidb64,token):
         user = CustomUser.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
-    if user is not None and account_activation_token.check_token(user, token):
-        user.is_active=True
-        user.save()
-        return render(request,'cse/after_confirm_pass.html', {'user':user})
+    if user is not None and account_activation_token_admin.check_token(user, token):
+        if user.pass_reset:
+            user.pass_reset=False
+            user.save()
+            return render(request,'cse/after_confirm_pass.html', {'user':user})
+        else:
+            render(request,'cse/if_invalid_pass.html')
 
     else:
         return render(request,'cse/if_invalid_pass.html')
 
 
 def password_reset_complete(request):
-    if request.method == 'POST' and CustomUser.objects.filter(email=request.POST.get('in_email')).exists():
-        # tt = request.POST.get('in_email')
-        # print(tt)
-        c = CustomUser.objects.get(email=request.POST.get('in_email'))
-        tpass = request.POST.get('psw')
-        c.set_password(tpass)
-        c.save()
-        return render(request,'cse/password_reset_confirm.html')
+    if request.method == 'POST':
+        if CustomUser.objects.filter(email=request.POST.get('in_email')).exists():
+            # tt = request.POST.get('in_email')
+            # print(tt)
+            c = CustomUser.objects.get(email=request.POST.get('in_email'))
+            tpass = request.POST.get('psw')
+            c.set_password(tpass)
+            c.save()
+            return render(request,'cse/password_reset_confirm.html')
+        else:
+            return render(request,'cse/password_reset.html')
     else:
         messages.error(request, 'Failed....!')
-        return render(request,'cse/after_confirm_pass.html')
+        return render(request,'cse/password_reset.html')
 
 # def reset(request):
 #         return render(request,'cse/password_reset_done.html')
@@ -365,11 +381,109 @@ def about_us(request):
 
 # Patient recorded created
 
+def patientconfirm(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin':
+            return render(request, 'cse/patient_confirm.html')
+        elif request.user.is_superuser:
+            return render(request,'cse/patient_confirm.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        return render(request,'cse/login.html')
+
 def pregform(request):
-    return render(request,'cse/pregform.html')
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            if request.method == 'POST':
+                if CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
+                    c = CustomUser.objects.get(email=request.POST.get('useremail'))
+                    if c.is_active == True:
+                        doctor = Doctors.objects.all()
+                        return render(request,'cse/pregform.html',{'user':c,'doctorlist':doctor})
+                    else:
+                        messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
+                        return render(request, 'cse/patient_confirm.html')
+                else:
+                    messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
+                    return render(request, 'cse/patient_confirm.html')
+            else:
+                # messages.error(request, 'After entering patient email , please click the PROCEED button.')
+                return render(request,'cse/patient_confirm.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        messages.error(request, 'Please login first...!')
+        return render(request, 'cse/login.html')
 
 
+def patient_reg(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            if request.method=='POST':
+                t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
+                t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
+                context = {
+                    'tpatient' : t_patient,
+                    'tdoctor' : t_doctor,
 
+                    'thistory' : request.POST.get('history'),
+                    'tadditional_field' : request.POST.get('additional_field'),
+                    'ttestadvised' : request.POST.get('testadvised'),
+
+                    'today_date' : date.today(),
+
+
+                    '1_medi_name' : request.POST.get('medicine_1'),
+                    '1_drug_limit' : request.POST.get('drug_limit_1'),
+                    '1_eat' : request.POST.get('eating_time_1'),
+
+                    '2_medi_name': request.POST.get('medicine_2'),
+                    '2_drug_limit': request.POST.get('drug_limit_2'),
+                    '2_eat': request.POST.get('eating_time_2'),
+
+                    '3_medi_name': request.POST.get('medicine_3'),
+                    '3_drug_limit': request.POST.get('drug_limit_3'),
+                    '3_eat': request.POST.get('eating_time_3'),
+
+                    '4_medi_name': request.POST.get('medicine_4'),
+                    '4_drug_limit': request.POST.get('drug_limit_4'),
+                    '4_eat': request.POST.get('eating_time_4'),
+
+                    '5_medi_name': request.POST.get('medicine_5'),
+                    '5_drug_limit': request.POST.get('drug_limit_5'),
+                    '5_eat': request.POST.get('eating_time_5'),
+
+                    '6_medi_name': request.POST.get('medicine_6'),
+                    '6_drug_limit': request.POST.get('drug_limit_6'),
+                    '6_eat': request.POST.get('eating_time_6'),
+
+                    '7_medi_name': request.POST.get('medicine_7'),
+                    '7_drug_limit': request.POST.get('drug_limit_7'),
+                    '7_eat': request.POST.get('eating_time_7'),
+
+                    '8_medi_name': request.POST.get('medicine_8'),
+                    '8_drug_limit': request.POST.get('drug_limit_8'),
+                    '8_eat': request.POST.get('eating_time_8'),
+
+                    '9_medi_name': request.POST.get('medicine_9'),
+                    '9_drug_limit': request.POST.get('drug_limit_9'),
+                    '9_eat': request.POST.get('eating_time_9'),
+
+                    '10_medi_name': request.POST.get('medicine_10'),
+                    '10_drug_limit': request.POST.get('drug_limit_10'),
+                    '10_eat': request.POST.get('eating_time_10'),
+
+                }
+                return render(request,'cse/prescription.html',context)
+            else:
+                # messages.error(request, 'Fill the form very carefully...!')
+                return render(request,'cse/patient_confirm.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        messages.error(request, 'Please login first...!')
+        return render(request, 'cse/login.html')
 
 
 

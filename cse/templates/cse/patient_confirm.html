@@ -558,7 +558,6 @@
 
 
     <!------------Navigation Bar start here------------------------------------------->
-
     <nav class="colorlib-nav" role="navigation">
         <div class="top-menu">
             <div class="container">
@@ -567,22 +566,21 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="loc">
                                         <span class="icon"><i class="icon-location"></i></span>
-                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
-										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
-										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
-										4d91.8319132?hl=en-GB">University Ave, Sylhet 3114</a></p>
+                                        <p>
+                                            <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -596,20 +594,46 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
-                                    <li><a href="#">Contact</a></li>
-{#                                    <li><a href="#">About Us</a></li>#}
+                                    <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:doctors' %}">Doctors</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:services' %}">Services</a></li>
+
+                                    <li class="has-dropdown">
+                                        <a href="{% url 'cse:blog' %}">Blog</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
+{#                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">#}
+{#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+{#                            </a></p>#}
                             <p class="btn-cta">
-                                <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
-                                <a href="{% url 'cse:register' %}"><span>  Register <i
-                                        class="glyphicon-registration-mark"></i></span></a>
+                                <a href="{% url 'cse:patientconfirm' %}">
+                                    <span>New Patient <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+{#                                <a href="{% url 'cse:newdoctor' %}">#}
+{#                                    <span>New Doctor <i class="glyphicon glyphicon-log-out"></i></span>#}
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+{#                                </a>#}
+                                <a href="{% url 'cse:logout' %}">
+                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
                             </p>
-
-
                         </div>
                     </div>
                 </div>
@@ -619,7 +643,7 @@
 
     <!----------------- End of Navigation Bar ---------------------------------->
 
-<form class="jotform-form" action="{% url 'cse:password_reset_done' %}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
+<form class="jotform-form" action="{% url 'cse:pregform' %}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
     {% csrf_token %}
     <!------------------------ End Navigation Bar---------------------------->
 
@@ -629,12 +653,10 @@
                 <div class="form-header-group ">
                     <div class="header-text httac htvam">
                         <h1 id="header_1" class="form-header" data-component="header">
-                            Forgot your password?
+                            Patient Is Valid?
                         </h1>
                         <div id="subHeader_1" class="form-subHeader">
-                            Enter your email address below, we'll send you an email asking you to confirm the reset. In the email we send, clicking the Confirm now link
-                lets us know the email ... may be expired (we do this for security reasons),
-                but we can send you a new one.
+                            Enter patient email address below to check that patient is sustian/valid or not.
                         </div>
                     </div>
                 </div>
@@ -757,7 +779,7 @@
         </style>
 
         <li>
-            <button class="butto button1">Request Password Reset
+            <button class="butto button1">Proceed To Check
 {#                <a href="{% url 'cse:password_reset' %}" style="color: black"  ></a>#}
             </button>
 {#            <button class="button button2">Login#}

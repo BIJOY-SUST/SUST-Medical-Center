@@ -8,7 +8,7 @@ app_name = 'cse'
 
 urlpatterns = [
 
-
+    path('test/',user_view.testing,name='test'),
 
     path('', user_view.staring, name='staring'),
     path('login/', user_view.login, name='login'),
@@ -31,7 +31,10 @@ urlpatterns = [
     path('services/', user_view.services, name='services'),
     path('about_us/', user_view.about_us, name='about_us'),
 
+
+    path('patientconfirm/', user_view.patientconfirm, name='patientconfirm'),
     path('pregform/', user_view.pregform, name='pregform'),
+    path('patientreg/',user_view.patient_reg,name='patient_reg'),
 
     path('newdoctor/', user_view.newdoctor, name='newdoctor'),
     path('newdoctor_reg/', user_view.newdoctorreg, name='newdoctor_reg'),
