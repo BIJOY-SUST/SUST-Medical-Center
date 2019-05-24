@@ -598,45 +598,54 @@ def pdf(request):
 
                     'today_date' : date.today(),
 
-
                     '1_medi_name' : request.POST.get('medicine_1'),
                     '1_drug_limit' : request.POST.get('drug_limit_1'),
+                    '1_days' : request.POST.get('days_1'),
                     '1_eat' : request.POST.get('eating_time_1'),
 
                     '2_medi_name': request.POST.get('medicine_2'),
                     '2_drug_limit': request.POST.get('drug_limit_2'),
+                    '2_days': request.POST.get('days_2'),
                     '2_eat': request.POST.get('eating_time_2'),
 
                     '3_medi_name': request.POST.get('medicine_3'),
                     '3_drug_limit': request.POST.get('drug_limit_3'),
+                    '3_days': request.POST.get('days_3'),
                     '3_eat': request.POST.get('eating_time_3'),
 
                     '4_medi_name': request.POST.get('medicine_4'),
                     '4_drug_limit': request.POST.get('drug_limit_4'),
+                    '4_days': request.POST.get('days_4'),
                     '4_eat': request.POST.get('eating_time_4'),
 
                     '5_medi_name': request.POST.get('medicine_5'),
                     '5_drug_limit': request.POST.get('drug_limit_5'),
+                    '5_days': request.POST.get('days_5'),
                     '5_eat': request.POST.get('eating_time_5'),
 
                     '6_medi_name': request.POST.get('medicine_6'),
                     '6_drug_limit': request.POST.get('drug_limit_6'),
+                    '6_days': request.POST.get('days_6'),
                     '6_eat': request.POST.get('eating_time_6'),
 
                     '7_medi_name': request.POST.get('medicine_7'),
                     '7_drug_limit': request.POST.get('drug_limit_7'),
+                    '7_days': request.POST.get('days_7'),
                     '7_eat': request.POST.get('eating_time_7'),
 
                     '8_medi_name': request.POST.get('medicine_8'),
                     '8_drug_limit': request.POST.get('drug_limit_8'),
+                    '8_days': request.POST.get('days_8'),
                     '8_eat': request.POST.get('eating_time_8'),
 
                     '9_medi_name': request.POST.get('medicine_9'),
                     '9_drug_limit': request.POST.get('drug_limit_9'),
+                    '9_days': request.POST.get('days_9'),
                     '9_eat': request.POST.get('eating_time_9'),
 
                     '10_medi_name': request.POST.get('medicine_10'),
                     '10_drug_limit': request.POST.get('drug_limit_10'),
+                    '10_days': request.POST.get('days_10'),
                     '10_eat': request.POST.get('eating_time_10'),
                 }
                 # html = template.render(context)

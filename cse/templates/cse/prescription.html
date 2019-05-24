@@ -2,15 +2,383 @@
 <html>
     <head>
         <title>Patient Prescription</title>
+            {% load staticfiles %}
         <style type="text/css">
-            body {
-                font-weight: 200;
-                font-size: 14px;
+            .a{
+                padding-left: -0px;
+                text-align: left;
+                font-size: 35px;
+                color: green;
             }
+            .c{
+                padding-left: -65px;
+                padding-right: -50px;
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .ad{
+                padding-left: -50px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .e{
+                padding-left: -90px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .f{
+                padding-left: -52px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .g{
+                padding-left: -64px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+
+
+
+
+
+
+            .b{
+                font-size: 20px;
+                color: green;
+                {#padding-top: 0px;#}
+                padding-left: -40px;
+                padding-right: -25px;
+                text-align: right;
+            }
+            .d{
+                font-size: 12px;
+                color: black;
+                padding-right: 0px;
+                text-align: right;
+            }
+
+
+
+
+
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+
+
+
+
+            .i{
+                position: static;
+                padding-left: 10px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .j{
+                position: static;
+                padding-left: 35px;
+                {#padding-right: -50px;#}
+                text-align: center;
+                font-size: 14px;
+                color: black;
+            }
+            .k{
+                position: static;
+                font-size: 12px;
+                color: black;
+                padding-right: 60px;
+                text-align: right;
+            }
+
+
+            .l{
+                padding-left: -282px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .m{
+                padding-left: -230px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+            .n{
+                padding-left: -255px;
+                {#padding-right: -50px;#}
+                text-align: left;
+                font-size: 14px;
+                color: black;
+            }
+
+
+            #customers {
+                  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                    font-size: 12px;
+                text-align: left;
+                table-layout: fixed;
+                font-size: 12px;
+
+            }
+
+            #customers td, #customers th {
+                padding: 2px;
+                border: 1px solid black;
+
+
+            }
+            #customers th {
+                  padding-top: 12px;
+                  padding-bottom: 12px;
+                  text-align: center;
+                  background-color: #4CAF50;
+                  color: black;
+                font-size: 10px;
+
+            }
+
+
+
+
+
+            #customerss {
+                  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                    font-size: 12px;
+                text-align: left;
+                table-layout: fixed;
+
+            }
+
+            #customerss td, #customerss th {
+                padding: 2px;
+                border: 1px solid black;
+                font-size: 12px;
+
+
+            }
+            #customerss th {
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+                  text-align: center;
+                  background-color: #4CAF50;
+                  color: black;
+                font-size: 10px;
+            }
+            .rx{
+                font-size: 22px;
+                color: black;
+            }
+            .sing{
+                text-align: right;
+                font-size: 18px;
+            }
+
+
 
         </style>
     </head>
     <body>
+        <div>
+            <table>
+                <tr>
+                    <th class="a">SUST Medical Center</th>
+                    <th class="b">Dr. {{ tdoctor.first_name }} {{ tdoctor.last_name }}</th>
+                </tr>
+                <tr>
+                    <th class="c">Shahjalal University of Science and Technology</th>
+                    <th class="d">{{ tdoctor.qualification }}</th>
+                </tr>
+                <tr>
+                    <th class="ad">Address: University Ave, Sylhet 3114</th>
+                    <th class="d">{{ tdoctor.positions }}</th>
+                </tr>
 
+                <tr>
+                    <th class="e">Phone: + 880-821-713491</th>
+                    <th class="d">Phone: {{ tdoctor.mobile_no}}</th>
+                </tr>
+                <tr>
+                    <th class="f">Email: bijoysust.system@gmail.com</th>
+                    <th class="d">Tel No: {{ tdoctor.tel_no}}</th>
+                </tr>
+                <tr>
+                    <th class="g">Website: sustmedicalcenter.com</th>
+                    <th class="d">Email: {{ tdoctor.email}}</th>
+                </tr>
+            </table>
+        </div>
+        <hr class='hrItem' />
+{#        <div>#}
+{#            <br>#}
+{#        </div>#}
+        <div>
+            <table>
+                <tr>
+                    <th class="i">Name: {{ tpatient.first_name }} {{ tpatient.last_name }}</th>
+                    <th class="j">Age: {{ tpatient.date_of_birth}}</th>
+                    <th class="k">Date: {{ today_date }}</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <br>
+        </div>
+        <table id="customers">
+             <tr>
+                <th>History</th>
+                <th>Additional Information</th>
+                <th>Tests Advised</th>
+             </tr>
+             <tr>
+                 <td>{{ thistory }}</td>
+                 <td>{{ tadditional_field }}</td>
+                 <td>{{ ttestadvised }}</td>
+             </tr>
+        </table>
+{#        <div>#}
+{#            <br>#}
+{#        </div>#}
+        <div>
+            <p class="rx">Rx</p>
+        </div>
+                <table id="customerss">
+             <tr>
+                <th>Medicine Name</th>
+                <th>Eating Time</th>
+                <th>Drug Limit</th>
+                <th>Number of Days</th>
+             </tr>
+             <tr>
+                 <td>{{ 1_medi_name }}</td>
+                 <td>{{ 1_eat }}</td>
+                 <td>{{ 1_drug_limit }}</td>
+                 <td>{{ 1_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 2_medi_name }}</td>
+                 <td>{{ 2_eat }}</td>
+                 <td>{{ 2_drug_limit }}</td>
+                 <td>{{ 2_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 3_medi_name }}</td>
+                 <td>{{ 3_eat }}</td>
+                 <td>{{ 3_drug_limit }}</td>
+                 <td>{{ 3_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 4_medi_name }}</td>
+                 <td>{{ 4_eat }}</td>
+                 <td>{{ 4_drug_limit }}</td>
+                 <td>{{ 4_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 5_medi_name }}</td>
+                 <td>{{ 5_eat }}</td>
+                 <td>{{ 5_drug_limit }}</td>
+                 <td>{{ 5_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 6_medi_name }}</td>
+                 <td>{{ 6_eat }}</td>
+                 <td>{{ 6_drug_limit }}</td>
+                 <td>{{ 6_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 7_medi_name }}</td>
+                 <td>{{ 7_eat }}</td>
+                 <td>{{ 7_drug_limit }}</td>
+                 <td>{{ 7_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 8_medi_name }}</td>
+                 <td>{{ 8_eat }}</td>
+                 <td>{{ 8_drug_limit }}</td>
+                 <td>{{ 8_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 9_medi_name }}</td>
+                 <td>{{ 9_eat }}</td>
+                 <td>{{ 9_drug_limit }}</td>
+                 <td>{{ 9_days }}</td>
+             </tr>
+             <tr>
+                 <td>{{ 10_medi_name }}</td>
+                 <td>{{ 10_eat }}</td>
+                 <td>{{ 10_drug_limit }}</td>
+                 <td>{{ 10_days }}</td>
+             </tr>
+
+        </table>
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+        <div>
+            <p class="sing">Doctor's Signature</p>
+        </div>
+{#        <div>#}
+{#            <br>#}
+{#        </div>#}
+{#        <div>#}
+{#        <div>#}
+{#            <table>#}
+{#                <tr>#}
+{#                    <td class="medi_1">Medicine Name</td>#}
+{#                    <td class="medi_2">Eating Time</td>#}
+{#                    <td class="medi_3">Drug Limit</td>#}
+{#                    <td class="medi_4">Number of Days</td>#}
+{##}
+{#                </tr>#}
+{#            </table>#}
+{#        </div>#}
+{#        <div>#}
+{#            <table class="table">#}
+{#                <tr>#}
+{#                    <th class="l"><u>History:</u></th>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th class="l"> {{ thistory }}</th>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th class="m"><u>Additional Information:</u></th>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th class="m">{{ tadditional_field }}</th>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th class="n"><u>Tests Advised:</u></th>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th class="n">{{ ttestadvised }}</th>#}
+{#                </tr>#}
+{#            </table>#}
+{#        </div>#}
     </body>
 </html>

@@ -687,8 +687,6 @@
                 <input id="prodId" name="in_email" type="hidden" value={{ user.email }}>
 
             </li>
-
-
              <!------------------------ User Name Field ---------------------------->
 {#            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
 {#                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">#}
@@ -770,7 +768,7 @@
                 <div id="cid_3666" class="form-input jf-required">
                   <span class="form-sub-label-container" style="vertical-align:top">
                     <textarea id="input_355" class="form-textarea validate[required]" name="additional_field" cols="40" rows="6"
-                              data-component="textarea" required=""></textarea>
+                              data-component="textarea"  required=""></textarea>
                     <label class="form-sub-label" for="input_36" style="min-height:13px">Example: BP Test Report Information</label>
                   </span>
                 </div>
@@ -828,7 +826,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_1" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -840,8 +838,21 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_1" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_1" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_1" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
@@ -855,9 +866,9 @@
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_1"
+                    <select type="text" class="" id="input_33" name="eating_time_1"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -867,13 +878,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -891,7 +905,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_2" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -903,24 +917,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_2" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_2" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_2" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_2"
+                    <select type="text" class="" id="input_33" name="eating_time_2"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -930,13 +956,18 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+
+
 
                     </select>
                 </div>
@@ -954,7 +985,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_3" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -966,24 +997,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_3" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_3" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_3" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_3"
+                    <select type="text" class="" id="input_33" name="eating_time_3"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -993,13 +1036,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1016,7 +1062,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_4" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1028,24 +1074,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_4" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_4" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_4" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_4"
+                    <select type="text" class="" id="input_33" name="eating_time_4"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1055,13 +1113,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1078,7 +1139,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_5" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1090,24 +1151,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_5" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_5" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_5" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_5"
+                    <select type="text" class="" id="input_33" name="eating_time_5"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1117,13 +1190,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1140,7 +1216,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_6" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1152,24 +1228,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_6" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_6" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_6" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_6"
+                    <select type="text" class="" id="input_33" name="eating_time_6"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1179,13 +1267,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1202,7 +1293,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_7" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1214,24 +1305,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_7" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_7" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_7" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_7"
+                    <select type="text" class="" id="input_33" name="eating_time_7"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1241,13 +1344,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1264,7 +1370,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_8" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1276,24 +1382,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_8" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_8" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_8" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_8"
+                    <select type="text" class="" id="input_33" name="eating_time_8"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1303,13 +1421,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1326,7 +1447,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_9" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1338,24 +1459,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_9" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_9" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_9" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_9"
+                    <select type="text" class="" id="input_33" name="eating_time_9"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1365,13 +1498,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
@@ -1388,7 +1524,7 @@
                 <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_10" class="form-textbox"
-                                 size="42" value="" data-component="first">
+                                 size="42" value="blank" data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
@@ -1400,24 +1536,36 @@
                 <div id="cid_25" class="form-input">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                              <input type="tel" id="input_25_phone" name="drug_limit_10" class="form-textbox" size="10"
-                                     value="" data-component="phone"/>
+                              <input type="text" id="input_25_phone" name="drug_limit_10" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                <div id="cid_25" class="form-input">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                              <input type="text" id="input_25_phone" name="days_10" class="form-textbox" size="10"
+                                     value="blank" data-component="phone"/>
+{#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
+{#                                     style="min-height:13px"> Telephone Number </label>#}
+                        </span>
+                    </div>
+                </div>
+            </li>
             <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
                 <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
                     Eating Time
 {#                    <span class="form-required">*</span>#}
                 </label>
                 <div id="cid_33" class="form-input jf-required">
-                    <select class="" id="input_33" name="eating_time_10"
+                    <select type="text" class="" id="input_33" name="eating_time_10"
                             style="width:280px" data-component="dropdown">
-                        <option value=""></option>
+                        <option value="blank"></option>
 
                         <option value="After Breakfast">After Breakfast</option>
                         <option value="After Lunch"> After Lunch</option>
@@ -1427,13 +1575,16 @@
                         <option value="Before Lunch"> Before Lunch</option>
                         <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and After Lunch"> After Breakfast and After Lunch</option>
-                        <option value="After Lunch and After Dinner"> After Lunch and After Dinner</option>
-                        <option value="After Breakfast and After Dinner"> After Breakfast and After Dinner</option>
+                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Before Lunch"> Before Breakfast and Before Lunch</option>
-                        <option value="Before Lunch and Before Dinner"> Before Lunch and Before Dinner</option>
-                        <option value="Before Breakfast and Before Dinner"> Before Breakfast and Before Dinner</option>
+                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+
+                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
+                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
 
                     </select>
                 </div>
