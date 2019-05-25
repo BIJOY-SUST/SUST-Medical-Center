@@ -107,10 +107,10 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li ><a href="{% url 'cse:index' %}">Home</a></li>
                                     <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                    <li class="has-dropdown">
+                                    <li >
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
@@ -118,7 +118,7 @@
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
-                                    <li class="has-dropdown">
+                                    <li class="active">
                                         <a href="{% url 'cse:blog' %}">Blog</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
@@ -222,58 +222,58 @@
             </ul>
         </div>
     </aside>
-    <div id="colorlib-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="blog-entry">
-                        <a href="{% url 'cse:blog' %}" class="blog-img"
-                           style="background-image: url({% static 'cse/images/blog-1.jpg' %})">
-                            <p class="date">
-                                <span>1</span>
-                                <span>Feb. 2017</span>
-                            </p>
-                        </a>
-                        <div class="desc">
-                            <h3><a href="blog.html">Here's why yoga is best for your health</a></h3>
+{#    <div id="colorlib-blog">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-md-4">#}
+{#                    <div class="blog-entry">#}
+{#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+{#                           style="background-image: url({% static 'cse/images/blog-1.jpg' %})">#}
+{#                            <p class="date">#}
+{#                                <span>1</span>#}
+{#                                <span>Feb. 2017</span>#}
+{#                            </p>#}
+{#                        </a>#}
+{#                        <div class="desc">#}
+{#                            <h3><a href="blog.html">Here's why yoga is best for your health</a></h3>#}
                             {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                             {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-entry">
-                        <a href="{% url 'cse:blog' %}" class="blog-img"
-                           style="background-image: url({% static 'cse/images/blog-2.jpg' %})">
-                            <p class="date">
-                                <span>31</span>
-                                <span>Jan. 2017</span>
-                            </p>
-                        </a>
-                        <div class="desc">
-                            <h3><a href="blog.html">live better get to know your medical technology</a></h3>
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-md-4">#}
+{#                    <div class="blog-entry">#}
+{#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+{#                           style="background-image: url({% static 'cse/images/blog-2.jpg' %})">#}
+{#                            <p class="date">#}
+{#                                <span>31</span>#}
+{#                                <span>Jan. 2017</span>#}
+{#                            </p>#}
+{#                        </a>#}
+{#                        <div class="desc">#}
+{#                            <h3><a href="blog.html">live better get to know your medical technology</a></h3>#}
                             {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                             {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-entry">
-                        <a href="{% url 'cse:blog' %}" class="blog-img"
-                           style="background-image: url({% static 'cse/images/blog-3.jpg' %})">
-                            <p class="date">
-                                <span>30</span>
-                                <span>Jan. 2017</span>
-                            </p>
-                        </a>
-                        <div class="desc">
-                            <h3><a href="blog.html">Eating apple is the source of energy</a></h3>
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-md-4">#}
+{#                    <div class="blog-entry">#}
+{#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+{#                           style="background-image: url({% static 'cse/images/blog-3.jpg' %})">#}
+{#                            <p class="date">#}
+{#                                <span>30</span>#}
+{#                                <span>Jan. 2017</span>#}
+{#                            </p>#}
+{#                        </a>#}
+{#                        <div class="desc">#}
+{#                            <h3><a href="blog.html">Eating apple is the source of energy</a></h3>#}
                             {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
                             {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
-                        </div>
-                    </div>
-                </div>
-            </div>
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
             {#			<div class="row">#}
             {#				<div class="col-md-4">#}
             {#					<div class="blog-entry">#}
@@ -321,20 +321,20 @@
             {#					</div>#}
             {#				</div>#}
             {#			</div>#}
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <ul class="pagination">
-                        <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+{#            <div class="row">#}
+{#                <div class="col-md-12 text-center">#}
+{#                    <ul class="pagination">#}
+{#                        <li class="disabled"><a href="#">&laquo;</a></li>#}
+{#                        <li class="active"><a href="#">1</a></li>#}
+{#                        <li><a href="#">2</a></li>#}
+{#                        <li><a href="#">3</a></li>#}
+{#                        <li><a href="#">4</a></li>#}
+{#                        <li><a href="#">&raquo;</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     <footer id="colorlib-footer" role="contentinfo">
         <div class="overlay"></div>

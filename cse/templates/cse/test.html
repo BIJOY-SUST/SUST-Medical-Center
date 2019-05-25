@@ -1,55 +1,38 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Title</title>
-        <style type="text/css">
-            body {
-                font-weight: 200;
-                font-size: 14px;
-            }
-            .header {
-                font-size: 20px;
-                font-weight: 100;
-                text-align: left;
-                color: #007cae;
-            }
-            .title {
-                font-size: 22px;
-                font-weight: 100;
-               /* text-align: right;*/
-               padding: 5px 10px 0px 10px;
-            }
-            .title span {
-                color: #007cae;
-            }
-            .details {
-                padding: 5px 5px 0px 5px;
-                text-align: left !important;
-                /*margin-left: 40%;*/
-            }
-            .hrItem {
-                border: none;
-                height: 1px;
-                /* Set the hr color */
-                color: #333; /* old IE */
-                background-color: #fff; /* Modern Browsers */
-            }
-        </style>
-    </head>
 
-    <body>
-        <div class='wrapper'>
-            <div class='header'>
-                <p class='title'>SUST Medical Center</p>
-            </div>
+<head>
+<title>W3.CSS</title>
+    {% load staticfiles %}
+
+</head>
+
+<body>
+
+
         <div>
-            <div class='details'>
-                Bill to: <br/>
-                Amount:  <br/>
-                Date:
-                <hr class='hrItem' />
-            </div>
-            </div>
+            <img class="mySlides" src="{% static 'cse/images/medi.png' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/medical.jpg' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/SUST.jpg' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/DSC_0010.jpg' %}"  style="width:100%">
         </div>
-    </body>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
 </html>

@@ -74,6 +74,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.10829"/>
     <link type="text/css" rel="stylesheet"
           href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=59fb4852cf3bfe589c6c6f21"/>
+
     <style type="text/css">
         .form-label-left {
             width: 150px;
@@ -158,7 +159,7 @@
         }
 
         .form-all {
-            width: 700px;
+            width: 1200px;
         }
 
         .form-label-left,
@@ -169,7 +170,7 @@
         }
 
         .form-all {
-            font-size: 16px
+            font-size: 14px
         }
 
         .form-all .qq-upload-button,
@@ -177,7 +178,7 @@
         .form-all .form-submit-button,
         .form-all .form-submit-reset,
         .form-all .form-submit-print {
-            font-size: 16px
+            font-size: 14px
         }
 
         .form-all .form-pagebreak-back-container,
@@ -240,7 +241,7 @@
         }
 
         .supernova {
-            {#background-image: url({% static 'cse/images/brushed.png' %});#}
+        {#background-image: url({% static 'cse/images/brushed.png' %});#}
         }
 
         #stage {
@@ -248,8 +249,7 @@
         }
 
         .form-all {
-            {#background-image: url({% static 'cse/images/brushed.png' %});#}
-            background-repeat: repeat;
+        {#background-image: url({% static 'cse/images/brushed.png' %});#} background-repeat: repeat;
             background-attachment: scroll;
             background-position: center top;
         }
@@ -550,14 +550,15 @@
                 "type": "control_dropdown"
             }]);
         }, 20);
+
     </script>
+
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <body>
 
-
-
-
-    <!------------Navigation Bar start here------------------------------------------->
+<div>
     <nav class="colorlib-nav" role="navigation">
         <div class="top-menu">
             <div class="container">
@@ -566,21 +567,22 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="num">
                                         <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
+                                        <p><a href="#">880-821-713491</a><br><a href="#">714479</a></p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="loc">
                                         <span class="icon"><i class="icon-location"></i></span>
-                                        <p>
-                                            <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
-                                                University Ave, Sylhet 3114</a></p>
+                                        <p><a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology
+										/@24.917476,91.831874,17z/data=!4m12!1m6!3m5!1s0x0:0xe277e14dbca9f2ab!2sShahjalal+University+of+
+										Science+and+Technology!8m2!3d24.9172232!4d91.8319132!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!
+										4d91.8319132?hl=en-GB"> University Ave, Sylhet 3114</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -594,45 +596,17 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
-                                    <li><a href="{% url 'cse:about_us' %}">About us</a></li>
-
-                                    <li class="has-dropdown">
-                                        <a href="{% url 'cse:doctors' %}">Doctors</a>
-                                        {#                                        <ul class="dropdown">#}
-                                        {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
-                                        {#                                        </ul>#}
-                                    </li>
-                                    <li><a href="{% url 'cse:services' %}">Services</a></li>
-
-                                    <li class="has-dropdown">
-                                        <a href="{% url 'cse:blog' %}">Blog</a>
-                                        {#                                        <ul class="dropdown">#}
-                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
-                                        {#                                        </ul>#}
-                                    </li>
-                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                    <li class="active"><a href="{% url 'cse:staring' %}">Home</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    {#                                    <li><a href="#">About Us</a></li>#}
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4">
-{#                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">#}
-{#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                            </a></p>#}
+                        <div class="col-md-3">
                             <p class="btn-cta">
-                                <a href="{% url 'cse:patientconfirm' %}">
-                                    <span>New Patient <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                                </a>
-{#                                <a href="{% url 'cse:newdoctor' %}">#}
-{#                                    <span>New Doctor <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                                </a>#}
-                                <a href="{% url 'cse:logout' %}">
-                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                                </a>
+                                <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
+                                <a href="{% url 'cse:register' %}"><span>  Register <i
+                                        class="glyphicon-registration-mark"></i></span></a>
                             </p>
                         </div>
                     </div>
@@ -640,265 +614,132 @@
             </div>
         </div>
     </nav>
+</div>
+<div>
+    <br>
+    <br>
 
-    <!----------------- End of Navigation Bar ---------------------------------->
+</div>
 
-<form class="jotform-form" action="{% url 'cse:pregform' %}" method="post" name="form_91042143588456" id="91042143588456" accept-charset="utf-8">
-    {% csrf_token %}
-    <!------------------------ End Navigation Bar---------------------------->
 
-    <div role="main" class="form-all">
-        <ul class="form-section page-section">
-            <li id="cid_1" class="form-input-wide" data-type="control_head">
-                <div class="form-header-group ">
-                    <div class="header-text httac htvam">
-                        <h1 id="header_1" class="form-header" data-component="header">
-                            Patient Is Valid?
-                        </h1>
-                        <div id="subHeader_1" class="form-subHeader">
-                            Enter patient email address below to check that patient is sustian/valid or not.
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <!---------- Error Message ------------------->
-            <li>
-                {% if messages %}
-                    <ul class="messages">
-                        <div class="alert alert-danger">
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                            {% endfor %}
-                        </div>
-                    </ul>
-                {% endif %}
-            </li>
-            <!------------------------ Email ---------------------------->
+<div class="w3-row-padding w3-content" style="max-width:1400px">
+    <div class="w3-twothird">
 
-            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">
-                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">
-                    User E-mail
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_6" class="form-input jf-required">
-                    <input type="email" onfocus="this.value=''" id="input_6"  name="useremail" class="form-textbox validate[required, Email]"
-                           size="40" value="ex: myname@example.com" placeholder="ex: myname@example.com" data-component="email" required=""/>
-                </div>
-            </li>
-                        <!------------------------ Password ---------------------------->
+{#          <img class="mySlides" src="img_la.jpg" style="width:100%">#}
+{#          <img class="mySlides" src="img_ny.jpg" style="width:100%">#}
+{#          <img class="mySlides" src="img_chicago.jpg" style="width:100%">#}
+        <div>
+            <img class="mySlides" src="{% static 'cse/images/medi.png' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/medical.jpg' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/SUST.jpg' %}"  style="width:100%">
+            <img class="mySlides" src="{% static 'cse/images/DSC_0010.jpg' %}"  style="width:100%">
+        </div>
+    <script>
+        var myIndex = 0;
+        carousel();
 
-{#            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">#}
-{#                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="input_6">#}
-{#                    Password#}
-{#                    <span class="form-required">*</span>#}
-{#                </label>#}
-{#                <div id="cid_6" class="form-input jf-required">#}
-{#                    <input type="password" onfocus="this.value=''" id="id_password"  name="password" class="form-textbox validate[required, Password]"#}
-{#                           size="20"  placeholder="ex: 123456" data-component="email" required=""/>#}
-{##}
-{#                            <input  type="checkbox" onclick="myFunction()">Show Password#}
-{#                            <script>#}
-{#                            function myFunction() {#}
-{#                              var x = document.getElementById("id_password");#}
-{#                              if (x.type === "password") {#}
-{#                                x.type = "text";#}
-{#                              } else {#}
-{#                                x.type = "password";#}
-{#                              }#}
-{#                            }#}
-{#                            </script>#}
-{#                </div>#}
-{#            </li>#}
-        <style>
-            .butto {
-              background-color: #4CAF50; /* Green */
-                position: relative;
-
-                right: -35px;
-                border-radius: 12px;
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
             }
-            .button {
-              background-color: #4CAF50; /* Green */
-                  position: absolute;
-                right: 50px;
-                border-radius: 50%;
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
             }
-            .butt {
-              background-color: #4CAF50; /* Green */
-                  position: relative;
-
-                right: -35px;
-                border-radius: 12px;
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
-            }
-            .button1:hover {
-                background-color: #f44336;
-                color: white;
-            }
-            .button2:hover {
-              background-color: #f44336;
-              color: white;
-            }
-            .button3:hover {
-              background-color: #f44336;
-              color: white;
-            }
-
-        </style>
-
-        <li>
-            <button class="butto button1">Proceed To Check
-{#                <a href="{% url 'cse:password_reset' %}" style="color: black"  ></a>#}
-            </button>
-{#            <button class="button button2">Login#}
-{#                <a href="{% url 'cse:login' %}" style="color: black" ></a>#}
-{#            </button>#}
-
-
-        </li>
-{#        <li class="form-line" data-type="control_button" id="id_27">#}
-{#                <div >#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
-{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
-{#                                data-component="button">#}
-{#                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
-{#        </li>#}
-{#        <li>#}
-{#            <button class="butt button3">#}
-{#                <a href="{% url 'cse:register' %}" style="color: black" >Don&#x27;t have an account? Click here to register</a>#}
-{#            </button>#}
-{##}
-{#        </li>#}
-
-
-{#             <!------------------------ reset button ---------------------------->#}
-{#            <li></li>#}
-{#            <li class="form-line form-line-column form-col-2" data-type="control_button" id="fgfg">#}
-{#                <div id="gfgf" class="form-input-wide">#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper" >#}
-{#                        <button id="fgfgf" type="submit" class="form-submit-button form-submit-button-simple_black"#}
-{#                                data-component="button">#}
-{#                            <a href="{% url 'cse:password_reset' %}">Forgot your password?</a>#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </li>#}
-{#             <!------------------------ Login button ---------------------------->#}
-{#            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">#}
-{#                <div id="cid_20" class="form-input-wide">#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
-{#                        <button id="input_20" type="submit"  style="width: 110px" class="form-submit-button form-submit-button-simple_green"#}
-{#                                data-component="button">#}
-{#                            <a href="{% url 'cse:login' %}" style="color: black">Login</a>#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </li>#}
-             <!------------------------ forword to register ---------------------------->
-            <li class="form-line" data-type="control_button" id="id_27">
-{#                <div id="cid_27" class="form-input-wide">#}
-{#                    <div style="text-align:left" class="form-buttons-wrapper">#}
-{#                        <button id="input_27" type="submit" class="form-submit-button form-submit-button-simple_black"#}
-{#                                data-component="button">#}
-{#                            <a href="{% url 'cse:register' %}">Don&#x27;t have an account? Click here to register.</a>#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </div>#}
-            </li>
-
-        </ul>
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+        <h2>Welcome</h2>
+        <div class="w3-justify">
+            <p>The Health Service Centre, SUST located near the central auditorium just opposite to the basket ball
+                ground , offers free experienced general practitioner and emergency medical care services to all members
+                of the University community: students (undergraduate and post graduate), teachers ,staffs and their
+                families in a user-friendly efficient environment. Students get medicine from the Centre at free of cost
+                but they need to show their Medical card at all consultations and employees get medicine at minimum
+                cost. The Centre provides service round the clock, seven days a week. The centre also has an
+                ambulance.</p>
+            <p>SUST Medical Center is a part of the Shahjalal University of Science and Technology.Shahjalal University
+                of Science and Technology also known as SUST is a state supported, public research university located in
+                Sylhet, Bangladesh. It is the 8th oldest university of the country and the first university to adopt
+                American credit system. SUST is the Flagship University of the Science & Technology University System of
+                Bangladesh.</p>
+        </div>
     </div>
-</form>
+    <div class="w3-third">
+        <div class="w3-container w3-light-grey">
+            <script>
+                var myVar = setInterval(myTimer, 0);
 
-{#<style>#}
-{#.footer {#}
-{#   position: fixed;#}
-{#   left: 0;#}
-{#   bottom: 0;#}
-{#       height:25px;#}
-{##}
-{#   width: 100%;#}
-{#   background-color: black;#}
-{#   color: white;#}
-{#   text-align: center;#}
-{#}#}
-{#</style>#}
-{#<div class="footer">#}
-{#    <p>#}
-{#        <small class="block">#}
-{#            Copyright &copy;<script>document.write(new Date().getFullYear());</script>#}
-{#            All rights reserved | Colorlib : SUST Medical Center</a>#}
-{#        </small>#}
-{#    </p>#}
-{##}
-{#</div>#}
+                function myTimer() {
+                    var d = new Date();
+                    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+                }
+            </script>
+
+            <p class="text-center" id="demo"></p>
+            <p>SUST Medical Center remains open in the following days and time: </p>
+            <h2 class="text-center"><strong>Schedule</strong></h2>
+            <h3 class="text-center">Saturday - Wednesday</h3>
+            <p><b>Summer(1 April - 30 September)</b></p>
+            <p>Morning: 09.00 am - 12.00 pm</p>
+            <p>Evening: 02.00 pm - 06.00 pm</p>
+            <br>
+            <p><b>Winter(1 October - 31 March)</b></p>
+            <p>Morning: 09.00 am - 12.00 pm</p>
+            <p>Evening: 02.00 pm - 05.00 pm</p>
+        </div>
+        <br>
+        <div class="w3-container w3-light-grey w3-justify">
+            <p><b>Presently Medical Centre provides medical facilities are as follows:</b></p>
+            <h3>Outdoor Treatment</h3>
+            <p class="w3-justify">All students, Teachers, Officers, Staffs
+                and their dependants get medical facilities from Medical Centre free of cost. Some emergency medicine is
+                supplied
+                to the sick students from Medical Centre free of cost.</p>
+            <h3>Emergency Treatment</h3>
+            <p class="w3-justify">Medical Centre provides all emergency primary treatment such as Asthma, High
+                Temperature, Vomitting, Diarrhoea, RTA, Trauma etc.</p>
+
+            <h3>Ambulance</h3>
+            <p class="w3-justify">
+                We have two well equipped Ambulances. All emergency patients are transferred to Clinic or Hospital by
+                Ambulance.</p>
+        </div>
+    </div>
+</div>
+
 <style>
-{#    body, html {#}
-{#    height: 100%;#}
-{#    overflow: hidden;#}
-{#}#}
 
-#contentWrapper {
-    overflow-x:auto;
-    overflow-y: hidden;
-    {#height: 100%;#}
-    height: 23px;
-    width: 100%;
-    margin-top: -16px;
-}
 
-#content {
-    padding-top: -5px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    width: 100%;
-}
+    #contentWrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+    {#height: 100%;#} height: 23px;
+        width: 100%;
+        margin-top: -16px;
+    }
+
+    #content {
+        padding-top: -5px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
 </style>
 <div id="contentWrapper">
     <div id="content">
-                        <p>
-                    <small class="block">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | Colorlib : SUST Medical Center</a>
-                    </small>
-                </p>
+        <p>
+            <small class="block">
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved | Colorlib : SUST Medical Center</a>
+            </small>
+        </p>
     </div>
 </div>
+
 </body>
 </html>

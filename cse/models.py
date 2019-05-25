@@ -52,3 +52,64 @@ class FeebBack(models.Model):
 
     def __str__(self):
         return self.user.email
+
+class MedicalInfo(models.Model):
+    user = models.ForeignKey(CustomUser,default=1,on_delete=models.CASCADE)
+    doctor = models.ForeignKey(Doctors,default=1,on_delete=models.CASCADE)
+
+    history = models.TextField(null=False,blank=False,default=None)
+    add_info = models.TextField(null=False,blank=False,default=None)
+    test_advise = models.TextField(null=False,blank=False,default=None)
+    adate = models.DateField(null=False,blank=False,default=None)
+    # docotr_email = models.EmailField(null=False,blank=False,default=None,max_length=100)
+
+    medi_name_1 = models.CharField(null=False,blank=False,default=None,max_length=100)
+    drug_limit_1 = models.CharField(null=False,blank=False,default=None,max_length=100)
+    num_of_day_1 = models.CharField(null=False,blank=False,default=None,max_length=100)
+    eat_time_1 = models.CharField(null=False,blank=False,default=None,max_length=100)
+
+    medi_name_2 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_2 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_2 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_2 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_3 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_3 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_3 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_3 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_4 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_4 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_4 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_4 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_5 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_5 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_5 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_5 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_6 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_6 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_6 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_6 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_7 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_7 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_7 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_7 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_8 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_8 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_8 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_8 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_9 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_9 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_9 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_9 = models.CharField(null=False, blank=False, default=None, max_length=100)
+
+    medi_name_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    drug_limit_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    num_of_day_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
+    eat_time_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
+

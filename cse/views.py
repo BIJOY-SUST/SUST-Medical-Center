@@ -17,7 +17,7 @@ from django.core.mail import send_mail,EmailMessage
 from django.contrib import  messages
 from django.shortcuts import render
 from datetime import date,datetime
-from .models import CustomUser,Doctors,FeebBack
+from .models import CustomUser,Doctors,FeebBack,MedicalInfo
 from django.contrib import messages
 
 from  django.http import HttpResponse
@@ -35,7 +35,7 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 def testing(request):
-    return render(request,'cse/test.html')
+    return render(request,'cse/test2.html')
 
 def staring(request):
         # site = get_current_site(request).dom
@@ -148,7 +148,7 @@ def register(request):
                             'token': account_activation_token.make_token(c),
                     })
                     from_email = settings.EMAIL_HOST_USER
-                    to_email = 'bsbijoy2050@gmail.com'
+                    to_email = settings.EMAIL_HOST_USER
                     to_list = [to_email]
                     send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
                     # emailcheck = EmailMessage(mail_subject, message, from_email, to_list,)
@@ -328,9 +328,11 @@ def feedback(request):
         if request.method=='POST':
             sub  = request.POST.get('subject')
             mess  = request.POST.get('message')
+            # adate = date.today()
+            # print(adate)
             c=FeebBack(user_id=request.user.id,tsub=sub,tmessage=mess)
             c.save()
-            mail_subject = "Thankyou for your feedback"
+            mail_subject = "Thank you for your feedback"
             message = render_to_string('cse/feed.html', {
                 'user': request.user,
             })
@@ -581,13 +583,141 @@ def pregform(request):
 #             return render(request, 'cse/login.html')
 
 def pdf(request):
+    # bb = request.POST.get('history'),
+    # print(bb)
     if request.user.is_authenticated:
         if request.user.user_type == 'Admin' or request.user.is_superuser:
             # if request.method == 'POST' or request.method == 'GET':
             if request.method == 'POST':
                 # template = get_template('cse/test.html')
+                # nam = request.user.first_name
+                # print(nam)
                 t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
                 t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
+
+                # medical_info Table
+
+                # his = request.POST.get('history'),
+                # addinfo = request.POST.get('additional_field'),
+                # test = request.POST.get('testadvised'),
+
+                # print(his)
+
+                # a_date =  date.today(),
+                # print(a_date)
+                # one_name =  request.POST.get('medicine_1'),
+                # one_limit= request.POST.get('drug_limit_1'),
+                # one_day =  request.POST.get('days_1'),
+                # one_eat =  request.POST.get('eating_time_1'),
+                #
+                # two_name =  request.POST.get('medicine_2'),
+                # two_limit = request.POST.get('drug_limit_2'),
+                # two_day = request.POST.get('days_2'),
+                # two_eat =  request.POST.get('eating_time_2'),
+                #
+                # the_name =  request.POST.get('medicine_3'),
+                # the_lim =  request.POST.get('drug_limit_3'),
+                # the_da =  request.POST.get('days_3'),
+                # the_eat = request.POST.get('eating_time_3'),
+                #
+                # f_name = request.POST.get('medicine_4'),
+                # f_lim = request.POST.get('drug_limit_4'),
+                # f_da = request.POST.get('days_4'),
+                # f_eat = request.POST.get('eating_time_4'),
+                #
+                # fi_name = request.POST.get('medicine_5'),
+                # fi_lim = request.POST.get('drug_limit_5'),
+                # fi_day = request.POST.get('days_5'),
+                # fi_eat = request.POST.get('eating_time_5'),
+                #
+                # si_name = request.POST.get('medicine_6'),
+                # si_lim = request.POST.get('drug_limit_6'),
+                # si_da = request.POST.get('days_6'),
+                # si_eat = request.POST.get('eating_time_6'),
+                #
+                # se_name =  request.POST.get('medicine_7'),
+                # se_lim= request.POST.get('drug_limit_7'),
+                # se_da =  request.POST.get('days_7'),
+                # se_eat = request.POST.get('eating_time_7'),
+                #
+                # ei_name= request.POST.get('medicine_8'),
+                # ei_lim = request.POST.get('drug_limit_8'),
+                # ei_day = request.POST.get('days_8'),
+                # ei_eat = request.POST.get('eating_time_8'),
+                #
+                # ni_name = request.POST.get('medicine_9'),
+                # ni_lim =  request.POST.get('drug_limit_9'),
+                # ni_day =  request.POST.get('days_9'),
+                # ni_eat = request.POST.get('eating_time_9'),
+                #
+                # ten_name =  request.POST.get('medicine_10'),
+                # ten_lim= request.POST.get('drug_limit_10'),
+                # ten_da= request.POST.get('days_10'),
+                # ten_eat =  request.POST.get('eating_time_10'),
+
+                c=MedicalInfo(user_id=t_patient.id,doctor_id=t_doctor.doctor_id, adate=date.today(),
+                              history=request.POST.get('history'),
+                              add_info=request.POST.get('additional_field'),
+                              test_advise=request.POST.get('testadvised'),
+
+                              medi_name_1=request.POST.get('medicine_1'),
+                              drug_limit_1=request.POST.get('drug_limit_1'),
+                              num_of_day_1=request.POST.get('days_1'),
+                              eat_time_1=request.POST.get('eating_time_1'),
+
+                              medi_name_2=request.POST.get('medicine_2'),
+                              drug_limit_2=request.POST.get('drug_limit_2'),
+                              num_of_day_2=request.POST.get('days_2'),
+                              eat_time_2=request.POST.get('eating_time_2'),
+
+                              medi_name_3= request.POST.get('medicine_3'),
+                              drug_limit_3=request.POST.get('drug_limit_3'),
+                              num_of_day_3=request.POST.get('days_3'),
+                              eat_time_3=request.POST.get('eating_time_3'),
+
+                              medi_name_4=request.POST.get('medicine_4'),
+                              drug_limit_4=request.POST.get('drug_limit_4'),
+                              num_of_day_4=request.POST.get('days_4'),
+                              eat_time_4= request.POST.get('eating_time_4'),
+
+
+                              medi_name_5=request.POST.get('medicine_5'),
+                              drug_limit_5=request.POST.get('drug_limit_5'),
+                              num_of_day_5=request.POST.get('days_5'),
+                              eat_time_5= request.POST.get('eating_time_5'),
+
+                              medi_name_6= request.POST.get('medicine_6'),
+                              drug_limit_6=request.POST.get('drug_limit_6'),
+                              num_of_day_6=request.POST.get('days_6'),
+                              eat_time_6=request.POST.get('eating_time_6'),
+
+                              medi_name_7=request.POST.get('medicine_7'),
+                              drug_limit_7=request.POST.get('drug_limit_7'),
+                              num_of_day_7=request.POST.get('days_7'),
+                              eat_time_7=request.POST.get('eating_time_7'),
+
+                              medi_name_8=request.POST.get('medicine_8'),
+                              drug_limit_8=request.POST.get('drug_limit_8'),
+                              num_of_day_8=request.POST.get('days_8'),
+                              eat_time_8=request.POST.get('eating_time_8'),
+
+                              medi_name_9=request.POST.get('medicine_9'),
+                              drug_limit_9=request.POST.get('drug_limit_9'),
+                              num_of_day_9=request.POST.get('days_9'),
+                              eat_time_9=request.POST.get('eating_time_9'),
+
+                              medi_name_10=request.POST.get('medicine_10'),
+                              drug_limit_10=request.POST.get('drug_limit_10'),
+                              num_of_day_10=request.POST.get('days_10'),
+                              eat_time_10=request.POST.get('eating_time_10')
+                              )
+                c.save()
+
+
+
+                # End of medical_info Table
+
+
                 context={
                     'tpatient' : t_patient,
                     'tdoctor' : t_doctor,
@@ -651,6 +781,9 @@ def pdf(request):
                 # html = template.render(context)
                 # return HttpResponse(html)
                 pdf = render_to_pdf('cse/prescription.html',context)
+
+                # c = MedicalInfo(user_id=t_patient.id, prescription=pdf)
+                # c.save()
                 if pdf:
                     response = HttpResponse(pdf, content_type='application/pdf')
                     filename = "Patient_%s.pdf" %("Prescription")
