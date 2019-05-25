@@ -582,6 +582,18 @@ def pregform(request):
 #             messages.error(request, 'Please login first...!')
 #             return render(request, 'cse/login.html')
 
+def calculate_age(born):
+    today = date.today()
+    try:
+        birthday = born.replace(year=today.year)
+    except ValueError: # raised when birth date is February 29 and the current year is not a leap year
+        birthday = born.replace(year=today.year, month=born.month+1, day=1)
+    if birthday > today:
+        return today.year - born.year - 1
+    else:
+        return today.year - born.year
+
+
 def pdf(request):
     # bb = request.POST.get('history'),
     # print(bb)
@@ -713,6 +725,7 @@ def pdf(request):
                               )
                 c.save()
 
+                dd = t_patient.date_of_birth
 
 
                 # End of medical_info Table
@@ -727,6 +740,7 @@ def pdf(request):
                     'ttestadvised' : request.POST.get('testadvised'),
 
                     'today_date' : date.today(),
+                    'agee' : calculate_age(dd),
 
                     '1_medi_name' : request.POST.get('medicine_1'),
                     '1_drug_limit' : request.POST.get('drug_limit_1'),
