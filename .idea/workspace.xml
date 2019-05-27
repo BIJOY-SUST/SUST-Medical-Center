@@ -403,12 +403,12 @@
       <workItem from="1558873441548" duration="7790000" />
       <workItem from="1558904603760" duration="4065000" />
       <workItem from="1558946542994" duration="11485000" />
-      <workItem from="1558969916084" duration="8337000" />
+      <workItem from="1558969916084" duration="8997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476172000" />
+    <option name="totallyTimeSpent" value="476832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,7 +421,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-37" width="1920" height="1117" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49904943" visible="true" weight="0.20010729" />
       <window_info id="Structure" order="1" sideWeight="0.5009506" side_tool="true" weight="0.14860515" />
@@ -434,7 +433,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3298479" />
-      <window_info anchor="bottom" id="manage.py@sust-medical-center" order="8" sideWeight="0.49731758" weight="0.22053231" />
+      <window_info active="true" anchor="bottom" id="manage.py@sust-medical-center" order="8" sideWeight="0.49731758" visible="true" weight="0.22053231" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50167227" side_tool="true" weight="0.43651626" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32967034" />

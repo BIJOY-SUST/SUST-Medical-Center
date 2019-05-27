@@ -276,7 +276,7 @@ def register(request):
                 if c.user_type == 'Admin':
                     site = request.META['HTTP_HOST']
                     # print(site)
-                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    mail_subject = "Confirmation message for SUST Medical Center"
                     message = render_to_string('cse/confirm_email_admin.html', {
                             'user': c,
                             'domain': site,
@@ -294,7 +294,7 @@ def register(request):
                 else:
                     site = request.META['HTTP_HOST']
                     # print(site)
-                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    mail_subject = "Confirmation message for SUST Medical Center"
                     message = render_to_string('cse/confirm_email.html', {
                             'user': c,
                             'domain': site,
@@ -352,7 +352,7 @@ def password_reset_done(request):
                     c.save()
                     site = request.META['HTTP_HOST']
                     # print(site)
-                    mail_subject = "Confirmation message for SUSTMedicalCenter"
+                    mail_subject = "Confirmation message for SUST Medical Center"
                     message = render_to_string('cse/confirm_email_pass.html', {
                             'user': c,
                             'domain': site,
