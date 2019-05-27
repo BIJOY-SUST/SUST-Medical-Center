@@ -107,10 +107,10 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li ><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:index' %}">Home</a></li>
                                     <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                    <li >
+                                    <li>
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
@@ -118,7 +118,7 @@
                                     </li>
                                     <li class="active"><a href="{% url 'cse:services' %}">Services</a></li>
 
-                                    <li >
+                                    <li>
                                         <a href="{% url 'cse:blog' %}">Blog</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
@@ -129,10 +129,15 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">
-                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            </a></p>
+                            <p class="btn-cta">
+                                <a href="{% url 'cse:profile' %}">
+                                    <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+                                <a href="{% url 'cse:logout' %}">
+                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +253,8 @@
 						</span>
                         <div class="desc">
                             <h3>Qualified Doctors</h3>
-                            <p>Here at SUST Medical Center, we provide diagnosis by doctors who are dedicated and skilled.</p>
+                            <p>Here at SUST Medical Center, we provide diagnosis by doctors who are dedicated and
+                                skilled.</p>
 
                         </div>
                     </div>
@@ -272,7 +278,8 @@
 						</span>
                         <div class="desc">
                             <h3>Emergency Services</h3>
-                            <p>We have emergency medical services ready to help.Ambulances are used to respond to medical emergencies by emergency medical services.</p>
+                            <p>We have emergency medical services ready to help.Ambulances are used to respond to
+                                medical emergencies by emergency medical services.</p>
 
                         </div>
                     </div>
@@ -318,45 +325,45 @@
     <div id="colorlib-contact">
         <div class="container">
             <div class="row">
-{#                <div class="col-md-10 col-md-offset-1 animate-box">#}
+                {#                <div class="col-md-10 col-md-offset-1 animate-box">#}
 
-                    <h2>Services provided at the University Health Service Centre include:</h2>
-                    <br>
-                    <ul>
-                        <li>Routine medical examinations & health checkups (blood pressure, RBS by glucometer etc.)</li>
-                        <li>Treatment of illness, injury, & other physical problems</li>
-                        <li>Minor Surgical Procedures (drainage of abscess ,boil etc)</li>
-                        <li>Minor Wound Management</li>
-                        <li>Sports Injury Management</li>
-                        <li>Travel Medicine and Advice</li>
-                        <li>Advice & assistance for students with examination difficulties</li>
-                        <li>Special arrangements for students with disabilities and sick students</li>
-                        <li>Referral to specialists ,imaging services, pathology, and physiotherapy according to need
-                            and
-                            condition
-                            of the patient
-                        </li>
-                        <li>Organize blood grouping and donation campaign under direct supervision</li>
-                        <li>Vaccination :Hepatitis B and Ca cervix</li>
-                        <li>Issuing medical card for the students and give medical clearance after completion of their
-                            respective
-                            courses(Bsc, Msc)
-                        </li>
-                        <li>Medical Assessments/Pre-Employment Medicals :By issuing fitness certificate</li>
-                    </ul>
-                    <br>
-                    <h2>Support and confidentiality</h2>
-                    <p>
-                        Our staffs are available to help you deal with your problems by treating you as a responsible
-                        adult,
-                        offering constructive support without judgment.
-                        <br><br>
-                        Consultations are held in confidence and nothing you tell a doctor will be passed on to anyone
-                        else,
-                        whether
-                        a parent, relative, friend or University staff.
-                    </p>
-{#                </div>#}
+                <h2>Services provided at the University Health Service Centre include:</h2>
+                <br>
+                <ul>
+                    <li>Routine medical examinations & health checkups (blood pressure, RBS by glucometer etc.)</li>
+                    <li>Treatment of illness, injury, & other physical problems</li>
+                    <li>Minor Surgical Procedures (drainage of abscess ,boil etc)</li>
+                    <li>Minor Wound Management</li>
+                    <li>Sports Injury Management</li>
+                    <li>Travel Medicine and Advice</li>
+                    <li>Advice & assistance for students with examination difficulties</li>
+                    <li>Special arrangements for students with disabilities and sick students</li>
+                    <li>Referral to specialists ,imaging services, pathology, and physiotherapy according to need
+                        and
+                        condition
+                        of the patient
+                    </li>
+                    <li>Organize blood grouping and donation campaign under direct supervision</li>
+                    <li>Vaccination :Hepatitis B and Ca cervix</li>
+                    <li>Issuing medical card for the students and give medical clearance after completion of their
+                        respective
+                        courses(Bsc, Msc)
+                    </li>
+                    <li>Medical Assessments/Pre-Employment Medicals :By issuing fitness certificate</li>
+                </ul>
+                <br>
+                <h2>Support and confidentiality</h2>
+                <p>
+                    Our staffs are available to help you deal with your problems by treating you as a responsible
+                    adult,
+                    offering constructive support without judgment.
+                    <br><br>
+                    Consultations are held in confidence and nothing you tell a doctor will be passed on to anyone
+                    else,
+                    whether
+                    a parent, relative, friend or University staff.
+                </p>
+                {#                </div>#}
 
             </div>
         </div>
@@ -377,7 +384,8 @@
                                     <span class="icon text-center"><i class="flaticon-healthy-1"></i></span>
                                     <div class="desc">
                                         <h3>Qualified Doctors</h3>
-                                        <p>Here at SUST Medical Center, we provide diagnosis by doctors who are dedicated and skilled. </p>
+                                        <p>Here at SUST Medical Center, we provide diagnosis by doctors who are
+                                            dedicated and skilled. </p>
                                     </div>
                                 </div>
                                 <div class="features animate-box">
@@ -393,7 +401,8 @@
                                     <span class="icon text-center"><i class="flaticon-medical-1"></i></span>
                                     <div class="desc">
                                         <h3>Online Enrollment</h3>
-                                        <p>Anyone can get an appointment from anywhere online without moving an inch. </p>
+                                        <p>Anyone can get an appointment from anywhere online without moving an
+                                            inch. </p>
                                     </div>
                                 </div>
                                 <div class="features animate-box">
@@ -434,141 +443,141 @@
     {#            </div>#}
     {#        </div>#}
     {#    </div>#}
-{#    <div>#}
-{#        <img class="img-user"  src="{{ user.photos.url }}">#}
-{##}
-{#        <span   ></span>#}
-{##}
-{#    </div>#}
+    {#    <div>#}
+    {#        <img class="img-user"  src="{{ user.photos.url }}">#}
+    {##}
+    {#        <span   ></span>#}
+    {##}
+    {#    </div>#}
 
-{##}
+    {##}
 
-{#                                <div>#}
-{#                                    <style>#}
-{##}
-{##}
-{#                                    /* Center the image and position the close button */#}
-{#                                    .imgcontainer {#}
-{#                                      text-align: center;#}
-{#                                      margin: 24px 0 12px 0;#}
-{#                                      position: relative;#}
-{#                                    }#}
-{##}
-{#                                    img.avatar {#}
-{#                                      width: 40%;#}
-{#                                      border-radius: 50%;#}
-{#                                    }#}
-{##}
-{#                                    .container {#}
-{#                                      padding: 16px;#}
-{#                                    }#}
-{##}
-{#                                    span.psw {#}
-{#                                      float: right;#}
-{#                                      padding-top: 16px;#}
-{#                                    }#}
-{##}
-{#                                    /* The Modal (background) */#}
-{#                                    .modal {#}
-{#                                      display: none; /* Hidden by default */#}
-{#                                      position: fixed; /* Stay in place */#}
-{#                                      z-index: 1; /* Sit on top */#}
-{#                                      left: 0;#}
-{#                                      top: 0;#}
-{#                                      width: 100%; /* Full width */#}
-{#                                      height: 100%; /* Full height */#}
-{#                                      overflow: auto; /* Enable scroll if needed */#}
-{#                                      background-color: rgb(0,0,0); /* Fallback color */#}
-{#                                      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */#}
-{#                                      padding-top: 60px;#}
-{#                                    }#}
-{##}
-{#                                    /* Modal Content/Box */#}
-{#                                    .modal-content {#}
-{#                                      background-color: #fefefe;#}
-{#                                      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */#}
-{#                                      border: 1px solid #888;#}
-{#                                      width: 80%; /* Could be more or less, depending on screen size */#}
-{#                                    }#}
-{##}
-{#                                    /* The Close Button (x) */#}
-{#                                    .close {#}
-{#                                      position: absolute;#}
-{#                                      right: 25px;#}
-{#                                      top: 0;#}
-{#                                      color: #000;#}
-{#                                      font-size: 35px;#}
-{#                                      font-weight: bold;#}
-{#                                    }#}
-{##}
-{#                                    .close:hover,#}
-{#                                    .close:focus {#}
-{#                                      color: red;#}
-{#                                      cursor: pointer;#}
-{#                                    }#}
-{##}
-{#                                    /* Add Zoom Animation */#}
-{#                                    .animate {#}
-{#                                      -webkit-animation: animatezoom 0.6s;#}
-{#                                      animation: animatezoom 0.6s#}
-{#                                    }#}
-{##}
-{#                                    @-webkit-keyframes animatezoom {#}
-{#                                      from {-webkit-transform: scale(0)}#}
-{#                                      to {-webkit-transform: scale(1)}#}
-{#                                    }#}
-{##}
-{#                                    @keyframes animatezoom {#}
-{#                                      from {transform: scale(0)}#}
-{#                                      to {transform: scale(1)}#}
-{#                                    }#}
-{##}
-{#                                    /* Change styles for span and cancel button on extra small screens */#}
-{#                                    @media screen and (max-width: 300px) {#}
-{#                                      span.psw {#}
-{#                                         display: block;#}
-{#                                         float: none;#}
-{#                                      }#}
-{#                                      .cancelbtn {#}
-{#                                         width: 100%;#}
-{#                                      }#}
-{#                                    }#}
-{#                                    </style>#}
-{#                                    <div id="id01" class="modal">#}
-{##}
-{#                                      <form class="modal-content animate" action="">#}
-{#                                        <div class="imgcontainer">#}
-{#                                          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>#}
-{#                                          <img src="{% static 'cse/images/person1.jpg' %}" alt="Avatar" class="avatar">#}
-{#                                        </div>#}
-{##}
-{#                                        <div class="container">#}
-{#                                            <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
-{#                                            <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
-{#                                          <p><b>Reg No: 2016331012</b></p>#}
-{#                                        <p><b>Department: Department of English (ENG)</b></p>#}
-{#                                        </div>#}
-{##}
-{##}
-{#                                      </form>#}
-{#                                    </div>#}
-{#                                     <img class="img-user" onclick="document.getElementById('id01').style.display='block'"  src="{{ item.user.photos.url }}" alt="Avatar" style="width: 200px">#}
-{##}
+    {#                                <div>#}
+    {#                                    <style>#}
+    {##}
+    {##}
+    {#                                    /* Center the image and position the close button */#}
+    {#                                    .imgcontainer {#}
+    {#                                      text-align: center;#}
+    {#                                      margin: 24px 0 12px 0;#}
+    {#                                      position: relative;#}
+    {#                                    }#}
+    {##}
+    {#                                    img.avatar {#}
+    {#                                      width: 40%;#}
+    {#                                      border-radius: 50%;#}
+    {#                                    }#}
+    {##}
+    {#                                    .container {#}
+    {#                                      padding: 16px;#}
+    {#                                    }#}
+    {##}
+    {#                                    span.psw {#}
+    {#                                      float: right;#}
+    {#                                      padding-top: 16px;#}
+    {#                                    }#}
+    {##}
+    {#                                    /* The Modal (background) */#}
+    {#                                    .modal {#}
+    {#                                      display: none; /* Hidden by default */#}
+    {#                                      position: fixed; /* Stay in place */#}
+    {#                                      z-index: 1; /* Sit on top */#}
+    {#                                      left: 0;#}
+    {#                                      top: 0;#}
+    {#                                      width: 100%; /* Full width */#}
+    {#                                      height: 100%; /* Full height */#}
+    {#                                      overflow: auto; /* Enable scroll if needed */#}
+    {#                                      background-color: rgb(0,0,0); /* Fallback color */#}
+    {#                                      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */#}
+    {#                                      padding-top: 60px;#}
+    {#                                    }#}
+    {##}
+    {#                                    /* Modal Content/Box */#}
+    {#                                    .modal-content {#}
+    {#                                      background-color: #fefefe;#}
+    {#                                      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */#}
+    {#                                      border: 1px solid #888;#}
+    {#                                      width: 80%; /* Could be more or less, depending on screen size */#}
+    {#                                    }#}
+    {##}
+    {#                                    /* The Close Button (x) */#}
+    {#                                    .close {#}
+    {#                                      position: absolute;#}
+    {#                                      right: 25px;#}
+    {#                                      top: 0;#}
+    {#                                      color: #000;#}
+    {#                                      font-size: 35px;#}
+    {#                                      font-weight: bold;#}
+    {#                                    }#}
+    {##}
+    {#                                    .close:hover,#}
+    {#                                    .close:focus {#}
+    {#                                      color: red;#}
+    {#                                      cursor: pointer;#}
+    {#                                    }#}
+    {##}
+    {#                                    /* Add Zoom Animation */#}
+    {#                                    .animate {#}
+    {#                                      -webkit-animation: animatezoom 0.6s;#}
+    {#                                      animation: animatezoom 0.6s#}
+    {#                                    }#}
+    {##}
+    {#                                    @-webkit-keyframes animatezoom {#}
+    {#                                      from {-webkit-transform: scale(0)}#}
+    {#                                      to {-webkit-transform: scale(1)}#}
+    {#                                    }#}
+    {##}
+    {#                                    @keyframes animatezoom {#}
+    {#                                      from {transform: scale(0)}#}
+    {#                                      to {transform: scale(1)}#}
+    {#                                    }#}
+    {##}
+    {#                                    /* Change styles for span and cancel button on extra small screens */#}
+    {#                                    @media screen and (max-width: 300px) {#}
+    {#                                      span.psw {#}
+    {#                                         display: block;#}
+    {#                                         float: none;#}
+    {#                                      }#}
+    {#                                      .cancelbtn {#}
+    {#                                         width: 100%;#}
+    {#                                      }#}
+    {#                                    }#}
+    {#                                    </style>#}
+    {#                                    <div id="id01" class="modal">#}
+    {##}
+    {#                                      <form class="modal-content animate" action="">#}
+    {#                                        <div class="imgcontainer">#}
+    {#                                          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>#}
+    {#                                          <img src="{% static 'cse/images/person1.jpg' %}" alt="Avatar" class="avatar">#}
+    {#                                        </div>#}
+    {##}
+    {#                                        <div class="container">#}
+    {#                                            <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
+    {#                                            <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
+    {#                                          <p><b>Reg No: 2016331012</b></p>#}
+    {#                                        <p><b>Department: Department of English (ENG)</b></p>#}
+    {#                                        </div>#}
+    {##}
+    {##}
+    {#                                      </form>#}
+    {#                                    </div>#}
+    {#                                     <img class="img-user" onclick="document.getElementById('id01').style.display='block'"  src="{{ item.user.photos.url }}" alt="Avatar" style="width: 200px">#}
+    {##}
     {#                                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>#}
-{#                                            <script>#}
-{#                                        // Get the modal#}
-{#                                        var modal = document.getElementById('id01');#}
-{#                                        #}
-{#                                        // When the user clicks anywhere outside of the modal, close it#}
-{#                                        window.onclick = function(event) {#}
-{#                                            if (event.target == modal) {#}
-{#                                                modal.style.display = "none";#}
-{#                                            }#}
-{#                                        }#}
-{#                                        </script>#}
-{#                                </div>#}
+    {#                                            <script>#}
+    {#                                        // Get the modal#}
+    {#                                        var modal = document.getElementById('id01');#}
+    {#                                        #}
+    {#                                        // When the user clicks anywhere outside of the modal, close it#}
+    {#                                        window.onclick = function(event) {#}
+    {#                                            if (event.target == modal) {#}
+    {#                                                modal.style.display = "none";#}
+    {#                                            }#}
+    {#                                        }#}
+    {#                                        </script>#}
+    {#                                </div>#}
 
-{##}
+    {##}
 
 
     <div id="colorlib-testimonial" class="colorlib-bg-section">
@@ -577,113 +586,113 @@
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
                     <h2>What our patients says</h2>
                     <p>Your feedback on your experience with our patient support team.
-We sincerely appreciate your insight because it helps us build a better patient experience.</p>
+                        We sincerely appreciate your insight because it helps us build a better patient experience.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 animate-box">
                     <div class="owl-carousel">
                         {% for item in messages %}
-                        <div class="item">
-                            <div class="testimony text-left">
+                            <div class="item">
+                                <div class="testimony text-left">
 
 
+                                    <img class="img-user" src="{{ item.user.photos.url }}" alt="Avatar"
+                                         style="width: 200px">
 
-                               <img class="img-user" src="{{ item.user.photos.url }}" alt="Avatar" style="width: 200px">
+                                    <span class="user">Name: {{ item.user.first_name }} {{ item.user.last_name }}</span>
+                                    <span class="user">Email: {{ item.user.email }}</span>
+                                    <span class="user">Reg. No:{{ item.user.reg_no }}</span>
+                                    <span class="user">Department: {{ item.user.department }}</span>
 
-                                <span class="user">Name: {{ item.user.first_name }} {{ item.user.last_name }}</span>
-                                <span class="user">Email: {{ item.user.email }}</span>
-                                <span class="user">Reg. No:{{ item.user.reg_no }}</span>
-                                <span class="user">Department: {{ item.user.department }}</span>
-
-{#                                        <div>#}
-{#                                            <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
-{#                                            <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
-{#                                          <p><b>Reg No: 2016331012</b></p>#}
-{#                                        <p><b>Department: Department of English (ENG)</b></p>#}
-{#                                        </div>#}
-                                <blockquote>
-{#                                    <textarea rows="4" cols="35">#}
-                                    <div style="text-align: center">
-                                        <p> <u>{{ item.tsub }}</u></p>
-                                    </div>
-                                    <style>
-                                        div.ex1 {
-                                          background-color: white;
-                                          width: 510px;
-                                          height: 400px;
-                                          overflow: scroll;
-                                        }
-                                    </style>
-                                    <div class="ex1">{{ item.tmessage }}</div>
-{#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-{#                                    </textarea>#}
-                                </blockquote>
+                                    {#                                        <div>#}
+                                    {#                                            <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
+                                    {#                                            <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
+                                    {#                                          <p><b>Reg No: 2016331012</b></p>#}
+                                    {#                                        <p><b>Department: Department of English (ENG)</b></p>#}
+                                    {#                                        </div>#}
+                                    <blockquote>
+                                        {#                                    <textarea rows="4" cols="35">#}
+                                        <div style="text-align: center">
+                                            <p><u>{{ item.tsub }}</u></p>
+                                        </div>
+                                        <style>
+                                            div.ex1 {
+                                                background-color: white;
+                                                width: 510px;
+                                                height: 400px;
+                                                overflow: scroll;
+                                            }
+                                        </style>
+                                        <div class="ex1">{{ item.tmessage }}</div>
+                                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+                                        {#                                            class="icon-star3"></i></span><span><i#}
+                                        {#                                            class="icon-star3"></i></span><span><i#}
+                                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+                                        {#                                    </textarea>#}
+                                    </blockquote>
+                                </div>
                             </div>
-                        </div>
                         {% endfor %}
-{#                        <div class="item">#}
-{#                            <div class="testimony text-center">#}
-{#                                <span class="img-user"#}
-{#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
-{#                                <span class="user">Carl Bean</span>#}
-{#                                <blockquote>#}
-{#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-{#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-{#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-{#                                </blockquote>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="item">#}
-{#                            <div class="testimony text-center">#}
-{#                                <span class="img-user"#}
-{#                                      style="background-image: url({% static 'cse/images/person3.jpg' %})"></span>#}
-{#                                <span class="user">John Bay</span>#}
-{#                                <blockquote>#}
-{#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-{#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-{#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-{#                                </blockquote>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="item">#}
-{#                            <div class="testimony text-center">#}
-{#                                <span class="img-user" style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>#}
-{#                                <span class="user">Ronald Duck</span>#}
-{#                                <blockquote>#}
-{#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-{#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-{#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-{#                                </blockquote>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="item">#}
-{#                            <div class="testimony text-center">#}
-{#                                <span class="img-user"#}
-{#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
-{#                                <span class="user">Justine Mill</span>#}
-{#                                <blockquote>#}
-{#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-{#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-{#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i#}
-{#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-{#                                </blockquote>#}
-{#                            </div>#}
-{#                        </div>#}
+                        {#                        <div class="item">#}
+                        {#                            <div class="testimony text-center">#}
+                        {#                                <span class="img-user"#}
+                        {#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
+                        {#                                <span class="user">Carl Bean</span>#}
+                        {#                                <blockquote>#}
+                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
+                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+                        {#                                </blockquote>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div class="item">#}
+                        {#                            <div class="testimony text-center">#}
+                        {#                                <span class="img-user"#}
+                        {#                                      style="background-image: url({% static 'cse/images/person3.jpg' %})"></span>#}
+                        {#                                <span class="user">John Bay</span>#}
+                        {#                                <blockquote>#}
+                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
+                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+                        {#                                </blockquote>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div class="item">#}
+                        {#                            <div class="testimony text-center">#}
+                        {#                                <span class="img-user" style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>#}
+                        {#                                <span class="user">Ronald Duck</span>#}
+                        {#                                <blockquote>#}
+                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
+                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+                        {#                                </blockquote>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div class="item">#}
+                        {#                            <div class="testimony text-center">#}
+                        {#                                <span class="img-user"#}
+                        {#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
+                        {#                                <span class="user">Justine Mill</span>#}
+                        {#                                <blockquote>#}
+                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
+                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i#}
+                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+                        {#                                </blockquote>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
                     </div>
                 </div>
             </div>

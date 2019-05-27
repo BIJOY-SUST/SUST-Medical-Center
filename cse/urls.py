@@ -9,6 +9,10 @@ app_name = 'cse'
 urlpatterns = [
 
     path('test/',user_view.testing,name='test'),
+    path('profile/',user_view.profile,name='profile'),
+    path('per_medi_info/',user_view.per_medi_info,name='per_medi_info'),
+
+
 
     path('', user_view.staring, name='staring'),
     path('login/', user_view.login, name='login'),

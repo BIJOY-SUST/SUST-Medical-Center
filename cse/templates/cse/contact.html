@@ -107,10 +107,10 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li ><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:index' %}">Home</a></li>
                                     <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                    <li >
+                                    <li>
                                         <a href="{% url 'cse:doctors' %}">Doctors</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
@@ -118,7 +118,7 @@
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
-                                    <li >
+                                    <li>
                                         <a href="{% url 'cse:blog' %}">Blog</a>
                                         {#                                        <ul class="dropdown">#}
                                         {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
@@ -129,10 +129,15 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">
-                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            </a></p>
+                            <p class="btn-cta">
+                                <a href="{% url 'cse:profile' %}">
+                                    <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+                                <a href="{% url 'cse:logout' %}">
+                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -239,10 +244,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
-                                        <div  style = "text-align: center" >
+                    <div style="text-align: center">
 
-                    <h1><b>Contact Information</b></h1>
-                                        </div>
+                        <h1><b>Contact Information</b></h1>
+                    </div>
                     <div class="row contact-info-wrap">
                         <div class="">
                             <p><span><i class="icon-location"></i></span>
@@ -268,31 +273,31 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div  style = "text-align: center" >
+                    <div style="text-align: center">
                         <h3>Get In Touch</h3>
 
                         <h2><b>PATIENTS FEEDBACK</b>
                         </h2>
                     </div>
                     <form action="{% url 'cse:feedback' %}" method="post">
-                         {% csrf_token %}
-{#                        <div class="row form-group">#}
-{#                            <div class="col-md-6">#}
-{#                                <label for="fname">First Name</label>#}
-{#                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">#}
-{#                            </div>#}
-{#                            <div class="col-md-6">#}
-{#                                <label for="lname">Last Name</label>#}
-{#                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="row form-group">#}
-{#                            <div class="col-md-12">#}
-{#                                <label for="email">Email</label>#}
-{#                                <input type="text" id="email" class="form-control" placeholder="Your email address">#}
-{#                            </div>#}
-{#                        </div>#}
+                        {% csrf_token %}
+                        {#                        <div class="row form-group">#}
+                        {#                            <div class="col-md-6">#}
+                        {#                                <label for="fname">First Name</label>#}
+                        {#                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">#}
+                        {#                            </div>#}
+                        {#                            <div class="col-md-6">#}
+                        {#                                <label for="lname">Last Name</label>#}
+                        {#                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {##}
+                        {#                        <div class="row form-group">#}
+                        {#                            <div class="col-md-12">#}
+                        {#                                <label for="email">Email</label>#}
+                        {#                                <input type="text" id="email" class="form-control" placeholder="Your email address">#}
+                        {#                            </div>#}
+                        {#                        </div>#}
 
                         <div class="row form-group">
                             <div class="col-md-12">
@@ -318,7 +323,7 @@
             </div>
         </div>
     </div>
-    <div  style = "text-align: center" >
+    <div style="text-align: center">
 
         <h2><b>Map of the area – Here you can find us</b>
         </h2>
@@ -475,9 +480,9 @@
 {#<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" #}
 {#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8"></iframe>#}
 <script async defer
-{#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8">#}
+        {#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8">#}
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8&callback=initMap">
-        {#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap">#}
+    {#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap">#}
 
 </script>
 

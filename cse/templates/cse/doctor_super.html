@@ -107,7 +107,7 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li ><a href="{% url 'cse:index' %}">Home</a></li>
+                                    <li><a href="{% url 'cse:index' %}">Home</a></li>
                                     <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
                                     <li class="active">
@@ -129,10 +129,19 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">
-                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            </a></p>
+                            <p class="btn-cta">
+                                <a href="{% url 'cse:newdoctor' %}">
+                                    <span>New Doctor <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+                                <a href="{% url 'cse:profile' %}">
+                                    <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a>
+                                <a href="{% url 'cse:logout' %}">
+                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -343,102 +352,104 @@
                 {% for item in doctorlist %}
                     <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">
                         <div class="doctor">
-{#                            <div class="staff-img"#}
-{#                                 style="background-image: url({% static 'cse/images/staff-4.jpg' %})"></div>#}
-                            <img class="staff-img" src="{{ item.doctorphoto.url }}" >
-{#                                 alt="Avatar" style="width: 200px">#}
+                            {#                            <div class="staff-img"#}
+                            {#                                 style="background-image: url({% static 'cse/images/staff-4.jpg' %})"></div>#}
+                            <img class="staff-img" src="{{ item.doctorphoto.url }}">
+                            {#                                 alt="Avatar" style="width: 200px">#}
                             <div class="desc">
-                                <h3>Dr. {{ item.first_name }} {{ item.last_name}}</h3>
+                                <h3>Dr. {{ item.first_name }} {{ item.last_name }}</h3>
                                 <span>{{ item.positions }}</span>
                                 <span>{{ item.qualification }}</span>
                                 <h4>Contact Information:</h4>
                                 <span>Phone: {{ item.mobile_no }}</span>
                                 <span>Email: {{ item.email }}</span>
 
-{#                                <ul class="colorlib-social">#}
-                                    <form action="{% url 'cse:doctors_delete' item.doctor_id %}" method="post" style="display: inline;">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="doctor_id" value="{{ item.doctor_id }}" />
-                                        <button type="submit" class="btn btn-default btn-sm" style="background-color: red"  >Delete
-{#                                            <span class=btn-cta">Delete</span>#}
-                                        </button>
-                                    </form>
-{#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
-{#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
-{#                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
-{#                                    <li><a href="#"><i class="icon-instagram"></i></a></li>#}
-{#                                </ul>#}
+                                {#                                <ul class="colorlib-social">#}
+                                <form action="{% url 'cse:doctors_delete' item.doctor_id %}" method="post"
+                                      style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="doctor_id" value="{{ item.doctor_id }}"/>
+                                    <button type="submit" class="btn btn-default btn-sm" style="background-color: red">
+                                        Delete
+                                        {#                                            <span class=btn-cta">Delete</span>#}
+                                    </button>
+                                </form>
+                                {#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
+                                {#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
+                                {#                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
+                                {#                                    <li><a href="#"><i class="icon-instagram"></i></a></li>#}
+                                {#                                </ul>#}
                             </div>
                         </div>
                     </div>
-{#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
-{#                    <div class="doctor">#}
-{#                        <div class="staff-img"#}
-{#                             style="background-image: url({% static 'cse/images/staff-4.jpg' %})"></div>#}
-{#                        <div class="desc">#}
-{#                            <h3><a href="#">Dr. Beatrice Prior</a></h3>#}
-{#                            <span>Dental Hygienist</span>#}
-{#                            <ul class="colorlib-social">#}
-{#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
-{#                            </ul>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
-{#                    <div class="doctor">#}
-{#                        <div class="staff-img"#}
-{#                             style="background-image: url({% static 'cse/images/staff-2.jpg' %})"></div>#}
-{#                        <div class="desc">#}
-{#                            <h3><a href="#">Dr. Edward Dughlas</a></h3>#}
-{#                            <span>Orthopedic Surgeon</span>#}
-{#                            <ul class="colorlib-social">#}
-{#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
-{#                            </ul>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
-{#                    <div class="doctor">#}
-{#                        <div class="staff-img"#}
-{#                             style="background-image: url({% static 'cse/images/staff-3.jpg' %})"></div>#}
-{#                        <div class="desc">#}
-{#                            <h3><a href="#">Dr. Peter Parker</a></h3>#}
-{#                            <span>Health Care</span>#}
-{#                            <ul class="colorlib-social">#}
-{#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
-{#                            </ul>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
-{#                    <div class="doctor">#}
-{#                        <div class="staff-img"#}
-{#                             style="background-image: url({% static 'cse/images/staff-1.jpg' %})"></div>#}
-{#                        <div class="desc">#}
-{#                            <h3><a href="#">Dr. Liza Thomas</a></h3>#}
-{#                            <span>Patient Services Manager</span>#}
-{#                            <ul class="colorlib-social">#}
-{#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
-{#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
-{#                            </ul>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-            {% endfor %}
+                    {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
+                    {#                    <div class="doctor">#}
+                    {#                        <div class="staff-img"#}
+                    {#                             style="background-image: url({% static 'cse/images/staff-4.jpg' %})"></div>#}
+                    {#                        <div class="desc">#}
+                    {#                            <h3><a href="#">Dr. Beatrice Prior</a></h3>#}
+                    {#                            <span>Dental Hygienist</span>#}
+                    {#                            <ul class="colorlib-social">#}
+                    {#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
+                    {#                            </ul>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                    {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
+                    {#                    <div class="doctor">#}
+                    {#                        <div class="staff-img"#}
+                    {#                             style="background-image: url({% static 'cse/images/staff-2.jpg' %})"></div>#}
+                    {#                        <div class="desc">#}
+                    {#                            <h3><a href="#">Dr. Edward Dughlas</a></h3>#}
+                    {#                            <span>Orthopedic Surgeon</span>#}
+                    {#                            <ul class="colorlib-social">#}
+                    {#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
+                    {#                            </ul>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                    {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
+                    {#                    <div class="doctor">#}
+                    {#                        <div class="staff-img"#}
+                    {#                             style="background-image: url({% static 'cse/images/staff-3.jpg' %})"></div>#}
+                    {#                        <div class="desc">#}
+                    {#                            <h3><a href="#">Dr. Peter Parker</a></h3>#}
+                    {#                            <span>Health Care</span>#}
+                    {#                            <ul class="colorlib-social">#}
+                    {#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
+                    {#                            </ul>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                    {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
+                    {#                    <div class="doctor">#}
+                    {#                        <div class="staff-img"#}
+                    {#                             style="background-image: url({% static 'cse/images/staff-1.jpg' %})"></div>#}
+                    {#                        <div class="desc">#}
+                    {#                            <h3><a href="#">Dr. Liza Thomas</a></h3>#}
+                    {#                            <span>Patient Services Manager</span>#}
+                    {#                            <ul class="colorlib-social">#}
+                    {#                                <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
+                    {#                                <li><a href="#"><i class="icon-instagram"></i></a></li>#}
+                    {#                            </ul>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                {% endfor %}
             </div>
 
-    <!----------------- STAFF----------------------------->
+            <!----------------- STAFF----------------------------->
 
             <div>
                 <h2>Other Staffs</h2>

@@ -35,7 +35,148 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 def testing(request):
-    return render(request,'cse/test2.html')
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+
+    else:
+        return render(request,'cse/test.html')
+
+
+
+def calculate_age(born):
+    today = date.today()
+    try:
+        birthday = born.replace(year=today.year)
+    except ValueError: # raised when birth date is February 29 and the current year is not a leap year
+        birthday = born.replace(year=today.year, month=born.month+1, day=1)
+    if birthday > today:
+        return today.year - born.year - 1
+    else:
+        return today.year - born.year
+
+def profile(request):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+
+    else:
+        userinfo= request.user
+        medical = MedicalInfo.objects.filter(user_id=request.user.id)
+        return render(request,'cse/profile.html',{'userinfo':userinfo,'medical':medical})
+
+def per_medi_info(request):
+    if not request.user.is_authenticated:
+        return render(request, 'cse/login.html')
+
+    else:
+        # print(request.user.first_name)
+        if request.method == 'POST':
+            # print(request.user.first_name)
+            t_patient = request.user
+            t_doctor = Doctors.objects.get(doctor_id=request.POST.get('in_doc_id'))
+            medi_in = MedicalInfo.objects.get(id=request.POST.get('in_mediingo_id'))
+            dd = t_patient.date_of_birth
+
+            context = {
+                'tpatient': t_patient,
+                'tdoctor': t_doctor,
+
+                'thistory': medi_in.history,
+                'tadditional_field': medi_in.add_info,
+                'ttestadvised': medi_in.test_advise,
+
+                'today_date': date.today(),
+                'agee': calculate_age(dd),
+
+                '1_medi_name': medi_in.medi_name_1,
+                '1_drug_limit': medi_in.drug_limit_1,
+                '1_days': medi_in.num_of_day_1,
+                '1_eat': medi_in.eat_time_1,
+
+                '2_medi_name': medi_in.medi_name_2,
+                '2_drug_limit': medi_in.drug_limit_2,
+                '2_days': medi_in.num_of_day_2,
+                '2_eat': medi_in.eat_time_2,
+
+                '3_medi_name': medi_in.medi_name_3,
+                '3_drug_limit': medi_in.drug_limit_3,
+                '3_days': medi_in.num_of_day_3,
+                '3_eat': medi_in.eat_time_3,
+
+                '4_medi_name': medi_in.medi_name_4,
+                '4_drug_limit': medi_in.drug_limit_4,
+                '4_days': medi_in.num_of_day_4,
+                '4_eat': medi_in.eat_time_4,
+
+                '5_medi_name': medi_in.medi_name_5,
+                '5_drug_limit': medi_in.drug_limit_5,
+                '5_days': medi_in.num_of_day_5,
+                '5_eat': medi_in.eat_time_5,
+
+                '6_medi_name': medi_in.medi_name_6,
+                '6_drug_limit': medi_in.drug_limit_6,
+                '6_days': medi_in.num_of_day_6,
+                '6_eat': medi_in.eat_time_6,
+
+                '7_medi_name': medi_in.medi_name_7,
+                '7_drug_limit':medi_in.drug_limit_7,
+                '7_days':medi_in.num_of_day_7,
+                '7_eat': medi_in.eat_time_7,
+
+                '8_medi_name': medi_in.medi_name_8,
+                '8_drug_limit': medi_in.drug_limit_8,
+                '8_days': medi_in.num_of_day_8,
+                '8_eat': medi_in.eat_time_8,
+
+                '9_medi_name': medi_in.medi_name_9,
+                '9_drug_limit': medi_in.drug_limit_9,
+                '9_days': medi_in.num_of_day_9,
+                '9_eat': medi_in.eat_time_9,
+
+                '10_medi_name': medi_in.medi_name_10,
+                '10_drug_limit': medi_in.drug_limit_10,
+                '10_days': medi_in.num_of_day_10,
+                '10_eat': medi_in.eat_time_10
+            }
+            # html = template.render(context)
+            # return HttpResponse(html)
+            pdf = render_to_pdf('cse/prescription.html', context)
+
+            # c = MedicalInfo(user_id=t_patient.id, prescription=pdf)
+            # c.save()
+            if pdf:
+                response = HttpResponse(pdf, content_type='application/pdf')
+                filename = "Patient_%s.pdf" % ("Prescription")
+                content = "inline; filename='%s'" % (filename)
+                download = request.GET.get("download")
+                if download:
+                    content = "attachment; filename='%s'" % (filename)
+                response['Content-Disposition'] = content
+                return response
+            else:
+                return HttpResponse("Not found")
+
+        else:
+            userinfo = request.user
+            medical = MedicalInfo.objects.filter(user_id=request.user.id)
+            return render(request, 'cse/profile.html', {'userinfo': userinfo, 'medical': medical})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def staring(request):
         # site = get_current_site(request).dom
@@ -582,16 +723,7 @@ def pregform(request):
 #             messages.error(request, 'Please login first...!')
 #             return render(request, 'cse/login.html')
 
-def calculate_age(born):
-    today = date.today()
-    try:
-        birthday = born.replace(year=today.year)
-    except ValueError: # raised when birth date is February 29 and the current year is not a leap year
-        birthday = born.replace(year=today.year, month=born.month+1, day=1)
-    if birthday > today:
-        return today.year - born.year - 1
-    else:
-        return today.year - born.year
+
 
 
 def pdf(request):
@@ -807,7 +939,8 @@ def pdf(request):
                         content = "attachment; filename='%s'" %(filename)
                     response['Content-Disposition'] = content
                     return response
-                return HttpResponse("Not found")
+                else:
+                    return HttpResponse("Not found")
             else:
                 # messages.error(request, 'Fill the form very carefully...!')
                 return render(request, 'cse/patient_confirm.html')
