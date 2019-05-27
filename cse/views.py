@@ -35,10 +35,6 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 def testing(request):
-    if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
-
-    else:
         return render(request,'cse/test.html')
 
 
