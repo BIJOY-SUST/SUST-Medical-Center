@@ -70,7 +70,7 @@ def per_medi_info(request):
             t_patient = request.user
             t_doctor = Doctors.objects.get(doctor_id=request.POST.get('in_doc_id'))
             medi_in = MedicalInfo.objects.get(id=request.POST.get('in_mediingo_id'))
-            dd = t_patient.date_of_birth
+            # dd = t_patient.date_of_birth
 
             context = {
                 'tpatient': t_patient,
@@ -81,7 +81,7 @@ def per_medi_info(request):
                 'ttestadvised': medi_in.test_advise,
 
                 'today_date': date.today(),
-                'agee': calculate_age(dd),
+                'agee': medi_in.age,
 
                 '1_medi_name': medi_in.medi_name_1,
                 '1_drug_limit': medi_in.drug_limit_1,
@@ -734,6 +734,7 @@ def pdf(request):
                 # print(nam)
                 t_patient = CustomUser.objects.get(email=request.POST.get('in_email'))
                 t_doctor = Doctors.objects.get(email=request.POST.get('doctoremail'))
+                dd = t_patient.date_of_birth
 
                 # medical_info Table
 
@@ -795,7 +796,7 @@ def pdf(request):
                 # ten_da= request.POST.get('days_10'),
                 # ten_eat =  request.POST.get('eating_time_10'),
 
-                c=MedicalInfo(user_id=t_patient.id,doctor_id=t_doctor.doctor_id, adate=date.today(),
+                c=MedicalInfo(user_id=t_patient.id,doctor_id=t_doctor.doctor_id, adate=date.today(),age=calculate_age(dd),
                               history=request.POST.get('history'),
                               add_info=request.POST.get('additional_field'),
                               test_advise=request.POST.get('testadvised'),
@@ -853,7 +854,6 @@ def pdf(request):
                               )
                 c.save()
 
-                dd = t_patient.date_of_birth
 
 
                 # End of medical_info Table

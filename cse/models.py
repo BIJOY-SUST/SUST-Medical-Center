@@ -61,6 +61,7 @@ class MedicalInfo(models.Model):
     add_info = models.TextField(null=False,blank=False,default=None)
     test_advise = models.TextField(null=False,blank=False,default=None)
     adate = models.DateField(null=False,blank=False,default=None)
+    age = models.IntegerField(null=False,blank=False,default=None)
     # docotr_email = models.EmailField(null=False,blank=False,default=None,max_length=100)
 
     medi_name_1 = models.CharField(null=False,blank=False,default=None,max_length=100)
