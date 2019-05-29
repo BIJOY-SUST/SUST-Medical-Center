@@ -1141,83 +1141,78 @@
             {#                {% endif %}#}
             {#            </li>#}
             <!----------------------- login page Fields ------------------------------------------>
-            <style>
-                .butto {
-                    background-color: #4CAF50; /* Green */
-                    position: relative;
+        <style>
+            .butto {
+              background-color: black; /* Green */
+                position: relative;
 
-                    right: -35px;
-                    border-radius: 12px;
-                    border: none;
-                    color: white;
-                    padding: 10px 25px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 16px;
-                    margin: 4px 2px;
-                    cursor: pointer;
-                    -webkit-transition-duration: 0.4s; /* Safari */
-                    transition-duration: 0.4s;
-                }
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button {
+              background-color: black; /* Green */
+                  position: absolute;
+                right: 50px;
+                border-radius: 70px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .butt {
+              background-color: black; /* Green */
+                  position: relative;
 
-                .button {
-                    background-color: #4CAF50; /* Green */
-                    position: absolute;
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button1:hover {
+                background-color: darkslategrey;
+                color: white;
+            }
+            .button2:hover {
+              background-color: darkslategrey;
+              color: white;
+            }
+            .button3:hover {
+              background-color: darkslategrey;
+              color: white;
+            }
 
-                    right: 50px;
-                    border-radius: 12px;
-                    border: none;
-                    color: white;
-                    padding: 10px 25px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 16px;
-                    margin: 4px 2px;
-                    cursor: pointer;
-                    -webkit-transition-duration: 0.4s; /* Safari */
-                    transition-duration: 0.4s;
-                }
-
-                .butt {
-                    background-color: #4CAF50; /* Green */
-                    position: relative;
-
-                    right: -35px;
-                    border: none;
-                    color: white;
-                    padding: 10px 25px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 16px;
-                    margin: 4px 2px;
-                    cursor: pointer;
-                    -webkit-transition-duration: 0.4s; /* Safari */
-                    transition-duration: 0.4s;
-                }
-
-                .button1:hover {
-                    background-color: #f44336;
-                    color: white;
-                }
-
-                .button2:hover {
-                    background-color: #f44336;
-                    color: white;
-                }
-
-                .button3:hover {
-                    background-color: #f44336;
-                    color: white;
-                }
-
-            </style>
+        </style>
 
             <li>
                 <button class="butto button1">
-                    <a href="{% url 'cse:login' %}" style="color: black">Already have an account? Click here to
+                    <a href="{% url 'cse:login' %}" style="color: white">Already have an account? Click here to
                         login</a>
                 </button>
                 <button class="button button2">Register

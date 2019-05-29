@@ -206,6 +206,8 @@
             </div>
         </div>
     </nav>
+
+
     {#start of 	main picture slide#}
     <aside id="colorlib-hero">
         <div class="flexslider">
@@ -330,7 +332,7 @@
                     <img class="img-responsive about-img" src="{% static 'cse/images/about.jpg' %}" alt="">
                 </div>
                 <div class="col-md-7 col-md-push-1">
-                    <h2>About Medicare</h2>
+                    <h2>About SUST Medical Center</h2>
                     <p>
                         We provide a comprehensive range of services for all our patients. We provide care and advice to
                         keep you in good health and prevent or minimise future ill health.
@@ -419,7 +421,7 @@
     {#            </div>#}
     {#        </div>#}
     {#    </div>#}
-
+<!----
     <div id="colorlib-services">
         <div class="container">
             <div class="row animate-box">
@@ -504,7 +506,7 @@
             </div>
         </div>
     </div>
-
+----->
     <div id="colorlib-choose">
         <div class="container-fluid">
             <div class="row">
@@ -558,41 +560,41 @@
         </div>
     </div>
 
-
-    <div id="colorlib-doctor">
-        <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
-                    <h2>Well Experienced Doctors</h2>
+{##}
+{#    <div id="colorlib-doctor">#}
+{#        <div class="container">#}
+{#            <div class="row animate-box">#}
+{#                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">#}
+{#                    <h2>Well Experienced Doctors</h2>#}
                     {#                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
-                </div>
-            </div>
-            <div class="row">
-                {% for item in doctorlist.all %}
-                    <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">
-                        <div class="doctor">
+{#                </div>#}
+{#            </div>#}
+{#            <div class="row">#}
+{#                {% for item in doctorlist.all %}#}
+{#                    <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
+{#                        <div class="doctor">#}
                             {#                            <div class="staff-img"#}
                             {#                                 style="background-image: url({% static 'cse/images/staff-4.jpg' %})"></div>#}
-                            <img class="staff-img" src="{{ item.doctorphoto.url }}">
+{#                            <img class="staff-img" src="{{ item.doctorphoto.url }}">#}
                             {#                                 alt="Avatar" style="width: 200px">#}
-                            <div class="desc">
-
-                                <h3>Dr. {{ item.first_name }} {{ item.last_name }}</h3>
-                                <span>{{ item.positions }}</span>
-                                <span>{{ item.qualification }}</span>
-                                <h4>Contact Information:</h4>
-                                <span>Phone: {{ item.mobile_no }}</span>
-                                <span>Email: {{ item.email }}</span>
-
+{#                            <div class="desc">#}
+{##}
+{#                                <h3>Dr. {{ item.first_name }} {{ item.last_name }}</h3>#}
+{#                                <span>{{ item.positions }}</span>#}
+{#                                <span>{{ item.qualification }}</span>#}
+{#                                <h4>Contact Information:</h4>#}
+{#                                <span>Phone: {{ item.mobile_no }}</span>#}
+{#                                <span>Email: {{ item.email }}</span>#}
+{##}
                                 {#                                <ul class="colorlib-social">#}
                                 {#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-instagram"></i></a></li>#}
                                 {#                                </ul>#}
-                            </div>
-                        </div>
-                    </div>
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
                     {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}
                     {#                    <div class="doctor">#}
                     {#                        <div class="staff-img"#}
@@ -657,10 +659,10 @@
                     {#                        </div>#}
                     {#                    </div>#}
                     {#                </div>#}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     {#    <div id="colorlib-counter" class="colorlib-counters"#}
     {#         style="background-image: url({% static 'cse/images/img_bg_2.jpg' %})" data-stellar-background-ratio="0.5">#}
@@ -765,35 +767,36 @@
     {#    </div>#}
 
 
-    <div id="colorlib-register" style="background-image: url({% static 'cse/images/img_bg_1.jpg' %})"
-         data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div class="date-counter text-center">
-                        <h2>We offer <strong>Free Consultation</strong></h2>
-                        <h3>By <strong>Specialist Doctor</strong></h3>
-                        <h3>Sylhet MAG Osmani Medical College</h3>
-
-                        <p>
-                        <h2>Every<strong> SUNDAY </strong></h2></p>
-                        <h2><strong> 3:30pm to 5.30pm </strong></h2>
-
+{#    <div id="colorlib-register" style="background-image: url({% static 'cse/images/img_bg_1.jpg' %})"#}
+{#         data-stellar-background-ratio="0.5">#}
+{#        <div class="overlay"></div>#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-md-10 col-md-offset-1 animate-box">#}
+{#                    <div class="date-counter text-center">#}
+{#                        <h2>We offer <strong>Free Consultation</strong></h2>#}
+{#                        <h3>By <strong>Specialist Doctor</strong></h3>#}
+{#                        <h3>Sylhet MAG Osmani Medical College</h3>#}
+{##}
+{#                        <p>#}
+{#                        <h2>Every<strong> SUNDAY </strong></h2></p>#}
+{#                        <h2><strong> 3:30pm to 5.30pm </strong></h2>#}
+{##}
                         {#                            <p class="countdown">#}
                         {#                                <span id="days"></span>#}
                         {#                                <span id="hours"></span>#}
                         {#                                <span id="minutes"></span>#}
                         {#                                <span id="seconds"></span>#}
                         {#                            </p>#}
-                        <p><strong>Limited offer, Hurry Up!</strong></p>
+{#                        <p><strong>Limited offer, Hurry Up!</strong></p>#}
                         {#                            <p><a href="#" class="btn btn-primary btn-lg">Book an Appointment <i class="icon-calendar3"></i></a>#}
                         {#                            </p>#}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
 
     <div id="colorlib-testimonial" class="colorlib-bg-section">
         <div class="container">
@@ -820,14 +823,14 @@
                                     <span class="user">Email: {{ item.user.email }}</span>
                                     <span class="user">Reg. No:{{ item.user.reg_no }}</span>
                                     <span class="user">Department: {{ item.user.department }}</span>
-                                    {#                                        <div>#}
-                                    {#                                            <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
-                                    {#                                            <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
-                                    {#                                          <p><b>Reg No: 2016331012</b></p>#}
-                                    {#                                        <p><b>Department: Department of English (ENG)</b></p>#}
-                                    {#                                        </div>#}
+{#                                                                            <div>#}
+{#                                                                                <p><b>Full Name: BIDDUT SARKER BIJOY</b></p>#}
+{#                                                                                <p><b>Email: bijoy.csesust@gmail.com</b></p>#}
+{#                                                                              <p><b>Reg No: 2016331012</b></p>#}
+{#                                                                            <p><b>Department: Department of English (ENG)</b></p>#}
+{#                                                                            </div>#}
                                     <blockquote>
-                                        {#                                    <textarea rows="4" cols="35">#}
+{#                                                                            <textarea rows="4" cols="35">#}
                                         <div style="text-align: center">
                                             <p><u>{{ item.tsub }}</u></p>
                                         </div>
@@ -840,74 +843,74 @@
                                             }
                                         </style>
                                         <div class="ex1">{{ item.tmessage }}</div>
-                                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-                                        {#                                            class="icon-star3"></i></span><span><i#}
-                                        {#                                            class="icon-star3"></i></span><span><i#}
-                                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-                                        {#                                    </textarea>#}
+{#                                                <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+{#                                                        class="icon-star3"></i></span><span><i#}
+{#                                                        class="icon-star3"></i></span><span><i#}
+{#                                                        class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+{#                                                </textarea>#}
                                     </blockquote>
                                 </div>
                             </div>
                         {% endfor %}
-                        {#                        <div class="item">#}
-                        {#                            <div class="testimony text-center">#}
-                        {#                                <span class="img-user"#}
-                        {#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
-                        {#                                <span class="user">Carl Bean</span>#}
-                        {#                                <blockquote>#}
-                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-                        {#                                </blockquote>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                        <div class="item">#}
-                        {#                            <div class="testimony text-center">#}
-                        {#                                <span class="img-user"#}
-                        {#                                      style="background-image: url({% static 'cse/images/person3.jpg' %})"></span>#}
-                        {#                                <span class="user">John Bay</span>#}
-                        {#                                <blockquote>#}
-                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-                        {#                                </blockquote>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                        <div class="item">#}
-                        {#                            <div class="testimony text-center">#}
-                        {#                                <span class="img-user" style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>#}
-                        {#                                <span class="user">Ronald Duck</span>#}
-                        {#                                <blockquote>#}
-                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-                        {#                                </blockquote>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                        <div class="item">#}
-                        {#                            <div class="testimony text-center">#}
-                        {#                                <span class="img-user"#}
-                        {#                                      style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
-                        {#                                <span class="user">Justine Mill</span>#}
-                        {#                                <blockquote>#}
-                        {#                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
-                        {#                                        Commas, wild Question Marks and devious Semikoli."</p>#}
-                        {#                                    <p class="color"><span><i class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i#}
-                        {#                                            class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
-                        {#                                </blockquote>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
+{#                                                <div class="item">#}
+{#                                                    <div class="testimony text-center">#}
+{#                                                        <span class="img-user"#}
+{#                                                              style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
+{#                                                        <span class="user">Carl Bean</span>#}
+{#                                                        <blockquote>#}
+{#                                                            <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+{#                                                                Commas, wild Question Marks and devious Semikoli."</p>#}
+{#                                                            <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+{#                                                        </blockquote>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="item">#}
+{#                                                    <div class="testimony text-center">#}
+{#                                                        <span class="img-user"#}
+{#                                                              style="background-image: url({% static 'cse/images/person3.jpg' %})"></span>#}
+{#                                                        <span class="user">John Bay</span>#}
+{#                                                        <blockquote>#}
+{#                                                            <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+{#                                                                Commas, wild Question Marks and devious Semikoli."</p>#}
+{#                                                            <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+{#                                                        </blockquote>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="item">#}
+{#                                                    <div class="testimony text-center">#}
+{#                                                        <span class="img-user" style="background-image: url({% static 'cse/images/person1.jpg' %})"></span>#}
+{#                                                        <span class="user">Ronald Duck</span>#}
+{#                                                        <blockquote>#}
+{#                                                            <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+{#                                                                Commas, wild Question Marks and devious Semikoli."</p>#}
+{#                                                            <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+{#                                                        </blockquote>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="item">#}
+{#                                                    <div class="testimony text-center">#}
+{#                                                        <span class="img-user"#}
+{#                                                              style="background-image: url({% static 'cse/images/person2.jpg' %})"></span>#}
+{#                                                        <span class="user">Justine Mill</span>#}
+{#                                                        <blockquote>#}
+{#                                                            <p>"The Big Oxmox advised her not to do so, because there were thousands of bad#}
+{#                                                                Commas, wild Question Marks and devious Semikoli."</p>#}
+{#                                                            <p class="color"><span><i class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i#}
+{#                                                                    class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>#}
+{#                                                        </blockquote>#}
+{#                                                    </div>#}
+{#                                                </div>#}
                     </div>
                 </div>
             </div>
