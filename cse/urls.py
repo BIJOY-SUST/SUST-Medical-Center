@@ -50,6 +50,7 @@ urlpatterns = [
 
     # MedicineInfo
     path('medicineinfo/',user_view.medicineinfo,name='medicineinfo'),
+    path('medisearch/',user_view.medisearch,name='medisearch'),
     path('newmedicine/',user_view.newmedicine,name='newmedicine'),
     path('mediregister/',user_view.mediregister,name='mediregister'),
     path('medichange/',user_view.medichange,name='medichange'),

@@ -1027,6 +1027,28 @@ def medicineinfo(request):
     else:
         return  render(request,'cse/login.html')
 
+def medisearch(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            mediall = MedicineInfo.objects.all()
+            query = request.GET.get("q")
+            if query:
+                medi_results = mediall.filter(
+                    Q(medicinename__icontains=query)|
+                    Q(medicineRegno__icontains=query)
+                    ).distinct()
+                context = {
+                    'medicineall': medi_results,
+                }
+                return render(request, 'cse/medicineall.html', context)
+            else:
+                return render(request,'cse/medicineall.html')
+
+        else:
+            return render(request,'cse/staring.html')
+    else:
+        return  render(request,'cse/login.html')
+
 
 def newmedicine(request):
     if request.user.is_authenticated:
