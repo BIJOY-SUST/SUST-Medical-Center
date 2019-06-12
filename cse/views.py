@@ -17,8 +17,11 @@ from django.core.mail import send_mail,EmailMessage
 from django.contrib import  messages
 from django.shortcuts import render
 from datetime import date,datetime
-from .models import CustomUser,Doctors,FeebBack,MedicalInfo
+from .models import CustomUser,Doctors,FeebBack,MedicalInfo,MedicineInfo
 from django.contrib import messages
+
+
+
 
 from  django.http import HttpResponse
 
@@ -969,37 +972,122 @@ def newdoctor(request):
 
 def newdoctorreg(request):
     if request.user.is_authenticated:
-        if request.method=='POST':
-                tfirstname = request.POST.get('firstname')
-                tlastname = request.POST.get('lastname')
-                tgender = request.POST.get('gender')
-                taddress = request.POST.get('address')
-                tqualifications = request.POST.get('qualifications')
-                tmobileno = request.POST.get('mobileno')
-                ttelno = request.POST.get('telno')
-                tuseremail = request.POST.get('useremail')
-                tposition = request.POST.get('position')
-                c = Doctors(first_name=tfirstname,last_name=tlastname,positions=tposition,gender=tgender,address=taddress,qualification=tqualifications,
-                               mobile_no=tmobileno,tel_no=ttelno,email=tuseremail)
+        if request.user.is_superuser:
+            if request.method=='POST':
+                    tfirstname = request.POST.get('firstname')
+                    tlastname = request.POST.get('lastname')
+                    tgender = request.POST.get('gender')
+                    taddress = request.POST.get('address')
+                    tqualifications = request.POST.get('qualifications')
+                    tmobileno = request.POST.get('mobileno')
+                    ttelno = request.POST.get('telno')
+                    tuseremail = request.POST.get('useremail')
+                    tposition = request.POST.get('position')
+                    c = Doctors(first_name=tfirstname,last_name=tlastname,positions=tposition,gender=tgender,address=taddress,qualification=tqualifications,
+                                   mobile_no=tmobileno,tel_no=ttelno,email=tuseremail)
 
-                c.doctorphoto = request.FILES['userphotos']
-                file_type = c.doctorphoto.url.split('.')[-1]
-                file_type = file_type.lower()
-                if file_type not in IMAGE_FILE_TYPES:
-                        messages.error(request, 'Image file must be PNG, JPG, or JPEG')
-                        return render(request, 'cse/doctorreg.html')
+                    c.doctorphoto = request.FILES['userphotos']
+                    file_type = c.doctorphoto.url.split('.')[-1]
+                    file_type = file_type.lower()
+                    if file_type not in IMAGE_FILE_TYPES:
+                            messages.error(request, 'Image file must be PNG, JPG, or JPEG')
+                            return render(request, 'cse/doctorreg.html')
 
 
-                if Doctors.objects.filter(email=request.POST.get('useremail')).exists():
-                        messages.error(request, 'User email is already exists..!')
-                        return render(request, 'cse/doctorreg.html')
+                    if Doctors.objects.filter(email=request.POST.get('useremail')).exists():
+                            messages.error(request, 'User email is already exists..!')
+                            return render(request, 'cse/doctorreg.html')
 
-                c.save()
-                messages.error(request, 'Doctors record created successfully..!')
-                return render(request, 'cse/doctorreg.html')
+                    c.save()
+                    messages.error(request, 'Doctors record created successfully..!')
+                    return render(request, 'cse/doctorreg.html')
+            else:
+                # messages.error(request, 'Error..!')
+                return render(request,'cse/doctorreg.html')
         else:
-            messages.error(request, 'Error..!')
-            return render(request,'cse/doctorreg.html')
-
+            return render(request,'cse/staring.html')
     else:
         return render(request,'cse/login.html')
+
+
+
+
+
+
+def medicineinfo(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+
+            context={
+                'medicineall' : MedicineInfo.objects.all(),
+            }
+            return render(request,'cse/medicineall.html',context)
+        else:
+            return render(request,'cse/staring.html')
+    else:
+        return  render(request,'cse/login.html')
+
+
+def newmedicine(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            return render(request,'cse/medicinenew.html')
+        else:
+            return render(request,'cse/staring.html')
+    else:
+        return  render(request,'cse/login.html')
+
+
+def mediregister(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            if request.method=='POST':
+
+                tname = request.POST.get('mediname')
+                # print(tname)
+                tregno = request.POST.get('medireg')
+                tquantity = request.POST.get('medicnt')
+
+                c = MedicineInfo(medicinename=tname,medicineRegno=tregno,medicinebefore=tquantity,medicineafter=0,medicinenow=tquantity)
+                c.save()
+                context = {
+                    'medicineall': MedicineInfo.objects.all(),
+                }
+                return render(request, 'cse/medicineall.html', context)
+            else:
+                return render(request,'cse/medicinenew.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        return  render(request,'cse/login.html')
+
+def medichange(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            if request.method=='POST':
+
+                tid = request.POST.get('in_id')
+                tval = request.POST.get('medicnt')
+                t_medi = MedicineInfo.objects.get(Medicine_id=tid)
+                # print(t_medi.medicinebefore)
+                # print(t_medi.medicineafter)
+                # print(t_medi.medicinenow)
+                # print(tval)
+                tt = int(tval,10)
+                # tt = tval
+                t_medi.medicineafter = t_medi.medicineafter + tt
+                t_medi.medicinenow = t_medi.medicinenow - tt
+                t_medi.save()
+
+                context = {
+                    'medicineall': MedicineInfo.objects.all(),
+                }
+                return render(request, 'cse/medicineall.html', context)
+            else:
+                return render(request,'cse/medicineall.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        return  render(request,'cse/login.html')
+
+

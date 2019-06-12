@@ -114,3 +114,12 @@ class MedicalInfo(models.Model):
     num_of_day_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
     eat_time_10 = models.CharField(null=False, blank=False, default=None, max_length=100)
 
+
+
+class MedicineInfo(models.Model):
+    Medicine_id = models.AutoField(null=False,blank=False,default=None, primary_key=True)
+    medicinename = models.CharField(null=False,blank=False,default=None,max_length=200)
+    medicineRegno = models.CharField(null=False,blank=False,default=None,max_length=200 , unique=True)
+    medicinebefore = models.IntegerField(null=False,blank=False,default=None)
+    medicineafter = models.IntegerField(null=True,blank=True,default=None)
+    medicinenow = models.IntegerField(null=False,blank=False,default=None)

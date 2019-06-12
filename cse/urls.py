@@ -48,6 +48,16 @@ urlpatterns = [
 
 
 
+    # MedicineInfo
+    path('medicineinfo/',user_view.medicineinfo,name='medicineinfo'),
+    path('newmedicine/',user_view.newmedicine,name='newmedicine'),
+    path('mediregister/',user_view.mediregister,name='mediregister'),
+    path('medichange/',user_view.medichange,name='medichange'),
+
+    # re_path(r'^medicineinfo/(?P<filter_by>[a-zA_Z]+)/$', user_view.medicineinfo,name='medicineinfo'),
+    # re_path(r'^songs/(?P<filter_by>[a-zA_Z]+)/$', views.songs, name='songs'),
+
+
     # account confirmations
     # path('activate/<uid>/<token>/', views.activate,name='activate'),
     re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', user_view.activate, name='activate'),
