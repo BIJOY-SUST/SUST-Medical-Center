@@ -665,7 +665,7 @@
 {#            <div class="collapse navbar-collapse" id="topNavBar">#}
                 <ul class="navbar-nav" >
                     {#                    <ul class="nav navbar-nav" style="margin-bottom: 10px;">#}
-                    <style type="text/css">
+                                        <style type="text/css">
                         .haha {
                             background-color: black; /* Green */
 
@@ -681,9 +681,24 @@
                             margin: 4px 2px;
                             cursor: pointer;
                         }
+                        .haaha {
+                            background-color: #b3b3b3; /* Green */
+
+                            right: -35px;
+                            border-radius: 12px;
+                            border: none;
+                            color: black;
+                            padding: 10px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                        }
 
                     </style>
-                    <li class="haha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
+                    <li class="haaha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
                     </li>
                     <li class="haha"><a href="{% url 'cse:newmedicine' %}">New Medicine</a>
                     </li>

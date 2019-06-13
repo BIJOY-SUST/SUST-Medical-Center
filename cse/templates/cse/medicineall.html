@@ -709,7 +709,22 @@
                             right: -35px;
                             border-radius: 12px;
                             border: none;
-                            color: mediumseagreen;
+                            color: white;
+                            padding: 10px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                        }
+                        .haaha {
+                            background-color: #b3b3b3; /* Green */
+
+                            right: -35px;
+                            border-radius: 12px;
+                            border: none;
+                            color: black;
                             padding: 10px 25px;
                             text-align: center;
                             text-decoration: none;
@@ -722,7 +737,7 @@
                     </style>
                     <li class="haha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
                     </li>
-                    <li class="haha"><a href="{% url 'cse:newmedicine' %}">New Medicine</a>
+                    <li class="haaha"><a href="{% url 'cse:newmedicine' %}">New Medicine</a>
                     </li>
 
                 </ul>
@@ -736,7 +751,7 @@
                                       placeholder="Medicine Name" value="{{ request.GET.q }}">
 {#                            </div>#}
                             <style type="text/css">
-                                .haha {
+                                .hahaa {
                                     background-color: black; /* Green */
 
                                     right: -35px;
@@ -754,12 +769,12 @@
                                     transition-duration: 0.4s;
                                 }
 
-                                .haha2:hover {
+                                .hahaa2:hover {
                                     background-color: black;
                                     color: #3de6fa;
                                 }
                             </style>
-                            <button class="haha haha2" type="submit">Search</button>
+                            <button class="hahaa hahaa2" type="submit">Search</button>
                         </form>
                     </li>
                 </ul>
