@@ -657,7 +657,78 @@
 
 <!----------------- End of Navigation Bar ---------------------------------->
 <!---------------------------------------------form start here--------------------------------------------------------->
+    <div>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+{#            <div class="collapse navbar-collapse" id="topNavBar">#}
+                <ul class="navbar-nav" >
+                    {#                    <ul class="nav navbar-nav" style="margin-bottom: 10px;">#}
+                    <style type="text/css">
+                        .haha {
+                            background-color: black; /* Green */
 
+                            right: -35px;
+                            border-radius: 12px;
+                            border: none;
+                            color: white;
+                            padding: 10px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                        }
+
+                    </style>
+                    <li class="haha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
+                    </li>
+                    <li class="haha"><a href="{% url 'cse:newmedicine' %}">New Medicine</a>
+                    </li>
+
+                </ul>
+
+{#                <ul class="nav navbar-nav navbar-right">#}
+{#                    <li>#}
+{#                        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'cse:medisearch' %}">#}
+{##}
+{#                            <div class="form-group">#}
+{#                                <input style="width: 300px" type="text" class="form-control" name="q"#}
+{#                                      placeholder="Medicine Name" value="{{ request.GET.q }}">#}
+{#                            </div>#}
+{#                            <style type="text/css">#}
+{#                                .haha {#}
+{#                                    background-color: black; /* Green */#}
+{##}
+{#                                    right: -35px;#}
+{#                                    border-radius: 12px;#}
+{#                                    border: none;#}
+{#                                    color: white;#}
+{#                                    padding: 10px 25px;#}
+{#                                    text-align: center;#}
+{#                                    text-decoration: none;#}
+{#                                    display: inline-block;#}
+{#                                    font-size: 16px;#}
+{#                                    margin: 4px 2px;#}
+{#                                    cursor: pointer;#}
+{#                                    -webkit-transition-duration: 0.4s; /* Safari */#}
+{#                                    transition-duration: 0.4s;#}
+{#                                }#}
+{##}
+{#                                .haha2:hover {#}
+{#                                    background-color: black;#}
+{#                                    color: #3de6fa;#}
+{#                                }#}
+{#                            </style>#}
+{#                            <button class="haha haha2" type="submit">Search</button>#}
+{#                        </form>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+        </div>
+    </div>
 
 <form class="jotform-form" action="{% url 'cse:mediregister' %}" method="post" enctype="multipart/form-data"
       name="form_91035707344454"
