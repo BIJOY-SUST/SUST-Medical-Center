@@ -54,6 +54,7 @@ urlpatterns = [
     path('newmedicine/',user_view.newmedicine,name='newmedicine'),
     path('mediregister/',user_view.mediregister,name='mediregister'),
     path('medichange/',user_view.medichange,name='medichange'),
+    path('mediadd/',user_view.mediadd,name='mediadd'),
 
     # re_path(r'^medicineinfo/(?P<filter_by>[a-zA_Z]+)/$', user_view.medicineinfo,name='medicineinfo'),
     # re_path(r'^songs/(?P<filter_by>[a-zA_Z]+)/$', views.songs, name='songs'),

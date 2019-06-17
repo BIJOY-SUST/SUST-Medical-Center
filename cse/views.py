@@ -1112,4 +1112,32 @@ def medichange(request):
     else:
         return  render(request,'cse/login.html')
 
+def mediadd(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            if request.method=='POST':
+
+                tid = request.POST.get('in_id2')
+                tval = request.POST.get('medicnt2')
+                t_medi = MedicineInfo.objects.get(Medicine_id=tid)
+                # print(t_medi.medicinebefore)
+                # print(t_medi.medicineafter)
+                # print(t_medi.medicinenow)
+                # print(tval)
+                tt = int(tval,10)
+                # tt = tval
+                t_medi.medicinebefore = t_medi.medicinebefore + tt
+                t_medi.save()
+
+                context = {
+                    'medicineall': MedicineInfo.objects.all(),
+                }
+                return render(request, 'cse/medicineall.html', context)
+            else:
+                return render(request,'cse/medicineall.html')
+        else:
+            return render(request,'cse/index.html')
+    else:
+        return  render(request,'cse/login.html')
+
 
