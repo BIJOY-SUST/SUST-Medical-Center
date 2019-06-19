@@ -438,7 +438,7 @@ def password_reset_complete(request):
 
 def index(request):
     if not request.user.is_authenticated:
-        return render(request,'cse/login.html')
+        return render(request,'cse/staring.html')
     elif request.user.is_superuser:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
         doctor = Doctors.objects.all()

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abee07fa-4b2e-4261-af07-88e65efc54a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/cse/templates/cse/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cse/templates/cse/index_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/index_admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cse/templates/cse/indexsuper.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/indexsuper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cse/templates/cse/patient_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/patient_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cse/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cse/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,54 +34,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/indexsuper.html">
+        <entry file="file://$PROJECT_DIR$/cse/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="210" column="72" lean-forward="true" selection-start-line="210" selection-start-column="72" selection-end-line="210" selection-end-column="72" />
+            <state relative-caret-position="6050">
+              <caret line="440" column="42" selection-start-line="440" selection-start-column="42" selection-end-line="440" selection-end-column="42" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/static/cse/images/img_bg_6.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/static/cse/images/img_bg_2.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/static/cse/images/home-banner.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/static/cse/images/banner.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/index_admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="235" column="33" selection-start-line="235" selection-start-column="33" selection-end-line="235" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cse/templates/cse/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="291" column="33" selection-start-line="291" selection-start-column="33" selection-end-line="291" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -183,7 +146,6 @@
         <option value="$PROJECT_DIR$/cse/templates/cse/contact.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/doctor_super.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/doctors.html" />
-        <option value="$PROJECT_DIR$/cse/templates/cse/services.html" />
         <option value="$PROJECT_DIR$/cse/static/cse/js/sunnota/main.js" />
         <option value="$PROJECT_DIR$/cse/static/cse/css/sunnota/style.css" />
         <option value="$PROJECT_DIR$/cse/models.py" />
@@ -191,17 +153,18 @@
         <option value="$PROJECT_DIR$/cse/templates/cse/pregform.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/login.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/register.html" />
-        <option value="$PROJECT_DIR$/cse/templates/cse/patient_confirm.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/password_reset.html" />
         <option value="$PROJECT_DIR$/cse/urls.py" />
-        <option value="$PROJECT_DIR$/cse/views.py" />
         <option value="$PROJECT_DIR$/cse/templates/cse/medicineall.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/prescription.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/test.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/doctorreg.html" />
-        <option value="$PROJECT_DIR$/cse/templates/cse/index_admin.html" />
-        <option value="$PROJECT_DIR$/cse/templates/cse/index.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/services.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/patient_confirm.html" />
         <option value="$PROJECT_DIR$/cse/templates/cse/indexsuper.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/index.html" />
+        <option value="$PROJECT_DIR$/cse/templates/cse/index_admin.html" />
+        <option value="$PROJECT_DIR$/cse/views.py" />
       </list>
     </option>
   </component>
@@ -245,14 +208,6 @@
               <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
               <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
               <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -276,7 +231,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cse/static/cse/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/media/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -441,12 +396,12 @@
       <workItem from="1560761536941" duration="661000" />
       <workItem from="1560797111580" duration="705000" />
       <workItem from="1560848527316" duration="1330000" />
-      <workItem from="1560938430364" duration="9360000" />
+      <workItem from="1560938430364" duration="10263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="562250000" />
+    <option name="totallyTimeSpent" value="563153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="142" column="26" lean-forward="true" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cse/static/cse/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -628,20 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="860" column="40" selection-start-line="860" selection-start-column="40" selection-end-line="860" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/patient_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="739" column="24" lean-forward="true" selection-start-line="739" selection-end-line="740" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="748" selection-start-line="748" selection-end-line="748" />
         </state>
       </provider>
     </entry>
@@ -701,13 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="878" selection-start-line="878" selection-end-line="878" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -778,20 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/index_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="235" column="33" selection-start-line="235" selection-start-column="33" selection-end-line="235" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="291" column="33" selection-start-line="291" selection-start-column="33" selection-end-line="291" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cse/static/cse/images/home-banner.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -804,15 +717,60 @@
     <entry file="file://$PROJECT_DIR$/cse/static/cse/images/img_bg_6.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="212" column="85" selection-start-line="212" selection-start-column="85" selection-end-line="212" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="671" column="28" lean-forward="true" selection-start-line="671" selection-start-column="28" selection-end-line="671" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/patient_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="704" column="22" lean-forward="true" selection-start-line="704" selection-start-column="22" selection-end-line="704" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="291" column="33" selection-start-line="291" selection-start-column="33" selection-end-line="291" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cse/templates/cse/indexsuper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="210" column="72" lean-forward="true" selection-start-line="210" selection-start-column="72" selection-end-line="210" selection-end-column="72" />
+        <state relative-caret-position="176">
+          <caret line="129" column="43" lean-forward="true" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/index_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1038">
+          <caret line="139" column="36" lean-forward="true" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6050">
+          <caret line="440" column="42" selection-start-line="440" selection-start-column="42" selection-end-line="440" selection-end-column="42" />
           <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#aside#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
