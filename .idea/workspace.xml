@@ -29,7 +29,17 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="670" column="12" selection-start-line="670" selection-start-column="12" selection-end-line="670" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -192,15 +202,14 @@
               <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
               <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
               <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sust-medical-center" type="b2602c69:ProjectViewProjectNode" />
               <item name="sust-medical-center" type="462c0819:PsiDirectoryNode" />
               <item name="cse" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="cse" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -381,12 +390,12 @@
       <workItem from="1560938430364" duration="10887000" />
       <workItem from="1560961024670" duration="136000" />
       <workItem from="1560973456836" duration="2139000" />
-      <workItem from="1561012261177" duration="1612000" />
+      <workItem from="1561012261177" duration="1890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="567664000" />
+    <option name="totallyTimeSpent" value="567942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,8 +408,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="35" width="1850" height="1045" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985728" visible="true" weight="0.20870535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985728" visible="true" weight="0.20870535" />
       <window_info id="Structure" order="1" sideWeight="0.50142723" side_tool="true" weight="0.23684211" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -728,18 +738,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="649" column="14" selection-start-line="649" selection-start-column="14" selection-end-line="649" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cse/static/cse/images/fgfgf.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cse/static/cse/images/SUST.jpg">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cse/templates/cse/staring.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="670" column="12" selection-start-line="670" selection-start-column="12" selection-end-line="670" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
