@@ -24,7 +24,19 @@
     <meta name="twitter:image" content=""/>
     <meta name="twitter:url" content=""/>
     <meta name="twitter:card" content=""/>
+    {#    profile#}
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+{#    end profile#}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!-- Animate.css -->
@@ -118,12 +130,7 @@
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
-                                    <li class="has-dropdown">
-                                        <a href="{% url 'cse:blog' %}">Blog</a>
-                                        {#                                        <ul class="dropdown">#}
-                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
-                                        {#                                        </ul>#}
-                                    </li>
+
                                     <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
@@ -472,97 +479,88 @@
         </div>
     </div>
 
-    <footer id="colorlib-footer" role="contentinfo">
-        <div class="overlay"></div>
-        <div class="container">
-            <section>
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+    <div class="w3-row-padding">
+        <div class="w3-third">
+            <h3>Shahjalal University of Science and Technology</h3>
+            <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
+                research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
+                country and the first university to adopt American credit system.</p>
+        </div>
 
+        <div class="w3-third">
+            <h3 style="text-align: center">About SUST</h3>
+            <ul>
+                <li class="">
+                    <a href="http://www.sust.edu/about">Overview</a>
+                </li>
+                <li class="">
+                    <a href="http://www.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
+                </li>
+                <li class="">
+                    <a href="http://www.sust.edu/about/mission">Mission</a>
+                </li><!-- <li class="">
+                                            <a href="http://www1.sust.edu/about/accolades">Accolades</a>
+                                        </li><li class="">
+                                            <a href="http://www1.sust.edu/about/achievements">Achievements</a>
+                                        </li> -->
+                <li class="">
+                    <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
+                </li>
+                <li class="">
+                    <a href="http://www.sust.edu/about/news-and-events">News and Events</a>
+                </li>
+                <li class="">
+                    <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
+                </li><!-- <li class="">
+                                            <a href="http://www1.sust.edu/about/visit-sust">Visit SUST</a>
+                                        </li> -->
+                <li class="">
+                    <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
+                </li>
+            </ul>
+        </div>
 
-                {#            <div class="">#}
-                {#                <center><b><h1>About</h1></b></center>#}
-                {#            </div>#}
-                {#                <div class="" style="alignment: left">#}
-                <article>
-                    <left><h3>Shahjalal University of Science and Technology</h3></left>
+        <div class="w3-third">
+            <h3 style="text-align: center">Contact SUST</h3>
+            <ul class="colorlib-footer-links">
+                <li>
+                    <p><span><i class="icon-location"></i></span>
+                        <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
+                            University Ave, Sylhet-3114.</a>
                     </p>
-                    <br>
-                    <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
-                        research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
-                        country and the first university to adopt American credit system. SUST is the Flagship
-                        University of
-                        the Science & Technology University System of Bangladesh.</p>
-                </article>
-                <div class="col-md-3 colorlib-widget">
-                    <h2>About SUST</h2>
-                    <ul>
-                        <li class="">
-                            <a href="http://www.sust.edu/about">Overview</a>
-                        </li>
-                        <li class="">
-                            <a href="http://www.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
-                        </li>
-                        <li class="">
-                            <a href="http://www.sust.edu/about/mission">Mission</a>
-                        </li><!-- <li class="">
-												<a href="http://www.sust.edu/about/accolades">Accolades</a>
-											</li><li class="">
-												<a href="http://www.sust.edu/about/achievements">Achievements</a>
-											</li> -->
-                        <li class="">
-                            <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
-                        </li>
-                        <li class="">
-                            <a href="http://www.sust.edu/about/news-and-events">News and Events</a>
-                        </li>
-                        <li class="">
-                            <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
-                        </li><!-- <li class="">
-												<a href="http://www.sust.edu/about/visit-sust">Visit SUST</a>
-											</li> -->
-                        <li class="">
-                            <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                {#                </div>#}
-                <div class="col-md-3 colorlib-widget">
-                    <h2>Contact SUST</h2>
-                    <ul class="colorlib-footer-links">
-                        <li>
-                            <p><span><i class="icon-location"></i></span>
-                                <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
-                                    University Ave, Sylhet-3114.</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
-                                880-821-713491</a></p>
-                        </li>
-                        <li>
-                            <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p><span><i class="icon-globe-outline"></i></span> <a href="https://www.sust.edu">www.sust.edu</a>
-                            </p>
+                </li>
+                <li>
+                    <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
+                        880-821-713491</a></p>
+                </li>
+                <li>
+                    <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
+                    </p>
+                </li>
+                <li>
+                    <p><span><i class="icon-globe-outline"></i></span> <a
+                            href="https://www.sust.edu">www.sust.edu</a>
+                    </p>
 
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                </li>
+            </ul>
         </div>
-        <div class="row copyright">
-            <div class="col-md-12 text-center">
-                <p>
-                    <small class="block">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | Colorlib : SUST Medical Center</a>
-                    </small>
-                </p>
 
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>
+
+<div class="w3-black w3-center w3-padding-24">
+    <p>
+        <small class="block">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | SUST Medical Center</a>
+        </small>
+    </p>
+</div>
+
+{#End of footer#}
 </div>
 
 <div class="gototop js-top">

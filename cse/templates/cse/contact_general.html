@@ -91,7 +91,7 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                    <div id="colorlib-logo"><a href="{% url 'cse:staring' %}"><i
                                             class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
                                 </div>
                                 <div class="col-md-3">
@@ -130,23 +130,19 @@
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
-
                                     <li class="active"><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <p class="btn-cta">
-                                <a href="{% url 'cse:profile' %}">
-                                    <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
-                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                                </a>
-{#                                <a href="{% url 'cse:logout' %}">#}
-{#                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                                </a>#}
-                            </p>
-                        </div>
+{#                        <div class="col-md-4">#}
+                            <div class="col-md-3">
+                                <p class="btn-cta">
+                                    <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
+                                    <a href="{% url 'cse:register' %}"><span>  Register <i
+                                            class="glyphicon-registration-mark"></i></span></a>
+                                </p>
+                            </div>
+{#                        </div>#}
                     </div>
                 </div>
             </div>
@@ -280,54 +276,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div style="text-align: center">
-                        <h3>Get In Touch</h3>
 
-                        <h2><b>PATIENTS FEEDBACK</b>
-                        </h2>
-                    </div>
-                    <form action="{% url 'cse:feedback' %}" method="post">
-                        {% csrf_token %}
-                        {#                        <div class="row form-group">#}
-                        {#                            <div class="col-md-6">#}
-                        {#                                <label for="fname">First Name</label>#}
-                        {#                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">#}
-                        {#                            </div>#}
-                        {#                            <div class="col-md-6">#}
-                        {#                                <label for="lname">Last Name</label>#}
-                        {#                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {##}
-                        {#                        <div class="row form-group">#}
-                        {#                            <div class="col-md-12">#}
-                        {#                                <label for="email">Email</label>#}
-                        {#                                <input type="text" id="email" class="form-control" placeholder="Your email address">#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Subject</label>
-                                <input type="text" name="subject" id="subject" class="form-control"
-                                       placeholder="Your subject of this message" required>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
-                                          placeholder="Say something about us" required></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group text-center">
-                            <input type="submit" value="Send Message" class="btn btn-primary">
-                        </div>
-
-                    </form>
-                </div>
             </div>
         </div>
     </div>
@@ -340,7 +289,6 @@
     <br>
     {#        <div id="map" class="colorlib-map"></div>#}
     <div id="map"></div>
-
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-dark-grey">
     <div class="w3-row-padding">

@@ -24,19 +24,7 @@
     <meta name="twitter:image" content=""/>
     <meta name="twitter:url" content=""/>
     <meta name="twitter:card" content=""/>
-{#    profile#}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Raleway", sans-serif
-    }
-</style>
-
-{#    end profile#}
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!-- Animate.css -->
@@ -130,23 +118,23 @@
                                     </li>
                                     <li><a href="{% url 'cse:services' %}">Services</a></li>
 
-
-                                    <li class="active"><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                    <li class="active">
+                                        <a href="{% url 'cse:blog' %}">Blog</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:blog_single' %}">Single Blog</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <p class="btn-cta">
-                                <a href="{% url 'cse:profile' %}">
-                                    <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
-                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                                </a>
-{#                                <a href="{% url 'cse:logout' %}">#}
-{#                                    <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                    {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                                </a>#}
-                            </p>
-                        </div>
+                            <div class="col-md-3">
+                                <p class="btn-cta">
+                                    <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
+                                    <a href="{% url 'cse:register' %}"><span>  Register <i
+                                            class="glyphicon-registration-mark"></i></span></a>
+                                </p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -217,16 +205,16 @@
     <aside id="colorlib-hero" class="hero">
         <div class="flexslider">
             <ul class="slides">
-                <li style="background-image: url({% static 'cse/images/hero1.jpg' %})">
+                <li style="background-image: url({% static 'cse/images/bg_3.jpg' %})">
                     <div class="overlay"></div>
                     <div class="container">
                         <div class="row">
+
                             <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center slider-text">
+
                                 <div class="slider-text-inner" align="left">
-                                    <h1 style="color: darkgreen">We Always Care Your <br> Health</h1>
-                                    <br>
-                                    <h1>Contact <strong>Us</strong></h1>
-                                    {#                                    <h1>Contact <strong>Us</strong></h1>#}
+                                    <h1>Our <strong>Blog & Events</strong></h1>
+                                    <h1 style="color: darkred">This page is under developing...!</h1>
                                 </div>
                             </div>
                         </div>
@@ -235,194 +223,211 @@
             </ul>
         </div>
     </aside>
-
-    {#        <div id="colorlib-appointment">#}
-    {#            <div class="container">#}
-    {#                <div class="row">#}
-    {#                    <div class="col-md-8 col-md-offset-2 text-center">#}
-    {#                        <h2 class="line-block">Make an appointment</h2>#}
-    {#                        <p class="line-block"><a href="#" class="btn btn-primary btn-outline btn-cta">Book an Appointment <i#}
-    {#                                class="icon-calendar3"></i></a></p>#}
+    {#    <div id="colorlib-blog">#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-4">#}
+    {#                    <div class="blog-entry">#}
+    {#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+    {#                           style="background-image: url({% static 'cse/images/blog-1.jpg' %})">#}
+    {#                            <p class="date">#}
+    {#                                <span>1</span>#}
+    {#                                <span>Feb. 2017</span>#}
+    {#                            </p>#}
+    {#                        </a>#}
+    {#                        <div class="desc">#}
+    {#                            <h3><a href="blog.html">Here's why yoga is best for your health</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="col-md-4">#}
+    {#                    <div class="blog-entry">#}
+    {#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+    {#                           style="background-image: url({% static 'cse/images/blog-2.jpg' %})">#}
+    {#                            <p class="date">#}
+    {#                                <span>31</span>#}
+    {#                                <span>Jan. 2017</span>#}
+    {#                            </p>#}
+    {#                        </a>#}
+    {#                        <div class="desc">#}
+    {#                            <h3><a href="blog.html">live better get to know your medical technology</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="col-md-4">#}
+    {#                    <div class="blog-entry">#}
+    {#                        <a href="{% url 'cse:blog' %}" class="blog-img"#}
+    {#                           style="background-image: url({% static 'cse/images/blog-3.jpg' %})">#}
+    {#                            <p class="date">#}
+    {#                                <span>30</span>#}
+    {#                                <span>Jan. 2017</span>#}
+    {#                            </p>#}
+    {#                        </a>#}
+    {#                        <div class="desc">#}
+    {#                            <h3><a href="blog.html">Eating apple is the source of energy</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#                        </div>#}
     {#                    </div>#}
     {#                </div>#}
     {#            </div>#}
+    {#			<div class="row">#}
+    {#				<div class="col-md-4">#}
+    {#					<div class="blog-entry">#}
+    {#						<a href="blog.html" class="blog-img" style="background-image: url(images/blog-4.jpg);">#}
+    {#							<p class="date">#}
+    {#								<span>1</span>#}
+    {#								<span>Feb. 2017</span>#}
+    {#							</p>#}
+    {#						</a>#}
+    {#						<div class="desc">#}
+    {#							<h3><a href="blog.html">Here's why yoga is best for your health</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#						</div>#}
+    {#					</div>#}
+    {#				</div>#}
+    {#				<div class="col-md-4">#}
+    {#					<div class="blog-entry">#}
+    {#						<a href="blog.html" class="blog-img" style="background-image: url(images/blog-5.jpg);">#}
+    {#							<p class="date">#}
+    {#								<span>31</span>#}
+    {#								<span>Jan. 2017</span>#}
+    {#							</p>#}
+    {#						</a>#}
+    {#						<div class="desc">#}
+    {#							<h3><a href="blog.html">live better get to know your medical technology</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#						</div>#}
+    {#					</div>#}
+    {#				</div>#}
+    {#				<div class="col-md-4">#}
+    {#					<div class="blog-entry">#}
+    {#						<a href="blog.html" class="blog-img" style="background-image: url(images/blog-6.jpg);">#}
+    {#							<p class="date">#}
+    {#								<span>30</span>#}
+    {#								<span>Jan. 2017</span>#}
+    {#							</p>#}
+    {#						</a>#}
+    {#						<div class="desc">#}
+    {#							<h3><a href="blog.html">Eating apple is the source of energy</a></h3>#}
+    {#							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>#}
+    {#							<p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>#}
+    {#						</div>#}
+    {#					</div>#}
+    {#				</div>#}
+    {#			</div>#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-12 text-center">#}
+    {#                    <ul class="pagination">#}
+    {#                        <li class="disabled"><a href="#">&laquo;</a></li>#}
+    {#                        <li class="active"><a href="#">1</a></li>#}
+    {#                        <li><a href="#">2</a></li>#}
+    {#                        <li><a href="#">3</a></li>#}
+    {#                        <li><a href="#">4</a></li>#}
+    {#                        <li><a href="#">&raquo;</a></li>#}
+    {#                    </ul>#}
+    {#                </div>#}
+    {#            </div>#}
     {#        </div>#}
+    {#    </div>#}
 
-    <div id="colorlib-contact">
+    <footer id="colorlib-footer" role="contentinfo">
+        <div class="overlay"></div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div style="text-align: center">
+            <section>
 
-                        <h1><b>Contact Information</b></h1>
-                    </div>
-                    <div class="row contact-info-wrap">
-                        <div class="">
+
+                {#            <div class="">#}
+                {#                <center><b><h1>About</h1></b></center>#}
+                {#            </div>#}
+                {#                <div class="" style="alignment: left">#}
+                <article>
+                    <left><h3>Shahjalal University of Science and Technology</h3></left>
+                    </p>
+                    <br>
+                    <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
+                        research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
+                        country and the first university to adopt American credit system. SUST is the Flagship
+                        University of
+                        the Science & Technology University System of Bangladesh.</p>
+                </article>
+                <div class="col-md-3 colorlib-widget">
+                    <h2>About SUST</h2>
+                    <ul>
+                        <li class="">
+                            <a href="http://www.sust.edu/about">Overview</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.sust.edu/about/mission">Mission</a>
+                        </li><!-- <li class="">
+												<a href="http://www.sust.edu/about/accolades">Accolades</a>
+											</li><li class="">
+												<a href="http://www.sust.edu/about/achievements">Achievements</a>
+											</li> -->
+                        <li class="">
+                            <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.sust.edu/about/news-and-events">News and Events</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
+                        </li><!-- <li class="">
+												<a href="http://www.sust.edu/about/visit-sust">Visit SUST</a>
+											</li> -->
+                        <li class="">
+                            <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                {#                </div>#}
+                <div class="col-md-3 colorlib-widget">
+                    <h2>Contact SUST</h2>
+                    <ul class="colorlib-footer-links">
+                        <li>
                             <p><span><i class="icon-location"></i></span>
                                 <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
-                                    Shahjalal University of Science and Technology, Sylhet-3114.</a>
+                                    University Ave, Sylhet-3114.</a>
                             </p>
-                        </div>
-                        <div class="">
+                        </li>
+                        <li>
                             <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
-                                880-821-713491</a>
+                                880-821-713491</a></p>
+                        </li>
+                        <li>
+                            <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
                             </p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-mail"></i></span> <a href="mailto:bijoysust.system@gmail.com">bijoysust.system@gmail.com</a>
+                        </li>
+                        <li>
+                            <p><span><i class="icon-globe-outline"></i></span> <a href="https://www.sust.edu">www.sust.edu</a>
                             </p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">sustmedicalcenter.com</a></p>
-                        </div>
-                        <div class="">
-                            <p><span><i class="icon-globe-outline"></i></span> <a href="#">www.sust.edu</a></p>
-                        </div>
-                    </div>
+
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <div style="text-align: center">
-                        <h3>Get In Touch</h3>
+            </section>
+        </div>
+        <div class="row copyright">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | Colorlib : SUST Medical Center</a>
+                    </small>
+                </p>
 
-                        <h2><b>PATIENTS FEEDBACK</b>
-                        </h2>
-                    </div>
-                    <form action="{% url 'cse:feedback' %}" method="post">
-                        {% csrf_token %}
-                        {#                        <div class="row form-group">#}
-                        {#                            <div class="col-md-6">#}
-                        {#                                <label for="fname">First Name</label>#}
-                        {#                                <input type="text" id="fname" class="form-control mb" placeholder="Your firstname">#}
-                        {#                            </div>#}
-                        {#                            <div class="col-md-6">#}
-                        {#                                <label for="lname">Last Name</label>#}
-                        {#                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {##}
-                        {#                        <div class="row form-group">#}
-                        {#                            <div class="col-md-12">#}
-                        {#                                <label for="email">Email</label>#}
-                        {#                                <input type="text" id="email" class="form-control" placeholder="Your email address">#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="subject">Subject</label>
-                                <input type="text" name="subject" id="subject" class="form-control"
-                                       placeholder="Your subject of this message" required>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
-                                          placeholder="Say something about us" required></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group text-center">
-                            <input type="submit" value="Send Message" class="btn btn-primary">
-                        </div>
-
-                    </form>
-                </div>
             </div>
         </div>
-    </div>
-    <div style="text-align: center">
-
-        <h2><b>Map of the area – Here you can find us</b>
-        </h2>
-    </div>
-
-    <br>
-    {#        <div id="map" class="colorlib-map"></div>#}
-    <div id="map"></div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-dark-grey">
-    <div class="w3-row-padding">
-        <div class="w3-third">
-            <h3>Shahjalal University of Science and Technology</h3>
-            <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
-                research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
-                country and the first university to adopt American credit system.</p>
-        </div>
-
-        <div class="w3-third">
-            <h3 style="text-align: center">About SUST</h3>
-            <ul>
-                <li class="">
-                    <a href="http://www.sust.edu/about">Overview</a>
-                </li>
-                <li class="">
-                    <a href="http://www.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
-                </li>
-                <li class="">
-                    <a href="http://www.sust.edu/about/mission">Mission</a>
-                </li><!-- <li class="">
-                                            <a href="http://www1.sust.edu/about/accolades">Accolades</a>
-                                        </li><li class="">
-                                            <a href="http://www1.sust.edu/about/achievements">Achievements</a>
-                                        </li> -->
-                <li class="">
-                    <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
-                </li>
-                <li class="">
-                    <a href="http://www.sust.edu/about/news-and-events">News and Events</a>
-                </li>
-                <li class="">
-                    <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
-                </li><!-- <li class="">
-                                            <a href="http://www1.sust.edu/about/visit-sust">Visit SUST</a>
-                                        </li> -->
-                <li class="">
-                    <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="w3-third">
-            <h3 style="text-align: center">Contact SUST</h3>
-            <ul class="colorlib-footer-links">
-                <li>
-                    <p><span><i class="icon-location"></i></span>
-                        <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
-                            University Ave, Sylhet-3114.</a>
-                    </p>
-                </li>
-                <li>
-                    <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
-                        880-821-713491</a></p>
-                </li>
-                <li>
-                    <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
-                    </p>
-                </li>
-                <li>
-                    <p><span><i class="icon-globe-outline"></i></span> <a
-                            href="https://www.sust.edu">www.sust.edu</a>
-                    </p>
-
-                </li>
-            </ul>
-        </div>
-
-    </div>
-</footer>
-
-<div class="w3-black w3-center w3-padding-24">
-    <p>
-        <small class="block">
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            All rights reserved | SUST Medical Center</a>
-        </small>
-    </p>
-</div>
-
-{#End of footer#}
+    </footer>
 </div>
 
 <div class="gototop js-top">
@@ -476,14 +481,9 @@
 {#<!-- Active js -->#}
 {#<script src="{% static 'cse/contact/js/active.js' %}"></script>#}
 
-{#<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" #}
-{#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8"></iframe>#}
-<script async defer
-        {#        src="https://www.google.com/maps/embed/v1/view?center=23.779295,90.393448&amp;zoom=16&amp;key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8">#}
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXhTlFcSopxEFq1jrKYL7BN9kUsgD5Yk8&callback=initMap">
-    {#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap">#}
 
-</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&callback=initMap"></script>
 
 
 </body>

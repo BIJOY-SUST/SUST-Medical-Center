@@ -10,6 +10,7 @@ urlpatterns = [
 
     path('test/',user_view.testing,name='test'),
     path('profile/',user_view.profile,name='profile'),
+    path('profile_medi/',user_view.profile_medi,name='profile_medi'),
     path('per_medi_info/',user_view.per_medi_info,name='per_medi_info'),
 
 
@@ -25,7 +26,6 @@ urlpatterns = [
 
 
     path('index/', user_view.index, name='index'),
-    path('blog/', user_view.blog, name='blog'),
     path('contact/', user_view.contact, name='contact'),
     path('feedback/', user_view.feedback, name='feedback'),
 

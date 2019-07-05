@@ -19,28 +19,23 @@ from django.shortcuts import render
 from datetime import date,datetime
 from .models import CustomUser,Doctors,FeebBack,MedicalInfo,MedicineInfo
 from django.contrib import messages
-
-
-
-
 from  django.http import HttpResponse
-
 from django.views.generic import View
-
 from django.template.loader import get_template
-
 from cse.utils import render_to_pdf
-
-
 from django.shortcuts import get_object_or_404
 
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
+
+# ----------------- Testing ----------------------------
+
 def testing(request):
-        return render(request,'cse/test.html')
-
-
+    userinfo = request.user
+    medical = MedicalInfo.objects.filter(user_id=request.user.id)
+    return render(request, 'cse/test2.html', {'userinfo': userinfo, 'medical': medical})
+# ---------------------- Medical Info --------------------
 
 def calculate_age(born):
     today = date.today()
@@ -53,28 +48,16 @@ def calculate_age(born):
     else:
         return today.year - born.year
 
-def profile(request):
-    if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
-
-    else:
-        userinfo= request.user
-        medical = MedicalInfo.objects.filter(user_id=request.user.id)
-        return render(request,'cse/profile.html',{'userinfo':userinfo,'medical':medical})
 
 def per_medi_info(request):
     if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
     else:
-        # print(request.user.first_name)
         if request.method == 'POST':
-            # print(request.user.first_name)
             t_patient = request.user
             t_doctor = Doctors.objects.get(doctor_id=request.POST.get('in_doc_id'))
             medi_in = MedicalInfo.objects.get(id=request.POST.get('in_mediingo_id'))
-            # dd = t_patient.date_of_birth
-
             context = {
                 'tpatient': t_patient,
                 'tdoctor': t_doctor,
@@ -160,64 +143,29 @@ def per_medi_info(request):
             return render(request, 'cse/profile.html', {'userinfo': userinfo, 'medical': medical})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def staring(request):
-        # site = get_current_site(request).dom
-        #
-        #
-        #
-        # ain,
-        # site = request.META['HTTP_HOST']
-        # print(site)
-        return render(request, 'cse/staring.html')
+# ----------------------Login or Register with Logout--------------------
 
 def logout(request):
     auth_logout(request)
-    return render(request, 'cse/staring.html')
+    last_ten = FeebBack.objects.all().order_by('-id')[:10]
+    return render(request, 'cse/staring.html', {'messages': last_ten})
 
 def login(request):
         if request.method == 'POST':
                 # temail = request.POST['useremail']
                 # tpassword = request.POST['password']
-
                 temail = request.POST.get('useremail')
                 tpassword = request.POST.get('password')
-
                 user = authenticate(email=temail, password=tpassword)
                 if user is not None:
                         if user.is_active:
-                                # user.user_type='Admin'
-                                # user.save()
                                 auth_login(request, user)
-                                if request.user.is_superuser:
+                                if request.user.is_superuser or user.user_type == 'Admin':
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    doctor = Doctors.objects.all()
-                                    return render(request, 'cse/indexsuper.html',{'messages': last_ten, 'doctorlist': doctor})
-
-                                elif user.user_type == 'Admin':
-                                    last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    doctor = Doctors.objects.all()
-                                    return render(request, 'cse/index_admin.html',{'messages': last_ten, 'doctorlist': doctor})
+                                    return render(request, 'cse/index_admin.html', {'messages': last_ten})
                                 else:
                                     last_ten = FeebBack.objects.all().order_by('-id')[:10]
-                                    doctor = Doctors.objects.all()
-                                    return render(request, 'cse/index.html',{'messages': last_ten, 'doctorlist': doctor})
+                                    return render(request, 'cse/index.html',{'messages': last_ten})
 
                         else:
                                 messages.error(request, 'Your account has been disabled..!')
@@ -225,7 +173,8 @@ def login(request):
                 else:
                         messages.error(request, 'Invalid login..!')
                         return render(request, 'cse/login.html')
-        return render(request, 'cse/login.html')
+        else:
+            return render(request, 'cse/login.html')
 
 
 def register(request):
@@ -233,8 +182,6 @@ def register(request):
                 tfirstname = request.POST.get('firstname')
                 tlastname = request.POST.get('lastname')
                 tusername = request.POST.get('username')
-
-
                 tbdate = request.POST.get('date_of_birth')
                 tgender = request.POST.get('gender')
                 taddress = request.POST.get('address')
@@ -313,8 +260,7 @@ def register(request):
                     # emailcheck.send()
                     return render(request, 'cse/before_confirm.html')
         else:
-                return render(request,'cse/register.html')
-
+            return render(request, 'cse/register.html')
 
 def activate(request,uidb64,token):
     try:
@@ -334,14 +280,7 @@ def activate(request,uidb64,token):
         return render(request,'cse/if_invalid.html')
 
 
-
-
-
-
-
-
-# ----------------------Password Reset er kaj sguru--------------------
-
+# ---------------------- Password Reset --------------------
 
 def password_reset(request):
         return render(request,'cse/password_reset.html')
@@ -354,7 +293,6 @@ def password_reset_done(request):
                     c.pass_reset=True
                     c.save()
                     site = request.META['HTTP_HOST']
-                    # print(site)
                     mail_subject = "Confirmation message for SUST Medical Center"
                     message = render_to_string('cse/confirm_email_pass.html', {
                             'user': c,
@@ -376,8 +314,6 @@ def password_reset_done(request):
                 return render(request, 'cse/password_reset.html')
         else:
             return render(request, 'cse/password_reset.html')
-
-
 
 def passactivate(request,uidb64,token):
     try:
@@ -413,53 +349,65 @@ def password_reset_complete(request):
         messages.error(request, 'Failed....!')
         return render(request,'cse/password_reset.html')
 
-# def reset(request):
-#         return render(request,'cse/password_reset_done.html')
+
+
+# Start website - BIJOY_SUST
+
+def profile(request):
+    if not request.user.is_authenticated:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
+    else:
+        userinfo= request.user
+        medical = MedicalInfo.objects.filter(user_id=request.user.id)
+        return render(request,'cse/profile.html',{'userinfo':userinfo,'medical':medical})
+
+def profile_medi(request):
+    if not request.user.is_authenticated:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
+    else:
+        userinfo= request.user
+        medical = MedicalInfo.objects.filter(user_id=request.user.id)
+        return render(request,'cse/profile_medi.html',{'userinfo':userinfo,'medical':medical})
 
 
 
+def staring(request):
+    if not request.user.is_authenticated:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+    elif request.user.is_superuser or request.user.user_type == 'Admin':
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/index_admin.html', {'messages': last_ten})
+    else:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/index.html', {'messages': last_ten})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# User authentication er kahini ses akn theke baki kaj
 
 def index(request):
     if not request.user.is_authenticated:
-        return render(request,'cse/staring.html')
-    elif request.user.is_superuser:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        doctor = Doctors.objects.all()
-        return render(request, 'cse/indexsuper.html', {'messages': last_ten,'doctorlist':doctor})
-    elif request.user.user_type == 'Admin':
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+    elif request.user.is_superuser or request.user.user_type == 'Admin':
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        doctor = Doctors.objects.all()
-        return render(request, 'cse/index_admin.html', {'messages': last_ten,'doctorlist':doctor})
+        return render(request, 'cse/index_admin.html', {'messages': last_ten})
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
-        doctor = Doctors.objects.all()
-        return render(request, 'cse/index.html', {'messages': last_ten,'doctorlist':doctor})
+        return render(request, 'cse/index.html', {'messages': last_ten})
 
-def blog(request):
+
+def about_us(request):
     if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
+        return render(request,'cse/about_us_general.html')
     else:
-        return render(request, 'cse/blog.html')
+        return render(request, 'cse/about_us.html')
+
 def contact(request):
     if not request.user.is_authenticated:
-        return render(request,'cse/login.html')
+        return render(request,'cse/contact_general.html')
     else:
         return render(request, 'cse/contact.html')
 
@@ -485,11 +433,13 @@ def feedback(request):
         else:
             return render(request,'cse/contact.html')
     else:
-        return render(request,'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 def doctors(request):
     if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
+        doctor = Doctors.objects.all()
+        return render(request, 'cse/doctor_general.html',{'doctorlist':doctor})
     elif request.user.is_superuser:
         doctor = Doctors.objects.all()
         return render(request, 'cse/doctor_super.html',{'doctorlist':doctor})
@@ -501,7 +451,8 @@ def doctors(request):
 
 def doctors_delete(request,doctor_id):
     if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
     elif request.user.is_superuser:
         doctor_s = Doctors.objects.get(pk=doctor_id)
         doctor_s.delete()
@@ -519,15 +470,8 @@ def services(request):
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
         return render(request, 'cse/services.html',{'messages': last_ten})
     else:
-        return render(request,'cse/login.html')
-
-def about_us(request):
-    if not request.user.is_authenticated:
-        return render(request, 'cse/login.html')
-    else:
-        return render(request, 'cse/about_us.html')
-
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/services_general.html', {'messages': last_ten})
 
 
 
@@ -535,15 +479,16 @@ def about_us(request):
 
 def patientconfirm(request):
     if request.user.is_authenticated:
-        if request.user.user_type == 'Admin':
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
             return render(request, 'cse/patient_confirm.html')
-        elif request.user.is_superuser:
-            return render(request,'cse/patient_confirm.html')
+        # elif request.user.is_superuser:
+        #     return render(request,'cse/patient_confirm.html')
         else:
-            return render(request,'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return render(request,'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 def pregform(request):
     if request.user.is_authenticated:
@@ -564,10 +509,11 @@ def pregform(request):
                 # messages.error(request, 'After entering patient email , please click the PROCEED button.')
                 return render(request,'cse/patient_confirm.html')
         else:
-            return render(request,'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        messages.error(request, 'Please login first...!')
-        return render(request, 'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 
 # def patient_reg(request):
@@ -944,10 +890,11 @@ def pdf(request):
                 # messages.error(request, 'Fill the form very carefully...!')
                 return render(request, 'cse/patient_confirm.html')
         else:
-            return render(request, 'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        messages.error(request, 'Please login first...!')
-        return render(request, 'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 
 
@@ -966,10 +913,11 @@ def newdoctor(request):
         if request.user.is_superuser:
             return render(request,'cse/doctorreg.html')
         else:
-            return render(request,'cse/staring.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return render(request,'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 def newdoctorreg(request):
     if request.user.is_authenticated:
         if request.user.is_superuser:
@@ -1005,10 +953,11 @@ def newdoctorreg(request):
                 # messages.error(request, 'Error..!')
                 return render(request,'cse/doctorreg.html')
         else:
-            return render(request,'cse/staring.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return render(request,'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 
 
@@ -1017,15 +966,16 @@ def newdoctorreg(request):
 def medicineinfo(request):
     if request.user.is_authenticated:
         if request.user.user_type == 'Admin' or request.user.is_superuser:
-
             context={
                 'medicineall' : MedicineInfo.objects.all(),
             }
             return render(request,'cse/medicineall.html',context)
         else:
-            return render(request,'cse/staring.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 def medisearch(request):
     if request.user.is_authenticated:
@@ -1045,19 +995,23 @@ def medisearch(request):
                 return render(request,'cse/medicineall.html')
 
         else:
-            return render(request,'cse/staring.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 
 def newmedicine(request):
     if request.user.is_authenticated:
         if request.user.user_type == 'Admin' or request.user.is_superuser:
             return render(request,'cse/medicinenew.html')
         else:
-            return render(request,'cse/staring.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
 
 
 def mediregister(request):
@@ -1079,9 +1033,12 @@ def mediregister(request):
             else:
                 return render(request,'cse/medicinenew.html')
         else:
-            return render(request,'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
 
 def medichange(request):
     if request.user.is_authenticated:
@@ -1108,9 +1065,12 @@ def medichange(request):
             else:
                 return render(request,'cse/medicineall.html')
         else:
-            return render(request,'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
 
 def mediadd(request):
     if request.user.is_authenticated:
@@ -1136,8 +1096,9 @@ def mediadd(request):
             else:
                 return render(request,'cse/medicineall.html')
         else:
-            return render(request,'cse/index.html')
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
     else:
-        return  render(request,'cse/login.html')
-
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
 

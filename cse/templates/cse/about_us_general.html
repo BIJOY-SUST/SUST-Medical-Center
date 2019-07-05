@@ -26,6 +26,20 @@
     <meta name="twitter:url" content=""/>
     <meta name="twitter:card" content=""/>
 
+{#    profile#}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+{#    end profile#}
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!-- Animate.css -->
@@ -53,49 +67,6 @@
 	<script src="{% static 'cse/js/respond.min.js' %}"></script>
 	<![endif]-->
 
-    <!------ Sunnota website design---------------->
-
-    <!-- Bootstrap CSS -->
-{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-
-    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/sunnota/style.css' %}"/>
-
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">#}
-    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <script src="{% static 'cse/js/sunnota/main.js' %}"></script>
-
-
-
-    <!----------------End of sunnota----------->
-
-
-
-
-
-    <!--------Profile Footer----->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Raleway", sans-serif
-        }
-    </style>
-
-    <!---- End of Profile Footer----->
-
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="alternate" type="application/json+oembed"
@@ -117,6 +88,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.10829"/>
     <link type="text/css" rel="stylesheet"
           href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=59fb4852cf3bfe589c6c6f21"/>
+
     <style type="text/css">
         .form-label-left {
             width: 150px;
@@ -201,7 +173,7 @@
         }
 
         .form-all {
-            width: 700px;
+            width: 1200px;
         }
 
         .form-label-left,
@@ -212,7 +184,7 @@
         }
 
         .form-all {
-            font-size: 16px
+            font-size: 14px
         }
 
         .form-all .qq-upload-button,
@@ -220,7 +192,7 @@
         .form-all .form-submit-button,
         .form-all .form-submit-reset,
         .form-all .form-submit-print {
-            font-size: 16px
+            font-size: 14px
         }
 
         .form-all .form-pagebreak-back-container,
@@ -592,380 +564,190 @@
                 "type": "control_dropdown"
             }]);
         }, 20);
+
     </script>
+
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <body>
+{#<div class="colorlib-loader"></div>#}
 
+<div id="page">
 
-<!------------Navigation Bar start here------------------------------------------->
-<nav class="colorlib-nav" role="navigation">
-    <div class="top-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="top">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
-                                        class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="num">
-                                    <span class="icon"><i class="icon-phone"></i></span>
-                                    <p><a href="#">Call us: 880-821-713491,</a><br><a href="#">714479</a></p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="loc">
-                                    <span class="icon"><i class="icon-location"></i></span>
-                                    <p>
-                                        <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
-                                            University Ave, Sylhet 3114</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-wrap">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="menu-1">
-                            <ul>
-                                <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
-                                <li><a href="{% url 'cse:about_us' %}">About us</a></li>
-
-                                <li class="has-dropdown">
-                                    <a href="{% url 'cse:doctors' %}">Doctors</a>
-                                    {#                                        <ul class="dropdown">#}
-                                    {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
-                                    {#                                        </ul>#}
-                                </li>
-                                <li><a href="{% url 'cse:services' %}">Services</a></li>
-
-                                <li><a href="{% url 'cse:contact' %}">Contact</a></li>
-                            </ul>
+                    <div class="col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                            class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="num">
+                                        <span class="icon"><i class="icon-phone"></i></span>
+                                        <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="loc">
+                                        <span class="icon"><i class="icon-location"></i></span>
+                                        <p>
+                                            <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                University Ave, Sylhet 3114</a></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        {#                            <p class="btn-cta"><a href="{% url 'cse:logout' %}">#}
-                        {#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                        {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                        {#                            </a></p>#}
-                        <p class="btn-cta">
-                            <a href="{% url 'cse:medicineinfo' %}">
-                                <span>Medicine <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            </a>
-                            {#                                <a href="{% url 'cse:newdoctor' %}">#}
-                            {#                                    <span>New Doctor <i class="glyphicon glyphicon-log-out"></i></span>#}
-                            {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            {#                                </a>#}
-                            <a href="{% url 'cse:profile' %}">
-                                <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-                            </a>
-{#                            <a href="{% url 'cse:logout' %}">#}
-{#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                            </a>#}
-                        </p>
+                </div>
+            </div>
+            <div class="menu-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="menu-1">
+                                <ul>
+                                    <li><a href="{% url 'cse:staring' %}">Home</a></li>
+                                    <li class="active"><a href="{% url 'cse:about_us' %}">About us</a></li>
+
+                                    <li>
+                                        <a href="{% url 'cse:doctors' %}">Doctors</a>
+                                        {#                                        <ul class="dropdown">#}
+                                        {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                        {#                                        </ul>#}
+                                    </li>
+                                    <li><a href="{% url 'cse:services' %}">Services</a></li>
+
+
+                                    <li><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="btn-cta">
+                                <a href="{% url 'cse:login' %}"><span>   Login   <i class="glyphicon-log-in"></i></span></a>
+                                <a href="{% url 'cse:register' %}"><span>  Register <i
+                                        class="glyphicon-registration-mark"></i></span></a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!----------------- End of Navigation Bar ---------------------------------->
-
-<!--------------------------------------body start---------------------------------->
-
-
-
-
-
-<div class="container-fluid songs-container">
-    <div>
-        <br>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-{#            <div class="collapse navbar-collapse" id="topNavBar">#}
-                <ul class="navbar-nav" >
-                    {#                    <ul class="nav navbar-nav" style="margin-bottom: 10px;">#}
-                    <style type="text/css">
-                        .haha {
-                            background-color: black; /* Green */
-
-                            right: -35px;
-                            border-radius: 12px;
-                            border: none;
-                            color: white;
-                            padding: 10px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 16px;
-                            margin: 4px 2px;
-                            cursor: pointer;
-                        }
-                        .haaha {
-                            background-color: #b3b3b3; /* Green */
-
-                            right: -35px;
-                            border-radius: 12px;
-                            border: none;
-                            color: black;
-                            padding: 10px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 16px;
-                            margin: 4px 2px;
-                            cursor: pointer;
-                        }
-
-                    </style>
-                    <li class="haha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
-                    </li>
-                    <li class="haaha"><a href="{% url 'cse:newmedicine' %}">Add Medicine</a>
-                    </li>
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'cse:medisearch' %}">
-
-{#                            <div class="form-group">#}
-                                <input style="width: 300px" type="text" class="form-control" name="q"
-                                      placeholder="Medicine Name/Registration No" value="{{ request.GET.q }}">
-{#                            </div>#}
-                            <style type="text/css">
-                                .hahaa {
-                                    background-color: darkslategrey; /* Green */
-
-                                    right: -35px;
-                                    border-radius: 12px;
-                                    border: none;
-                                    color: white;
-                                    padding: 10px 25px;
-                                    text-align: center;
-                                    text-decoration: none;
-                                    display: inline-block;
-                                    font-size: 16px;
-                                    margin: 4px 2px;
-                                    cursor: pointer;
-                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                    transition-duration: 0.4s;
-                                }
-
-                                .hahaa2:hover {
-                                    background-color: black;
-                                    color: #3de6fa;
-                                }
-                            </style>
-                            <button class="hahaa hahaa2" type="submit">Search</button>
-                        </form>
-                    </li>
-                </ul>
-{#            </div>#}
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-sm-12">
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Medicine Name</th>
-                                <th>Registration Number</th>
-                                <th>Incoming Medicine</th>
-                                <th>Outgoing Medicine</th>
-                                <th>Present Medicine</th>
-                                <th>Medicine Subtraction</th>
-                                <th>Medicine Addition</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in medicineall %}
-                                <tr>
-                                    <td>{{ item.medicinename }}</td>
-                                    <td>{{ item.medicineRegno }}</td>
-                                    <td>{{ item.medicinebefore }}</td>
-                                    <td>{{ item.medicineafter }}</td>
-                                    <td>{{ item.medicinenow }}</td>
-                                    <td>
-                                        <form class="" method="POST" action="{% url 'cse:medichange' %}">
-                                            {% csrf_token %}
-                                            <style type="text/css">
-                                                .hmm {
-                                                    height: 40px;
-                                                    width: 25%;
-                                                    background-color: white;
-                                                    color: black;
-                                                    border: 3px solid #4CAF50;
-
-                                                }
-
-                                                .butto {
-                                                    background-color: #005cbf; /* Green */
-                                                    position: relative;
-
-                                                    right: -5px;
-                                                    border-radius: 50%;
-                                                    border: none;
-                                                    color: white;
-                                                    padding: 10px 25px;
-                                                    text-align: center;
-                                                    text-decoration: none;
-                                                    display: inline-block;
-                                                    font-size: 16px;
-                                                    margin: 4px 2px;
-                                                    cursor: pointer;
-                                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                                    transition-duration: 0.4s;
-                                                }
-
-                                                .button1:hover {
-                                                    background-color: black;
-                                                    color: white;
-                                                }
-
-                                            </style>
-                                            <input name="in_id" type="hidden" value={{ item.Medicine_id }}>
-                                            <!----------------------- medicine regno ----------------------->
-
-{#                                            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
-
-                                                <div id="cid_34" class="form-input jf-required">
-                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt" class="form-label form-label-left form-label-auto"
-                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>
-
-                                                    <button type="submit" class="butto button1">Edit</button>
-{##}
-{#                                                    <input class="hmm"  type="number" id="label_34" data-component="first" name="medicnt" value="">#}
-{#                                                    <button type="submit" class="butto button1">Edit</button>#}
-                                                </div>
-{#                                            </li>#}
-                                        </form>
-                                    </td>
-
-                                    <td>
-                                        <form class="" method="POST" action="{% url 'cse:mediadd' %}">
-                                            {% csrf_token %}
-                                            <style type="text/css">
-                                                .hmm {
-                                                    height: 40px;
-                                                    width: 25%;
-                                                    background-color: white;
-                                                    color: black;
-                                                    border: 3px solid #4CAF50;
-
-                                                }
-
-                                                .butto {
-                                                    background-color: #005cbf; /* Green */
-                                                    position: relative;
-
-                                                    right: -5px;
-                                                    border-radius: 50%;
-                                                    border: none;
-                                                    color: white;
-                                                    padding: 10px 25px;
-                                                    text-align: center;
-                                                    text-decoration: none;
-                                                    display: inline-block;
-                                                    font-size: 16px;
-                                                    margin: 4px 2px;
-                                                    cursor: pointer;
-                                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                                    transition-duration: 0.4s;
-                                                }
-
-                                                .button1:hover {
-                                                    background-color: black;
-                                                    color: white;
-                                                }
-
-                                            </style>
-                                            <input name="in_id2" type="hidden" value={{ item.Medicine_id }}>
-                                            <!----------------------- medicine regno ----------------------->
-
-{#                                            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
-
-                                                <div id="cid_34" class="form-input jf-required">
-                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt2" class="form-label form-label-left form-label-auto"
-                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>
-
-                                                    <button type="submit" class="butto button1">Edit</button>
-{##}
-{#                                                    <input class="hmm"  type="number" id="label_34" data-component="first" name="medicnt" value="">#}
-{#                                                    <button type="submit" class="butto button1">Edit</button>#}
-                                                </div>
-{#                                            </li>#}
-                                        </form>
-                                    </td>
-
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+</div>
+<div>
+    <br>
+    <br>
 
 </div>
 
 
+<div class="w3-row-padding w3-content" style="max-width:1400px">
+    <div class="w3-twothird">
 
+{#          <img class="mySlides" src="img_la.jpg" style="width:100%">#}
+{#          <img class="mySlides" src="img_ny.jpg" style="width:100%">#}
+{#          <img class="mySlides" src="img_chicago.jpg" style="width:100%">#}
+        <div>
+            <img class="mySlides" src="{% static 'cse/images/fgfgf.png' %}" style="width:100%">
+{#            <img class="mySlides" src="{% static 'cse/images/medical.jpg' %}"  style="width:100%">#}
+            <img class="mySlides" src="{% static 'cse/images/SUST2.jpg' %}" style="width:100%">
+{#            <img class="mySlides" src="{% static 'cse/images/DSC_0010.jpg' %}"  style="width:100%">#}
+        </div>
+    <script>
+        var myIndex = 0;
+        carousel();
 
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+        <div>
+            <br>
+{#            <br>#}
 
+        </div>
+        <h2>Welcome</h2>
+        <div class="w3-justify">
+            <p>The Health Service Centre, SUST located near the central auditorium just opposite to the basket ball
+                ground , offers free experienced general practitioner and emergency medical care services to all members
+                of the University community: students (undergraduate and post graduate), teachers ,staffs and their
+                families in a user-friendly efficient environment. Students get medicine from the Centre at free of cost
+                but they need to show their Medical card at all consultations and employees get medicine at minimum
+                cost. The Centre provides service round the clock, seven days a week. The centre also has an
+                ambulance.</p>
+            <p>SUST Medical Center is a part of the Shahjalal University of Science and Technology.Shahjalal University
+                of Science and Technology also known as SUST is a state supported, public research university located in
+                Sylhet, Bangladesh. It is the 8th oldest university of the country and the first university to adopt
+                American credit system. SUST is the Flagship University of the Science & Technology University System of
+                Bangladesh.</p>
+        </div>
+    </div>
+    <div class="w3-third">
+        <div class="w3-container w3-light-grey">
+{#            <script>#}
+{#                var myVar = setInterval(myTimer, 0);#}
+{##}
+{#                function myTimer() {#}
+{#                    var d = new Date();#}
+{#                    document.getElementById("demo").innerHTML = d.toLocaleTimeString();#}
+{#                }#}
+{#            </script>#}
+              <br>
+{#            <p class="text-center" id="demo"></p>#}
+            <p>SUST Medical Center remains open in the following days and time: </p>
+            <h2 class="text-center"><strong>Schedule</strong></h2>
+            <h3 class="text-center">Saturday - Wednesday</h3>
+            <p><b>Summer(1 April - 30 September)</b></p>
+            <p>Morning: 09.00 am - 12.00 pm</p>
+            <p>Evening: 02.00 pm - 06.00 pm</p>
+            <br>
+            <p><b>Winter(1 October - 31 March)</b></p>
+            <p>Morning: 09.00 am - 12.00 pm</p>
+            <p>Evening: 02.00 pm - 05.00 pm</p>
+        </div>
+        <br>
+        <div class="w3-container w3-light-grey w3-justify">
+            <p><b>Presently Medical Centre provides medical facilities are as follows:</b></p>
+            <h3>Outdoor Treatment</h3>
+            <p class="w3-justify">All students, Teachers, Officers, Staffs
+                and their dependants get medical facilities from Medical Centre free of cost. Some emergency medicine is
+                supplied
+                to the sick students from Medical Centre free of cost.</p>
+            <h3>Emergency Treatment</h3>
+            <p class="w3-justify">Medical Centre provides all emergency primary treatment such as Asthma, High
+                Temperature, Vomitting, Diarrhoea, RTA, Trauma etc.</p>
 
+            <h3>Ambulance</h3>
+            <p class="w3-justify">
+                We have a well equipped Ambulance. All emergency patients are transferred to Clinic or Hospital by
+                Ambulance.</p>
+        </div>
+    </div>
+</div>
 
+{#Footer#}
+<div>
 
+    <br>
 
-
-
-
-
-
-<!-----------------------------------body end-------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-dark-grey">
     <div class="w3-row-padding">
@@ -988,9 +770,9 @@
                 <li class="">
                     <a href="http://www.sust.edu/about/mission">Mission</a>
                 </li><!-- <li class="">
-                                            <a href="http://www.sust.edu/about/accolades">Accolades</a>
+                                            <a href="http://www1.sust.edu/about/accolades">Accolades</a>
                                         </li><li class="">
-                                            <a href="http://www.sust.edu/about/achievements">Achievements</a>
+                                            <a href="http://www1.sust.edu/about/achievements">Achievements</a>
                                         </li> -->
                 <li class="">
                     <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
@@ -1001,7 +783,7 @@
                 <li class="">
                     <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
                 </li><!-- <li class="">
-                                            <a href="http://www.sust.edu/about/visit-sust">Visit SUST</a>
+                                            <a href="http://www1.sust.edu/about/visit-sust">Visit SUST</a>
                                         </li> -->
                 <li class="">
                     <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
@@ -1046,9 +828,38 @@
         </small>
     </p>
 </div>
-<!----End of Footer------>
 
+{#End of footer#}
 
+{#<style>#}
+{##}
+{##}
+{#    #contentWrapper {#}
+{#        overflow-x: auto;#}
+{#        overflow-y: hidden;#}
+{#    height: 100%; height: 23px;#}
+{#        width: 100%;#}
+{#        margin-top: -16px;#}
+{#    }#}
+{##}
+{#    #content {#}
+{#        padding-top: -5px;#}
+{#        text-align: center;#}
+{#        background-color: black;#}
+{#        color: white;#}
+{#        width: 100%;#}
+{#    }#}
+{#</style>#}
+{#<div id="contentWrapper">#}
+{#    <div id="content">#}
+{#        <p>#}
+{#            <small class="block">#}
+{#                Copyright &copy;<script>document.write(new Date().getFullYear());</script>#}
+{#                All rights reserved | Colorlib : SUST Medical Center</a>#}
+{#            </small>#}
+{#        </p>#}
+{#    </div>#}
+{#</div>#}
 
 </body>
 </html>

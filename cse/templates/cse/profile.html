@@ -1,293 +1,480 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>SUST Medical Center</title>
+<head>
 
-{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUST Medical Center</title>
 
-<link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
+    {% load staticfiles %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
-<meta name="author" content=""/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
 
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content=""/>
-<meta property="og:image" content=""/>
-<meta property="og:url" content=""/>
-<meta property="og:site_name" content=""/>
-<meta property="og:description" content=""/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:image" content=""/>
-<meta name="twitter:url" content=""/>
-<meta name="twitter:card" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
-<!-- Animate.css -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/animate.css' %}"/>
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/icomoon.css' %}"/>
-<!-- Bootstrap  -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/bootstrap.css' %}"/>
-<!-- Magnific Popup -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/magnific-popup.css' %}"/>
-<!-- Owl Carousel  -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.carousel.min.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.theme.default.min.css' %}"/>
-<!-- Flexslider  -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/flexslider.css' %}"/>
-<!-- Flaticons  -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/fonts/flaticon/font/flaticon.css' %}"/>
-<!-- Theme style  -->
-<link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
-<!-- Modernizr JS -->
-<script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-	<script src="{% static 'cse/js/respond.min.js' %}"></script>
-	<![endif]-->
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/animate.css' %}"/>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/icomoon.css' %}"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/bootstrap.css' %}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/magnific-popup.css' %}"/>
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.theme.default.min.css' %}"/>
+    <!-- Flexslider  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/flexslider.css' %}"/>
+    <!-- Flaticons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/fonts/flaticon/font/flaticon.css' %}"/>
+    <!-- Theme style  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
 
-<style type="text/css">
-    article {
-        float: left;
-    {#text-align: left;#}{#padding: 50px;#} width: 50%;
-    {#background-color: #f1f1f1;#} height: 300px; /* only for demonstration, should be removed */
-    }
-</style>
+    <!-- Modernizr JS -->
+    <script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+        <script src="{% static 'cse/js/respond.min.js' %}"></script>
+        <![endif]-->
+
+    <style type="text/css">
+        article {
+            float: left;
+        {#text-align: left;#}{#padding: 50px;#} width: 50%;
+        {#background-color: #f1f1f1;#} height: 300px; /* only for demonstration, should be removed */
+        }
+    </style>
+
+{#  ---------------------- masum sir ----------------#}
+{#<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/profile_sir/sir.css' %}"  />
 
 
 
 
 
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+</head>
 
 
 
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Raleway", sans-serif
-    }
-</style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:450px;" id="mySidebar"><br>
-    <div class="w3-container">
-        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
-           title="close menu">
-            <i class="fa fa-remove"></i>
-        </a>
-        <img src="{{ userinfo.photos.url }}" style="width:100%;" class="w3-round"><br><br>
-        <h3><b>Full Name : {{ userinfo.first_name }} {{ userinfo.last_name }}</b></h3>
-        <h6><b>User Name : {{ userinfo.username }}</b></h6>
-        <h6><b>Height : {{ userinfo.height }}</b></h6>
-        <h6><b>Date Of Birth : {{ userinfo.date_of_birth }}</b></h6>
-        <h6><b>Email : {{ userinfo.email }}</b></h6>
-        <h6><b>Reg. No : {{ userinfo.reg_no }}</b></h6>
-        <h6><b>Blood Group : {{ userinfo.blood_group }}</b></h6>
-        <h6><b>Gender : {{ userinfo.gender }}</b></h6>
-        <h6><b>Mobile : {{ userinfo.mobile_no }}</b></h6>
-        <h6><b>Telephone : {{ userinfo.tel_no }}</b></h6>
-        <h6><b>User Type : {{ userinfo.user_type }}</b></h6>
-        <h6><b>Date Joined : {{ userinfo.date_joined }}</b></h6>
-        <h6><b>Department : {{ userinfo.department }}</b></h6>
-        <h6><b>Address : {{ userinfo.address }}</b></h6>
-        {#    <p class="w3-text-grey">Template by W3.CSS</p>#}
-    </div>
-    <div class="w3-bar-block">
-        {#    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>#}
-        {#    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>#}
-        {#    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>#}
-        {#  </div>#}
-        <a class="w3-panel w3-large">
-            <a href="https://www.facebook.com/">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            </a>
-            <a href="https://www.instagram.com/">
-                <i class="fa fa-instagram w3-hover-opacity"></i></a>
+{#<div class="colorlib-loader"></div>#}
 
-            <a href="https://www.snapchat.com/">
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-            </a>
-            <a href="https://www.pinterest.com/">
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            </a>
-
-            <a href="https://twitter.com/">
-                <i class="fa fa-twitter w3-hover-opacity"></i></a>
-
-            <a href="https://www.linkedin.com/">
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </a>
-        </a>
-    </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
-     title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:450px">
-
+<div class="w3-main" style="margin-left:0px">
     <!-- Header -->
-    <header id="portfolio">
-        <img src="{{ userinfo.photos.url }}" style="width:65px;"
-             class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
-                class="fa fa-bars"></i></span>
-        <div>
-            <style>
-                .lolul {
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    overflow: hidden;
-                    background-color: #333;
-                }
+{#    <header id="portfolio">#}
+    <div>
+        <style>
+            .lolul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
 
-                .lolli {
-                    float: left;
-                }
-                .lilog {
-                    float: right;
-                }
+            .lolli {
+                float: left;
+            }
+            .lilog {
+                float: right;
+            }
 
-                .lia{
-                    display: inline-block;
-                    color: white;
-                    text-align: center;
-                    padding: 14px 16px;
-                    text-decoration: none;
-                }
+            .lia{
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-                .lia:hover {
-                    background-color: revert;
-                }
-            </style>
+            .lia:hover {
+                background-color: revert;
+            }
+        </style>
 
-
-
-            <div>
-                <ul class="lolul">
-                    <li class="lolli"><a class="lia" href="{% url 'cse:index' %}">Home</a></li>
-                    <li class="lolli"><a class="lia" href="{% url 'cse:about_us' %}">About us</a></li>
-                    <li class="lolli"><a class="lia" href="{% url 'cse:doctors' %}">Doctors</a></li>
-                    <li class="lolli"><a class="lia" href="{% url 'cse:services' %}">Services</a></li>
-                    <li class="lolli"><a class="lia" href="{% url 'cse:blog' %}">Blog</a></li>
-                    <li class="lolli"><a class="lia" href="{% url 'cse:contact' %}">Contact</a></li>
-
-
-                    <li class="lilog"><a class="lia" href="{% url 'cse:logout' %}">Logout</a></li>
-                    <li class="lilog"><a class="lia" href="{% url 'cse:profile' %}">View Profile</a></li>
-
-                </ul>
-            </div>
-
-
-        </div>
-
-        <div>
-            <br>
-        </div>
-        <div class="w3-container">
-            <h1><b>My Medical Information</b></h1>
-            <h4>When filling out medical forms, how often have you guessed about medications, surgery dates,
-                vaccinations or insurance information? Now you don’t have to. My Medical Info lets you easily organize
-                all your health information in one place, where you can view it and share it with your
-                doctors. Now you’ll have all your basic medical information whenever you need it, and give your doctors
-                the accurate information they need to provide the very best care. Enjoy the peace of mind that knowledge
-                brings ... with My Medical Info.</h4>
-            <br>
-            <h4><b>Here your medical information in ascending order by your prescription date:</b></h4>
-            <br>
-        </div>
-    </header>
-
-    <!-- First Photo Grid-->
-    <div class="w3-row-padding">
-
-        {% for item in medical %}
-            <div class="w3-third w3-container w3-margin-bottom">
-                {#            <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-                <form action="{% url 'cse:per_medi_info' %}" method="post">
-                    {% csrf_token %}
-
-                    <div class="w3-container w3-white">
-                        {#                    <p><b>Lorem Ipsum</b></p>#}
-                        <br>
-
-                        <input id="prodId" name="in_doc_id" type="hidden" value={{ item.doctor_id }}>
-                        <input id="prodId" name="in_mediingo_id" type="hidden" value={{ item.id }}>
-                        <div class="form-group text-center">
-                            <input type="submit" value="{{ item.adate }}" class="btn btn-primary">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="top">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                                class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="num">
+                                            <span class="icon"><i class="icon-phone"></i></span>
+                                            <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="loc">
+                                            <span class="icon"><i class="icon-location"></i></span>
+                                            <p>
+                                                <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                    University Ave, Sylhet 3114</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        {#                        <style>#}
-                        {#                            .ddd{#}
-                        {#                                text-align: center;#}
-                        {#                                color: green;#}
-                        {#                            }#}
-                        {#                        </style>#}
-                        {#                        <p class="ddd"><a href=""><strong>{{ item.adate }}</strong></a></p>#}
-
                     </div>
-                </form>
+                </div>
+                <div class="menu-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'cse:index' %}">Home</a></li>
+                                        <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
+                                        <li><a href="{% url 'cse:doctors' %}">Doctors</a>
+                                            {#                                        <ul class="dropdown">#}
+                                            {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                            {#                                        </ul>#}
+                                        </li>
+                                        <li><a href="{% url 'cse:services' %}">Services</a></li>
+
+                                        <li><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="btn-cta">
+                                    <a href="{% url 'cse:profile' %}">
+                                        <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
+                                    </a>
+                                    <a href="{% url 'cse:logout' %}">
+                                        <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-        {#        <div class="w3-third w3-container w3-margin-bottom">#}
-        {#            <img src="/w3images/lights.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-        {#            <div class="w3-container w3-white">#}
-        {#                <p><b>Lorem Ipsum</b></p>#}
-        {#                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies#}
-        {#                    congue gravida diam non fringilla.</p>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <div class="w3-third w3-container w3-margin-bottom">#}
-        {#            <img src="/w3images/nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-        {#            <div class="w3-container w3-white">#}
-        {#                <p><b>Lorem Ipsum</b></p>#}
-        {#                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies#}
-        {#                    congue gravida diam non fringilla.</p>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#    </div>#}
-        {##}
-        {#        <!-- Second Photo Grid-->#}
-        {#    <div class="w3-row-padding">#}
-        {#        <div class="w3-third w3-container w3-margin-bottom">#}
-        {#            <img src="/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-        {#            <div class="w3-container w3-white">#}
-        {#                <p><b>Lorem Ipsum</b></p>#}
-        {#                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies#}
-        {#                    congue gravida diam non fringilla.</p>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <div class="w3-third w3-container w3-margin-bottom">#}
-        {#            <img src="/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-        {#            <div class="w3-container w3-white">#}
-        {#                <p><b>Lorem Ipsum</b></p>#}
-        {#                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies#}
-        {#                    congue gravida diam non fringilla.</p>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <div class="w3-third w3-container w3-margin-bottom">#}
-        {#            <img src="/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">#}
-        {#            <div class="w3-container w3-white">#}
-        {#                <p><b>Lorem Ipsum</b></p>#}
-        {#                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies#}
-        {#                    congue gravida diam non fringilla.</p>#}
-        {#            </div>#}
-        {#        </div>#}
+        </nav>
+
+{#            <div>#}
+{#                <ul class="lolul">#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:index' %}">Home</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:about_us' %}">About us</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:doctors' %}">Doctors</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:services' %}">Services</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:contact' %}">Contact</a></li>#}
+{##}
+{##}
+{#                    <li class="lilog"><a class="lia" href="{% url 'cse:logout' %}">Logout</a></li>#}
+{#                    <li class="lilog"><a class="lia" href="{% url 'cse:profile' %}">View Profile</a></li>#}
+{##}
+{#                </ul>#}
+{#            </div>#}
+
+<!-------------------- profile start ----------------------------->
+
+
+        <div class="container emp-profile">
+{#                <form method="post">#}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{ userinfo.photos.url }}"
+                                 alt=""/>
+{#                                <div class="file btn btn-lg btn-primary">#}
+{#                                    Change Photo#}
+{#                                    <input type="file" name="file"/>#}
+{#                                </div>#}
+{#                    <div class="col-md-4">#}
+                        <div class="profile-work">
+                            <p>CONTACT INFO</p>
+                            <h6>
+                                <b>
+                                    <p><span><i class="icon-phone"></i></span> <a href="tel://{{ userinfo.mobile_no }}">+
+                                        {{ userinfo.mobile_no }}</a>
+                                    </p>
+
+
+                                </b>
+                            </h6>
+                            <h6>
+                                <b>
+                                    <p><span><i class="icon-mail"></i></span> <a
+                                            href="mailto:bijoysust.system@gmail.com">bijoysust.system@gmail.com</a>
+                                    </p>
+
+
+                                </b>
+                            </h6>
+{#                            </p>#}
+                            <p>SOCIAL LINK</p>
+
+{#                                    <a class="w3-panel w3-large">#}
+                                <a href="https://www.facebook.com/">
+                                    <i class="fa fa-facebook-official w3-hover-opacity"> </i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/">
+                                    <i class="fa fa-instagram w3-hover-opacity"></i> Instagram</a><br>
+
+                                <a href="https://www.snapchat.com/">
+                                    <i class="fa fa-snapchat w3-hover-opacity"></i> Snapchat
+                                </a>
+                                <a href="https://www.pinterest.com/">
+                                    <i class="fa fa-pinterest-p w3-hover-opacity"></i> Pinterest
+                                </a><br>
+
+                                <a href="https://twitter.com/">
+                                    <i class="fa fa-twitter w3-hover-opacity"></i> Twitter</a>
+
+                                <a href="https://www.linkedin.com/">
+                                    <i class="fa fa-linkedin w3-hover-opacity"></i> Linkedin
+                                </a><br>
+                    {#        </a>#}
+
+{#                            <a href="">Website Link</a><br/>#}
+{#                            <a href="">Bootsnipp Profile</a><br/>#}
+{#                            <a href="">Bootply Profile</a>#}
+
+
+{#                            <a href="">Web Designer</a><br/>#}
+{#                            <a href="">Web Developer</a><br/>#}
+{#                            <a href="">WordPress</a><br/>#}
+{#                            <a href="">WooCommerce</a><br/>#}
+{#                            <a href="">PHP, .Net</a><br/>#}
+                        </div>
+{#                    </div>#}
+{#                            <p><span><i class="icon-mail"></i></span> <a#}
+{#                                    href="mailto:{{ userinfo.email }}">{{ userinfo.email }}</a>#}
+{#                            </p>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h5>
+                                <h3><b>{{ userinfo.first_name }} {{ userinfo.last_name }}</b></h3>
+                            </h5>
+                            <h5>
+                                <small style="color: black">{{ userinfo.department }}</small></b>
+
+                            </h5>
+                            <h10><b>Shahjalal University of Science and Technology, Sylhet.</b></h10>
+
+                            {#                                Web Developer and Designer#}
+                            </h5>
+{#                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>#}
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab"
+                                       role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+{#                                <li class="nav-item">#}
+{#                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"#}
+{#                                       role="tab" aria-controls="profile" aria-selected="false">Education Info</a>#}
+{#                                </li>#}
+                            </ul>
+                            <h8><b>User Name : {{ userinfo.username }}</b></h8><br>
+                            <h8><b>Height : {{ userinfo.height }}</b></h8><br>
+                            <h8><b>Date Of Birth : {{ userinfo.date_of_birth }}</b></h8><br>
+                            <h8><b>Reg. No : {{ userinfo.reg_no }}</b></h8><br>
+                            <h8><b>Blood Group : {{ userinfo.blood_group }}</b></h8><br>
+                            <h8><b>Gender : {{ userinfo.gender }}</b></h8><br>
+                            <h8><b>User Type : {{ userinfo.user_type }}</b></h8><br>
+                            <h8><b>Date Joined : {{ userinfo.date_joined }}</b></h8><br>
+                            <h8><b>Address : {{ userinfo.address }}</b></h8><br>
+                            <h8><b>Department : {{ userinfo.department }}</b></h8>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <style>
+                            .butto {
+                                background-color: darkslategrey; /* Green */
+                                position: relative;
+
+                                right: -5px;
+                                border-radius: 12px;
+                                border: none;
+                                color: white;
+                                padding: 6px 12px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 4px 2px;
+                                cursor: pointer;
+                                -webkit-transition-duration: 0.4s; /* Safari */
+                                transition-duration: 0.4s;
+                            }
+
+                            .button1:hover {
+                                background-color: black;
+                                color: white;
+                            }
+
+
+                        </style>
+                        <button class="butto button1">
+                            <a href="{% url 'cse:profile_medi' %}" style="color:white;">My Medical Info</a>
+                        </button>
+                        {#                                            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>#}
+                    </div>
+                </div>
+                <div class="row">
+{#                    <div class="col-md-4">#}
+{#                        <div class="profile-work">#}
+{#                            <p><span><i class="icon-mail"></i></span> <a href="mailto:{{ userinfo.email }}">{{ userinfo.email }}</a>#}
+{#                            </p>#}
+{#                            <p>WORK LINK</p>#}
+{#                            <a href="">Website Link</a><br/>#}
+{#                            <a href="">Bootsnipp Profile</a><br/>#}
+{#                            <a href="">Bootply Profile</a>#}
+{#                            <p>SKILLS</p>#}
+{#                            <a href="">Web Designer</a><br/>#}
+{#                            <a href="">Web Developer</a><br/>#}
+{#                            <a href="">WordPress</a><br/>#}
+{#                            <a href="">WooCommerce</a><br/>#}
+{#                            <a href="">PHP, .Net</a><br/>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-8">#}
+{#                        <div class="tab-content profile-tab" id="myTabContent">#}
+{#                            <div class="tab-pane fade show active" id="home" role="tabpanel"#}
+{#                                 aria-labelledby="home-tab">#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>User Id</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>Kshiti123</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Name</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>Kshiti Ghelani</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Email</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>kshitighelani@gmail.com</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Phone</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>123 456 7890</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Profession</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>Web Developer and Designer</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Experience</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>Expert</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Hourly Rate</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>10$/hr</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Total Projects</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>230</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>English Level</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>Expert</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <label>Availability</label>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-6">#}
+{#                                        <p>6 months</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-12">#}
+{#                                        <label>Your Bio</label><br/>#}
+{#                                        <p>Your detail description</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+{#                </form>#}
+         </div>
+    </div>
+
+<!-------------------- profile end ----------------------------->
+
     </div>
 
 
