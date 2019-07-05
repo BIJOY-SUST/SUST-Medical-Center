@@ -805,26 +805,26 @@
 
 
             <!------------------------ Doctor ID Field ---------------------------->
+            <li>
+                {#                <h3>Hi, {{ user.email }}</h3>#}
+                <input id="prodId" name="doctoremail" type="hidden" value={{ sin_doc.email }}>
 
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Doctor ID
-                    <span class="form-required">*</span>
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select class="form-dropdown validate[required]" id="input_33" name="doctoremail"
-                            style="width:375px" data-component="dropdown" required="">
-                        <option value=""></option>
-                        {% for item in doctorlist %}
-                            <option value="{{ item.email }}">{{ item.email }}</option>
-
-                            {#                        <option value="Teacher"> Teacher</option>#}
-                            {#                        <option value="Stuff"> Stuff</option>#}
-                            {#                        <option value="Admin"> Admin</option>#}
-                        {% endfor %}
-                    </select>
-                </div>
             </li>
+{#            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">#}
+{#                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">#}
+{#                    Doctor ID#}
+{#                    <span class="form-required">*</span>#}
+{#                </label>#}
+{#                <div id="cid_33" class="form-input jf-required">#}
+{#                    <select class="form-dropdown validate[required]" id="input_33" name="doctoremail"#}
+{#                            style="width:375px" data-component="dropdown" required="">#}
+{#                        <option value=""></option>#}
+{#                        {% for item in doctorlist %}#}
+{#                            <option value="{{ item.email }}">{{ item.email }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{#            </li>#}
 
             <!------------------------ medicine name Field ---------------------------->
 

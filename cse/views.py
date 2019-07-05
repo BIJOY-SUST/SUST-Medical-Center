@@ -496,9 +496,25 @@ def pregform(request):
             if request.method == 'POST':
                 if CustomUser.objects.filter(email=request.POST.get('useremail')).exists():
                     c = CustomUser.objects.get(email=request.POST.get('useremail'))
-                    if c.is_active == True:
-                        doctor = Doctors.objects.all()
-                        return render(request,'cse/pregform.html',{'user':c,'doctorlist':doctor})
+                    if request.user.is_superuser or Doctors.objects.filter(email=request.user.email).exists():
+                        c = CustomUser.objects.get(email=request.POST.get('useremail'))
+                        if c.is_active == True:
+                            doctor = Doctors.objects.all()
+
+                            context = {
+                                'user': c,
+                                'doctorlist': doctor,
+                                'sin_doc' : request.user
+                            }
+
+                            return render(request,'cse/pregform.html',context)
+                        else:
+                            messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
+                            return render(request, 'cse/patient_confirm.html')
+
+                    elif c.is_active:
+                        messages.error(request, 'Yes, Valid Patient....!!!')
+                        return render(request, 'cse/patient_confirm.html')
                     else:
                         messages.error(request, 'User email doesnot exists..!, Please enter a valid Email address.')
                         return render(request, 'cse/patient_confirm.html')

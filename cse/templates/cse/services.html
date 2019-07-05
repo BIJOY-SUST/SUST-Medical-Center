@@ -217,7 +217,15 @@
     <aside id="colorlib-hero" class="hero">
         <div class="flexslider">
             <ul class="slides">
-                <li style="background-image: url({% static 'cse/images/banner-bg2.jpg' %})">
+                <style>
+                    .dada{
+                        background-image: url({% static 'cse/images/banner-bg2.jpg' %});
+                        background-repeat: no-repeat;
+                        background-size: 1420px 400px;
+                    }
+                </style>
+                <li class="dada">
+{#                <li style="background-image: url({% static 'cse/images/banner-bg2.jpg' %})">#}
                     <div class="overlay"></div>
                     <div class="container">
                         <div class="row">
