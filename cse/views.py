@@ -462,7 +462,7 @@ def patient_to_doctor(request):
             c = Doctors.objects.get(email=request.POST.get('in_email'))
 
             # System to doctor
-            mail_subject = "Thank you for your Email"
+            mail_subject = "Patient Request"
             message = render_to_string('cse/feed3.html', {
                 'user': request.user,
                 'doc' : c,

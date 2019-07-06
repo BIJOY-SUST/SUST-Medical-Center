@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abee07fa-4b2e-4261-af07-88e65efc54a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cse/templates/cse/doctor_general.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/doctor_general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cse/templates/cse/doctor_super.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/doctor_super.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cse/templates/cse/doctors.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/doctors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cse/templates/cse/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/cse/templates/cse/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cse/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cse/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cse/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cse/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cse/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="220">
+              <caret line="464" column="44" selection-start-line="464" selection-start-column="44" selection-end-line="464" selection-end-column="44" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -514,12 +508,12 @@
       <workItem from="1562340948585" duration="6886000" />
       <workItem from="1562389105848" duration="11013000" />
       <workItem from="1562410381759" duration="12321000" />
-      <workItem from="1562426151383" duration="394000" />
+      <workItem from="1562426151383" duration="735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="658569000" />
+    <option name="totallyTimeSpent" value="658910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -886,8 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cse/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="220">
+          <caret line="464" column="44" selection-start-line="464" selection-start-column="44" selection-end-line="464" selection-end-column="44" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
