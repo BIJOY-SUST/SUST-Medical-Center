@@ -382,6 +382,16 @@
                                         {#                                            <span class=btn-cta">Delete</span>#}
                                     </button>
                                 </form>
+                                <form action="{% url 'cse:full_doctor' item.doctor_id %}" method="post"
+                                      style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="doctor_id" value="{{ item.doctor_id }}"/>
+                                     <input type="submit" value="View full profile..." class="btn btn-primary">
+
+                                </form>
+
+
+
                                 {#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>#}

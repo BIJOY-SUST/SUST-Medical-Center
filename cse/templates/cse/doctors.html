@@ -367,6 +367,17 @@
                                 <span>Phone: {{ item.mobile_no }}</span>
                                 <span>Email: {{ item.email }}</span>
 
+
+
+                                <form action="{% url 'cse:full_doctor' item.doctor_id %}" method="post"
+                                      style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="doctor_id" value="{{ item.doctor_id }}"/>
+                                     <input type="submit" value="View full profile..." class="btn btn-primary">
+
+                                </form>
+
+
                                 {#                                <ul class="colorlib-social">#}
                                 {#                                    <li><a href="#"><i class="icon-facebook2"></i></a></li>#}
                                 {#                                    <li><a href="#"><i class="icon-twitter2"></i></a></li>#}
@@ -374,6 +385,8 @@
                                 {#                                    <li><a href="#"><i class="icon-instagram"></i></a></li>#}
                                 {#                                </ul>#}
                             </div>
+
+
                         </div>
                     </div>
                     {#                <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">#}

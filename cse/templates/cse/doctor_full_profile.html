@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUST Medical Center</title>
+
+    {% load staticfiles %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'cse/images/logo.png' %}"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+
+{#  doctor's full profile  #}
+        <!-- Icon css link -->
+        <link href=" {% static 'cse/tiger/vendors/material-icon/css/materialdesignicons.min.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/vendors/linears-icon/style.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/vendors/owl-carousel/assets/owl.carousel.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/vendors/animate-css/animate.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href=" {% static 'cse/tiger/css/style.css' %}" >
+        <link href=" {% static 'cse/tiger/css/responsive.css' %}" rel="stylesheet">
+
+        <link href=" {% static 'cse/tiger/css/colors/default.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/colors/orange.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/colors/pink.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/colors/violet.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/colors/blue.css' %}" rel="stylesheet">
+        <link href=" {% static 'cse/tiger/css/colors/past.css' %}" rel="stylesheet">
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+
+{#    #}
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/animate.css' %}"/>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/icomoon.css' %}"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/bootstrap.css' %}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/magnific-popup.css' %}"/>
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/owl.theme.default.min.css' %}"/>
+    <!-- Flexslider  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/flexslider.css' %}"/>
+    <!-- Flaticons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/fonts/flaticon/font/flaticon.css' %}"/>
+    <!-- Theme style  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/style.css' %}"/>
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'cse/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+        <script src="{% static 'cse/js/respond.min.js' %}"></script>
+        <![endif]-->
+
+    <style type="text/css">
+        article {
+            float: left;
+        {#text-align: left;#}{#padding: 50px;#} width: 50%;
+        {#background-color: #f1f1f1;#} height: 300px; /* only for demonstration, should be removed */
+        }
+    </style>
+
+{#  ---------------------- masum sir ----------------#}
+{#<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/profile_sir/sir.css' %}"  />
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+</head>
+
+
+
+
+
+{#<body class="w3-light-grey w3-content" style="max-width:1600px">#}
+
+{#<div class="colorlib-loader"></div>#}
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:0px">
+    <!-- Header -->
+{#    <header id="portfolio">#}
+    <div>
+{#        <style>#}
+{#            .lolul {#}
+{#                list-style-type: none;#}
+{#                margin: 0;#}
+{#                padding: 0;#}
+{#                overflow: hidden;#}
+{#                background-color: #333;#}
+{#            }#}
+{##}
+{#            .lolli {#}
+{#                float: left;#}
+{#            }#}
+{#            .lilog {#}
+{#                float: right;#}
+{#            }#}
+{##}
+{#            .lia{#}
+{#                display: inline-block;#}
+{#                color: white;#}
+{#                text-align: center;#}
+{#                padding: 14px 16px;#}
+{#                text-decoration: none;#}
+{#            }#}
+{##}
+{#            .lia:hover {#}
+{#                background-color: revert;#}
+{#            }#}
+{#        </style>#}
+
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="top">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="colorlib-logo"><a href="{% url 'cse:index' %}"><i
+                                                class="flaticon-stethoscope"></i>SUST <span>Medical Center</span></a></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="num">
+                                            <span class="icon"><i class="icon-phone"></i></span>
+                                            <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="loc">
+                                            <span class="icon"><i class="icon-location"></i></span>
+                                            <p>
+                                                <a href="https://www.google.com/maps/place/SUST+Medical+Center,+Sylhet/@24.9240367,91.8316584,16.8z/data=!4m13!1m7!3m6!1s0x375055622432310f:0x4d4e2815757c58c5!2sSUST+Medical+Center,+Sylhet!3b1!8m2!3d24.9231143!4d91.8334144!3m4!1s0x375055622432310f:0x4d4e2815757c58c5!8m2!3d24.9231143!4d91.8334144">
+                                                    University Ave, Sylhet 3114</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'cse:index' %}">Home</a></li>
+                                        <li><a href="{% url 'cse:about_us' %}">About us</a></li>
+
+                                        <li><a href="{% url 'cse:doctors' %}">Doctors</a>
+                                            {#                                        <ul class="dropdown">#}
+                                            {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
+                                            {#                                        </ul>#}
+                                        </li>
+                                        <li><a href="{% url 'cse:services' %}">Services</a></li>
+
+                                        <li><a href="{% url 'cse:contact' %}">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="btn-cta">
+                                    <a href="{% url 'cse:profile' %}">
+                                        <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
+                                    </a>
+                                    <a href="{% url 'cse:logout' %}">
+                                        <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+{#            <div>#}
+{#                <ul class="lolul">#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:index' %}">Home</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:about_us' %}">About us</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:doctors' %}">Doctors</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:services' %}">Services</a></li>#}
+{#                    <li class="lolli"><a class="lia" href="{% url 'cse:contact' %}">Contact</a></li>#}
+{##}
+{##}
+{#                    <li class="lilog"><a class="lia" href="{% url 'cse:logout' %}">Logout</a></li>#}
+{#                    <li class="lilog"><a class="lia" href="{% url 'cse:profile' %}">View Profile</a></li>#}
+{##}
+{#                </ul>#}
+{#            </div>#}
+
+<!-------------------- profile start ----------------------------->
+
+
+
+
+
+    <body class="light_bg" data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="80" data-scroll-animation="true">
+
+
+        <div class="container emp-profile">
+
+
+        <!--================End Footer Area =================-->
+
+        <!--================Total container Area =================-->
+        <div class="container main_container">
+            <div class="content_inner_bg row m0">
+                <section class="about_person_area pad" id="about">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="profile-img">
+                                <img  src="{{ sin_doc.doctorphoto.url }}" alt="">
+                                <div>
+                                    <br>
+                                </div>
+                                <p>CONTACT INFO</p>
+                                <h6>
+                                    <b>
+                                        <p><span><i class="icon-phone"></i></span> <a
+                                                href="tel://{{ sin_doc.mobile_no }}">+
+                                            {{ sin_doc.mobile_no }}</a>
+                                        </p>
+
+
+                                    </b>
+                                </h6>
+                                <h6>
+                                    <b>
+                                        <p><span><i class="icon-mail"></i></span> <a
+                                                href="mailto:{{ sin_doc.email }}">{{ sin_doc.email }}</a>
+                                        </p>
+
+
+                                    </b>
+                                </h6>
+                                <p >SOCIAL LINK</p>
+
+{#                                    <a class="w3-panel w3-large">#}
+                                <a href="https://www.facebook.com/">
+                                    <i class="fa fa-facebook-official w3-hover-opacity"> </i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/">
+                                    <i class="fa fa-instagram w3-hover-opacity"></i> Instagram</a>
+
+                                <a href="https://www.snapchat.com/">
+                                    <i class="fa fa-snapchat w3-hover-opacity"></i> Snapchat
+                                </a><br>
+                                <a href="https://www.pinterest.com/">
+                                    <i class="fa fa-pinterest-p w3-hover-opacity"></i> Pinterest
+                                </a>
+
+                                <a href="https://twitter.com/">
+                                    <i class="fa fa-twitter w3-hover-opacity"></i> Twitter</a>
+
+                                <a href="https://www.linkedin.com/">
+                                    <i class="fa fa-linkedin w3-hover-opacity"></i> Linkedin
+                                </a><br>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row person_details">
+                                <h3>Hi I'm <span>{{ sin_doc.first_name }} {{ sin_doc.last_name }}</span></h3>
+                                <h5>{{ sin_doc.positions }}, SUST Medical Center</h5>
+                                <h4>Shahjalal University of Science and Technology,Sylhet</h4>
+
+                                <p>Dr. M. Ali is known as the pioneer knee surgeon of the country.
+                                    He has vast experience doing surgeries both in home and abroad. </p>
+
+                                <p>
+                                    After his orthopedic specialist qualification from Dhaka university, he was awarded fellowship
+                                    from Singapore General hospital on arthroscopy and replacement surgeries. He received training on
+                                    advanced arthroscopic surgery in 2000 which was
+                                    supervised by Royal College Surgeons of England and Australia.
+                                </p>
+                                <div class="person_information">
+                                    <ul>
+                                        <li><a ><b>Name: {{ sin_doc.first_name }} {{ sin_doc.last_name }}</b></a></li>
+                                        <li><a ><b>Address: {{ sin_doc.address }}</b></a></li>
+                                        <li><a ><b>Phone: {{ sin_doc.mobile_no }}</b></a></li>
+                                        <li><a ><b>Email: {{ sin_doc.email }}</b></a></li>
+                                        <li><a ><b>Nationality: Bangladesh</b></a></li>
+                                        <li><a ><h5>Qualifications: {{ sin_doc.qualification }}</h5></a></li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+        <hr class='hrItem' />
+
+                <section class="contact_area pad" id="contact">
+                    <div class="main_title">
+                        <h2 style="text-align: center">Contact Me</h2>
+                    </div>
+
+                    <form action="{% url 'cse:patient_to_doctor' %}" method="post">
+                        {% csrf_token %}
+{#                        <h5>fhidh</h5>#}
+{#                        <li>#}
+                            <input id="prodId" name="in_email" type="hidden" value={{ sin_doc.email }}>
+{#                        </li>#}
+{#                        <h5>ihffh</h5>#}
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="subject">Subject</label>
+{#                                <input type="text" name="subject" id="subject" class="form-control"#}
+{#                                       placeholder="Your subject of this message" required>#}
+                                <textarea name="subject" id="subject" cols="30" rows="1" class="form-control"
+                                          placeholder="Your subject of this message" required></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                          placeholder="Say something about us" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Send Message" class="btn btn-primary">
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </div>
+        <!--================End Total container Area =================-->
+
+
+    </body>
+
+
+
+
+
+
+
+
+<!-------------------- profile end ----------------------------->
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-dark-grey">
+        <div class="w3-row-padding">
+            <div class="w3-third">
+                <h3>Shahjalal University of Science and Technology</h3>
+                <p>Shahjalal University of Science and Technology also known as SUST is a state supported, public
+                    research university located in Sylhet, Bangladesh. It is the 8th oldest university of the
+                    country and the first university to adopt American credit system.</p>
+            </div>
+
+            <div class="w3-third">
+                <h3 style="text-align: center">About SUST</h3>
+                <ul>
+                    <li class="">
+                        <a href="http://www.sust.edu/about">Overview</a>
+                    </li>
+                    <li class="">
+                        <a href="http://www.sust.edu/about/university-facts-acts">University Facts &amp; Acts</a>
+                    </li>
+                    <li class="">
+                        <a href="http://www.sust.edu/about/mission">Mission</a>
+                    </li><!-- <li class="">
+												<a href="http://www.sust.edu/about/accolades">Accolades</a>
+											</li><li class="">
+												<a href="http://www.sust.edu/about/achievements">Achievements</a>
+											</li> -->
+                    <li class="">
+                        <a href="http://www.sust.edu/about/location">Location, Maps and Direction</a>
+                    </li>
+                    <li class="">
+                        <a href="http://www.sust.edu/about/news-and-events">News and Events</a>
+                    </li>
+                    <li class="">
+                        <a href="http://www.sust.edu/about/notice-board">Notice Board</a>
+                    </li><!-- <li class="">
+												<a href="http://www.sust.edu/about/visit-sust">Visit SUST</a>
+											</li> -->
+                    <li class="">
+                        <a href="http://www.sust.edu/about/contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third">
+                <h3 style="text-align: center">Contact SUST</h3>
+                <ul class="colorlib-footer-links">
+                    <li>
+                        <p><span><i class="icon-location"></i></span>
+                            <a href="https://www.google.com/maps/place/Shahjalal+University+of+Science+and+Technology/@24.9172232,91.8319132,15z/data=!4m5!3m4!1s0x0:0xe277e14dbca9f2ab!8m2!3d24.9172232!4d91.8319132">
+                                University Ave, Sylhet-3114.</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span><i class="icon-phone"></i></span> <a href="tel://880-821-713491">+
+                            880-821-713491</a></p>
+                    </li>
+                    <li>
+                        <p><span><i class="icon-mail"></i></span> <a href="mailto:system.admin@sust.edu">system.admin@sust.edu</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span><i class="icon-globe-outline"></i></span> <a
+                                href="https://www.sust.edu">www.sust.edu</a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="w3-black w3-center w3-padding-24">
+        <p>
+            <small class="block">
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved | Colorlib : SUST Medical Center</a>
+            </small>
+        </p>
+    </div>
+
+    <!-- End page content -->
+
+
+
+
+
+
+
+{#   -------------------------    Doctor's Full Profile        ----------------------------------  #}
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'cse/tiger/js/jquery-2.1.4.min.js' %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'cse/tiger/js/bootstrap.min.js' %}"></script>
+        <!-- Extra plugin js -->
+        <script src="{% static 'cse/tiger/vendors/counter-up/waypoints.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/counter-up/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/style-switcher/styleswitcher.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/style-switcher/switcher-active.js' %}"></script>
+        <script src="{% static 'cse/tiger/vendors/animate-css/wow.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/js/gmaps.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/js/jquery.form.js' %}"></script>
+        <script src="{% static 'cse/tiger/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'cse/tiger/js/contact.js' %}"></script>
+        <script src="{% static 'cse/tiger/js/theme.js' %}"></script>
+
+
+
+{##}
+
+
+
+
+
+
+
+
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+
+</html>

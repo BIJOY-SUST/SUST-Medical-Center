@@ -1,0 +1,15 @@
+{% autoescape off %}
+    Dr. {{ doc.first_name }} {{ doc.last_name }},
+    {{ user.first_name }} {{ user.last_name }} is a patient of SUST. He/She wants to your help.
+    Her/Him email is  - {{ user.email }}.
+    He/She sent you a message which is given below:-
+    Subject:- {{ subj }}.
+
+    Message:- {{ messg }}.
+
+    If you can, please help him/her as soon as possible by giving his/her solution.
+
+    Sincerely,
+    SUST Medical Center Team
+
+{% endautoescape %}

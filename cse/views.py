@@ -32,9 +32,7 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 # ----------------- Testing ----------------------------
 
 def testing(request):
-    userinfo = request.user
-    medical = MedicalInfo.objects.filter(user_id=request.user.id)
-    return render(request, 'cse/test2.html', {'userinfo': userinfo, 'medical': medical})
+    return render(request, 'cse/doctor_full_profile.html')
 # ---------------------- Medical Info --------------------
 
 def calculate_age(born):
@@ -446,6 +444,57 @@ def doctors(request):
     else:
         doctor = Doctors.objects.all()
         return render(request, 'cse/doctors.html',{'doctorlist':doctor})
+
+def full_doctor(request,doctor_id):
+    if not request.user.is_authenticated:
+        doctor_s = Doctors.objects.get(pk=doctor_id)
+        return render(request, 'cse/doctor_full_p_general.html',{'sin_doc':doctor_s})
+    else:
+        doctor_s = Doctors.objects.get(pk=doctor_id)
+        return render(request, 'cse/doctor_full_profile.html',{'sin_doc':doctor_s})
+
+
+def patient_to_doctor(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            sub = request.POST.get('subject')
+            mess = request.POST.get('message')
+            c = Doctors.objects.get(email=request.POST.get('in_email'))
+
+            # System to doctor
+            mail_subject = "Thank you for your Email"
+            message = render_to_string('cse/feed3.html', {
+                'user': request.user,
+                'doc' : c,
+                'subj': sub,
+                'messg': mess,
+            })
+            from_email = settings.EMAIL_HOST_USER
+            to_email = c.email
+            to_list = [to_email]
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+
+
+            # system to patient
+            mail_subject = "Thank you for your Email"
+            message = render_to_string('cse/feed2.html', {
+                'user': request.user,
+            })
+            from_email = settings.EMAIL_HOST_USER
+            to_email = request.user.email
+            to_list = [to_email]
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+
+            return render(request, 'cse/doctor_full_profile.html', {'sin_doc':c})
+        else:
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/staring.html', {'messages': last_ten})
+    else:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
+
+
 
 
 
