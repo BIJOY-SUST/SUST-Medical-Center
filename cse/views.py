@@ -32,7 +32,7 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 # ----------------- Testing ----------------------------
 
 def testing(request):
-    return render(request, 'cse/doctor_full_profile.html')
+    return render(request, 'cse/test2.html')
 # ---------------------- Medical Info --------------------
 
 def calculate_age(born):
@@ -1026,7 +1026,7 @@ def newdoctorreg(request):
 
 
 
-
+# Medicine er kaj suru
 
 def medicineinfo(request):
     if request.user.is_authenticated:
@@ -1041,6 +1041,22 @@ def medicineinfo(request):
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
         return render(request, 'cse/staring.html', {'messages': last_ten})
+
+def medi_pre(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            context={
+                'medicineall' : MedicineInfo.objects.all(),
+            }
+            return render(request,'cse/medi_pre.html',context)
+        else:
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
+    else:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
+
 
 def medisearch(request):
     if request.user.is_authenticated:
@@ -1065,6 +1081,34 @@ def medisearch(request):
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
         return render(request, 'cse/staring.html', {'messages': last_ten})
+
+def medisearch2(request):
+    if request.user.is_authenticated:
+        if request.user.user_type == 'Admin' or request.user.is_superuser:
+            mediall = MedicineInfo.objects.all()
+            query = request.GET.get("q")
+            if query:
+                medi_results = mediall.filter(
+                    Q(medicinename__icontains=query)|
+                    Q(medicineRegno__icontains=query)
+                    ).distinct()
+                context = {
+                    'medicineall': medi_results,
+                }
+                return render(request, 'cse/medi_pre.html', context)
+            else:
+                return render(request,'cse/medi_pre.html')
+
+        else:
+            last_ten = FeebBack.objects.all().order_by('-id')[:10]
+            return render(request, 'cse/index.html', {'messages': last_ten})
+    else:
+        last_ten = FeebBack.objects.all().order_by('-id')[:10]
+        return render(request, 'cse/staring.html', {'messages': last_ten})
+
+
+
+
 
 def newmedicine(request):
     if request.user.is_authenticated:
@@ -1103,6 +1147,8 @@ def mediregister(request):
     else:
         last_ten = FeebBack.objects.all().order_by('-id')[:10]
         return render(request, 'cse/staring.html', {'messages': last_ten})
+
+
 
 
 def medichange(request):
@@ -1152,14 +1198,16 @@ def mediadd(request):
                 tt = int(tval,10)
                 # tt = tval
                 t_medi.medicinebefore = t_medi.medicinebefore + tt
+                t_medi.medicinenow = t_medi.medicinenow + tt
+
                 t_medi.save()
 
                 context = {
                     'medicineall': MedicineInfo.objects.all(),
                 }
-                return render(request, 'cse/medicineall.html', context)
+                return render(request, 'cse/medi_pre.html', context)
             else:
-                return render(request,'cse/medicineall.html')
+                return render(request,'cse/medi_pre.html')
         else:
             last_ten = FeebBack.objects.all().order_by('-id')[:10]
             return render(request, 'cse/index.html', {'messages': last_ten})

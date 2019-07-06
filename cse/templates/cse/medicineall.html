@@ -792,7 +792,7 @@
                                 <th>Outgoing Medicine</th>
                                 <th>Present Medicine</th>
                                 <th>Medicine Subtraction</th>
-                                <th>Medicine Addition</th>
+{#                                <th>Medicine Addition</th>#}
 
                             </tr>
                         </thead>
@@ -859,62 +859,62 @@
 {#                                            </li>#}
                                         </form>
                                     </td>
-
-                                    <td>
-                                        <form class="" method="POST" action="{% url 'cse:mediadd' %}">
-                                            {% csrf_token %}
-                                            <style type="text/css">
-                                                .hmm {
-                                                    height: 40px;
-                                                    width: 25%;
-                                                    background-color: white;
-                                                    color: black;
-                                                    border: 3px solid #4CAF50;
-
-                                                }
-
-                                                .butto {
-                                                    background-color: #005cbf; /* Green */
-                                                    position: relative;
-
-                                                    right: -5px;
-                                                    border-radius: 50%;
-                                                    border: none;
-                                                    color: white;
-                                                    padding: 10px 25px;
-                                                    text-align: center;
-                                                    text-decoration: none;
-                                                    display: inline-block;
-                                                    font-size: 16px;
-                                                    margin: 4px 2px;
-                                                    cursor: pointer;
-                                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                                    transition-duration: 0.4s;
-                                                }
-
-                                                .button1:hover {
-                                                    background-color: black;
-                                                    color: white;
-                                                }
-
-                                            </style>
-                                            <input name="in_id2" type="hidden" value={{ item.Medicine_id }}>
-                                            <!----------------------- medicine regno ----------------------->
-
+{##}
+{#                                    <td>#}
+{#                                        <form class="" method="POST" action="{% url 'cse:mediadd' %}">#}
+{#                                            {% csrf_token %}#}
+{#                                            <style type="text/css">#}
+{#                                                .hmm {#}
+{#                                                    height: 40px;#}
+{#                                                    width: 25%;#}
+{#                                                    background-color: white;#}
+{#                                                    color: black;#}
+{#                                                    border: 3px solid #4CAF50;#}
+{##}
+{#                                                }#}
+{##}
+{#                                                .butto {#}
+{#                                                    background-color: #005cbf; /* Green */#}
+{#                                                    position: relative;#}
+{##}
+{#                                                    right: -5px;#}
+{#                                                    border-radius: 50%;#}
+{#                                                    border: none;#}
+{#                                                    color: white;#}
+{#                                                    padding: 10px 25px;#}
+{#                                                    text-align: center;#}
+{#                                                    text-decoration: none;#}
+{#                                                    display: inline-block;#}
+{#                                                    font-size: 16px;#}
+{#                                                    margin: 4px 2px;#}
+{#                                                    cursor: pointer;#}
+{#                                                    -webkit-transition-duration: 0.4s; /* Safari */#}
+{#                                                    transition-duration: 0.4s;#}
+{#                                                }#}
+{##}
+{#                                                .button1:hover {#}
+{#                                                    background-color: black;#}
+{#                                                    color: white;#}
+{#                                                }#}
+{##}
+{#                                            </style>#}
+{#                                            <input name="in_id2" type="hidden" value={{ item.Medicine_id }}>#}
+{#                                            <!----------------------- medicine regno ----------------------->#}
+{##}
 {#                                            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
-
-                                                <div id="cid_34" class="form-input jf-required">
-                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt2" class="form-label form-label-left form-label-auto"
-                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>
-
-                                                    <button type="submit" class="butto button1">Edit</button>
+{##}
+{#                                                <div id="cid_34" class="form-input jf-required">#}
+{#                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt2" class="form-label form-label-left form-label-auto"#}
+{#                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>#}
+{##}
+{#                                                    <button type="submit" class="butto button1">Edit</button>#}
 {##}
 {#                                                    <input class="hmm"  type="number" id="label_34" data-component="first" name="medicnt" value="">#}
 {#                                                    <button type="submit" class="butto button1">Edit</button>#}
-                                                </div>
+{#                                                </div>#}
 {#                                            </li>#}
-                                        </form>
-                                    </td>
+{#                                        </form>#}
+{#                                    </td>#}
 
                                 </tr>
                             {% endfor %}

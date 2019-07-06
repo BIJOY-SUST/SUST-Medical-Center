@@ -53,8 +53,10 @@ urlpatterns = [
     # MedicineInfo
     path('medicineinfo/',user_view.medicineinfo,name='medicineinfo'),
     path('medisearch/',user_view.medisearch,name='medisearch'),
+    path('medisearch2/',user_view.medisearch2,name='medisearch2'),
     path('newmedicine/',user_view.newmedicine,name='newmedicine'),
     path('mediregister/',user_view.mediregister,name='mediregister'),
+    path('medi_pre/',user_view.medi_pre,name='medi_pre'),
     path('medichange/',user_view.medichange,name='medichange'),
     path('mediadd/',user_view.mediadd,name='mediadd'),
 
