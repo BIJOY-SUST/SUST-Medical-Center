@@ -200,7 +200,7 @@
                                         <li><a href="{% url 'cse:index' %}">Home</a></li>
                                         <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                        <li><a href="{% url 'cse:doctors' %}">Doctors</a>
+                                        <li class="active"><a href="{% url 'cse:doctors' %}">Doctors</a>
                                             {#                                        <ul class="dropdown">#}
                                             {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
                                             {#                                        </ul>#}
@@ -216,9 +216,9 @@
                                     <a href="{% url 'cse:profile' %}">
                                         <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
                                     </a>
-                                    <a href="{% url 'cse:logout' %}">
-                                        <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>
-                                    </a>
+{#                                    <a href="{% url 'cse:logout' %}">#}
+{#                                        <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
+{#                                    </a>#}
                                 </p>
                             </div>
                         </div>
@@ -318,12 +318,12 @@
                                 <h5>{{ sin_doc.positions }}, SUST Medical Center</h5>
                                 <h4>Shahjalal University of Science and Technology,Sylhet</h4>
 
-                                <p>Dr. M. Ali is known as the pioneer knee surgeon of the country.
-                                    He has vast experience doing surgeries both in home and abroad. </p>
+                                <p>{{ sin_doc.first_name }} {{ sin_doc.last_name }} is known as the pioneer knee surgeon of the country.
+                                    I have vast experience doing surgeries both in home and abroad. </p>
 
                                 <p>
-                                    After his orthopedic specialist qualification from Dhaka university, he was awarded fellowship
-                                    from Singapore General hospital on arthroscopy and replacement surgeries. He received training on
+                                    After my orthopedic specialist qualification from Dhaka university, I was awarded fellowship
+                                    from Singapore General hospital on arthroscopy and replacement surgeries. I received training on
                                     advanced arthroscopic surgery in 2000 which was
                                     supervised by Royal College Surgeons of England and Australia.
                                 </p>
