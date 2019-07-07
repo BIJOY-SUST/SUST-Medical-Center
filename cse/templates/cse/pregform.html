@@ -608,7 +608,7 @@
                                 <li><a href="{% url 'cse:index' %}">Home</a></li>
                                 <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                <li >
+                                <li>
                                     <a href="{% url 'cse:doctors' %}">Doctors</a>
                                     {#                                        <ul class="dropdown">#}
                                     {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
@@ -639,10 +639,10 @@
                                 <span>View Profile <i class="glyphicon glyphicon-log-out"></i></span>
                                 {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
                             </a>
-{#                            <a href="{% url 'cse:logout' %}">#}
-{#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
-                                {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
-{#                            </a>#}
+                            {#                            <a href="{% url 'cse:logout' %}">#}
+                            {#                                <span>Logout <i class="glyphicon glyphicon-log-out"></i></span>#}
+                            {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
+                            {#                            </a>#}
                         </p>
                     </div>
                 </div>
@@ -810,798 +810,846 @@
                 <input id="prodId" name="doctoremail" type="hidden" value={{ sin_doc.email }}>
 
             </li>
-{#            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">#}
-{#                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">#}
-{#                    Doctor ID#}
-{#                    <span class="form-required">*</span>#}
-{#                </label>#}
-{#                <div id="cid_33" class="form-input jf-required">#}
-{#                    <select class="form-dropdown validate[required]" id="input_33" name="doctoremail"#}
-{#                            style="width:375px" data-component="dropdown" required="">#}
-{#                        <option value=""></option>#}
-{#                        {% for item in doctorlist %}#}
-{#                            <option value="{{ item.email }}">{{ item.email }}</option>#}
-{#                        {% endfor %}#}
-{#                    </select>#}
-{#                </div>#}
-{#            </li>#}
+            {#            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">#}
+            {#                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">#}
+            {#                    Doctor ID#}
+            {#                    <span class="form-required">*</span>#}
+            {#                </label>#}
+            {#                <div id="cid_33" class="form-input jf-required">#}
+            {#                    <select class="form-dropdown validate[required]" id="input_33" name="doctoremail"#}
+            {#                            style="width:375px" data-component="dropdown" required="">#}
+            {#                        <option value=""></option>#}
+            {#                        {% for item in doctorlist %}#}
+            {#                            <option value="{{ item.email }}">{{ item.email }}</option>#}
+            {#                        {% endfor %}#}
+            {#                    </select>#}
+            {#                </div>#}
+            {#            </li>#}
 
             <!------------------------ medicine name Field ---------------------------->
 
             <!------------------------------ 1 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 1</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med1">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 1</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_1" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_1" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_1" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_1"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_1"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
 
             <!------------------------------ 2 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 2</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med2">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 2</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_2" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_2" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_2" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_2"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_2"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
 
             <!------------------------------ 3 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 3</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med3">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 3</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_3" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_3" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_3" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_3"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_3"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 4 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 4</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med4">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 4</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_4" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_4" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_4" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_4"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_4"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 5 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 5</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+
+            <div id="med5">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 5</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_5" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_5" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_5" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_5"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_5"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 6 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 6</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med6">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 6</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_6" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_6" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_6" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_6"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_6"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 7 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 7</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med7">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 7</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_7" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_7" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_7" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_7"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_7"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 8 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 8</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med8">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 8</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_8" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_8" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_8" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_8"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_8"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 9 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 9</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med9">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 9</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_9" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_9" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_9" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_9"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_9"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
             <!------------------------------ 10 ----------------------->
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <p style="text-align: center"><b>Medicine 10</b></p>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_34">
-                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
-                    Medicine Name
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_34" class="form-input jf-required">
+            <div id="med10">
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <p style="text-align: center"><b>Medicine 10</b></p>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_34">
+                    <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">
+                        Medicine Name
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_34" class="form-input jf-required">
                         <span class="form-sub-label-container" style="vertical-align:top">
                           <input type="text" id="first_4" name="medicine_10" class="form-textbox"
                                  size="42" value="." data-component="first">
                           <label class="form-sub-label" for="first_4" id="sublabel_first"
                                  style="min-height:13px"> Example: Napa 400mg </label>
                         </span>
-                </div>
-            </li>
+                    </div>
+                </li>
 
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area"> Drug Limit </label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="drug_limit_10" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
-                <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
-                <div id="cid_25" class="form-input">
-                    <div data-wrapper-react="true">
+                </li>
+                <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">
+                    <label class="form-label form-label-left" id="label_25" for="input_25_area">Number of Days</label>
+                    <div id="cid_25" class="form-input">
+                        <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
                               <input type="text" id="input_25_phone" name="days_10" class="form-textbox" size="10"
                                      value="." data-component="phone"/>
 {#                              <label class="form-sub-label" for="input_25_phone" id="sublabel_phone"#}
 {#                                     style="min-height:13px"> Telephone Number </label>#}
                         </span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
-                <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
-                    Eating Time
-                    {#                    <span class="form-required">*</span>#}
-                </label>
-                <div id="cid_33" class="form-input jf-required">
-                    <select type="text" class="" id="input_33" name="eating_time_10"
-                            style="width:280px" data-component="dropdown">
-                        <option value="."></option>
+                </li>
+                <li class="form-line jf-required" data-type="control_dropdown" id="id_33">
+                    <label class="form-label form-label-left form-label-auto" id="label_33" for="input_33">
+                        Eating Time
+                        {#                    <span class="form-required">*</span>#}
+                    </label>
+                    <div id="cid_33" class="form-input jf-required">
+                        <select type="text" class="" id="input_33" name="eating_time_10"
+                                style="width:280px" data-component="dropdown">
+                            <option value="."></option>
 
-                        <option value="After Breakfast">After Breakfast</option>
-                        <option value="After Lunch"> After Lunch</option>
-                        <option value="After Dinner"> After Dinner</option>
+                            <option value="After Breakfast">After Breakfast</option>
+                            <option value="After Lunch"> After Lunch</option>
+                            <option value="After Dinner"> After Dinner</option>
 
-                        <option value="Before Breakfast"> Before Breakfast</option>
-                        <option value="Before Lunch"> Before Lunch</option>
-                        <option value="Before Dinner"> Before Dinner</option>
+                            <option value="Before Breakfast"> Before Breakfast</option>
+                            <option value="Before Lunch"> Before Lunch</option>
+                            <option value="Before Dinner"> Before Dinner</option>
 
-                        <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
-                        <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
-                        <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
+                            <option value="After Breakfast and Lunch"> After Breakfast and Lunch</option>
+                            <option value="After Lunch and Dinner"> After Lunch and Dinner</option>
+                            <option value="After Breakfast and Dinner"> After Breakfast and Dinner</option>
 
-                        <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
-                        <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
-                        <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
+                            <option value="Before Breakfast and Lunch"> Before Breakfast and Lunch</option>
+                            <option value="Before Lunch and Dinner"> Before Lunch and Dinner</option>
+                            <option value="Before Breakfast and  Dinner"> Before Breakfast and Dinner</option>
 
-                        <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner</option>
-                        <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner</option>
+                            <option value="After Breakfast ,Lunch and Dinner"> After Breakfast, Lunch and Dinner
+                            </option>
+                            <option value="Before Breakfast , Lunch and Dinner"> Before Breakfast, Lunch and Dinner
+                            </option>
 
-                    </select>
-                </div>
-            </li>
+                        </select>
+                    </div>
+                </li>
+            </div>
+            <div id="addbutton">
+                <li>
+                    <p style="color: red; text-align: center;">
+                        <a href="javascript:add_feed()">+Add New Medicine </a>
+                    </p>
+                </li>
+            </div>
             <!------------------------ Mobile Number Field ---------------------------->
 
 
@@ -1901,74 +1949,79 @@
             {#                {% endif %}#}
             {#            </li>#}
             <!----------------------- login page Fields ------------------------------------------>
-        <style>
-            .butto {
-              background-color: darkslategrey; /* Green */
-                position: relative;
+            <style>
+                .butto {
+                    background-color: darkslategrey; /* Green */
+                    position: relative;
 
-                right: -35px;
-                border-radius: 12px;
-              border: none;
-              color: white;
-              padding: 10px 25px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
-            }
-            .button {
-              background-color: darkslategrey; /* Green */
-                  position: absolute;
-                right: 50px;
-                border-radius: 70px;
-              border: none;
-              color: white;
-              padding: 10px 25px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
-            }
-            .butt {
-              background-color: darkslategrey; /* Green */
-                  position: relative;
+                    right: -35px;
+                    border-radius: 12px;
+                    border: none;
+                    color: white;
+                    padding: 10px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    -webkit-transition-duration: 0.4s; /* Safari */
+                    transition-duration: 0.4s;
+                }
 
-                right: -35px;
-                border-radius: 12px;
-              border: none;
-              color: white;
-              padding: 10px 25px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              -webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
-            }
-            .button1:hover {
-                background-color: black;
-                color: white;
-            }
-            .button2:hover {
-              background-color: black;
-              color: white;
-            }
-            .button3:hover {
-              background-color: black;
-              color: white;
-            }
+                .button {
+                    background-color: darkslategrey; /* Green */
+                    position: absolute;
+                    right: 50px;
+                    border-radius: 70px;
+                    border: none;
+                    color: white;
+                    padding: 10px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    -webkit-transition-duration: 0.4s; /* Safari */
+                    transition-duration: 0.4s;
+                }
 
-        </style>
+                .butt {
+                    background-color: darkslategrey; /* Green */
+                    position: relative;
+
+                    right: -35px;
+                    border-radius: 12px;
+                    border: none;
+                    color: white;
+                    padding: 10px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    -webkit-transition-duration: 0.4s; /* Safari */
+                    transition-duration: 0.4s;
+                }
+
+                .button1:hover {
+                    background-color: black;
+                    color: white;
+                }
+
+                .button2:hover {
+                    background-color: black;
+                    color: white;
+                }
+
+                .button3:hover {
+                    background-color: black;
+                    color: white;
+                }
+
+            </style>
 
             <li>
                 <button class="butto button1">
@@ -2192,6 +2245,27 @@
 {#</div>#}
 
 {#Footer end#}
+<script type="application/javascript">
+    for(var k=1; k<=10; k++){
+        document.getElementById("med"+k).style.display="none";
+    }
+    var i=0;
+
+
+    function add_feed() {
+        i++;
+        if(i>10){
+            document.getElementById("addbutton").style.display="none";
+        }
+        for(var j=1;j<=i;j++){
+            document.getElementById("med"+j).style.display= "block";
+        }
+        for(var j=i; j<=10; j++){
+            document.getElementById("med"+j).style.display= "none";
+        }
+
+    }
+</script>
 
 </body>
 </html>

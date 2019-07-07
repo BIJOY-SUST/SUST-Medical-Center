@@ -53,35 +53,6 @@
 	<script src="{% static 'cse/js/respond.min.js' %}"></script>
 	<![endif]-->
 
-    <!------ Sunnota website design---------------->
-
-    <!-- Bootstrap CSS -->
-{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-
-    <link rel="stylesheet" type="text/css" href="{% static 'cse/css/sunnota/style.css' %}"/>
-
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">#}
-    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <script src="{% static 'cse/js/sunnota/main.js' %}"></script>
-
-
-
-    <!----------------End of sunnota----------->
-
-
-
-
-
     <!--------Profile Footer----->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,7 +172,7 @@
         }
 
         .form-all {
-            width: 700px;
+            width: 900px;
         }
 
         .form-label-left,
@@ -612,7 +583,7 @@
                             <div class="col-md-3">
                                 <div class="num">
                                     <span class="icon"><i class="icon-phone"></i></span>
-                                    <p><a href="#">Call us: 880-821-713491,</a><br><a href="#">714479</a></p>
+                                    <p><a href="#">Call us: 880-821-713491</a><br><a href="#">714479</a></p>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -634,16 +605,17 @@
                     <div class="col-xs-8">
                         <div class="menu-1">
                             <ul>
-                                <li class="active"><a href="{% url 'cse:index' %}">Home</a></li>
+                                <li><a href="{% url 'cse:index' %}">Home</a></li>
                                 <li><a href="{% url 'cse:about_us' %}">About us</a></li>
 
-                                <li class="has-dropdown">
+                                <li >
                                     <a href="{% url 'cse:doctors' %}">Doctors</a>
                                     {#                                        <ul class="dropdown">#}
                                     {#                                            <li><a href="{% url 'cse:doctors_single' %}">Single Doctor</a></li>#}
                                     {#                                        </ul>#}
                                 </li>
                                 <li><a href="{% url 'cse:services' %}">Services</a></li>
+
 
                                 <li><a href="{% url 'cse:contact' %}">Contact</a></li>
                             </ul>
@@ -655,8 +627,8 @@
                         {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
                         {#                            </a></p>#}
                         <p class="btn-cta">
-                            <a href="{% url 'cse:medicineinfo' %}">
-                                <span>Medicine <i class="glyphicon glyphicon-log-out"></i></span>
+                            <a href="{% url 'cse:pregform' %}">
+                                <span>Patient <i class="glyphicon glyphicon-log-out"></i></span>
                                 {#                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout#}
                             </a>
                             {#                                <a href="{% url 'cse:newdoctor' %}">#}
@@ -680,291 +652,551 @@
 </nav>
 
 <!----------------- End of Navigation Bar ---------------------------------->
-
-<!--------------------------------------body start---------------------------------->
-
+<!---------------------------------------------form start here--------------------------------------------------------->
 
 
-
-
-<div class="container-fluid songs-container">
-    <div>
-        <br>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-{#            <div class="collapse navbar-collapse" id="topNavBar">#}
-                <ul class="navbar-nav" >
-                    {#                    <ul class="nav navbar-nav" style="margin-bottom: 10px;">#}
-                    <style type="text/css">
-                        .haha {
-                            background-color: black; /* Green */
-
-                            right: -35px;
-                            border-radius: 12px;
-                            border: none;
-                            color: white;
-                            padding: 10px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 16px;
-                            margin: 4px 2px;
-                            cursor: pointer;
-                        }
-                        .haaha {
-                            background-color: #b3b3b3; /* Green */
-
-                            right: -35px;
-                            border-radius: 12px;
-                            border: none;
-                            color: black;
-                            padding: 10px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 16px;
-                            margin: 4px 2px;
-                            cursor: pointer;
-                        }
-
-                    </style>
-                    <li class="haha"><a href="{% url 'cse:medicineinfo' %}">View All</a>
-                    </li>
-                    <li class="haaha"><a href="{% url 'cse:newmedicine' %}">Add Medicine</a>
-                    </li>
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'cse:medisearch' %}">
-
-{#                            <div class="form-group">#}
-                                <input style="width: 300px" type="text" class="form-control" name="q"
-                                      placeholder="Medicine Name/Registration No" value="{{ request.GET.q }}">
-{#                            </div>#}
-                            <style type="text/css">
-                                .hahaa {
-                                    background-color: darkslategrey; /* Green */
-
-                                    right: -35px;
-                                    border-radius: 12px;
-                                    border: none;
-                                    color: white;
-                                    padding: 10px 25px;
-                                    text-align: center;
-                                    text-decoration: none;
-                                    display: inline-block;
-                                    font-size: 16px;
-                                    margin: 4px 2px;
-                                    cursor: pointer;
-                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                    transition-duration: 0.4s;
-                                }
-
-                                .hahaa2:hover {
-                                    background-color: black;
-                                    color: #3de6fa;
-                                }
-                            </style>
-                            <button class="hahaa hahaa2" type="submit">Search</button>
-                        </form>
-                    </li>
-                </ul>
-{#            </div>#}
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-sm-12">
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Medicine Name</th>
-                                <th>Registration Number</th>
-                                <th>Incoming Medicine</th>
-                                <th>Outgoing Medicine</th>
-                                <th>Present Medicine</th>
-                                <th>Medicine Subtraction</th>
-                                <th>Medicine Addition</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in medicineall %}
-                                <tr>
-                                    <td>{{ item.medicinename }}</td>
-                                    <td>{{ item.medicineRegno }}</td>
-                                    <td>{{ item.medicinebefore }}</td>
-                                    <td>{{ item.medicineafter }}</td>
-                                    <td>{{ item.medicinenow }}</td>
-                                    <td>
-                                        <form class="" method="POST" action="{% url 'cse:medichange' %}">
-                                            {% csrf_token %}
-                                            <style type="text/css">
-                                                .hmm {
-                                                    height: 40px;
-                                                    width: 25%;
-                                                    background-color: white;
-                                                    color: black;
-                                                    border: 3px solid #4CAF50;
-
-                                                }
-
-                                                .butto {
-                                                    background-color: #005cbf; /* Green */
-                                                    position: relative;
-
-                                                    right: -5px;
-                                                    border-radius: 50%;
-                                                    border: none;
-                                                    color: white;
-                                                    padding: 10px 25px;
-                                                    text-align: center;
-                                                    text-decoration: none;
-                                                    display: inline-block;
-                                                    font-size: 16px;
-                                                    margin: 4px 2px;
-                                                    cursor: pointer;
-                                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                                    transition-duration: 0.4s;
-                                                }
-
-                                                .button1:hover {
-                                                    background-color: black;
-                                                    color: white;
-                                                }
-
-                                            </style>
-                                            <input name="in_id" type="hidden" value={{ item.Medicine_id }}>
-                                            <!----------------------- medicine regno ----------------------->
-
-{#                                            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
-
-                                                <div id="cid_34" class="form-input jf-required">
-                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt" class="form-label form-label-left form-label-auto"
-                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>
-
-                                                    <button type="submit" class="butto button1">Edit</button>
-{##}
-{#                                                    <input class="hmm"  type="number" id="label_34" data-component="first" name="medicnt" value="">#}
-{#                                                    <button type="submit" class="butto button1">Edit</button>#}
-                                                </div>
-{#                                            </li>#}
-                                        </form>
-                                    </td>
-
-                                    <td>
-                                        <form class="" method="POST" action="{% url 'cse:mediadd' %}">
-                                            {% csrf_token %}
-                                            <style type="text/css">
-                                                .hmm {
-                                                    height: 40px;
-                                                    width: 25%;
-                                                    background-color: white;
-                                                    color: black;
-                                                    border: 3px solid #4CAF50;
-
-                                                }
-
-                                                .butto {
-                                                    background-color: #005cbf; /* Green */
-                                                    position: relative;
-
-                                                    right: -5px;
-                                                    border-radius: 50%;
-                                                    border: none;
-                                                    color: white;
-                                                    padding: 10px 25px;
-                                                    text-align: center;
-                                                    text-decoration: none;
-                                                    display: inline-block;
-                                                    font-size: 16px;
-                                                    margin: 4px 2px;
-                                                    cursor: pointer;
-                                                    -webkit-transition-duration: 0.4s; /* Safari */
-                                                    transition-duration: 0.4s;
-                                                }
-
-                                                .button1:hover {
-                                                    background-color: black;
-                                                    color: white;
-                                                }
-
-                                            </style>
-                                            <input name="in_id2" type="hidden" value={{ item.Medicine_id }}>
-                                            <!----------------------- medicine regno ----------------------->
-
-{#                                            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
-
-                                                <div id="cid_34" class="form-input jf-required">
-                                                    <input style="border: 2px solid #4CAF50"  type="number" id="label_34" name="medicnt2" class="form-label form-label-left form-label-auto"
-                                                           size="5" placeholder="ex: 55" value="" data-component="first" required=""/>
-
-                                                    <button type="submit" class="butto button1">Edit</button>
-{##}
-{#                                                    <input class="hmm"  type="number" id="label_34" data-component="first" name="medicnt" value="">#}
-{#                                                    <button type="submit" class="butto button1">Edit</button>#}
-                                                </div>
-{#                                            </li>#}
-                                        </form>
-                                    </td>
-
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+<form class="jotform-form" action="{% url 'cse:pdf' %}" method="post" enctype="multipart/form-data"
+      name="form_91035707344454"
+      id="91035707344454" accept-charset="utf-8">
+    {% csrf_token %}
+    {#    <input type="hidden" name="formID" value="91035707344454"/>#}
+    {#{% for message in messages %}#}
+    {#    <div class="alert alert-success">#}
+    {#        <a class="close" href="#" data-dismiss="alert">×</a>#}
+    {#        {{ message }}#}
+    {#    </div>#}
+    {#{% endfor %}#}
+    <div role="main" class="form-all">
+        <ul class="form-section page-section">
+            <li id="cid_1" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group ">
+                    <div class="header-text httac htvam">
+                        <h1 id="header_1" class="form-header" data-component="header">
+                            Patient's Registration Form
+                        </h1>
+                        <div id="subHeader_1" class="form-subHeader">
+                            Fill out the form carefully for registration
+                        </div>
+                    </div>
                 </div>
+            </li>
+            <li>
+                {% if messages %}
+                    <ul class="messages">
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                {% endif %}
+            </li>
+            <!------------------------ Full Name Field ---------------------------->
+
+            <li>
+                {#                <h3>Hi, {{ user.email }}</h3>#}
+                <input id="prodId" name="in_email" type="hidden" value={{ user.email }}>
+
+            </li>
+            <!------------------------ User Name Field ---------------------------->
+            {#            <li class="form-line jf-required" data-type="control_textbox" id="id_34">#}
+            {#                <label class="form-label form-label-left form-label-auto" id="label_34" for="input_34">#}
+            {#                    User Name#}
+            {#                    <span class="form-required">*</span>#}
+            {#                </label>#}
+            {#                <div id="cid_34" class="form-input jf-required">#}
+            {#                    <span class="form-sub-label-container" style="vertical-align:top">#}
+            {#                        <input type="text" onfocus="this.value=''" id="input_34" name="username" data-type="input-textbox"#}
+            {#                               class="form-textbox validate[required]" size="20" value="BIJOY_SUST" placeholder="BIJOY_SUST"#}
+            {#                               data-component="textbox" required=""/>#}
+            {#                        <label class="form-sub-label" for="input_34" style="min-height:13px"> You can access the web site using this username </label>#}
+            {#                    </span>#}
+            {#                </div>#}
+            {#            </li>#}
+
+
+            <!------------------------ Birth of Date Field ---------------------------->
+
+            {#            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_birthdate" id="id_24">#}
+            {#                <label class="form-label form-label-left" id="label_24" for="input_24">#}
+            {#                    Birth Date#}
+            {#                    <span class="form-required">*</span>#}
+            {#                </label>#}
+            {#                <div id="cid_34" class="form-input jf-required">#}
+            {#                    <span class="form-sub-label-container" style="vertical-align:top">#}
+            {#                        <input type="date" id="input_34" name="date_of_birth" data-type="input-date"#}
+            {#                               class="form-date validate[required]" size="20"  data-date-format="DD-MM-YYYY" value="01-30-2001"#}
+            {#                               data-component="date" required=""/>#}
+            {##}
+            {#                    </span>#}
+            {#                </div>#}
+            {##}
+            {#            </li>#}
+
+            <!------------------------ Gender Field ---------------------------->
+
+            {#            <li class="form-line form-line-column form-col-2 jf-required" data-type="control_dropdown" id="id_3">#}
+            {#                <label class="form-label form-label-left" id="label_3" for="input_3">#}
+            {#                    Gender#}
+            {#                    <span class="form-required">#}
+            {#            *#}
+            {#          </span>#}
+            {#                </label>#}
+            {#                <div id="cid_3" class="form-input jf-required">#}
+            {#                    <select class="form-dropdown validate[required]" id="input_3" name="gender" style="width:150px"#}
+            {#                            data-component="dropdown" required="">#}
+            {#                        <option value=""></option>#}
+            {#                        <option value="Male"> Male</option>#}
+            {#                        <option value="Female"> Female</option>#}
+            {#                        <option value="N/A"> N/A</option>#}
+            {#                    </select>#}
+            {#                </div>#}
+            {#            </li>#}
+
+            <!------- History-------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_36">
+                <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
+                    History
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_36" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_36" class="form-textarea validate[required]" name="history" cols="40" rows="4"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36" style="min-height:13px">Example: Fever</label>
+                  </span>
+                </div>
+            </li>
+
+            <!------------------------ Additional Information Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_3666">
+                <label class="form-label form-label-left form-label-auto" id="label_3666" for="input_36">
+                    Additional Information
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_3666" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_355" class="form-textarea validate[required]" name="additional_field" cols="40"
+                              rows="6"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36" style="min-height:13px">Example: BP Test Report Information</label>
+                  </span>
+                </div>
+            </li>
+            <!------------------------ Test Advised Field ---------------------------->
+
+            <li class="form-line jf-required" data-type="control_textarea" id="id_36">
+                <label class="form-label form-label-left form-label-auto" id="label_36" for="input_36">
+                    Tests Advised
+                    <span class="form-required">*</span>
+                </label>
+                <div id="cid_36" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <textarea id="input_36" class="form-textarea validate[required]" name="testadvised" cols="40"
+                              rows="4"
+                              data-component="textarea" required=""></textarea>
+                    <label class="form-sub-label" for="input_36"
+                           style="min-height:13px"> Example: MRI of right knee </label>
+                  </span>
+                </div>
+            </li>
+
+
+            <!------------------------ Doctor ID Field ---------------------------->
+            <li>
+                {#                <h3>Hi, {{ user.email }}</h3>#}
+                <input id="prodId" name="doctoremail" type="hidden" value={{ sin_doc.email }}>
+                <h5 style="text-align: center">Medicine</h5>
+
+            </li>
+
+<script type="text/javascript">
+
+    function validate(frm)
+    {
+        var ele = frm.elements['feedurl[]'];
+        if (! ele.length)
+        {
+            alert(ele.value);
+        }
+        for(var i=0; i<ele.length; i++)
+        {
+            alert(ele[i].value);
+        }
+        return true;
+    }
+    function add_feed()
+    {
+        var div1 = document.createElement('div');
+        div1.type="text";
+
+        // Get template data
+        div1.innerHTML = document.getElementById('newlinktpl').innerHTML;
+        // append to our form, so that template data
+        //become part of form
+        document.getElementById('newlink').appendChild(div1);
+    }
+</script>
+<!-------------------- profile start ----------------------------->
+
+<style>
+   .feed {
+       padding: 5px 0;
+       
+
+   }
+    .addnew{
+
+        color: red;
+        text-align: center;
+
+    }
+    .lol{
+              {#background-color: darkslategrey; /* Green */#}
+                position: relative;
+
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: black;
+              padding: 6px 12px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+
+    }
+    .lol2{
+                   position: relative;
+
+                right:  -30px;
+                border-radius: 1px;
+                border-color: black;
+              {#border: brown;#}
+              {#color: black;#}
+              {#padding: 6px 12px;#}
+              {#text-align: center;#}
+              {#text-decoration: none;#}
+              {#display: inline-block;#}
+              {#font-size: 16px;#}
+              {#margin: 4px 2px;#}
+              {#cursor: pointer;#}
+              {#-webkit-transition-duration: 0.4s; /* Safari */#}
+              {#transition-duration: 0.4s;#}
+
+    }
+   .lol3{
+                   position: relative;
+
+                right:  -27px;
+                border-radius: 1px;
+                border-color: black;
+              {#border: brown;#}
+              {#color: black;#}
+              {#padding: 6px 12px;#}
+              {#text-align: center;#}
+              {#text-decoration: none;#}
+              {#display: inline-block;#}
+              {#font-size: 16px;#}
+              {#margin: 4px 2px;#}
+              {#cursor: pointer;#}
+              {#-webkit-transition-duration: 0.4s; /* Safari */#}
+              {#transition-duration: 0.4s;#}
+
+    }
+   .lol4{
+                   position: relative;
+
+                right:  -57px;
+                border-radius: 1px;
+                border-color: black;
+              {#border: brown;#}
+              {#color: black;#}
+              {#padding: 6px 12px;#}
+              {#text-align: center;#}
+              {#text-decoration: none;#}
+              {#display: inline-block;#}
+              {#font-size: 16px;#}
+              {#margin: 4px 2px;#}
+              {#cursor: pointer;#}
+              {#-webkit-transition-duration: 0.4s; /* Safari */#}
+              {#transition-duration: 0.4s;#}
+
+    }
+
+
+</style>
+<form method="post" action="#" onsubmit="return validate(this)">
+    <table>
+    <tr>
+{#        <td  >#}
+{#            <h5>List:-</h5>#}
+{#            <br>#}
+{#        </td>#}
+
+        <td valign=top>
+            <div id="newlink">
+{#                <div class="feed">#}
+{#                   <input type="text" name="feedurl[]" value="http://feeds.feedburner.com/satya-weblog/scripting" size="50">#}
+{#                </div>#}
             </div>
+        </td>
+    </tr>
+    </table>
+    {#	<p>#}
+    {#		<br>#}
+    {#		<input type="submit" name="submit1">#}
+    {#		<input type="reset" name="reset1">#}
+    {#	</p>#}
+    <p class="addnew">
+        <a href="javascript:add_feed()">+Add New Medicine </a>
+    </p>
+</form>
+<!-- Template. This whole data will be added directly to working form above -->
+<div id="newlinktpl" style="display:none">
+	<div class="feed">
+        <label class="lol" >Medicine Name : </label>
+	 <input  class="lol2"  type="text" name="feedurl[]" value=""  size="47">
+        <br>
+        <br>
+                <label class="lol" >Medicine Limits :  </label>
 
-        </div>
+	 <input class="lol3" type="text" name="feedurl[]" value=""  size="14">
+{#	 <br>#}
+        <label class="lol">Number of days : </label>
+        <input class="lol3" type="text" name="feedurl[]" value=""  size="14">
+	 <br>
+	 <br>
+                <label class="lol">Eating Time : </label>
 
-    </div>
+        <input class="lol4" type="text" name="feedurl[]" value=""  size="47">
+        <br>
+        <br>
+        <br>
 
+	</div>
 </div>
 
+<!-------------------- profile end ----------------------------->
+
+            <style>
+                /* Style all input fields */
+
+                /* The message box is shown when the user clicks on the password field */
+                #message {
+                    display: none;
+                {#background-image: url({% static 'cse/images/brus' %});#}{#background: #f1f1f1;#} color: #000;
+                    position: fixed;
+                    bottom: 50pt;
+                    right: 0;
+                    width: 500px;
+                {#position: relative;#}{#  left: 200px;#}{#  top: 5px;#} padding: 10px;
+                    margin-top: 10px;
+                }
+
+                #message p {
+                    padding: 10px 35px;
+                    font-size: 18px;
+                }
+
+                /* Add a green text color and a checkmark when the requirements are right */
+                .valid {
+                    color: green;
+                }
+
+                .valid:before {
+                    position: relative;
+                    left: -35px;
+                    content: "✔";
+                }
+
+                /* Add a red text color and an "x" when the requirements are wrong */
+                .invalid {
+                    color: red;
+                }
+
+                .invalid:before {
+                    position: relative;
+                    left: -35px;
+                    content: "✖";
+                }
+            </style>
+            {#             <!------------------------ Password Field ---------------------------->#}
+            {##}
+            {##}
+            {#            <li class="form-line form-line-column form-col-3 jf-required" data-type="control_email" id="id_6">#}
+            {#                <label style="font-size: 16px" class="form-label form-label-left" id="label_6" for="psw">#}
+            {#                    Password#}
+            {#                    <span class="form-required">*</span>#}
+            {#                </label>#}
+            {#                <div id="cid_6" class="form-input jf-required">#}
+            {#                    <input type="password" onfocus="this.value=''" id="psw"#}
+            {#                           name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"#}
+            {#                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more#}
+            {#                           characters"#}
+            {#                           size="30"  placeholder="ex: aA123456"  class="form-textbox validate[required]"#}
+            {#                           data-component="password" required="">#}
+            {##}
+            {#                            <input type="checkbox" onclick="myFunction()">Show Password#}
+            {#                            <script>#}
+            {#                            function myFunction() {#}
+            {#                              var x = document.getElementById("psw");#}
+            {#                              if (x.type === "password") {#}
+            {#                                x.type = "text";#}
+            {#                              } else {#}
+            {#                                x.type = "password";#}
+            {#                              }#}
+            {#                            }#}
+            {#                            </script>#}
+            {#                </div>#}
+            {#            </li>#}
 
 
+            <!------------------------ User Photos Field ---------------------------->
+
+            {#            <li class="form-line jf-required" data-type="control_fileupload" id="id_29">#}
+            {#                <label class="form-label form-label-left" id="label_29" for="input_29">#}
+            {#                    User Photos#}
+            {#                    <span class="form-required">*</span>#}
+            {#                </label>#}
+            {#                <div id="cid_29" class="form-input jf-required">#}
+            {#          <span class="form-sub-label-container" style="vertical-align:top">#}
+            {#            <input type="file" id="input_29" name="userphotos" class="form-upload validate[required]"#}
+            {#                   data-imagevalidate="yes"#}
+            {#                   data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"#}
+            {#                   data-file-maxsize="1024" data-file-minsize="100" data-file-limit="" data-component="fileupload"#}
+            {#                   required=""/>#}
+            {#            <label class="form-sub-label" for="input_29" style="min-height:13px"> Max Size 1 MB(Image file must be PNG, JPG, or JPEG) </label>#}
+            {#          </span>#}
+            {#                </div>#}
+            {#            </li>#}
 
 
+            {#            <li>#}
+            {#                {% if messages %}#}
+            {#                    <ul class="messages">#}
+            {#                        <div class="alert alert-success">#}
+            {#                            {% for message in messages %}#}
+            {#                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+            {#                            {% endfor %}#}
+            {#                        </div>#}
+            {#                    </ul>#}
+            {#                {% endif %}#}
+            {#            </li>#}
+            <!----------------------- login page Fields ------------------------------------------>
+        <style>
+            .butto {
+              background-color: darkslategrey; /* Green */
+                position: relative;
+
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button {
+              background-color: darkslategrey; /* Green */
+                  position: absolute;
+                right: 50px;
+                border-radius: 70px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .butt {
+              background-color: darkslategrey; /* Green */
+                  position: relative;
+
+                right: -35px;
+                border-radius: 12px;
+              border: none;
+              color: white;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              -webkit-transition-duration: 0.4s; /* Safari */
+              transition-duration: 0.4s;
+            }
+            .button1:hover {
+                background-color: black;
+                color: white;
+            }
+            .button2:hover {
+              background-color: black;
+              color: white;
+            }
+            .button3:hover {
+              background-color: black;
+              color: white;
+            }
+
+        </style>
+
+            <li>
+                <button class="butto button1">
+                    <a href="{% url 'cse:index' %}" style="color: white">Back To Home Page</a>
+                </button>
+                <button class="button button2">Patient Register
+                    {#                <a href="{% url 'cse:' %}" style="color: black" ></a>#}
+                </button>
 
 
+            </li>
 
+            {#            <li class="form-line form-line-column form-col-2" data-type="control_button" id="id_19">#}
+            {#                <div id="cid_19" class="form-input-wide">#}
+            {#                    <div style="text-align: left" class="form-buttons-wrapper">#}
+            {#                <button id="input_19" type="submit"  class="form-submit-button form-submit-button-simple_black" data-component="button">#}
+            {#                        <a href="{% url 'cse:login' %}">Already have an account? Click here to login.</a>#}
+            {#                </button>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </li>#}
+            {##}
+            {#            <!----------------------- Register Button ------------------------------------------>#}
+            {##}
+            <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
+                <div id="cid_20" class="form-input-wide">
+                    <div style="margin-left:156px" class="form-buttons-wrapper">
+                        {#                <button  id="input_20" type="submit" style="width: 150px"#}
+                        {#                        class="form-submit-button form-submit-button-simple_green"#}
+                        {#                        data-component="button">#}
+                        {#                    Register#}
+                        {#                </button>#}
+                    </div>
+                </div>
+            </li>
 
-
-
-
-
-
-<!-----------------------------------body end-------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </ul>
+    </div>
+</form>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-dark-grey">
@@ -1049,6 +1281,106 @@
 <!----End of Footer------>
 
 
+{#<div id="message">#}
+{#    <h3>Password must contain the following:</h3>#}
+{#    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>#}
+{#    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>#}
+{#    <p id="number" class="invalid">A <b>number</b></p>#}
+{#    <p id="length" class="invalid">Minimum <b>8 characters</b></p>#}
+{#</div>#}
+{##}
+{#<script>#}
+{#    var myInput = document.getElementById("psw");#}
+{#    var letter = document.getElementById("letter");#}
+{#    var capital = document.getElementById("capital");#}
+{#    var number = document.getElementById("number");#}
+{#    var length = document.getElementById("length");#}
+{##}
+{#    // When the user clicks on the password field, show the message box#}
+{#    myInput.onfocus = function () {#}
+{#        document.getElementById("message").style.display = "block";#}
+{#    }#}
+{##}
+{#    // When the user clicks outside of the password field, hide the message box#}
+{#    myInput.onblur = function () {#}
+{#        document.getElementById("message").style.display = "none";#}
+{#    }#}
+{##}
+{#    // When the user starts to type something inside the password field#}
+{#    myInput.onkeyup = function () {#}
+{#        // Validate lowercase letters#}
+{#        var lowerCaseLetters = /[a-z]/g;#}
+{#        if (myInput.value.match(lowerCaseLetters)) {#}
+{#            letter.classList.remove("invalid");#}
+{#            letter.classList.add("valid");#}
+{#        } else {#}
+{#            letter.classList.remove("valid");#}
+{#            letter.classList.add("invalid");#}
+{#        }#}
+{##}
+{#        // Validate capital letters#}
+{#        var upperCaseLetters = /[A-Z]/g;#}
+{#        if (myInput.value.match(upperCaseLetters)) {#}
+{#            capital.classList.remove("invalid");#}
+{#            capital.classList.add("valid");#}
+{#        } else {#}
+{#            capital.classList.remove("valid");#}
+{#            capital.classList.add("invalid");#}
+{#        }#}
+{##}
+{#        // Validate numbers#}
+{#        var numbers = /[0-9]/g;#}
+{#        if (myInput.value.match(numbers)) {#}
+{#            number.classList.remove("invalid");#}
+{#            number.classList.add("valid");#}
+{#        } else {#}
+{#            number.classList.remove("valid");#}
+{#            number.classList.add("invalid");#}
+{#        }#}
+{##}
+{#        // Validate length#}
+{#        if (myInput.value.length >= 8) {#}
+{#            length.classList.remove("invalid");#}
+{#            length.classList.add("valid");#}
+{#        } else {#}
+{#            length.classList.remove("valid");#}
+{#            length.classList.add("invalid");#}
+{#        }#}
+{#    }#}
+{#</script>#}
+
+{#Footer start#}
+
+{#<style>#}
+{##}
+{#    #contentWrapper {#}
+{#        overflow-x: auto;#}
+{#        overflow-y: hidden;#}
+{#        height: 23px;#}
+{#        width: 100%;#}
+{#        margin-top: -16px;#}
+{#    }#}
+{##}
+{#    #content {#}
+{#        padding-top: -5px;#}
+{#        text-align: center;#}
+{#        background-color: black;#}
+{#        color: white;#}
+{#        width: 100%;#}
+{#    }#}
+{#</style>#}
+{#<div id="contentWrapper">#}
+{#    <div id="content">#}
+{#        <p>#}
+{#            <small class="block">#}
+{#                Copyright &copy;<script>document.write(new Date().getFullYear());</script>#}
+{#                All rights reserved | Colorlib : SUST Medical Center</a>#}
+{#            </small>#}
+{#        </p>#}
+{#    </div>#}
+{#</div>#}
+
+{#Footer end#}
 
 </body>
 </html>
