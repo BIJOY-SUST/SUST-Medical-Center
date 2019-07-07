@@ -32,6 +32,7 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 # ----------------- Testing ----------------------------
 
 def testing(request):
+
     return render(request, 'cse/test3.html')
 # ---------------------- Medical Info --------------------
 
