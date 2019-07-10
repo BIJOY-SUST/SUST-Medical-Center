@@ -1,4 +1,4 @@
-sust-medical-center
+# SUST-Medical-Center-With-Django
 
 
 Summary of this project:-
@@ -28,12 +28,12 @@ medicines, he will be able to take medicines and whoever he can, he will be able
 from the website that he Is not really a patient whom he is giving medicine.
 8. Retrieval of Medical Clearance. And through the medical center, students can give their medical
 clearance.
+9. Through this they (medical center) can keep a record of their various medicines.
+10. Users (patients) give their problem details in online and make appointment with doctor.
+This procedure can manage by Queue System.
 
 The work that can be in this project:-
 
-1. Through this they (medical center) can keep a record of their various medicines.
-2. Users (patients) give their problem details in online and make appointment with doctor.
-This procedure can manage by Queue System.
-3. Users can add image.
-4. Pay fees and take receipt.
-5. Message, voice, video call chat between users and doctors managed by admin.
+1. Users can add image.
+2. Pay fees and take receipt.
+3. Message, voice, video call chat between users and doctors managed by admin.
