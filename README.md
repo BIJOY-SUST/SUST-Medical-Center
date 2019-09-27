@@ -1,5 +1,6 @@
-# SUST-Medical-Center-With-Django
+### SUST Medical Center
 
+This is a personal project for Database Lab Course in Computer Science Department of SUST. The website provides the student with the necessary information that they want and need which saves them from a lot of hassle. This System provides information about medical centers and the whereabouts of expert doctors. Students no longer have to travel 1 hour just for one checkup and then find that it wasn't available. This website was made by Django ( Python Web framework ).
 
 Summary of this project:-
 
